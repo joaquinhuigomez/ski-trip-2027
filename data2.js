@@ -3021,13 +3021,13 @@ window.ROUND2 = {
    "type": "multi",
    "required": false,
    "anon": true,
-   "short": "Cost levers",
-   "title": "Which cost levers would you accept?",
-   "help": "Try them on the price table above first.",
+   "short": "Ways to save",
+   "title": "If it brought the price down, would any of these be fine with you?",
+   "help": "Entirely optional. Tick any you’d be happy with, or “I don’t mind”. Nothing here commits anyone.",
    "options": [
     {
      "id": "ski1",
-     "label": "Ski one day less (rest or sightseeing day instead)"
+     "label": "Skiing one day less (a rest or sightseeing day instead)"
     },
     {
      "id": "lessons",
@@ -3039,15 +3039,19 @@ window.ROUND2 = {
     },
     {
      "id": "share",
-     "label": "Share a room or double bed for a cheaper flat"
+     "label": "Sharing a room or double bed for a cheaper flat"
     },
     {
      "id": "bags",
-     "label": "Share hold bags"
+     "label": "Sharing hold bags"
+    },
+    {
+     "id": "any",
+     "label": "I don’t mind"
     },
     {
      "id": "none",
-     "label": "None of these"
+     "label": "I’d rather keep the full plan"
     }
    ]
   },
