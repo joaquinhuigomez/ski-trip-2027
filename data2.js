@@ -324,11 +324,11 @@ window.ROUND2 = {
       },
       {
        "label": "Airport transfer, return",
-       "note": "Out midweek private 8-seat minivan £240 (€47 pp, PUBLISHED Alps2Alps 2026/27 guide); back Sun private ~€367 (€61 pp, ESTIMATE). No shared Les Arcs shuttle midweek; Alpskibus to Bourg daily (2026/27 TBC).",
-       "adv": 108.0,
-       "beg": 108.0,
-       "cur": "EUR",
-       "status": "ESTIMATE"
+       "note": "Private minibus for 6, live Alps2Alps quote for Wed 27 / Sun 31 (Sunday pickup 13:25).",
+       "adv": 98,
+       "beg": 98,
+       "cur": "GBP",
+       "status": "VERIFIED"
       },
       {
        "label": "Alpages du Chantel flat (ski-in/out, pool), 5 nights",
@@ -423,11 +423,11 @@ window.ROUND2 = {
       },
       {
        "label": "Airport transfer, return",
-       "note": "Out midweek private 8-seat minivan £240 (€47 pp, PUBLISHED Alps2Alps 2026/27 guide); back Sun private ~€367 (€61 pp, ESTIMATE). No shared Les Arcs shuttle midweek; Alpskibus to Bourg daily (2026/27 TBC).",
-       "adv": 108.0,
-       "beg": 108.0,
-       "cur": "EUR",
-       "status": "ESTIMATE"
+       "note": "Private minibus for 6, live Alps2Alps quote for Wed 27 / Sun 31 (Sunday pickup 13:25).",
+       "adv": 98,
+       "beg": 98,
+       "cur": "GBP",
+       "status": "VERIFIED"
       },
       {
        "label": "La Nova 3-bed, Villards, 5 nights",
@@ -527,11 +527,11 @@ window.ROUND2 = {
       },
       {
        "label": "Airport transfer, return",
-       "note": "Wed out private minivan ~€47 pp (PUBLISHED guide); Sun back private ~€61 pp (ESTIMATE). Wed-afternoon flight + transfer fine (arrive ~19:00–20:00).",
-       "adv": 108.0,
-       "beg": 108.0,
-       "cur": "EUR",
-       "status": "ESTIMATE"
+       "note": "Private minibus for 6, live Alps2Alps quote for Wed 27 / Sun 31 (Sunday pickup 13:25).",
+       "adv": 98,
+       "beg": 98,
+       "cur": "GBP",
+       "status": "VERIFIED"
       },
       {
        "label": "Alpages du Chantel flat (ski-in/out, pool), 4 nights",
@@ -626,11 +626,11 @@ window.ROUND2 = {
       },
       {
        "label": "Airport transfer, return",
-       "note": "Wed out private minivan ~€47 pp (PUBLISHED guide); Sun back private ~€61 pp (ESTIMATE). Wed-afternoon flight + transfer fine (arrive ~19:00–20:00).",
-       "adv": 108.0,
-       "beg": 108.0,
-       "cur": "EUR",
-       "status": "ESTIMATE"
+       "note": "Private minibus for 6, live Alps2Alps quote for Wed 27 / Sun 31 (Sunday pickup 13:25).",
+       "adv": 98,
+       "beg": 98,
+       "cur": "GBP",
+       "status": "VERIFIED"
       },
       {
        "label": "La Nova 3-bed, Villards, 4 nights",
@@ -730,11 +730,11 @@ window.ROUND2 = {
       },
       {
        "label": "Airport transfer, return",
-       "note": "Thu early private minivan (~€47 pp, arrive ~12:30); Sun private back ~€61 pp. Sunday ski only with flight ≥ ~18:00.",
-       "adv": 108.0,
-       "beg": 108.0,
-       "cur": "EUR",
-       "status": "PUBLISHED"
+       "note": "Private minibus for 6, live Alps2Alps quote for Wed 27 / Sun 31 (Sunday pickup 13:25).",
+       "adv": 98,
+       "beg": 98,
+       "cur": "GBP",
+       "status": "VERIFIED"
       },
       {
        "label": "Alpages du Chantel flat (ski-in/out, pool), 3 nights",
@@ -829,11 +829,11 @@ window.ROUND2 = {
       },
       {
        "label": "Airport transfer, return",
-       "note": "Thu early private minivan (~€47 pp, arrive ~12:30); Sun private back ~€61 pp. Sunday ski only with flight ≥ ~18:00.",
-       "adv": 108.0,
-       "beg": 108.0,
-       "cur": "EUR",
-       "status": "PUBLISHED"
+       "note": "Private minibus for 6, live Alps2Alps quote for Wed 27 / Sun 31 (Sunday pickup 13:25).",
+       "adv": 98,
+       "beg": 98,
+       "cur": "GBP",
+       "status": "VERIFIED"
       },
       {
        "label": "La Nova 3-bed, Villards, 3 nights",
@@ -1138,11 +1138,11 @@ window.ROUND2 = {
       },
       {
        "label": "Airport transfer, return",
-       "note": "Tue private 8-seater out (~€210) + Sun private back. ESTIMATE",
-       "adv": 70.0,
-       "beg": 70.0,
-       "cur": "EUR",
-       "status": "ESTIMATE"
+       "note": "Private minibus for 6, live Alps2Alps quote for Wed 27 / Sun 31 (Sunday pickup 14:45).",
+       "adv": 69,
+       "beg": 69,
+       "cur": "GBP",
+       "status": "VERIFIED"
       },
       {
        "label": "Flaine Forêt 2-bed, ski-in/out, 5 nights",
@@ -1237,11 +1237,11 @@ window.ROUND2 = {
       },
       {
        "label": "Airport transfer, return",
-       "note": "Tue private 8-seater out (~€210) + Sun private back. ESTIMATE",
-       "adv": 70.0,
-       "beg": 70.0,
-       "cur": "EUR",
-       "status": "ESTIMATE"
+       "note": "Private minibus for 6, live Alps2Alps quote for Wed 27 / Sun 31 (Sunday pickup 14:45).",
+       "adv": 69,
+       "beg": 69,
+       "cur": "GBP",
+       "status": "VERIFIED"
       },
       {
        "label": "Ski-in/out chalet, 3-bed, 5 nights",
@@ -1341,11 +1341,11 @@ window.ROUND2 = {
       },
       {
        "label": "Airport transfer, return",
-       "note": "Wed private out + Sun private back (~€210 per vehicle). ESTIMATE",
-       "adv": 70.0,
-       "beg": 70.0,
-       "cur": "EUR",
-       "status": "ESTIMATE"
+       "note": "Private minibus for 6, live Alps2Alps quote for Wed 27 / Sun 31 (Sunday pickup 14:45).",
+       "adv": 69,
+       "beg": 69,
+       "cur": "GBP",
+       "status": "VERIFIED"
       },
       {
        "label": "Flaine Forêt 2-bed, ski-in/out, 4 nights",
@@ -1440,11 +1440,11 @@ window.ROUND2 = {
       },
       {
        "label": "Airport transfer, return",
-       "note": "Wed private out + Sun private back (~€210 per vehicle). ESTIMATE",
-       "adv": 70.0,
-       "beg": 70.0,
-       "cur": "EUR",
-       "status": "ESTIMATE"
+       "note": "Private minibus for 6, live Alps2Alps quote for Wed 27 / Sun 31 (Sunday pickup 14:45).",
+       "adv": 69,
+       "beg": 69,
+       "cur": "GBP",
+       "status": "VERIFIED"
       },
       {
        "label": "Petite Ourse 2-bed, 4 nights",
@@ -1544,11 +1544,11 @@ window.ROUND2 = {
       },
       {
        "label": "Airport transfer, return",
-       "note": "Thu morning private out + Sun private back. ESTIMATE",
-       "adv": 70.0,
-       "beg": 70.0,
-       "cur": "EUR",
-       "status": "ESTIMATE"
+       "note": "Private minibus for 6, live Alps2Alps quote for Wed 27 / Sun 31 (Sunday pickup 14:45).",
+       "adv": 69,
+       "beg": 69,
+       "cur": "GBP",
+       "status": "VERIFIED"
       },
       {
        "label": "Flaine Forêt 2-bed, ski-in/out, 3 nights",
@@ -1643,11 +1643,11 @@ window.ROUND2 = {
       },
       {
        "label": "Airport transfer, return",
-       "note": "Thu morning private out + Sun private back. ESTIMATE",
-       "adv": 70.0,
-       "beg": 70.0,
-       "cur": "EUR",
-       "status": "ESTIMATE"
+       "note": "Private minibus for 6, live Alps2Alps quote for Wed 27 / Sun 31 (Sunday pickup 14:45).",
+       "adv": 69,
+       "beg": 69,
+       "cur": "GBP",
+       "status": "VERIFIED"
       },
       {
        "label": "Petite Ourse 2-bed, 3 nights",
@@ -2804,6 +2804,13 @@ window.ROUND2 = {
    "photoNote": ""
   }
  ],
+ "bookFirst": [
+  "Flights: all 6 seats in one booking on the day the vote closes; the cheapest fare band goes first and fares are non-refundable.",
+  "The comfort flat if Les Arcs wins (refundable until 22 Jan); backup: a 3-bed in the same Chantel residence at €2,259, each girl her own bed.",
+  "The Flaine budget flat (£594) if Flaine wins; the comfort flat there needs the host to accept a request.",
+  "Transfers last: live quotes are £98 pp (Les Arcs) and £69 pp (Flaine) return."
+ ],
+ "recheck": "Re-checked live on 4 Oct, 21:50: all flats still available at the same prices; flights unchanged.",
  "guideCopy": {
   "C": {
    "why": "Arc 1800 has the best beginner set-up of the three: lessons meet on the snow in front of the flat, and most of the bars are here. Flexible agencies make Sunday and midweek check-ins possible.",

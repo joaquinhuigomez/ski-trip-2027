@@ -747,7 +747,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
 
 <script src="data.js?v=6"></script>
 <script src="images.js?v=4"></script>
-<script src="data2.js?v=14"></script>
+<script src="data2.js?v=15"></script>
 <script>
 (() => {
   'use strict';
@@ -1113,6 +1113,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
           <dt>Transfer</dt><dd>${tr ? esc(tr.note) : ''}</dd>
           <dt>Lessons</dt><dd>${les ? `${esc(les.label)}: ${E(les.beg)} per girl` : ''}</dd>
           <dt>Per person</dt><dd>${G(tL.beg / FX)} per girl · ${G(tL.adv / FX)} per boy (${tierB} tier, excluding food)</dd>
+          <dt>Book first</dt><dd><ol style="margin:0;padding-left:1.1rem">${(R2.bookFirst || []).map(x => `<li>${esc(x)}</li>`).join('')}</ol><span class="muted">${esc(R2.recheck || '')}</span></dd>
           <dt>Round 3 asks</dt><dd>Confirm you’re in for these dates · morning or afternoon flight · budget or comfort flat · one volunteer each for flights, transfer and lessons. Passport details go in the private chat, never on this page.</dd>
         </dl>`;
     };

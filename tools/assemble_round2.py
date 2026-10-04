@@ -45,6 +45,11 @@ R2.update({
   ],
   'newOptions': [{'id': x['_resort']['id'], 'kanji': x['_resort']['kanji'], 'name': x['_resort']['short'], 'why': x['why'], 'pros': x['pros'], 'cons': x['cons'], 'food': x['food'], 'vibe': x['vibe'],
                   'transfer': x['transfer_time'], 'images': photos_for(x['_resort']['short']), 'photoNote': ''} for x in EXTRAS],
+  'bookFirst': ['Flights: all 6 seats in one booking on the day the vote closes; the cheapest fare band goes first and fares are non-refundable.',
+                'The comfort flat if Les Arcs wins (refundable until 22 Jan); backup: a 3-bed in the same Chantel residence at €2,259, each girl her own bed.',
+                'The Flaine budget flat (£594) if Flaine wins; the comfort flat there needs the host to accept a request.',
+                'Transfers last: live quotes are £98 pp (Les Arcs) and £69 pp (Flaine) return.'],
+  'recheck': 'Re-checked live on 4 Oct, 21:50: all flats still available at the same prices; flights unchanged.',
   'guideCopy': {'C': {
     'why': 'Arc 1800 has the best beginner set-up of the three: lessons meet on the snow in front of the flat, and most of the bars are here. Flexible agencies make Sunday and midweek check-ins possible.',
     'pros': ['Came first in round 1', 'Ski-in/ski-out flats for every trip length, from about £50 per person per night', 'Beginner set-up at the door: ESF meets outside, free beginner chairlifts at weekends, €45 beginner day pass', 'Serious terrain for the advanced pair: Aiguille Rouge (3,226 m), 2,000 m of vertical, La Plagne on the same pass', 'Tree-lined runs at Arc 1600 and Peisey for cold or flat-light days', 'Proper après: Folie Douce, Red Hot Saloon'],

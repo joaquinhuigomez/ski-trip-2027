@@ -56,12 +56,22 @@ def stay(st: dict) -> dict:
 def num(v: Any, default: float = 0.0) -> float:
     return float(v) if isinstance(v, (int, float)) else default
 
+# Live private-minibus quotes (Alps2Alps, checked 4 Oct 21:50) for midweek-out / Sunday-back shapes.
+LIVE_TRANSFER = {'arcs': {'gbp': 98, 'note': 'Private minibus for 6, live Alps2Alps quote for Wed 27 / Sun 31 (Sunday pickup 13:25).'},
+                 'geneva2': {'gbp': 69, 'note': 'Private minibus for 6, live Alps2Alps quote for Wed 27 / Sun 31 (Sunday pickup 14:45).'}}
+
+def transfer_item(resort: dict, sh: str, d: dict) -> dict:
+    live = LIVE_TRANSFER.get(resort['key'])
+    if live and sh in ('M', 'S', 'XS'):
+        return {'label': 'Airport transfer, return', 'note': live['note'], 'adv': live['gbp'], 'beg': live['gbp'], 'cur': 'GBP', 'status': 'VERIFIED'}
+    return {'label': 'Airport transfer, return', 'note': d.get('transfer_note', ''), 'adv': num(d['transfer_pp']), 'beg': num(d['transfer_pp']), 'cur': 'EUR', 'status': 'ESTIMATE' if 'ESTIMATE' in d.get('transfer_note', '') else 'PUBLISHED'}
+
 def build_cell(resort: dict, shape: dict, d: dict, tier: str, school_override: dict) -> list:
     sh = shape['id']
     st = d['stay_value'] if tier == 'budget' else d['stay_comfort']
     items = [flight_item(resort['airport'], sh),
              {'label': '23 kg hold bag, both ways', 'note': 'easyJet/BA estimate. On short trips two people can share one bag.', 'adv': 85, 'beg': 85, 'cur': 'GBP', 'status': 'ESTIMATE', 'kind': 'bag', 'days': 1},
-             {'label': 'Airport transfer, return', 'note': d.get('transfer_note', ''), 'adv': num(d['transfer_pp']), 'beg': num(d['transfer_pp']), 'cur': 'EUR', 'status': 'ESTIMATE' if 'ESTIMATE' in d.get('transfer_note', '') else 'PUBLISHED'},
+             transfer_item(resort, sh, d),
              {'label': f"{short_name(st['name'])}, {shape['nights']} nights", 'note': ("Booked for a longer stay than we use, because of the flat's minimum stay; the price is for the full booking. " if '(booked' in st.get('name', '') else '') + f"{st.get('beds', '')}. {st.get('lift', '')} to the lift. Rated {st.get('rating', 'n/a')}. {st.get('cancel', '')}", 'group': True, 'amount': num(st['total']), 'cur': st.get('cur', 'EUR'), 'status': 'VERIFIED' if 'VERIFIED' in str(st.get('status', '')) else 'ESTIMATE', 'src': st.get('url')}]
     if resort.get('touristTax'):
         tt = resort['touristTax'] * shape['nights']
