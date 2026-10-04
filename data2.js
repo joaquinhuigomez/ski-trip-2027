@@ -5,19 +5,22 @@ window.ROUND2 = {
    "id": "C",
    "kanji": "三",
    "short": "Les Arcs 1800",
-   "sub": "France · fly Geneva · ≈3 h transfer"
+   "sub": "France · fly Geneva · ≈3 h transfer",
+   "label": "Les Arcs 1800 (France)"
   },
   {
-   "id": "B",
-   "kanji": "二",
-   "short": "Stubai (Fulpmes)",
-   "sub": "Austria · fly Innsbruck · 25 min transfer"
-  },
-  {
-   "id": "P",
+   "id": "F",
    "kanji": "四",
-   "short": "Les Carroz (Grand Massif)",
-   "sub": "France · fly Geneva · ≈1 h transfer"
+   "short": "Flaine (Grand Massif)",
+   "sub": "France · fly Geneva · ≈1h15 transfer",
+   "label": "Flaine, Grand Massif (France)"
+  },
+  {
+   "id": "L",
+   "kanji": "五",
+   "short": "La Plagne (Paradiski)",
+   "sub": "France · fly Geneva · ≈2h45 transfer",
+   "label": "La Plagne, Paradiski (France)"
   }
  ],
  "shapes": [
@@ -981,32 +984,32 @@ window.ROUND2 = {
     }
    }
   },
-  "B": {
+  "F": {
    "LS": {
     "feasible": true,
-    "note": "Sun 24 -> Sat 30, 6 nights, ski Mon-Sat, 5 AL. Whole group on easyJet LGW 14:25 -> INN 17:25 Sun, minibus, flat by ~18:15. 27 Fulpmes properties accept Sun check-in; Sun->Sat is CHEAPER than Sat->Sat for the same flats (Kirchplatz C €3,091 vs €3,410; Serles €2,287 vs €2,668). Fulpmes supermarkets closed Sunday - shop at airport/Hbf. Group lessons start Mon (fits).",
-    "food": 60,
+    "note": "Sun 24→Sat 30, 6 nights, ski Mon–Fri plus optional Sat morning. The whole group flies Sun afternoon. The own-bed wooden chalet at 1,800 m is the standout listing, and ESF Mon–Fri group courses fit.",
+    "food": 65,
     "budget": {
      "stay": {
-      "url": "https://www.booking.com/hotel/at/haus-dorfblick-apartment-serles-co2-neutral.en-gb.html?checkin=2027-01-24&checkout=2027-01-30&group_adults=6&no_rooms=1&group_children=0&selected_currency=EUR",
-      "total": 2287,
-      "cur": "EUR",
-      "beds": "3 bedrooms x 1 large double; couple own room, girls 2 per double",
-      "lift": "~12 min walk to Kreuzjochbahn; Kirchplatz ski bus ~6 min walk",
-      "rating": "9.9/10 (10) Booking",
-      "cancel": "Free until 10 Jan 2027; '1 left'",
+      "url": "https://www.airbnb.co.uk/rooms/10625381?check_in=2027-01-24&check_out=2027-01-30&adults=6",
+      "total": 1286,
+      "cur": "GBP",
+      "beds": "BR1 2 singles; BR2 double (couple); BR3 2 singles: each girl own bed; 1 bathroom",
+      "lift": "3 min walk to slopes",
+      "rating": "4.86 (52)",
+      "cancel": "Free before 25 Dec 2026",
       "status": "VERIFIED-LIVE",
-      "name": "Königin Serles"
+      "name": "Hameau de Flaine chalet, 3-bed"
      },
      "items": [
       {
-       "label": "Return flight London ⇄ Innsbruck",
-       "note": "Out: Sun 24 easyJet LGW 14:25-17:25 (£45.00). Back: Sat 30 TUI INN-LGW 17:45-18:40 (£112.00). Fare for 6 seats, cabin bag.",
-       "adv": 157.0,
-       "beg": 157.0,
+       "label": "Return flight London ⇄ Geneva",
+       "note": "Out: Sun 24 easyJet LTN 13:45-16:30 (£38.00). Back: Sat 30 easyJet GVA-SEN 10:00-10:40 (£34.17). Fare for 6 seats, cabin bag.",
+       "adv": 72.17,
+       "beg": 72.17,
        "cur": "GBP",
        "status": "VERIFIED",
-       "src": "https://www.google.com/travel/flights?q=One%20way%20flights%20from%20London%20to%20Innsbruck%20on%202027-01-24%20for%206%20adults&hl=en-GB&curr=GBP"
+       "src": "https://www.google.com/travel/flights?q=One%20way%20flights%20from%20London%20to%20Geneva%20on%202027-01-24%20for%206%20adults&hl=en-GB&curr=GBP"
       },
       {
        "label": "23 kg hold bag, both ways",
@@ -1020,57 +1023,57 @@ window.ROUND2 = {
       },
       {
        "label": "Airport transfer, return",
-       "note": "Private 7-seat minibus €144 each way (PUBLISHED aggregator), Sun arrival and Sat departure both fine.",
-       "adv": 48.0,
-       "beg": 48.0,
+       "note": "Sun 24 evening private 8-seater (~€210) + Sat 30 private or Eurobus (weekend line). ESTIMATE",
+       "adv": 70.0,
+       "beg": 70.0,
        "cur": "EUR",
-       "status": "PUBLISHED"
+       "status": "ESTIMATE"
       },
       {
-       "label": "Königin Serles, 6 nights",
-       "note": "3 bedrooms x 1 large double; couple own room, girls 2 per double. ~12 min walk to Kreuzjochbahn; Kirchplatz ski bus ~6 min walk to the lift. Rated 9.9/10 (10) Booking. Free until 10 Jan 2027; '1 left'",
+       "label": "Hameau de Flaine chalet, 3-bed, 6 nights",
+       "note": "BR1 2 singles; BR2 double (couple); BR3 2 singles: each girl own bed; 1 bathroom. 3 min walk to slopes to the lift. Rated 4.86 (52). Free before 25 Dec 2026",
        "group": true,
-       "amount": 2287.0,
-       "cur": "EUR",
+       "amount": 1286.0,
+       "cur": "GBP",
        "status": "VERIFIED",
-       "src": "https://www.booking.com/hotel/at/haus-dorfblick-apartment-serles-co2-neutral.en-gb.html?checkin=2027-01-24&checkout=2027-01-30&group_adults=6&no_rooms=1&group_children=0&selected_currency=EUR"
-      },
-      {
-       "label": "Tourist tax",
-       "note": "€4.80 per person per night, paid locally",
-       "adv": 28.799999999999997,
-       "beg": 28.799999999999997,
-       "cur": "EUR",
-       "status": "PUBLISHED"
+       "src": "https://www.airbnb.co.uk/rooms/10625381?check_in=2027-01-24&check_out=2027-01-30&adults=6"
       },
       {
        "label": "Lift pass",
-       "note": "Adv + Natasha: 6-day Stubai Skipass Mon-Sat €355. Beginners: 3 x beginner ticket €43 + Schlick 3-day €167 = €296 (simplest 6-day Stubai €355). PUBLISHED 2026/27.",
+       "note": "Grand Massif 5 × €63 + €2 card (Sat morning 4 h +€56.70 optional). Beginners Flaine Pass Débutant 5 × €30.50 + €2",
        "intAs": "adv",
-       "adv": 355.0,
-       "beg": 296.0,
+       "adv": 317.0,
+       "beg": 154.5,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "lift",
        "days": 5
       },
       {
-       "label": "Beginners: Skischule Stubai Tirol group, Mon–Thu 4 h",
-       "note": "Skischule Stubai Tirol: beginner group Mon-Thu 4 x 4h €270; Natasha 'slightly advanced' 2h Mon-Thu €205 (Olympia glacier 5 days €310); private for 3, Mon-Fri mornings €270/day = €450 pp (+€90 Sat). No group courses Fri/Sat.",
+       "label": "Carré Neige piste-rescue cover",
+       "intAs": "adv",
+       "adv": 17.5,
+       "beg": 17.5,
+       "cur": "EUR",
+       "status": "PUBLISHED"
+      },
+      {
+       "label": "Beginners: ESF Flaine group, 5 mornings Mon–Fri (Class 1; confirm entry)",
+       "note": "ESF Flaine 5 mornings Mon–Fri ~€230 (ESTIMATE from €260 for 6; not for true first-timers, so confirm the returning beginners can join). Private 5 × 3 h for 3 (~€216/session ÷ 3)",
        "intAs": 0,
        "adv": 0,
-       "beg": 270,
+       "beg": 230,
        "cur": "EUR",
-       "status": "PUBLISHED",
+       "status": "ESTIMATE",
        "kind": "school",
        "days": 5
       },
       {
-       "label": "Natasha: “slightly advanced” group, Mon–Thu 2 h",
+       "label": "Natasha: ESF group Mon–Fri at her level",
        "note": "",
        "adv": 0,
        "beg": 0,
-       "int": 205,
+       "int": 230,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
@@ -1079,11 +1082,11 @@ window.ROUND2 = {
       {
        "intAs": "beg",
        "label": "Rental for beginners and Natasha",
-       "note": "Pittl 6-day beginner kit €122 + €63 + €41 (round-1 VERIFIED-LIVE 6-day price, Sun-Fri window).",
+       "note": "5 days kit + helmet, Sport 2000-type (ESTIMATE from Les Carroz published prices)",
        "adv": 0,
-       "beg": 226.0,
+       "beg": 132.0,
        "cur": "EUR",
-       "status": "VERIFIED",
+       "status": "ESTIMATE",
        "kind": "rental",
        "days": 5
       },
@@ -1098,25 +1101,25 @@ window.ROUND2 = {
     },
     "comfort": {
      "stay": {
-      "url": "https://www.airbnb.co.uk/rooms/876679139510040180?check_in=2027-01-24&check_out=2027-01-30&adults=6&currency=EUR",
-      "total": 3091,
-      "cur": "EUR",
-      "beds": "3BR/2BA: queen (couple); queen + single; queen + single -> every girl own bed",
-      "lift": "Kirchplatz ski bus at door, 5 min to Schlick valley station",
-      "rating": "4.94 (31) Airbnb",
-      "cancel": "Free until 25 Dec 2026, partial until 17 Jan 2027; tourist tax €172.80 extra",
-      "status": "VERIFIED-LIVE (alt own-bed: Krösbacher 2 units €3,130, 8.7/317)",
-      "name": "Kirchplatz Type C"
+      "url": "https://www.airbnb.co.uk/rooms/27622174?check_in=2027-01-24&check_out=2027-01-30&adults=6",
+      "total": 2242,
+      "cur": "GBP",
+      "beds": "3 bedrooms, 7 beds (split not verified)",
+      "lift": "Ski-in/out",
+      "rating": "4.96",
+      "cancel": "Free cancellation (date at booking)",
+      "status": "VERIFIED-LIVE",
+      "name": "Ski-in/out chalet, 3-bed"
      },
      "items": [
       {
-       "label": "Return flight London ⇄ Innsbruck",
-       "note": "Out: Sun 24 easyJet LGW 14:25-17:25 (£45.00). Back: Sat 30 TUI INN-LGW 17:45-18:40 (£112.00). Fare for 6 seats, cabin bag.",
-       "adv": 157.0,
-       "beg": 157.0,
+       "label": "Return flight London ⇄ Geneva",
+       "note": "Out: Sun 24 easyJet LTN 13:45-16:30 (£38.00). Back: Sat 30 easyJet GVA-SEN 10:00-10:40 (£34.17). Fare for 6 seats, cabin bag.",
+       "adv": 72.17,
+       "beg": 72.17,
        "cur": "GBP",
        "status": "VERIFIED",
-       "src": "https://www.google.com/travel/flights?q=One%20way%20flights%20from%20London%20to%20Innsbruck%20on%202027-01-24%20for%206%20adults&hl=en-GB&curr=GBP"
+       "src": "https://www.google.com/travel/flights?q=One%20way%20flights%20from%20London%20to%20Geneva%20on%202027-01-24%20for%206%20adults&hl=en-GB&curr=GBP"
       },
       {
        "label": "23 kg hold bag, both ways",
@@ -1130,57 +1133,57 @@ window.ROUND2 = {
       },
       {
        "label": "Airport transfer, return",
-       "note": "Private 7-seat minibus €144 each way (PUBLISHED aggregator), Sun arrival and Sat departure both fine.",
-       "adv": 48.0,
-       "beg": 48.0,
+       "note": "Sun 24 evening private 8-seater (~€210) + Sat 30 private or Eurobus (weekend line). ESTIMATE",
+       "adv": 70.0,
+       "beg": 70.0,
        "cur": "EUR",
-       "status": "PUBLISHED"
+       "status": "ESTIMATE"
       },
       {
-       "label": "Kirchplatz Type C, 6 nights",
-       "note": "3BR/2BA: queen (couple); queen + single; queen + single -> every girl own bed. Kirchplatz ski bus at door, 5 min to Schlick valley station to the lift. Rated 4.94 (31) Airbnb. Free until 25 Dec 2026, partial until 17 Jan 2027; tourist tax €172.80 extra",
+       "label": "Ski-in/out chalet, 3-bed, 6 nights",
+       "note": "3 bedrooms, 7 beds (split not verified). Ski-in/out to the lift. Rated 4.96. Free cancellation (date at booking)",
        "group": true,
-       "amount": 3091.0,
-       "cur": "EUR",
+       "amount": 2242.0,
+       "cur": "GBP",
        "status": "VERIFIED",
-       "src": "https://www.airbnb.co.uk/rooms/876679139510040180?check_in=2027-01-24&check_out=2027-01-30&adults=6&currency=EUR"
-      },
-      {
-       "label": "Tourist tax",
-       "note": "€4.80 per person per night, paid locally",
-       "adv": 28.799999999999997,
-       "beg": 28.799999999999997,
-       "cur": "EUR",
-       "status": "PUBLISHED"
+       "src": "https://www.airbnb.co.uk/rooms/27622174?check_in=2027-01-24&check_out=2027-01-30&adults=6"
       },
       {
        "label": "Lift pass",
-       "note": "Adv + Natasha: 6-day Stubai Skipass Mon-Sat €355. Beginners: 3 x beginner ticket €43 + Schlick 3-day €167 = €296 (simplest 6-day Stubai €355). PUBLISHED 2026/27.",
+       "note": "Grand Massif 5 × €63 + €2 card (Sat morning 4 h +€56.70 optional). Beginners Flaine Pass Débutant 5 × €30.50 + €2",
        "intAs": "adv",
-       "adv": 355.0,
-       "beg": 296.0,
+       "adv": 317.0,
+       "beg": 154.5,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "lift",
        "days": 5
       },
       {
-       "label": "Beginners: private instructor for 3, Mon–Fri mornings",
-       "note": "Skischule Stubai Tirol: beginner group Mon-Thu 4 x 4h €270; Natasha 'slightly advanced' 2h Mon-Thu €205 (Olympia glacier 5 days €310); private for 3, Mon-Fri mornings €270/day = €450 pp (+€90 Sat). No group courses Fri/Sat.",
+       "label": "Carré Neige piste-rescue cover",
+       "intAs": "adv",
+       "adv": 17.5,
+       "beg": 17.5,
+       "cur": "EUR",
+       "status": "PUBLISHED"
+      },
+      {
+       "label": "Beginners: private instructor for 3, 5 × 3 h",
+       "note": "ESF Flaine 5 mornings Mon–Fri ~€230 (ESTIMATE from €260 for 6; not for true first-timers, so confirm the returning beginners can join). Private 5 × 3 h for 3 (~€216/session ÷ 3)",
        "intAs": 0,
        "adv": 0,
-       "beg": 450,
+       "beg": 360,
        "cur": "EUR",
-       "status": "PUBLISHED",
+       "status": "ESTIMATE",
        "kind": "school",
        "days": 5
       },
       {
-       "label": "Natasha: “slightly advanced” group, Mon–Thu 2 h",
+       "label": "Natasha: ESF group Mon–Fri at her level",
        "note": "",
        "adv": 0,
        "beg": 0,
-       "int": 205,
+       "int": 230,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
@@ -1189,11 +1192,11 @@ window.ROUND2 = {
       {
        "intAs": "beg",
        "label": "Rental for beginners and Natasha",
-       "note": "Pittl 6-day beginner kit €122 + €63 + €41 (round-1 VERIFIED-LIVE 6-day price, Sun-Fri window).",
+       "note": "5 days kit + helmet, Sport 2000-type (ESTIMATE from Les Carroz published prices)",
        "adv": 0,
-       "beg": 226.0,
+       "beg": 132.0,
        "cur": "EUR",
-       "status": "VERIFIED",
+       "status": "ESTIMATE",
        "kind": "rental",
        "days": 5
       },
@@ -1209,29 +1212,29 @@ window.ROUND2 = {
    },
    "M": {
     "feasible": true,
-    "note": "Tue 26 -> Sun 31, 5 nights, 5 ski days (Wed-Sat + Sun AM). easyJet LGW 15:05 Tue (£50), in flat ~19:00 -> 3.5 AL. BA 17:50/19:25 Sun lets you ski Sun morning. Best Stubai value per ski day.",
-    "food": 60,
+    "note": "Tue 26→Sun 31, 5 nights, ski Wed–Sat + Sun morning. No midweek group start, so private lessons. About £980 budget beginner all-in; the Tuesday adds ~£185 for one more ski day.",
+    "food": 65,
     "budget": {
      "stay": {
-      "url": "https://www.booking.com/hotel/at/ansitz-hofer.en-gb.html?checkin=2027-01-26&checkout=2027-01-31&group_adults=6&no_rooms=1&group_children=0&selected_currency=EUR",
-      "total": 1849,
-      "cur": "EUR",
-      "beds": "3 bedrooms x 1 extra-large double; couple own room, girls 2 per double",
-      "lift": "~800 m / 10-12 min walk to Schlick valley station, or 6 min walk + 5 min free ski bus",
-      "rating": "9.7/10 (85) Booking",
-      "cancel": "Free until 27 Dec 2026, pay property before arrival",
+      "url": "https://www.airbnb.co.uk/rooms/1496957851675922721?check_in=2027-01-26&check_out=2027-01-31&adults=6",
+      "total": 726,
+      "cur": "GBP",
+      "beds": "BR1 bunk (2 girls); BR2 double (couple); living-room 140 sofa bed (2 girls)",
+      "lift": "Listed ski-in/out",
+      "rating": "4.0 (1)",
+      "cancel": "Free before 27 Dec 2026",
       "status": "VERIFIED-LIVE",
-      "name": "Ansitz Hofer"
+      "name": "Flaine Forêt 2-bed, ski-in/out"
      },
      "items": [
       {
-       "label": "Return flight London ⇄ Innsbruck",
-       "note": "Out: Tue 26 easyJet LGW 15:05-18:05 (£50.00). Back: Sun 31 BA Euroflyer INN-LGW 17:50-18:45 (£135.33). Fare for 6 seats, cabin bag.",
-       "adv": 185.33,
-       "beg": 185.33,
+       "label": "Return flight London ⇄ Geneva",
+       "note": "Out: Tue 26 easyJet LTN 17:20-20:05 (£51.00). Back: Sun 31 easyJet GVA-LGW 18:25-19:05 (£66.00). Fare for 6 seats, cabin bag.",
+       "adv": 117.0,
+       "beg": 117.0,
        "cur": "GBP",
        "status": "VERIFIED",
-       "src": "https://www.google.com/travel/flights?q=One%20way%20flights%20from%20London%20to%20Innsbruck%20on%202027-01-26%20for%206%20adults&hl=en-GB&curr=GBP"
+       "src": "https://www.google.com/travel/flights?q=One%20way%20flights%20from%20London%20to%20Geneva%20on%202027-01-26%20for%206%20adults&hl=en-GB&curr=GBP"
       },
       {
        "label": "23 kg hold bag, both ways",
@@ -1245,57 +1248,57 @@ window.ROUND2 = {
       },
       {
        "label": "Airport transfer, return",
-       "note": "Private 7-seat minibus INN-Fulpmes €144 each way (Kiwitaxi, PUBLISHED), any weekday, ~25 min. Public bus ~€8-9 pp each way, 60-70 min.",
-       "adv": 48.0,
-       "beg": 48.0,
+       "note": "Tue private 8-seater out (~€210) + Sun private back. ESTIMATE",
+       "adv": 70.0,
+       "beg": 70.0,
        "cur": "EUR",
-       "status": "PUBLISHED"
+       "status": "ESTIMATE"
       },
       {
-       "label": "Ansitz Hofer, 5 nights",
-       "note": "3 bedrooms x 1 extra-large double; couple own room, girls 2 per double. ~800 m / 10-12 min walk to Schlick valley station, or 6 min walk + 5 min free ski bus to the lift. Rated 9.7/10 (85) Booking. Free until 27 Dec 2026, pay property before arrival",
+       "label": "Flaine Forêt 2-bed, ski-in/out, 5 nights",
+       "note": "BR1 bunk (2 girls); BR2 double (couple); living-room 140 sofa bed (2 girls). Listed ski-in/out to the lift. Rated 4.0 (1). Free before 27 Dec 2026",
        "group": true,
-       "amount": 1849.0,
-       "cur": "EUR",
+       "amount": 726.0,
+       "cur": "GBP",
        "status": "VERIFIED",
-       "src": "https://www.booking.com/hotel/at/ansitz-hofer.en-gb.html?checkin=2027-01-26&checkout=2027-01-31&group_adults=6&no_rooms=1&group_children=0&selected_currency=EUR"
-      },
-      {
-       "label": "Tourist tax",
-       "note": "€4.80 per person per night, paid locally",
-       "adv": 24.0,
-       "beg": 24.0,
-       "cur": "EUR",
-       "status": "PUBLISHED"
+       "src": "https://www.airbnb.co.uk/rooms/1496957851675922721?check_in=2027-01-26&check_out=2027-01-31&adults=6"
       },
       {
        "label": "Lift pass",
-       "note": "Adv + Natasha: 5-day Stubai Skipass €312 (glacier+Schlick). Beginners: 2 x Schlick beginner ticket €43 + Schlick 3-day €167; simplest = 5-day Stubai €312. Beginner ticket may exclude Kreuzjochbahn to Froneben (+€15.80/day). PUBLISHED 2026/27.",
+       "note": "4 × €63 + Sun 4 h €56.70 + €2. Beginners 4 × €30.50 + 4 h €27.50 + €2",
        "intAs": "adv",
-       "adv": 312.0,
-       "beg": 253.0,
+       "adv": 310.7,
+       "beg": 151.5,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "lift",
        "days": 5
       },
       {
-       "label": "Beginners: group lessons Wed–Thu (4 h), then practise",
-       "note": "Fulpmes group courses don’t run Fri or Sat.",
+       "label": "Carré Neige piste-rescue cover",
+       "intAs": "adv",
+       "adv": 17.5,
+       "beg": 17.5,
+       "cur": "EUR",
+       "status": "PUBLISHED"
+      },
+      {
+       "label": "Beginners: private for 3, 4 × 2 h (no midweek group start)",
+       "note": "ESF groups start Sunday only. Budget 'group' figure = private 4 × 2 h for 3 (~€144 ÷ 3). Comfort 4 × 3 h. Natasha 1 private 2 h (€125) or 2 sessions €250",
        "intAs": 0,
        "adv": 0,
-       "beg": 180,
+       "beg": 192,
        "cur": "EUR",
-       "status": "PUBLISHED",
+       "status": "ESTIMATE",
        "kind": "school",
        "days": 4
       },
       {
-       "label": "Natasha: group Wed–Thu, 2 h",
+       "label": "Natasha: 1 private 2 h session",
        "note": "",
        "adv": 0,
        "beg": 0,
-       "int": 140,
+       "int": 125,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
@@ -1304,11 +1307,11 @@ window.ROUND2 = {
       {
        "intAs": "beg",
        "label": "Rental for beginners and Natasha",
-       "note": "INTERSPORT Pittl valley station, 5 days Wed-Sun: economy skis €108 + boots €56 + helmet €36 (VERIFIED-LIVE). Natasha premium kit €224; advanced superior+boots €212; waiver +€18.75.",
+       "note": "5 days kit + helmet (ESTIMATE)",
        "adv": 0,
-       "beg": 200.0,
+       "beg": 132.0,
        "cur": "EUR",
-       "status": "VERIFIED",
+       "status": "ESTIMATE",
        "kind": "rental",
        "days": 5
       },
@@ -1323,25 +1326,25 @@ window.ROUND2 = {
     },
     "comfort": {
      "stay": {
-      "url": "https://www.booking.com/hotel/at/adlerpension.en-gb.html?checkin=2027-01-26&checkout=2027-01-31&group_adults=6&no_rooms=3&group_children=0&selected_currency=EUR",
-      "total": 2930,
-      "cur": "EUR",
-      "beds": "Couple: double room. Girls: 2 Comfort Doubles each with double + in-room sofa bed -> every girl own bed",
-      "lift": "Centre, 5 min ski bus from Kirchplatz; ~1,000 yd walk",
-      "rating": "8.9/10 (211) Booking",
-      "cancel": "Free until 27 Dec 2026, pay at property",
-      "status": "VERIFIED-LIVE (alt: Hotel Brugger half board €4,116, 9.6/340)",
-      "name": "Adler Boutique Hotel (B&B, pool)"
+      "url": "https://www.airbnb.co.uk/rooms/27622174?check_in=2027-01-26&check_out=2027-01-31&adults=6",
+      "total": 1922,
+      "cur": "GBP",
+      "beds": "3 bedrooms, 7 beds (split not verified)",
+      "lift": "Ski-in/out",
+      "rating": "4.96",
+      "cancel": "Free cancellation",
+      "status": "VERIFIED-LIVE",
+      "name": "Ski-in/out chalet, 3-bed"
      },
      "items": [
       {
-       "label": "Return flight London ⇄ Innsbruck",
-       "note": "Out: Tue 26 easyJet LGW 15:05-18:05 (£50.00). Back: Sun 31 BA Euroflyer INN-LGW 17:50-18:45 (£135.33). Fare for 6 seats, cabin bag.",
-       "adv": 185.33,
-       "beg": 185.33,
+       "label": "Return flight London ⇄ Geneva",
+       "note": "Out: Tue 26 easyJet LTN 17:20-20:05 (£51.00). Back: Sun 31 easyJet GVA-LGW 18:25-19:05 (£66.00). Fare for 6 seats, cabin bag.",
+       "adv": 117.0,
+       "beg": 117.0,
        "cur": "GBP",
        "status": "VERIFIED",
-       "src": "https://www.google.com/travel/flights?q=One%20way%20flights%20from%20London%20to%20Innsbruck%20on%202027-01-26%20for%206%20adults&hl=en-GB&curr=GBP"
+       "src": "https://www.google.com/travel/flights?q=One%20way%20flights%20from%20London%20to%20Geneva%20on%202027-01-26%20for%206%20adults&hl=en-GB&curr=GBP"
       },
       {
        "label": "23 kg hold bag, both ways",
@@ -1355,57 +1358,57 @@ window.ROUND2 = {
       },
       {
        "label": "Airport transfer, return",
-       "note": "Private 7-seat minibus INN-Fulpmes €144 each way (Kiwitaxi, PUBLISHED), any weekday, ~25 min. Public bus ~€8-9 pp each way, 60-70 min.",
-       "adv": 48.0,
-       "beg": 48.0,
+       "note": "Tue private 8-seater out (~€210) + Sun private back. ESTIMATE",
+       "adv": 70.0,
+       "beg": 70.0,
        "cur": "EUR",
-       "status": "PUBLISHED"
+       "status": "ESTIMATE"
       },
       {
-       "label": "Adler Boutique Hotel (B&B, pool), 5 nights",
-       "note": "Couple: double room. Girls: 2 Comfort Doubles each with double + in-room sofa bed -> every girl own bed. Centre, 5 min ski bus from Kirchplatz; ~1,000 yd walk to the lift. Rated 8.9/10 (211) Booking. Free until 27 Dec 2026, pay at property",
+       "label": "Ski-in/out chalet, 3-bed, 5 nights",
+       "note": "3 bedrooms, 7 beds (split not verified). Ski-in/out to the lift. Rated 4.96. Free cancellation",
        "group": true,
-       "amount": 2930.0,
-       "cur": "EUR",
+       "amount": 1922.0,
+       "cur": "GBP",
        "status": "VERIFIED",
-       "src": "https://www.booking.com/hotel/at/adlerpension.en-gb.html?checkin=2027-01-26&checkout=2027-01-31&group_adults=6&no_rooms=3&group_children=0&selected_currency=EUR"
-      },
-      {
-       "label": "Tourist tax",
-       "note": "€4.80 per person per night, paid locally",
-       "adv": 24.0,
-       "beg": 24.0,
-       "cur": "EUR",
-       "status": "PUBLISHED"
+       "src": "https://www.airbnb.co.uk/rooms/27622174?check_in=2027-01-26&check_out=2027-01-31&adults=6"
       },
       {
        "label": "Lift pass",
-       "note": "Adv + Natasha: 5-day Stubai Skipass €312 (glacier+Schlick). Beginners: 2 x Schlick beginner ticket €43 + Schlick 3-day €167; simplest = 5-day Stubai €312. Beginner ticket may exclude Kreuzjochbahn to Froneben (+€15.80/day). PUBLISHED 2026/27.",
+       "note": "4 × €63 + Sun 4 h €56.70 + €2. Beginners 4 × €30.50 + 4 h €27.50 + €2",
        "intAs": "adv",
-       "adv": 312.0,
-       "beg": 253.0,
+       "adv": 310.7,
+       "beg": 151.5,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "lift",
        "days": 5
       },
       {
-       "label": "Beginners: private instructor for 3, Wed–Sat mornings",
-       "note": "Private: Skischule Stubai Tirol 2h mornings Wed-Sat, €190 + 2x€40 = €270/day for 3 (€90 pp/day; Schischule Fulpmes €70 pp/day). Fulpmes groups run Sun-Thu only (no Fri/Sat): beginners can only get Wed+Thu (€180 4h or €140 2h 'slightly advanced'). Natasha: Olympia glacier group (starts any day) 4 days €275; or Stubai Tirol Wed+Thu €140.",
+       "label": "Carré Neige piste-rescue cover",
+       "intAs": "adv",
+       "adv": 17.5,
+       "beg": 17.5,
+       "cur": "EUR",
+       "status": "PUBLISHED"
+      },
+      {
+       "label": "Beginners: private for 3, 4 × 3 h",
+       "note": "ESF groups start Sunday only. Budget 'group' figure = private 4 × 2 h for 3 (~€144 ÷ 3). Comfort 4 × 3 h. Natasha 1 private 2 h (€125) or 2 sessions €250",
        "intAs": 0,
        "adv": 0,
-       "beg": 360,
+       "beg": 288,
        "cur": "EUR",
-       "status": "PUBLISHED",
+       "status": "ESTIMATE",
        "kind": "school",
        "days": 4
       },
       {
-       "label": "Natasha: Olympia glacier group, 4 days",
+       "label": "Natasha: 2 private 2 h sessions",
        "note": "",
        "adv": 0,
        "beg": 0,
-       "int": 275,
+       "int": 250,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
@@ -1414,11 +1417,11 @@ window.ROUND2 = {
       {
        "intAs": "beg",
        "label": "Rental for beginners and Natasha",
-       "note": "INTERSPORT Pittl valley station, 5 days Wed-Sun: economy skis €108 + boots €56 + helmet €36 (VERIFIED-LIVE). Natasha premium kit €224; advanced superior+boots €212; waiver +€18.75.",
+       "note": "5 days kit + helmet (ESTIMATE)",
        "adv": 0,
-       "beg": 200.0,
+       "beg": 132.0,
        "cur": "EUR",
-       "status": "VERIFIED",
+       "status": "ESTIMATE",
        "kind": "rental",
        "days": 5
       },
@@ -1434,29 +1437,29 @@ window.ROUND2 = {
    },
    "S": {
     "feasible": true,
-    "note": "Wed 27 -> Sun 31, 4 nights, 4 ski days (Thu-Sat + Sun AM). No Wed-afternoon direct INN flight (last easyJet 12:00, £206+), so 3 AL not 2.5. Dominated by M at Stubai (M flights cheaper).",
-    "food": 60,
+    "note": "Wed 27→Sun 31, 4 nights, ski Thu–Sat + Sun morning. Best fit: about £795 budget beginner all-in, ski-in/out, snow-sure.",
+    "food": 65,
     "budget": {
      "stay": {
-      "url": "https://www.booking.com/hotel/at/ansitz-hofer.en-gb.html?checkin=2027-01-27&checkout=2027-01-31&group_adults=6&no_rooms=1&group_children=0&selected_currency=EUR",
-      "total": 1493,
-      "cur": "EUR",
-      "beds": "3 bedrooms x 1 extra-large double; couple own room, girls 2 per double",
-      "lift": "~800 m / 10-12 min walk, or 6 min walk + 5 min free ski bus",
-      "rating": "9.7/10 (85) Booking",
-      "cancel": "Free until 28 Dec 2026",
+      "url": "https://www.airbnb.co.uk/rooms/1496957851675922721?check_in=2027-01-27&check_out=2027-01-31&adults=6",
+      "total": 594,
+      "cur": "GBP",
+      "beds": "BR1 bunk; BR2 double (couple); living-room 140 sofa bed",
+      "lift": "Listed ski-in/out",
+      "rating": "4.0 (1)",
+      "cancel": "Free cancellation",
       "status": "VERIFIED-LIVE",
-      "name": "Ansitz Hofer"
+      "name": "Flaine Forêt 2-bed, ski-in/out"
      },
      "items": [
       {
-       "label": "Return flight London ⇄ Innsbruck",
-       "note": "Out: Wed 27 Lufthansa LHR 06:35 via MUC + bus, arr 13:10 (£98.17); cheapest direct easyJet LGW 10:55-14:00 £205.50 -> £340.83 total. Back: Sun 31 BA Euroflyer INN-LGW 17:50-18:45 (£135.33). Fare for 6 seats, cabin bag.",
-       "adv": 233.5,
-       "beg": 233.5,
+       "label": "Return flight London ⇄ Geneva",
+       "note": "Out: Wed 27 easyJet SEN 10:40-13:15 (£28.00). Back: Sun 31 easyJet GVA-LGW 18:25-19:05 (£66.00). Fare for 6 seats, cabin bag.",
+       "adv": 94.0,
+       "beg": 94.0,
        "cur": "GBP",
        "status": "VERIFIED",
-       "src": "https://www.google.com/travel/flights?q=One%20way%20flights%20from%20London%20to%20Innsbruck%20on%202027-01-27%20for%206%20adults&hl=en-GB&curr=GBP"
+       "src": "https://www.google.com/travel/flights?q=One%20way%20flights%20from%20London%20to%20Geneva%20on%202027-01-27%20for%206%20adults&hl=en-GB&curr=GBP"
       },
       {
        "label": "23 kg hold bag, both ways",
@@ -1470,57 +1473,57 @@ window.ROUND2 = {
       },
       {
        "label": "Airport transfer, return",
-       "note": "Private minibus €144 each way, any weekday; public bus ~€8-9 pp each way.",
-       "adv": 48.0,
-       "beg": 48.0,
+       "note": "Wed private out + Sun private back (~€210 per vehicle). ESTIMATE",
+       "adv": 70.0,
+       "beg": 70.0,
        "cur": "EUR",
-       "status": "PUBLISHED"
+       "status": "ESTIMATE"
       },
       {
-       "label": "Ansitz Hofer, 4 nights",
-       "note": "3 bedrooms x 1 extra-large double; couple own room, girls 2 per double. ~800 m / 10-12 min walk, or 6 min walk + 5 min free ski bus to the lift. Rated 9.7/10 (85) Booking. Free until 28 Dec 2026",
+       "label": "Flaine Forêt 2-bed, ski-in/out, 4 nights",
+       "note": "BR1 bunk; BR2 double (couple); living-room 140 sofa bed. Listed ski-in/out to the lift. Rated 4.0 (1). Free cancellation",
        "group": true,
-       "amount": 1493.0,
-       "cur": "EUR",
+       "amount": 594.0,
+       "cur": "GBP",
        "status": "VERIFIED",
-       "src": "https://www.booking.com/hotel/at/ansitz-hofer.en-gb.html?checkin=2027-01-27&checkout=2027-01-31&group_adults=6&no_rooms=1&group_children=0&selected_currency=EUR"
-      },
-      {
-       "label": "Tourist tax",
-       "note": "€4.80 per person per night, paid locally",
-       "adv": 19.2,
-       "beg": 19.2,
-       "cur": "EUR",
-       "status": "PUBLISHED"
+       "src": "https://www.airbnb.co.uk/rooms/1496957851675922721?check_in=2027-01-27&check_out=2027-01-31&adults=6"
       },
       {
        "label": "Lift pass",
-       "note": "Adv + Natasha: 4-day Stubai Skipass €267.90. Beginners: 1 x beginner ticket €43 + Schlick 3-day €167; simplest 4-day Stubai €267.90. PUBLISHED.",
+       "note": "3 × €63 + Sun 4 h €56.70 + €2. Beginners 3 × €30.50 + €27.50 + €2",
        "intAs": "adv",
-       "adv": 267.9,
-       "beg": 210.0,
+       "adv": 247.7,
+       "beg": 121.0,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "lift",
        "days": 4
       },
       {
-       "label": "Beginners: Schischule Fulpmes private for 3, Thu–Sat mornings",
-       "note": "Only one group day (Thu) is possible, so private is the realistic option. Fulpmes school is about €70 pp a day.",
+       "label": "Carré Neige piste-rescue cover",
+       "intAs": "adv",
+       "adv": 14.0,
+       "beg": 14.0,
+       "cur": "EUR",
+       "status": "PUBLISHED"
+      },
+      {
+       "label": "Beginners: private for 3, 3 × 2 h Thu–Sat",
+       "note": "No midweek ESF group start. Budget = private 3 × 2 h for 3; comfort 3 × 3 h. Natasha 1–2 private 2 h sessions (€125 each)",
        "intAs": 0,
        "adv": 0,
-       "beg": 210,
+       "beg": 144,
        "cur": "EUR",
        "status": "ESTIMATE",
        "kind": "school",
        "days": 3
       },
       {
-       "label": "Natasha: group Thursday, 2 h",
+       "label": "Natasha: 1 private 2 h session",
        "note": "",
        "adv": 0,
        "beg": 0,
-       "int": 80,
+       "int": 125,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
@@ -1529,11 +1532,11 @@ window.ROUND2 = {
       {
        "intAs": "beg",
        "label": "Rental for beginners and Natasha",
-       "note": "Pittl 4 days Thu-Sun: €92 + €48 + €31 (VERIFIED-LIVE). Natasha €191; advanced €181; waiver +€15.",
+       "note": "4 days kit + helmet (ESTIMATE)",
        "adv": 0,
-       "beg": 171.0,
+       "beg": 111.0,
        "cur": "EUR",
-       "status": "VERIFIED",
+       "status": "ESTIMATE",
        "kind": "rental",
        "days": 4
       },
@@ -1548,25 +1551,25 @@ window.ROUND2 = {
     },
     "comfort": {
      "stay": {
-      "url": "https://www.booking.com/hotel/at/adlerpension.en-gb.html?checkin=2027-01-27&checkout=2027-01-31&group_adults=6&no_rooms=3&group_children=0&selected_currency=EUR",
-      "total": 2368,
-      "cur": "EUR",
-      "beds": "Couple double room; girls 2 Comfort Doubles each double + in-room sofa bed -> own beds",
-      "lift": "Centre, 5 min ski bus; ~1,000 yd walk",
-      "rating": "8.9/10 (211) Booking",
-      "cancel": "Free until 28 Dec 2026, pay at property",
-      "status": "VERIFIED-LIVE (alt: Hotel Brugger half board €3,328, 9.6/340)",
-      "name": "Adler Boutique Hotel (B&B, pool)"
+      "url": "https://www.booking.com/hotel/fr/appartement-petite-ours-flaine.en-gb.html?checkin=2027-01-27&checkout=2027-01-31&group_adults=6&no_rooms=1&selected_currency=GBP",
+      "total": 1246,
+      "cur": "GBP",
+      "beds": "Double (couple); bunk room; sofa bed",
+      "lift": "350 yd from centre",
+      "rating": "9.2 (23)",
+      "cancel": "Free cancellation",
+      "status": "VERIFIED-LIVE",
+      "name": "Petite Ourse 2-bed"
      },
      "items": [
       {
-       "label": "Return flight London ⇄ Innsbruck",
-       "note": "Out: Wed 27 Lufthansa LHR 06:35 via MUC + bus, arr 13:10 (£98.17); cheapest direct easyJet LGW 10:55-14:00 £205.50 -> £340.83 total. Back: Sun 31 BA Euroflyer INN-LGW 17:50-18:45 (£135.33). Fare for 6 seats, cabin bag.",
-       "adv": 233.5,
-       "beg": 233.5,
+       "label": "Return flight London ⇄ Geneva",
+       "note": "Out: Wed 27 easyJet SEN 10:40-13:15 (£28.00). Back: Sun 31 easyJet GVA-LGW 18:25-19:05 (£66.00). Fare for 6 seats, cabin bag.",
+       "adv": 94.0,
+       "beg": 94.0,
        "cur": "GBP",
        "status": "VERIFIED",
-       "src": "https://www.google.com/travel/flights?q=One%20way%20flights%20from%20London%20to%20Innsbruck%20on%202027-01-27%20for%206%20adults&hl=en-GB&curr=GBP"
+       "src": "https://www.google.com/travel/flights?q=One%20way%20flights%20from%20London%20to%20Geneva%20on%202027-01-27%20for%206%20adults&hl=en-GB&curr=GBP"
       },
       {
        "label": "23 kg hold bag, both ways",
@@ -1580,57 +1583,57 @@ window.ROUND2 = {
       },
       {
        "label": "Airport transfer, return",
-       "note": "Private minibus €144 each way, any weekday; public bus ~€8-9 pp each way.",
-       "adv": 48.0,
-       "beg": 48.0,
+       "note": "Wed private out + Sun private back (~€210 per vehicle). ESTIMATE",
+       "adv": 70.0,
+       "beg": 70.0,
        "cur": "EUR",
-       "status": "PUBLISHED"
+       "status": "ESTIMATE"
       },
       {
-       "label": "Adler Boutique Hotel (B&B, pool), 4 nights",
-       "note": "Couple double room; girls 2 Comfort Doubles each double + in-room sofa bed -> own beds. Centre, 5 min ski bus; ~1,000 yd walk to the lift. Rated 8.9/10 (211) Booking. Free until 28 Dec 2026, pay at property",
+       "label": "Petite Ourse 2-bed, 4 nights",
+       "note": "Double (couple); bunk room; sofa bed. 350 yd from centre to the lift. Rated 9.2 (23). Free cancellation",
        "group": true,
-       "amount": 2368.0,
-       "cur": "EUR",
+       "amount": 1246.0,
+       "cur": "GBP",
        "status": "VERIFIED",
-       "src": "https://www.booking.com/hotel/at/adlerpension.en-gb.html?checkin=2027-01-27&checkout=2027-01-31&group_adults=6&no_rooms=3&group_children=0&selected_currency=EUR"
-      },
-      {
-       "label": "Tourist tax",
-       "note": "€4.80 per person per night, paid locally",
-       "adv": 19.2,
-       "beg": 19.2,
-       "cur": "EUR",
-       "status": "PUBLISHED"
+       "src": "https://www.booking.com/hotel/fr/appartement-petite-ours-flaine.en-gb.html?checkin=2027-01-27&checkout=2027-01-31&group_adults=6&no_rooms=1&selected_currency=GBP"
       },
       {
        "label": "Lift pass",
-       "note": "Adv + Natasha: 4-day Stubai Skipass €267.90. Beginners: 1 x beginner ticket €43 + Schlick 3-day €167; simplest 4-day Stubai €267.90. PUBLISHED.",
+       "note": "3 × €63 + Sun 4 h €56.70 + €2. Beginners 3 × €30.50 + €27.50 + €2",
        "intAs": "adv",
-       "adv": 267.9,
-       "beg": 210.0,
+       "adv": 247.7,
+       "beg": 121.0,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "lift",
        "days": 4
       },
       {
-       "label": "Beginners: Skischule Stubai Tirol private for 3, Thu–Sat mornings",
-       "note": "Private 3 mornings Thu-Sat at €270/day for 3. Group: only Thu possible in Fulpmes (no Fri/Sat courses) -> €95 (4h) / €80 (2h) for 1 day; effectively private-only. Natasha: Olympia glacier group 3 days €240 (daily start) or Stubai Tirol Thu only €80.",
+       "label": "Carré Neige piste-rescue cover",
+       "intAs": "adv",
+       "adv": 14.0,
+       "beg": 14.0,
+       "cur": "EUR",
+       "status": "PUBLISHED"
+      },
+      {
+       "label": "Beginners: private for 3, 3 × 3 h Thu–Sat",
+       "note": "No midweek ESF group start. Budget = private 3 × 2 h for 3; comfort 3 × 3 h. Natasha 1–2 private 2 h sessions (€125 each)",
        "intAs": 0,
        "adv": 0,
-       "beg": 270,
+       "beg": 216,
        "cur": "EUR",
-       "status": "PUBLISHED",
+       "status": "ESTIMATE",
        "kind": "school",
        "days": 3
       },
       {
-       "label": "Natasha: Olympia glacier group, 3 days",
+       "label": "Natasha: 2 private 2 h sessions",
        "note": "",
        "adv": 0,
        "beg": 0,
-       "int": 240,
+       "int": 250,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
@@ -1639,11 +1642,11 @@ window.ROUND2 = {
       {
        "intAs": "beg",
        "label": "Rental for beginners and Natasha",
-       "note": "Pittl 4 days Thu-Sun: €92 + €48 + €31 (VERIFIED-LIVE). Natasha €191; advanced €181; waiver +€15.",
+       "note": "4 days kit + helmet (ESTIMATE)",
        "adv": 0,
-       "beg": 171.0,
+       "beg": 111.0,
        "cur": "EUR",
-       "status": "VERIFIED",
+       "status": "ESTIMATE",
        "kind": "rental",
        "days": 4
       },
@@ -1659,29 +1662,29 @@ window.ROUND2 = {
    },
    "XS": {
     "feasible": true,
-    "note": "Thu 28 -> Sun 31, 3 nights. easyJet LGW 07:00 -> INN 10:00, on snow ~12:00-12:30 Thu; ski Sun to ~13:00 then BA 17:50/19:25. ~3.5 ski days for 2 AL - the 25-min transfer is what makes it work. Need luggage drop before 15:00 check-in.",
-    "food": 60,
+    "note": "Thu 28→Sun 31, 3 nights, ski Thu afternoon–Sun morning (06:10 flight, skiing by ~13:00). Good value at about £760 budget beginner.",
+    "food": 65,
     "budget": {
      "stay": {
-      "url": "https://www.booking.com/hotel/at/ansitz-hofer.en-gb.html?checkin=2027-01-28&checkout=2027-01-31&group_adults=6&no_rooms=1&group_children=0&selected_currency=EUR",
-      "total": 1137,
-      "cur": "EUR",
-      "beds": "3 bedrooms x 1 extra-large double; couple own room, girls 2 per double",
-      "lift": "~800 m / 10-12 min walk, or 6 min walk + 5 min free ski bus",
-      "rating": "9.7/10 (85) Booking",
-      "cancel": "Free until 29 Dec 2026",
+      "url": "https://www.airbnb.co.uk/rooms/1496957851675922721?check_in=2027-01-28&check_out=2027-01-31&adults=6",
+      "total": 462,
+      "cur": "GBP",
+      "beds": "BR1 bunk; BR2 double (couple); living-room 140 sofa bed",
+      "lift": "Listed ski-in/out",
+      "rating": "4.0 (1)",
+      "cancel": "Free before 29 Dec 2026",
       "status": "VERIFIED-LIVE",
-      "name": "Ansitz Hofer"
+      "name": "Flaine Forêt 2-bed, ski-in/out"
      },
      "items": [
       {
-       "label": "Return flight London ⇄ Innsbruck",
-       "note": "Out: Thu 28 easyJet LGW 07:00-10:00 (£127.00). Back: Sun 31 BA Euroflyer INN-LGW 17:50-18:45 (£135.33). Fare for 6 seats, cabin bag.",
-       "adv": 262.33,
-       "beg": 262.33,
+       "label": "Return flight London ⇄ Geneva",
+       "note": "Out: Thu 28 easyJet LGW 06:10-08:50 (£74.50). Back: Sun 31 easyJet GVA-LGW 18:25-19:05 (£66.00). Fare for 6 seats, cabin bag.",
+       "adv": 140.5,
+       "beg": 140.5,
        "cur": "GBP",
        "status": "VERIFIED",
-       "src": "https://www.google.com/travel/flights?q=One%20way%20flights%20from%20London%20to%20Innsbruck%20on%202027-01-28%20for%206%20adults&hl=en-GB&curr=GBP"
+       "src": "https://www.google.com/travel/flights?q=One%20way%20flights%20from%20London%20to%20Geneva%20on%202027-01-28%20for%206%20adults&hl=en-GB&curr=GBP"
       },
       {
        "label": "23 kg hold bag, both ways",
@@ -1695,57 +1698,57 @@ window.ROUND2 = {
       },
       {
        "label": "Airport transfer, return",
-       "note": "Private minibus €144 each way any weekday (~25 min); public bus ~€8-9 pp each way is fine for a light morning arrival.",
-       "adv": 48.0,
-       "beg": 48.0,
+       "note": "Thu morning private out + Sun private back. ESTIMATE",
+       "adv": 70.0,
+       "beg": 70.0,
        "cur": "EUR",
-       "status": "PUBLISHED"
+       "status": "ESTIMATE"
       },
       {
-       "label": "Ansitz Hofer, 3 nights",
-       "note": "3 bedrooms x 1 extra-large double; couple own room, girls 2 per double. ~800 m / 10-12 min walk, or 6 min walk + 5 min free ski bus to the lift. Rated 9.7/10 (85) Booking. Free until 29 Dec 2026",
+       "label": "Flaine Forêt 2-bed, ski-in/out, 3 nights",
+       "note": "BR1 bunk; BR2 double (couple); living-room 140 sofa bed. Listed ski-in/out to the lift. Rated 4.0 (1). Free before 29 Dec 2026",
        "group": true,
-       "amount": 1137.0,
-       "cur": "EUR",
+       "amount": 462.0,
+       "cur": "GBP",
        "status": "VERIFIED",
-       "src": "https://www.booking.com/hotel/at/ansitz-hofer.en-gb.html?checkin=2027-01-28&checkout=2027-01-31&group_adults=6&no_rooms=1&group_children=0&selected_currency=EUR"
-      },
-      {
-       "label": "Tourist tax",
-       "note": "€4.80 per person per night, paid locally",
-       "adv": 14.399999999999999,
-       "beg": 14.399999999999999,
-       "cur": "EUR",
-       "status": "PUBLISHED"
+       "src": "https://www.airbnb.co.uk/rooms/1496957851675922721?check_in=2027-01-28&check_out=2027-01-31&adults=6"
       },
       {
        "label": "Lift pass",
-       "note": "Adv + Natasha: 4-day Stubai Skipass €267.90 (Thu PM counts as a day); cheaper glacier-only 3.5-day €224.60 or Schlick from-12:00 €54.50 + 3-day €167 = €221.50. Beginners: beginner ticket Thu + Fri (€86) + Schlick 2-day €119.50. PUBLISHED.",
+       "note": "Thu 4 h €56.70 + 2 × €63 + Sun 4 h €56.70 + €2. Beginners €27.50 + 2 × €30.50 + €27.50 + €2",
        "intAs": "adv",
-       "adv": 267.9,
-       "beg": 205.5,
+       "adv": 241.4,
+       "beg": 118.0,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "lift",
        "days": 3
       },
       {
-       "label": "Beginners: Schischule Fulpmes private for 3 (Thu pm, Fri, Sat)",
-       "note": "Private: Thu 13-15 (€170+€80=€250) + Fri & Sat mornings (€270 each) = €790 for 3. Group NOT feasible on Schlick (Thu 09:45 meeting missed, no Fri/Sat courses); only Olympia at the glacier (daily start). Natasha: Olympia Fri+Sat €180.",
+       "label": "Carré Neige piste-rescue cover",
+       "intAs": "adv",
+       "adv": 10.5,
+       "beg": 10.5,
+       "cur": "EUR",
+       "status": "PUBLISHED"
+      },
+      {
+       "label": "Beginners: private for 3, 2 h Thu pm + 2 × 2 h",
+       "note": "No group fits. Budget = private 2 h Thu pm + 2 × 2 h for 3; comfort 2 h + 2 × 3 h. Natasha 1–2 private 2 h sessions",
        "intAs": 0,
        "adv": 0,
-       "beg": 210,
+       "beg": 144,
        "cur": "EUR",
        "status": "ESTIMATE",
        "kind": "school",
        "days": 3
       },
       {
-       "label": "Natasha: Olympia glacier group, Fri + Sat",
+       "label": "Natasha: 1 private 2 h session",
        "note": "",
        "adv": 0,
        "beg": 0,
-       "int": 180,
+       "int": 125,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
@@ -1754,11 +1757,11 @@ window.ROUND2 = {
       {
        "intAs": "beg",
        "label": "Rental for beginners and Natasha",
-       "note": "Pittl 4 days Thu-Sun (Thu counts): €171 (VERIFIED-LIVE); Natasha €191; advanced €181.",
+       "note": "3–4 days kit + helmet (ESTIMATE)",
        "adv": 0,
-       "beg": 171.0,
+       "beg": 111.0,
        "cur": "EUR",
-       "status": "VERIFIED",
+       "status": "ESTIMATE",
        "kind": "rental",
        "days": 3
       },
@@ -1773,25 +1776,25 @@ window.ROUND2 = {
     },
     "comfort": {
      "stay": {
-      "url": "https://www.booking.com/hotel/at/adlerpension.en-gb.html?checkin=2027-01-28&checkout=2027-01-31&group_adults=6&no_rooms=3&group_children=0&selected_currency=EUR",
-      "total": 1808,
-      "cur": "EUR",
-      "beds": "Couple double room; girls 2 Comfort Doubles each double + in-room sofa bed -> own beds",
-      "lift": "Centre, 5 min ski bus; ~1,000 yd walk",
-      "rating": "8.9/10 (211) Booking",
-      "cancel": "Free cancellation, pay at property",
-      "status": "VERIFIED-LIVE (search-results total; Brugger unavailable Thu-Sun)",
-      "name": "Adler Boutique Hotel (B&B, pool)"
+      "url": "https://www.booking.com/hotel/fr/appartement-petite-ours-flaine.en-gb.html?checkin=2027-01-28&checkout=2027-01-31&group_adults=6&no_rooms=1&selected_currency=GBP",
+      "total": 935,
+      "cur": "GBP",
+      "beds": "Double (couple); bunk room; sofa bed",
+      "lift": "350 yd from centre",
+      "rating": "9.2 (23)",
+      "cancel": "Free cancellation",
+      "status": "VERIFIED-LIVE (price shown; availability banner ambiguous, re-check)",
+      "name": "Petite Ourse 2-bed"
      },
      "items": [
       {
-       "label": "Return flight London ⇄ Innsbruck",
-       "note": "Out: Thu 28 easyJet LGW 07:00-10:00 (£127.00). Back: Sun 31 BA Euroflyer INN-LGW 17:50-18:45 (£135.33). Fare for 6 seats, cabin bag.",
-       "adv": 262.33,
-       "beg": 262.33,
+       "label": "Return flight London ⇄ Geneva",
+       "note": "Out: Thu 28 easyJet LGW 06:10-08:50 (£74.50). Back: Sun 31 easyJet GVA-LGW 18:25-19:05 (£66.00). Fare for 6 seats, cabin bag.",
+       "adv": 140.5,
+       "beg": 140.5,
        "cur": "GBP",
        "status": "VERIFIED",
-       "src": "https://www.google.com/travel/flights?q=One%20way%20flights%20from%20London%20to%20Innsbruck%20on%202027-01-28%20for%206%20adults&hl=en-GB&curr=GBP"
+       "src": "https://www.google.com/travel/flights?q=One%20way%20flights%20from%20London%20to%20Geneva%20on%202027-01-28%20for%206%20adults&hl=en-GB&curr=GBP"
       },
       {
        "label": "23 kg hold bag, both ways",
@@ -1805,57 +1808,57 @@ window.ROUND2 = {
       },
       {
        "label": "Airport transfer, return",
-       "note": "Private minibus €144 each way any weekday (~25 min); public bus ~€8-9 pp each way is fine for a light morning arrival.",
-       "adv": 48.0,
-       "beg": 48.0,
+       "note": "Thu morning private out + Sun private back. ESTIMATE",
+       "adv": 70.0,
+       "beg": 70.0,
        "cur": "EUR",
-       "status": "PUBLISHED"
+       "status": "ESTIMATE"
       },
       {
-       "label": "Adler Boutique Hotel (B&B, pool), 3 nights",
-       "note": "Couple double room; girls 2 Comfort Doubles each double + in-room sofa bed -> own beds. Centre, 5 min ski bus; ~1,000 yd walk to the lift. Rated 8.9/10 (211) Booking. Free cancellation, pay at property",
+       "label": "Petite Ourse 2-bed, 3 nights",
+       "note": "Double (couple); bunk room; sofa bed. 350 yd from centre to the lift. Rated 9.2 (23). Free cancellation",
        "group": true,
-       "amount": 1808.0,
-       "cur": "EUR",
+       "amount": 935.0,
+       "cur": "GBP",
        "status": "VERIFIED",
-       "src": "https://www.booking.com/hotel/at/adlerpension.en-gb.html?checkin=2027-01-28&checkout=2027-01-31&group_adults=6&no_rooms=3&group_children=0&selected_currency=EUR"
-      },
-      {
-       "label": "Tourist tax",
-       "note": "€4.80 per person per night, paid locally",
-       "adv": 14.399999999999999,
-       "beg": 14.399999999999999,
-       "cur": "EUR",
-       "status": "PUBLISHED"
+       "src": "https://www.booking.com/hotel/fr/appartement-petite-ours-flaine.en-gb.html?checkin=2027-01-28&checkout=2027-01-31&group_adults=6&no_rooms=1&selected_currency=GBP"
       },
       {
        "label": "Lift pass",
-       "note": "Adv + Natasha: 4-day Stubai Skipass €267.90 (Thu PM counts as a day); cheaper glacier-only 3.5-day €224.60 or Schlick from-12:00 €54.50 + 3-day €167 = €221.50. Beginners: beginner ticket Thu + Fri (€86) + Schlick 2-day €119.50. PUBLISHED.",
+       "note": "Thu 4 h €56.70 + 2 × €63 + Sun 4 h €56.70 + €2. Beginners €27.50 + 2 × €30.50 + €27.50 + €2",
        "intAs": "adv",
-       "adv": 267.9,
-       "beg": 205.5,
+       "adv": 241.4,
+       "beg": 118.0,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "lift",
        "days": 3
       },
       {
-       "label": "Beginners: Skischule Stubai Tirol private for 3 (Thu pm, Fri, Sat)",
-       "note": "Private: Thu 13-15 (€170+€80=€250) + Fri & Sat mornings (€270 each) = €790 for 3. Group NOT feasible on Schlick (Thu 09:45 meeting missed, no Fri/Sat courses); only Olympia at the glacier (daily start). Natasha: Olympia Fri+Sat €180.",
+       "label": "Carré Neige piste-rescue cover",
+       "intAs": "adv",
+       "adv": 10.5,
+       "beg": 10.5,
+       "cur": "EUR",
+       "status": "PUBLISHED"
+      },
+      {
+       "label": "Beginners: private for 3, 2 h Thu pm + 2 × 3 h",
+       "note": "No group fits. Budget = private 2 h Thu pm + 2 × 2 h for 3; comfort 2 h + 2 × 3 h. Natasha 1–2 private 2 h sessions",
        "intAs": 0,
        "adv": 0,
-       "beg": 263.33,
+       "beg": 192,
        "cur": "EUR",
-       "status": "PUBLISHED",
+       "status": "ESTIMATE",
        "kind": "school",
        "days": 3
       },
       {
-       "label": "Natasha: Olympia glacier group, Fri + Sat",
+       "label": "Natasha: 2 private 2 h sessions",
        "note": "",
        "adv": 0,
        "beg": 0,
-       "int": 180,
+       "int": 250,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
@@ -1864,11 +1867,11 @@ window.ROUND2 = {
       {
        "intAs": "beg",
        "label": "Rental for beginners and Natasha",
-       "note": "Pittl 4 days Thu-Sun (Thu counts): €171 (VERIFIED-LIVE); Natasha €191; advanced €181.",
+       "note": "3–4 days kit + helmet (ESTIMATE)",
        "adv": 0,
-       "beg": 171.0,
+       "beg": 111.0,
        "cur": "EUR",
-       "status": "VERIFIED",
+       "status": "ESTIMATE",
        "kind": "rental",
        "days": 3
       },
@@ -1883,22 +1886,22 @@ window.ROUND2 = {
     }
    }
   },
-  "P": {
+  "L": {
    "LS": {
     "feasible": true,
-    "note": "Sun 24→Sat 30, 6 nights, ski Mon–Fri plus optional Sat morning before a 17:30+ flight, 5 AL. Whole group flies together Sun afternoon (easyJet LTN 13:45, £38). Recommended full-week shape for this resort.",
+    "note": "Sun 24→Sat 30 (6 n), ski Mon–Fri. Whole group flies Sunday. ESF Mon–Fri group fits; Ben's Bus Saturday return from the village.",
     "food": 60,
     "budget": {
      "stay": {
-      "url": "https://www.booking.com/hotel/fr/bel-appartement-panoramique.en-gb.html?checkin=2027-01-24&checkout=2027-01-30&group_adults=6&no_rooms=1&selected_currency=GBP",
-      "total": 587,
-      "cur": "GBP",
-      "beds": "BR1 double + single (couple); BR2 double + 2 singles (4 girls, 2 share the double); sofa bed",
-      "lift": "~370 m (Booking: 400 yd)",
-      "rating": "9.2 (17 external), new on Booking",
-      "cancel": "Free before 10 Jan 2027 (£476 non-refundable); request-to-book",
-      "status": "VERIFIED-LIVE",
-      "name": "Bel Appartement 2-bed"
+      "url": "https://www.airbnb.co.uk/rooms/28236121?check_in=2027-01-24&check_out=2027-01-30&adults=6",
+      "total": 1254,
+      "cur": "EUR",
+      "beds": "2BR duplex: listed as 3 doubles + 2 doubles (confirm — likely bunks/mezzanine); 2.5 bath",
+      "lift": "0 min, listed ski-in/out",
+      "rating": "4.89 (19)",
+      "cancel": "Free 24h, then partial refund before 20 Jan",
+      "status": "VERIFIED-LIVE (£1,066)",
+      "name": "Plagne Centre duplex, ski-in/out"
      },
      "items": [
       {
@@ -1922,27 +1925,27 @@ window.ROUND2 = {
       },
       {
        "label": "Airport transfer, return",
-       "note": "Sun 24 evening: private 8-seater ~€185 (no shared shuttle after the 13:30 Eurobus). Sat 30: Eurobus 17:00 from Les Carroz (€35) for a flight at 20:30 or later, or private ~€230 (ESTIMATE)",
-       "adv": 66.0,
-       "beg": 66.0,
+       "note": "Sun out private minibus ~€370 (€62 pp, ESTIMATE; Ben's Bus Sunday only to Aime); Sat back Ben's Bus £51.50 from La Plagne villages (PUBLISHED).",
+       "adv": 123.0,
+       "beg": 123.0,
        "cur": "EUR",
        "status": "ESTIMATE"
       },
       {
-       "label": "Bel Appartement 2-bed, 6 nights",
-       "note": "BR1 double + single (couple); BR2 double + 2 singles (4 girls, 2 share the double); sofa bed. ~370 m (Booking: 400 yd) to the lift. Rated 9.2 (17 external), new on Booking. Free before 10 Jan 2027 (£476 non-refundable); request-to-book",
+       "label": "Plagne Centre duplex, ski-in/out, 6 nights",
+       "note": "2BR duplex: listed as 3 doubles + 2 doubles (confirm — likely bunks/mezzanine); 2.5 bath. 0 min, listed ski-in/out to the lift. Rated 4.89 (19). Free 24h, then partial refund before 20 Jan",
        "group": true,
-       "amount": 587.0,
-       "cur": "GBP",
+       "amount": 1254.0,
+       "cur": "EUR",
        "status": "VERIFIED",
-       "src": "https://www.booking.com/hotel/fr/bel-appartement-panoramique.en-gb.html?checkin=2027-01-24&checkout=2027-01-30&group_adults=6&no_rooms=1&selected_currency=GBP"
+       "src": "https://www.airbnb.co.uk/rooms/28236121?check_in=2027-01-24&check_out=2027-01-30&adults=6"
       },
       {
        "label": "Lift pass",
-       "note": "5 days €315 + €2 card; optional Sat morning 4 h €56.70. Beginners 5 × €28 + €2",
+       "note": "La Plagne 5d €329 (PUBLISHED); Paradiski 5d ~€367 ESTIMATE. Beginners: free beginner lifts Mon + CoolSki Tue–Fri 4×~€39 (2025/26 €38 PUBLISHED; 26/27 ESTIMATE).",
        "intAs": "adv",
-       "adv": 317.0,
-       "beg": 142.0,
+       "adv": 329.0,
+       "beg": 156.0,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "lift",
@@ -1957,22 +1960,22 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: ESF group course, Mon–Fri mornings",
-       "note": "Private 5 × 3 h mornings Mon–Fri (Maison Sport from €216 per lesson ÷ 3). ESF TOP 8 Mon–Fri €270 works because group courses start Monday",
+       "label": "Beginners: ESF group, Mon–Fri 5 mornings 09:15–12:00 (high-season rate; €224 if low)",
+       "note": "ESF La Plagne Centre group Mon–Fri 5 mornings 09:15–12:00: €273 high / €224 low season (late-Jan band unconfirmed). Private 3h for 3 people €231 ×5 /3 = €385.",
        "intAs": 0,
        "adv": 0,
-       "beg": 270,
+       "beg": 273,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
        "days": 5
       },
       {
-       "label": "Natasha: higher class of the same ESF course",
+       "label": "Natasha: ESF intermediate group, Mon–Fri 5 mornings",
        "note": "",
        "adv": 0,
        "beg": 0,
-       "int": 270,
+       "int": 273,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
@@ -1981,9 +1984,9 @@ window.ROUND2 = {
       {
        "intAs": "beg",
        "label": "Rental for beginners and Natasha",
-       "note": "5 days interpolated from Sport 2000 4-day/6-day tariff (ESTIMATE)",
+       "note": "5-day 3★ pack €139 + helmet €24 = €163 walk-in (PUBLISHED Sport 2000 Plagne Villages), ~€130 online −20% (ESTIMATE).",
        "adv": 0,
-       "beg": 132.0,
+       "beg": 130.0,
        "cur": "EUR",
        "status": "ESTIMATE",
        "kind": "rental",
@@ -2000,15 +2003,15 @@ window.ROUND2 = {
     },
     "comfort": {
      "stay": {
-      "url": "https://www.airbnb.co.uk/rooms/48263726?check_in=2027-01-24&check_out=2027-01-30&adults=6",
-      "total": 1884,
-      "cur": "GBP",
-      "beds": "Master double (couple); 2 rooms with twin singles (each girl own bed); sofa bed",
-      "lift": "250 m to slopes; ski locker at the Kédeuze gondola",
-      "rating": "4.86 (14)",
-      "cancel": "Free before 25 Dec 2026; linen €15 pp extra",
-      "status": "VERIFIED-LIVE",
-      "name": "Chalet Éline, 4-star"
+      "url": "https://www.airbnb.co.uk/rooms/44286828?check_in=2027-01-24&check_out=2027-01-30&adults=6",
+      "total": 1819,
+      "cur": "EUR",
+      "beds": "3BR: 2 singles · double · double; 1 bath + sep WC",
+      "lift": "0 min ski-in/out on a run; ESF 200 m",
+      "rating": "4.93 (60)",
+      "cancel": "Free before 25 Dec, partial before 17 Jan",
+      "status": "VERIFIED-LIVE (£1,547)",
+      "name": "Plagne Villages duplex, on the slopes"
      },
      "items": [
       {
@@ -2032,27 +2035,27 @@ window.ROUND2 = {
       },
       {
        "label": "Airport transfer, return",
-       "note": "Sun 24 evening: private 8-seater ~€185 (no shared shuttle after the 13:30 Eurobus). Sat 30: Eurobus 17:00 from Les Carroz (€35) for a flight at 20:30 or later, or private ~€230 (ESTIMATE)",
-       "adv": 66.0,
-       "beg": 66.0,
+       "note": "Sun out private minibus ~€370 (€62 pp, ESTIMATE; Ben's Bus Sunday only to Aime); Sat back Ben's Bus £51.50 from La Plagne villages (PUBLISHED).",
+       "adv": 123.0,
+       "beg": 123.0,
        "cur": "EUR",
        "status": "ESTIMATE"
       },
       {
-       "label": "Chalet Éline, 4-star, 6 nights",
-       "note": "Master double (couple); 2 rooms with twin singles (each girl own bed); sofa bed. 250 m to slopes; ski locker at the Kédeuze gondola to the lift. Rated 4.86 (14). Free before 25 Dec 2026; linen €15 pp extra",
+       "label": "Plagne Villages duplex, on the slopes, 6 nights",
+       "note": "3BR: 2 singles · double · double; 1 bath + sep WC. 0 min ski-in/out on a run; ESF 200 m to the lift. Rated 4.93 (60). Free before 25 Dec, partial before 17 Jan",
        "group": true,
-       "amount": 1884.0,
-       "cur": "GBP",
+       "amount": 1819.0,
+       "cur": "EUR",
        "status": "VERIFIED",
-       "src": "https://www.airbnb.co.uk/rooms/48263726?check_in=2027-01-24&check_out=2027-01-30&adults=6"
+       "src": "https://www.airbnb.co.uk/rooms/44286828?check_in=2027-01-24&check_out=2027-01-30&adults=6"
       },
       {
        "label": "Lift pass",
-       "note": "5 days €315 + €2 card; optional Sat morning 4 h €56.70. Beginners 5 × €28 + €2",
+       "note": "La Plagne 5d €329 (PUBLISHED); Paradiski 5d ~€367 ESTIMATE. Beginners: free beginner lifts Mon + CoolSki Tue–Fri 4×~€39 (2025/26 €38 PUBLISHED; 26/27 ESTIMATE).",
        "intAs": "adv",
-       "adv": 317.0,
-       "beg": 142.0,
+       "adv": 329.0,
+       "beg": 156.0,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "lift",
@@ -2067,22 +2070,22 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: Maison Sport private instructor for 3, 5 × 3 h",
-       "note": "Private 5 × 3 h mornings Mon–Fri (Maison Sport from €216 per lesson ÷ 3). ESF TOP 8 Mon–Fri €270 works because group courses start Monday",
+       "label": "Beginners: ESF private 3h × 5 mornings, 3 people (€231/session ÷ 3)",
+       "note": "ESF La Plagne Centre group Mon–Fri 5 mornings 09:15–12:00: €273 high / €224 low season (late-Jan band unconfirmed). Private 3h for 3 people €231 ×5 /3 = €385.",
        "intAs": 0,
        "adv": 0,
-       "beg": 360,
+       "beg": 385,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
        "days": 5
       },
       {
-       "label": "Natasha: higher class of the ESF group course",
+       "label": "Natasha: ESF intermediate group, Mon–Fri 5 mornings",
        "note": "",
        "adv": 0,
        "beg": 0,
-       "int": 270,
+       "int": 273,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
@@ -2091,9 +2094,9 @@ window.ROUND2 = {
       {
        "intAs": "beg",
        "label": "Rental for beginners and Natasha",
-       "note": "5 days interpolated from Sport 2000 4-day/6-day tariff (ESTIMATE)",
+       "note": "5-day 3★ pack €139 + helmet €24 = €163 walk-in (PUBLISHED Sport 2000 Plagne Villages), ~€130 online −20% (ESTIMATE).",
        "adv": 0,
-       "beg": 132.0,
+       "beg": 130.0,
        "cur": "EUR",
        "status": "ESTIMATE",
        "kind": "rental",
@@ -2111,19 +2114,19 @@ window.ROUND2 = {
    },
    "M": {
     "feasible": true,
-    "note": "Tue 26→Sun 31, 5 nights, ski Wed–Sat + Sun morning. A Tue 20:10 flight plus late private transfer (arrive ~00:30) makes 3 AL possible but tiring; Tue flights not checked (Wed-level assumed).",
+    "note": "Tue 26→Sun 31 (5 n), ski Wed–Sat + Sun am. Tue-evening flight + private same-night transfer realistic (3 AL). No group lessons midweek.",
     "food": 60,
     "budget": {
      "stay": {
-      "url": "https://www.booking.com/hotel/fr/bel-appartement-panoramique.en-gb.html?checkin=2027-01-26&checkout=2027-01-31&group_adults=6&no_rooms=1&selected_currency=GBP",
-      "total": 490,
-      "cur": "GBP",
-      "beds": "BR1 double + single (couple); BR2 double + 2 singles; sofa bed",
-      "lift": "~370 m",
-      "rating": "9.2 (17 external)",
-      "cancel": "Free before 12 Jan 2027 (£397 non-refundable); request-to-book",
-      "status": "VERIFIED-LIVE",
-      "name": "Bel Appartement 2-bed"
+      "url": "https://www.airbnb.co.uk/rooms/28236121?check_in=2027-01-26&check_out=2027-01-31&adults=6",
+      "total": 1107,
+      "cur": "EUR",
+      "beds": "2BR duplex, 5 beds listed (confirm layout); 2.5 bath",
+      "lift": "0 min, listed ski-in/out",
+      "rating": "4.89 (19)",
+      "cancel": "Free 24h, then partial refund before 20 Jan",
+      "status": "VERIFIED-LIVE (£941)",
+      "name": "Plagne Centre duplex, ski-in/out"
      },
      "items": [
       {
@@ -2147,27 +2150,27 @@ window.ROUND2 = {
       },
       {
        "label": "Airport transfer, return",
-       "note": "Tue out private ~€185 per vehicle; Sun back private or Eurobus 17:00 (€35) for a 20:45 LGW flight",
-       "adv": 62.0,
-       "beg": 62.0,
+       "note": "Out midweek private minibus ~€300 (€50 pp, ESTIMATE from operator 'from' prices); back Sun private ~€370 (€62 pp, ESTIMATE). No midweek shared shuttle.",
+       "adv": 112.0,
+       "beg": 112.0,
        "cur": "EUR",
-       "status": "PUBLISHED"
+       "status": "ESTIMATE"
       },
       {
-       "label": "Bel Appartement 2-bed, 5 nights",
-       "note": "BR1 double + single (couple); BR2 double + 2 singles; sofa bed. ~370 m to the lift. Rated 9.2 (17 external). Free before 12 Jan 2027 (£397 non-refundable); request-to-book",
+       "label": "Plagne Centre duplex, ski-in/out, 5 nights",
+       "note": "2BR duplex, 5 beds listed (confirm layout); 2.5 bath. 0 min, listed ski-in/out to the lift. Rated 4.89 (19). Free 24h, then partial refund before 20 Jan",
        "group": true,
-       "amount": 490.0,
-       "cur": "GBP",
+       "amount": 1107.0,
+       "cur": "EUR",
        "status": "VERIFIED",
-       "src": "https://www.booking.com/hotel/fr/bel-appartement-panoramique.en-gb.html?checkin=2027-01-26&checkout=2027-01-31&group_adults=6&no_rooms=1&selected_currency=GBP"
+       "src": "https://www.airbnb.co.uk/rooms/28236121?check_in=2027-01-26&check_out=2027-01-31&adults=6"
       },
       {
        "label": "Lift pass",
-       "note": "4 days €252 + Sun 4 h €56.70 + €2 card. Beginners 5 × €28 + €2 (4-hour beginner price unpublished)",
+       "note": "La Plagne 5d €329 (= 4d €268 + 4h €58) PUBLISHED. Beginners CoolSki Wed–Sat 4×~€39, Sun am free lifts.",
        "intAs": "adv",
-       "adv": 311.0,
-       "beg": 142.0,
+       "adv": 329.0,
+       "beg": 156.0,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "lift",
@@ -2182,22 +2185,22 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: ESF half-day Wed + 3-morning course Thu–Sat",
-       "note": "Private 4 × 3 h (Wed–Sat). Group: ESF Wed single half-day €67 + TOP 4 Thu–Sat €152",
+       "label": "Beginners: ESF private 2h × 4 (Wed–Sat), 3 people (€145 ÷ 3)",
+       "note": "ESF groups start Sun/Mon only. Private 3h (3 people) €231 ×4 /3 = €308; budget 2h €145 ×4 /3 = €193. Intermediate: private 2h €124 ×2 = €248.",
        "intAs": 0,
        "adv": 0,
-       "beg": 219,
+       "beg": 193,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
        "days": 4
       },
       {
-       "label": "Natasha: same ESF format at her level",
+       "label": "Natasha: ESF private 2h × 2 sessions (no midweek group)",
        "note": "",
        "adv": 0,
        "beg": 0,
-       "int": 219,
+       "int": 248,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
@@ -2206,9 +2209,9 @@ window.ROUND2 = {
       {
        "intAs": "beg",
        "label": "Rental for beginners and Natasha",
-       "note": "5 days (Wed–Sun), interpolated (ESTIMATE)",
+       "note": "5-day 3★ + helmet €163 walk-in, ~€130 online (ESTIMATE −20%).",
        "adv": 0,
-       "beg": 132.0,
+       "beg": 130.0,
        "cur": "EUR",
        "status": "ESTIMATE",
        "kind": "rental",
@@ -2225,15 +2228,15 @@ window.ROUND2 = {
     },
     "comfort": {
      "stay": {
-      "url": "https://www.airbnb.co.uk/rooms/48263726?check_in=2027-01-26&check_out=2027-01-31&adults=6",
-      "total": 1613,
-      "cur": "GBP",
-      "beds": "Master double; 2 twin rooms; sofa bed",
-      "lift": "250 m",
-      "rating": "4.86 (14)",
-      "cancel": "Free before 28 Dec 2026",
-      "status": "VERIFIED-LIVE (27→31 £1,369 + listing's 'add 26 Jan for £244')",
-      "name": "Chalet Éline, 4-star"
+      "url": "https://www.airbnb.co.uk/rooms/23081622?check_in=2027-01-26&check_out=2027-01-31&adults=6",
+      "total": 2002,
+      "cur": "EUR",
+      "beds": "Double room (couple) · bunk room (5 bunks + pull-out) · 2 beds in divisible living area; 2 bathrooms",
+      "lift": "50 m to piste, ski locker in hall",
+      "rating": "4.82 (38), Superhost",
+      "cancel": "Free before 27 Dec, partial before 19 Jan",
+      "status": "VERIFIED-LIVE (£1,702)",
+      "name": "Plagne Villages duplex for 8"
      },
      "items": [
       {
@@ -2257,27 +2260,27 @@ window.ROUND2 = {
       },
       {
        "label": "Airport transfer, return",
-       "note": "Tue out private ~€185 per vehicle; Sun back private or Eurobus 17:00 (€35) for a 20:45 LGW flight",
-       "adv": 62.0,
-       "beg": 62.0,
+       "note": "Out midweek private minibus ~€300 (€50 pp, ESTIMATE from operator 'from' prices); back Sun private ~€370 (€62 pp, ESTIMATE). No midweek shared shuttle.",
+       "adv": 112.0,
+       "beg": 112.0,
        "cur": "EUR",
-       "status": "PUBLISHED"
+       "status": "ESTIMATE"
       },
       {
-       "label": "Chalet Éline, 4-star, 5 nights",
-       "note": "Master double; 2 twin rooms; sofa bed. 250 m to the lift. Rated 4.86 (14). Free before 28 Dec 2026",
+       "label": "Plagne Villages duplex for 8, 5 nights",
+       "note": "Double room (couple) · bunk room (5 bunks + pull-out) · 2 beds in divisible living area; 2 bathrooms. 50 m to piste, ski locker in hall to the lift. Rated 4.82 (38), Superhost. Free before 27 Dec, partial before 19 Jan",
        "group": true,
-       "amount": 1613.0,
-       "cur": "GBP",
+       "amount": 2002.0,
+       "cur": "EUR",
        "status": "VERIFIED",
-       "src": "https://www.airbnb.co.uk/rooms/48263726?check_in=2027-01-26&check_out=2027-01-31&adults=6"
+       "src": "https://www.airbnb.co.uk/rooms/23081622?check_in=2027-01-26&check_out=2027-01-31&adults=6"
       },
       {
        "label": "Lift pass",
-       "note": "4 days €252 + Sun 4 h €56.70 + €2 card. Beginners 5 × €28 + €2 (4-hour beginner price unpublished)",
+       "note": "La Plagne 5d €329 (= 4d €268 + 4h €58) PUBLISHED. Beginners CoolSki Wed–Sat 4×~€39, Sun am free lifts.",
        "intAs": "adv",
-       "adv": 311.0,
-       "beg": 142.0,
+       "adv": 329.0,
+       "beg": 156.0,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "lift",
@@ -2292,22 +2295,22 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: Maison Sport private for 3, 4 × 3 h",
-       "note": "Private 4 × 3 h (Wed–Sat). Group: ESF Wed single half-day €67 + TOP 4 Thu–Sat €152",
+       "label": "Beginners: ESF private 3h × 4 mornings, 3 people (€231 ÷ 3)",
+       "note": "ESF groups start Sun/Mon only. Private 3h (3 people) €231 ×4 /3 = €308; budget 2h €145 ×4 /3 = €193. Intermediate: private 2h €124 ×2 = €248.",
        "intAs": 0,
        "adv": 0,
-       "beg": 288,
+       "beg": 308,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
        "days": 4
       },
       {
-       "label": "Natasha: ESF group at her level",
+       "label": "Natasha: ESF private 2h × 3 sessions",
        "note": "",
        "adv": 0,
        "beg": 0,
-       "int": 219,
+       "int": 372,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
@@ -2316,9 +2319,9 @@ window.ROUND2 = {
       {
        "intAs": "beg",
        "label": "Rental for beginners and Natasha",
-       "note": "5 days (Wed–Sun), interpolated (ESTIMATE)",
+       "note": "5-day 3★ + helmet €163 walk-in, ~€130 online (ESTIMATE −20%).",
        "adv": 0,
-       "beg": 132.0,
+       "beg": 130.0,
        "cur": "EUR",
        "status": "ESTIMATE",
        "kind": "rental",
@@ -2336,19 +2339,19 @@ window.ROUND2 = {
    },
    "S": {
     "feasible": true,
-    "note": "Wed 27→Sun 31, 4 nights, ski Thu–Sat + Sun morning. Best value: easyJet SEN Wed 10:40 (£28) means rentals on Wed evening; ESF 3-day course starts Thu. About £760 all-in for a budget beginner.",
+    "note": "Wed 27→Sun 31 (4 n), ski Thu–Sat + Sun am. Budget sweet spot; value duplex €927 for 6.",
     "food": 60,
     "budget": {
      "stay": {
-      "url": "https://www.booking.com/hotel/fr/bel-appartement-panoramique.en-gb.html?checkin=2027-01-27&checkout=2027-01-31&group_adults=6&no_rooms=1&selected_currency=GBP",
-      "total": 392,
-      "cur": "GBP",
-      "beds": "BR1 double + single (couple); BR2 double + 2 singles; sofa bed",
-      "lift": "~370 m",
-      "rating": "9.2 (17 external)",
-      "cancel": "Free before 13 Jan 2027 (£317 non-refundable); request-to-book",
-      "status": "VERIFIED-LIVE",
-      "name": "Bel Appartement 2-bed"
+      "url": "https://www.airbnb.co.uk/rooms/28236121?check_in=2027-01-27&check_out=2027-01-31&adults=6",
+      "total": 927,
+      "cur": "EUR",
+      "beds": "2BR duplex, 5 beds listed (confirm layout); 2.5 bath",
+      "lift": "0 min, listed ski-in/out",
+      "rating": "4.89 (19)",
+      "cancel": "Free 24h, then partial refund before 20 Jan",
+      "status": "VERIFIED-LIVE (£788)",
+      "name": "Plagne Centre duplex, ski-in/out"
      },
      "items": [
       {
@@ -2372,27 +2375,27 @@ window.ROUND2 = {
       },
       {
        "label": "Airport transfer, return",
-       "note": "No midweek shared shuttle confirmed: private 8-seater ~€185 per way (≈€31 pp). Sun return private, or Eurobus 17:00 (€35)",
-       "adv": 62.0,
-       "beg": 62.0,
+       "note": "Wed out private ~€50 pp; Sun back private ~€62 pp (ESTIMATE).",
+       "adv": 112.0,
+       "beg": 112.0,
        "cur": "EUR",
-       "status": "PUBLISHED"
+       "status": "ESTIMATE"
       },
       {
-       "label": "Bel Appartement 2-bed, 4 nights",
-       "note": "BR1 double + single (couple); BR2 double + 2 singles; sofa bed. ~370 m to the lift. Rated 9.2 (17 external). Free before 13 Jan 2027 (£317 non-refundable); request-to-book",
+       "label": "Plagne Centre duplex, ski-in/out, 4 nights",
+       "note": "2BR duplex, 5 beds listed (confirm layout); 2.5 bath. 0 min, listed ski-in/out to the lift. Rated 4.89 (19). Free 24h, then partial refund before 20 Jan",
        "group": true,
-       "amount": 392.0,
-       "cur": "GBP",
+       "amount": 927.0,
+       "cur": "EUR",
        "status": "VERIFIED",
-       "src": "https://www.booking.com/hotel/fr/bel-appartement-panoramique.en-gb.html?checkin=2027-01-27&checkout=2027-01-31&group_adults=6&no_rooms=1&selected_currency=GBP"
+       "src": "https://www.airbnb.co.uk/rooms/28236121?check_in=2027-01-27&check_out=2027-01-31&adults=6"
       },
       {
        "label": "Lift pass",
-       "note": "3 days €189 + Sun 4 h €56.70 + €2. Beginners 4 × €28 + €2",
+       "note": "3d €206 + 4h €58 Sun (PUBLISHED); alt 4d €268. Beginners CoolSki Thu–Sat 3×~€39.",
        "intAs": "adv",
-       "adv": 248.0,
-       "beg": 114.0,
+       "adv": 264.0,
+       "beg": 117.0,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "lift",
@@ -2407,22 +2410,22 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: ESF 3-morning course, starts Thursday",
-       "note": "Private 3 × 3 h mornings Thu–Sat (Maison Sport from €216 per lesson ÷ 3). ESF TOP 4: 3 consecutive mornings from Thursday, €152, which fits exactly",
+       "label": "Beginners: ESF private 2h × 3 (Thu–Sat), 3 people (€145 ÷ 3)",
+       "note": "No midweek group start. ESF private 3h ×3 = €693 /3 = €231; budget 2h ×3 /3 = €145. Intermediate private 2h ×2 = €248.",
        "intAs": 0,
        "adv": 0,
-       "beg": 152,
+       "beg": 145,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
        "days": 3
       },
       {
-       "label": "Natasha: ESF 3-morning course at her level",
+       "label": "Natasha: ESF private 2h × 2 sessions (no midweek group)",
        "note": "",
        "adv": 0,
        "beg": 0,
-       "int": 152,
+       "int": 248,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
@@ -2431,11 +2434,11 @@ window.ROUND2 = {
       {
        "intAs": "beg",
        "label": "Rental for beginners and Natasha",
-       "note": "Sport 2000 4 days €92 + helmet €19 (PUBLISHED)",
+       "note": "4-day 3★ €111 + helmet €19 = €130 walk-in, ~€104 online (ESTIMATE).",
        "adv": 0,
-       "beg": 111.0,
+       "beg": 104.0,
        "cur": "EUR",
-       "status": "VERIFIED",
+       "status": "ESTIMATE",
        "kind": "rental",
        "days": 4
       },
@@ -2450,15 +2453,15 @@ window.ROUND2 = {
     },
     "comfort": {
      "stay": {
-      "url": "https://www.airbnb.co.uk/rooms/48263726?check_in=2027-01-27&check_out=2027-01-31&adults=6",
-      "total": 1369,
-      "cur": "GBP",
-      "beds": "Master double; 2 twin rooms (each girl own bed); sofa bed",
-      "lift": "250 m",
-      "rating": "4.86 (14)",
-      "cancel": "Free before 28 Dec 2026; minimum 4 nights",
-      "status": "VERIFIED-LIVE",
-      "name": "Chalet Éline, 4-star"
+      "url": "https://www.airbnb.co.uk/rooms/23081622?check_in=2027-01-26&check_out=2027-01-31&adults=6",
+      "total": 2002,
+      "cur": "EUR",
+      "beds": "Double · 5 bunks + pull-out · 2 living-area beds; 2 bathrooms",
+      "lift": "50 m to piste, ski locker",
+      "rating": "4.82 (38), Superhost",
+      "cancel": "Free before 27 Dec",
+      "status": "VERIFIED-LIVE for 26–31 (Wed 27–31 blocked by 5-night min). Mid alt: Plagne Bellecôte Apartment €990 for 27–31, 2BR 6 beds 2 bath, 4.83 (6)",
+      "name": "Plagne Villages duplex for 8"
      },
      "items": [
       {
@@ -2482,27 +2485,27 @@ window.ROUND2 = {
       },
       {
        "label": "Airport transfer, return",
-       "note": "No midweek shared shuttle confirmed: private 8-seater ~€185 per way (≈€31 pp). Sun return private, or Eurobus 17:00 (€35)",
-       "adv": 62.0,
-       "beg": 62.0,
+       "note": "Wed out private ~€50 pp; Sun back private ~€62 pp (ESTIMATE).",
+       "adv": 112.0,
+       "beg": 112.0,
        "cur": "EUR",
-       "status": "PUBLISHED"
+       "status": "ESTIMATE"
       },
       {
-       "label": "Chalet Éline, 4-star, 4 nights",
-       "note": "Master double; 2 twin rooms (each girl own bed); sofa bed. 250 m to the lift. Rated 4.86 (14). Free before 28 Dec 2026; minimum 4 nights",
+       "label": "Plagne Villages duplex for 8, 4 nights",
+       "note": "Booked for a longer stay than we use, because of the flat's minimum stay; the price is for the full booking. Double · 5 bunks + pull-out · 2 living-area beds; 2 bathrooms. 50 m to piste, ski locker to the lift. Rated 4.82 (38), Superhost. Free before 27 Dec",
        "group": true,
-       "amount": 1369.0,
-       "cur": "GBP",
+       "amount": 2002.0,
+       "cur": "EUR",
        "status": "VERIFIED",
-       "src": "https://www.airbnb.co.uk/rooms/48263726?check_in=2027-01-27&check_out=2027-01-31&adults=6"
+       "src": "https://www.airbnb.co.uk/rooms/23081622?check_in=2027-01-26&check_out=2027-01-31&adults=6"
       },
       {
        "label": "Lift pass",
-       "note": "3 days €189 + Sun 4 h €56.70 + €2. Beginners 4 × €28 + €2",
+       "note": "3d €206 + 4h €58 Sun (PUBLISHED); alt 4d €268. Beginners CoolSki Thu–Sat 3×~€39.",
        "intAs": "adv",
-       "adv": 248.0,
-       "beg": 114.0,
+       "adv": 264.0,
+       "beg": 117.0,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "lift",
@@ -2517,22 +2520,22 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: Maison Sport private for 3, 3 × 3 h",
-       "note": "Private 3 × 3 h mornings Thu–Sat (Maison Sport from €216 per lesson ÷ 3). ESF TOP 4: 3 consecutive mornings from Thursday, €152, which fits exactly",
+       "label": "Beginners: ESF private 3h × 3 mornings, 3 people (€231 ÷ 3)",
+       "note": "No midweek group start. ESF private 3h ×3 = €693 /3 = €231; budget 2h ×3 /3 = €145. Intermediate private 2h ×2 = €248.",
        "intAs": 0,
        "adv": 0,
-       "beg": 216,
+       "beg": 231,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
        "days": 3
       },
       {
-       "label": "Natasha: ESF 3-morning course at her level",
+       "label": "Natasha: ESF private 2h × 3 sessions",
        "note": "",
        "adv": 0,
        "beg": 0,
-       "int": 152,
+       "int": 372,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
@@ -2541,11 +2544,11 @@ window.ROUND2 = {
       {
        "intAs": "beg",
        "label": "Rental for beginners and Natasha",
-       "note": "Sport 2000 4 days €92 + helmet €19 (PUBLISHED)",
+       "note": "4-day 3★ €111 + helmet €19 = €130 walk-in, ~€104 online (ESTIMATE).",
        "adv": 0,
-       "beg": 111.0,
+       "beg": 104.0,
        "cur": "EUR",
-       "status": "VERIFIED",
+       "status": "ESTIMATE",
        "kind": "rental",
        "days": 4
       },
@@ -2561,19 +2564,19 @@ window.ROUND2 = {
    },
    "XS": {
     "feasible": true,
-    "note": "Thu 28→Sun 31, 3 nights. easyJet LGW 06:10→08:50 (£74.50), on snow by ~12:30. Ski Thu afternoon, Fri, Sat, Sun morning; Sun Jet2 16:45 (£45) or easyJet 18:25 (£66). About £650 all-in for a budget beginner.",
+    "note": "Thu 28→Sun 31 (3 n). Only 4 true 3-night homes (all €2,200+ chalets); cheapest is booking the value duplex Wed 27–Sun 31 (Thursday check-in triggers a 9-night min) and arriving Thu. ~5–6h transfer for ~3 ski-day-equivalents.",
     "food": 60,
     "budget": {
      "stay": {
-      "url": "https://www.booking.com/hotel/fr/bel-appartement-panoramique.en-gb.html?checkin=2027-01-28&checkout=2027-01-31&group_adults=6&no_rooms=1&selected_currency=GBP",
-      "total": 294,
-      "cur": "GBP",
-      "beds": "BR1 double + single (couple); BR2 double + 2 singles; sofa bed",
-      "lift": "~370 m",
-      "rating": "9.2 (17 external)",
-      "cancel": "Free before 14 Jan 2027 (£238 non-refundable); request-to-book. Backup: Airbnb 1590568746700533022 £411",
-      "status": "VERIFIED-LIVE",
-      "name": "Bel Appartement 2-bed"
+      "url": "https://www.airbnb.co.uk/rooms/28236121?check_in=2027-01-27&check_out=2027-01-31&adults=6",
+      "total": 927,
+      "cur": "EUR",
+      "beds": "2BR duplex, 5 beds listed (confirm layout); 2.5 bath",
+      "lift": "0 min, listed ski-in/out",
+      "rating": "4.89 (19)",
+      "cancel": "Free 24h, then partial refund before 20 Jan",
+      "status": "VERIFIED-LIVE for 27–31 (28–31 blocked: 9-night min for Thu check-in)",
+      "name": "Plagne Centre duplex, ski-in/out"
      },
      "items": [
       {
@@ -2597,27 +2600,27 @@ window.ROUND2 = {
       },
       {
        "label": "Airport transfer, return",
-       "note": "Private 8-seater ~€185 per way (Thu morning, Sun afternoon); Eurobus Sun 17:00 only works with a flight at 20:45 or later",
-       "adv": 62.0,
-       "beg": 62.0,
+       "note": "Thu early private ~€50 pp (arrive ~12:30); Sun private back ~€62 pp. Sunday ski only with flight ≥ ~18:00.",
+       "adv": 112.0,
+       "beg": 112.0,
        "cur": "EUR",
        "status": "PUBLISHED"
       },
       {
-       "label": "Bel Appartement 2-bed, 3 nights",
-       "note": "BR1 double + single (couple); BR2 double + 2 singles; sofa bed. ~370 m to the lift. Rated 9.2 (17 external). Free before 14 Jan 2027 (£238 non-refundable); request-to-book. Backup: Airbnb 1590568746700533022 £411",
+       "label": "Plagne Centre duplex, ski-in/out, 3 nights",
+       "note": "Booked for a longer stay than we use, because of the flat's minimum stay; the price is for the full booking. 2BR duplex, 5 beds listed (confirm layout); 2.5 bath. 0 min, listed ski-in/out to the lift. Rated 4.89 (19). Free 24h, then partial refund before 20 Jan",
        "group": true,
-       "amount": 294.0,
-       "cur": "GBP",
+       "amount": 927.0,
+       "cur": "EUR",
        "status": "VERIFIED",
-       "src": "https://www.booking.com/hotel/fr/bel-appartement-panoramique.en-gb.html?checkin=2027-01-28&checkout=2027-01-31&group_adults=6&no_rooms=1&selected_currency=GBP"
+       "src": "https://www.airbnb.co.uk/rooms/28236121?check_in=2027-01-27&check_out=2027-01-31&adults=6"
       },
       {
        "label": "Lift pass",
-       "note": "Thu 4 h €56.70 + 2 days €126 + Sun 4 h €56.70 + €2. Beginners ~4 × €28 + €2 (4-hour beginner price unpublished, ESTIMATE)",
+       "note": "Thu 4h €58 + 2d €140 + Sun 4h €58 (PUBLISHED); alt 4d €268. Beginners: Thu + Sun free lifts, CoolSki Fri–Sat 2×~€39.",
        "intAs": "adv",
-       "adv": 241.0,
-       "beg": 114.0,
+       "adv": 256.0,
+       "beg": 78.0,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "lift",
@@ -2632,22 +2635,22 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: Maison Sport private for 3 (Thu pm, Fri, Sat)",
-       "note": "The group course starts Thursday 09:00, before the flight lands, so private is the realistic option.",
+       "label": "Beginners: ESF private 2h × 3 (Thu pm, Fri, Sat), 3 people (€145 ÷ 3)",
+       "note": "No group option. Thu pm 2h (€145) + Fri/Sat 3h (2×€231) = €607 /3 = €202; budget 3×2h = €145 pp. Intermediate private 2h ×1 = €124.",
        "intAs": 0,
        "adv": 0,
-       "beg": 192,
+       "beg": 145,
        "cur": "EUR",
-       "status": "ESTIMATE",
+       "status": "PUBLISHED",
        "kind": "school",
        "days": 3
       },
       {
-       "label": "Natasha: ESF half-day group, Friday",
+       "label": "Natasha: ESF private 2h × 1 session",
        "note": "",
        "adv": 0,
        "beg": 0,
-       "int": 67,
+       "int": 124,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
@@ -2656,11 +2659,11 @@ window.ROUND2 = {
       {
        "intAs": "beg",
        "label": "Rental for beginners and Natasha",
-       "note": "4 calendar days (Thu–Sun) €92 + helmet €19 (PUBLISHED)",
+       "note": "4 rental days (Thu–Sun): €130 walk-in, ~€104 online (ESTIMATE).",
        "adv": 0,
-       "beg": 111.0,
+       "beg": 104.0,
        "cur": "EUR",
-       "status": "VERIFIED",
+       "status": "ESTIMATE",
        "kind": "rental",
        "days": 3
       },
@@ -2675,15 +2678,15 @@ window.ROUND2 = {
     },
     "comfort": {
      "stay": {
-      "url": "https://www.airbnb.co.uk/rooms/2164753?check_in=2027-01-28&check_out=2027-01-31&adults=6",
-      "total": 1030,
-      "cur": "GBP",
-      "beds": "King room (couple); bunk room with 2 bunks (4 own beds); sofa bed + 2 singles in living areas",
-      "lift": "~5 min walk to ski departure",
-      "rating": "4.96 (48)",
-      "cancel": "Free before 14 Jan 2027",
-      "status": "VERIFIED-LIVE",
-      "name": "Duplex Center 3-bed"
+      "url": "https://www.airbnb.co.uk/rooms/23081622?check_in=2027-01-26&check_out=2027-01-31&adults=6",
+      "total": 2002,
+      "cur": "EUR",
+      "beds": "Double · 5 bunks + pull-out · 2 living-area beds; 2 bathrooms",
+      "lift": "50 m to piste",
+      "rating": "4.82 (38), Superhost",
+      "cancel": "Free before 27 Dec",
+      "status": "VERIFIED-LIVE for 26–31. True 3-night alt: Paul & Pio chalet €2,219 (28–31, free cancel to 27 Jan, 1 review, 500 m to lift)",
+      "name": "Plagne Villages duplex for 8"
      },
      "items": [
       {
@@ -2707,27 +2710,27 @@ window.ROUND2 = {
       },
       {
        "label": "Airport transfer, return",
-       "note": "Private 8-seater ~€185 per way (Thu morning, Sun afternoon); Eurobus Sun 17:00 only works with a flight at 20:45 or later",
-       "adv": 62.0,
-       "beg": 62.0,
+       "note": "Thu early private ~€50 pp (arrive ~12:30); Sun private back ~€62 pp. Sunday ski only with flight ≥ ~18:00.",
+       "adv": 112.0,
+       "beg": 112.0,
        "cur": "EUR",
        "status": "PUBLISHED"
       },
       {
-       "label": "Duplex Center 3-bed, 3 nights",
-       "note": "King room (couple); bunk room with 2 bunks (4 own beds); sofa bed + 2 singles in living areas. ~5 min walk to ski departure to the lift. Rated 4.96 (48). Free before 14 Jan 2027",
+       "label": "Plagne Villages duplex for 8, 3 nights",
+       "note": "Booked for a longer stay than we use, because of the flat's minimum stay; the price is for the full booking. Double · 5 bunks + pull-out · 2 living-area beds; 2 bathrooms. 50 m to piste to the lift. Rated 4.82 (38), Superhost. Free before 27 Dec",
        "group": true,
-       "amount": 1030.0,
-       "cur": "GBP",
+       "amount": 2002.0,
+       "cur": "EUR",
        "status": "VERIFIED",
-       "src": "https://www.airbnb.co.uk/rooms/2164753?check_in=2027-01-28&check_out=2027-01-31&adults=6"
+       "src": "https://www.airbnb.co.uk/rooms/23081622?check_in=2027-01-26&check_out=2027-01-31&adults=6"
       },
       {
        "label": "Lift pass",
-       "note": "Thu 4 h €56.70 + 2 days €126 + Sun 4 h €56.70 + €2. Beginners ~4 × €28 + €2 (4-hour beginner price unpublished, ESTIMATE)",
+       "note": "Thu 4h €58 + 2d €140 + Sun 4h €58 (PUBLISHED); alt 4d €268. Beginners: Thu + Sun free lifts, CoolSki Fri–Sat 2×~€39.",
        "intAs": "adv",
-       "adv": 241.0,
-       "beg": 114.0,
+       "adv": 256.0,
+       "beg": 78.0,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "lift",
@@ -2742,22 +2745,22 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: Maison Sport private for 3 (Thu pm, Fri, Sat)",
-       "note": "Private: 2 h Thu afternoon (€144) + 3 h Fri and Sat (€216 each), ÷ 3. Group is weak: they miss TOP 4's Thu 09:00 start; only a Fri single half-day (€67) is sold; no Saturday singles. Recommend private",
+       "label": "Beginners: ESF private Thu pm 2h + Fri/Sat 3h, 3 people",
+       "note": "No group option. Thu pm 2h (€145) + Fri/Sat 3h (2×€231) = €607 /3 = €202; budget 3×2h = €145 pp. Intermediate private 2h ×1 = €124.",
        "intAs": 0,
        "adv": 0,
-       "beg": 192,
+       "beg": 202,
        "cur": "EUR",
-       "status": "ESTIMATE",
+       "status": "PUBLISHED",
        "kind": "school",
        "days": 3
       },
       {
-       "label": "Natasha: ESF half-day group, Friday",
+       "label": "Natasha: ESF private 2h × 2 sessions",
        "note": "",
        "adv": 0,
        "beg": 0,
-       "int": 67,
+       "int": 248,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
@@ -2766,11 +2769,11 @@ window.ROUND2 = {
       {
        "intAs": "beg",
        "label": "Rental for beginners and Natasha",
-       "note": "4 calendar days (Thu–Sun) €92 + helmet €19 (PUBLISHED)",
+       "note": "4 rental days (Thu–Sun): €130 walk-in, ~€104 online (ESTIMATE).",
        "adv": 0,
-       "beg": 111.0,
+       "beg": 104.0,
        "cur": "EUR",
-       "status": "VERIFIED",
+       "status": "ESTIMATE",
        "kind": "rental",
        "days": 3
       },
@@ -2849,7 +2852,7 @@ window.ROUND2 = {
     }
    }
   ],
-  "taken": "4 Oct 2026, 20:45",
+  "taken": "4 Oct 2026, 21:01",
   "note": "Round 1 is kept as a record. Everyone votes again in round 2, which uses new options and prices."
  },
  "closeLabel": "Wed 14 Oct",
@@ -2858,7 +2861,7 @@ window.ROUND2 = {
   {
    "k": "Round 1",
    "t": "Les Arcs came first",
-   "d": "Les Arcs 7 points, Val Thorens 6, Stubai 5, with 4 of 6 votes in. Val Thorens is the most expensive, so it drops out of round 2."
+   "d": "Les Arcs 7 points, Val Thorens 6, Stubai 5, with 4 of 6 votes in. Val Thorens and Stubai drop out: Val Thorens has the priciest flats, and Innsbruck flights cost two to three times Geneva’s."
   },
   {
    "k": "Flying together",
@@ -2871,106 +2874,191 @@ window.ROUND2 = {
    "d": "Some of us asked for a cheaper version. There are now 3–5 night trips using 2–3.5 days of leave, a budget tier, and cost levers to switch on."
   },
   {
-   "k": "New option",
-   "t": "Les Carroz, an hour from Geneva",
-   "d": "Built for short trips: sheltered, tree-lined beginner slopes, a €63 day pass, and flats from £16 a night."
+   "k": "New options",
+   "t": "Two snow-sure alternatives",
+   "d": "Both villages sit at 1,600 m or higher, so the snow is reliable, and both are priced against Les Arcs. Details below the price table."
   }
  ],
  "matrixHelp": "Per person, all-in except food: flights, bag, transfer, flat, lift pass, lessons, rental and insurance. Budget is the cheapest flat that fits the rules, plus group lessons where they run. Comfort is an own-bed flat plus a private instructor for the beginners. Tap a price for the full breakdown.",
- "voteLead": "Two questions are needed: which lengths you could do, and your resort ranking. The rest is optional. Budget answers are shown as counts only. Vote by Wednesday 14 October.",
+ "voteLead": "Two questions are needed: which lengths you could do, and your resort ranking. The rest is optional. Answers about dates, leave and budget appear as counts only, never next to names. Vote by Wednesday 14 October.",
  "flexRule": "Anyone who joins for only part of the week pays for the flat by the night, plus their own flights, pass and lessons. Full-week flats (Sun → Sat), split six ways:",
  "rules": [
   "Length: the longest trip everyone ticked. If no length works for everyone, the one most people ticked, and the rest join for part of it.",
   "Resort: most points wins (3 for first, 2 for second, 1 for third).",
-  "Budget or comfort: decided from the budget answers and accepted levers, shown as counts rather than names.",
+  "Budget or comfort: decided from the budget answers and accepted levers.",
+  "Privacy: dates, leave, budget, lever and part-trip answers are shown as counts only. Only the resort ranking shows names.",
   "Booking: within 48 hours of the vote closing, on refundable rates."
  ],
- "pivot": {
-  "name": "Les Carroz, Grand Massif",
-  "why": "Closest real ski village to Geneva. Sheltered, tree-lined, lower beginner terrain (warmer and less exposed), and a flat €63/day Grand Massif pass (no short-stay penalty), with Flaine and 265 km for the advanced pair. Flats accept Wed/Thu/Sun/Tue arrivals at £16–57 pppn (verified).",
-  "pros": [
-   "Shortest transfer of all candidates: GVA → Les Carroz about 55–70 min, so Sunday-morning skiing before an evening flight works",
-   "Pass priced per day (€63), so 3 days cost half of 6; beginner pass €28/day",
-   "2-bed flats 350–550 m from the gondola at £16–20 pppn; 4-star 3-bed with own beds £52–57 pppn (verified live)",
-   "Short stays bookable: Wed→Sun, Thu→Sun, Tue→Sun, Sun→Sat all available",
-   "Sheltered, tree-lined lower slopes with a covered carpet and beginners-only green at the top of the gondola",
-   "ESF 3-day group course (TOP 4) starts Thursday, €152, which fits shape S exactly",
-   "Real terrain for advanced skiers: Flaine bowl, Gers, the 14 km Cascades run, 265 km in total",
-   "Traditional Savoyard village with a pool/spa, ice rink, toboggan run and cosy bars"
-  ],
-  "cons": [
-   "Village at 1,140 m: thin-snow risk on the home runs in a poor January (you download by gondola)",
-   "True ski-in/out is rare and expensive (£94 pppn); budget picks are a 4–7 min walk",
-   "Après is cosy, not a party; no Folie Douce",
-   "ESF private lessons take only 1–2 people; for 3 use Maison Sport or ESI",
-   "Shared shuttles mostly weekends only (Eurobus Sat/Sun, Ben's Bus Sat); midweek needs a private minibus",
-   "Cheapest flat is request-to-book and new on Booking.com; keep a backup",
-   "No Cantonese-speaking instructors found; no specific LGBTQ scene"
-  ],
-  "food": [
-   {
-    "name": "Le K",
-    "what": "Lunch at the top of the Kédeuze gondola, 360° sun terrace by the beginner area",
-    "price": "€€"
-   },
-   {
-    "name": "L'Alpage de l'Airon",
-    "what": "Working-farm restaurant near the Kédeuze, own produce, Mont Blanc view",
-    "price": "€€"
-   },
-   {
-    "name": "Le Refuge 1110m",
-    "what": "Village fondue/raclette dinner, Tripadvisor 4.6 (~355)",
-    "price": "€€"
-   },
-   {
-    "name": "Le Tire-Fesses",
-    "what": "Après terrace by the toboggan run; burgers, Savoyard food, crêpes",
-    "price": "€–€€"
-   },
-   {
-    "name": "Grizzly Pub",
-    "what": "Main-square pub for après beers",
-    "price": "€"
-   }
-  ],
-  "vibe": "A real Savoyard village with a gondola in its centre: learners on a sheltered green under the pines, the couple off to Flaine, fondue together at night.",
-  "transfer": "55–70 min by road (private minibus); 2h30–3h by train via Cluses + bus",
-  "images": [
-   {
-    "subject": "Flaine overview in ski season",
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Flaine_overview.jpg/1920px-Flaine_overview.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Flaine_overview.jpg",
-    "author": "DimiTalen",
-    "license": "CC0",
-    "src": "Wikimedia Commons"
-   },
-   {
-    "subject": "Flaine front de neige & Tête Pelouse",
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flaine_Front_de_Neige_and_T%C3%AAte_Pelouse.jpg/1920px-Flaine_Front_de_Neige_and_T%C3%AAte_Pelouse.jpg",
-    "page": "https://commons.wikimedia.org/wiki/File:Flaine_Front_de_Neige_and_T%C3%AAte_Pelouse.jpg",
-    "author": "DimiTalen",
-    "license": "CC0",
-    "src": "Wikimedia Commons"
-   },
-   {
-    "subject": "Cheese fondue pot shared at the table",
-    "url": "https://images.unsplash.com/photo-1754910568188-6f303fd38d81?w=1600&q=80&auto=format&fit=crop",
-    "page": "https://unsplash.com/photos/people-dipping-bread-into-a-cheese-fondue-pot-JuSDnZwZnTk",
-    "author": "Andri Aeschlimann",
-    "license": "Unsplash License",
-    "src": "Unsplash"
-   }
-  ]
- },
+ "newOptions": [
+  {
+   "kanji": "四",
+   "name": "Flaine (Grand Massif)",
+   "why": "The snow-sure, ski-in/out alternative at 1,600–1,800 m that still fits the budget: ski-in/out 2-bed flats for Wed→Sun at £594 and a 3-bedroom own-bed chalet at 1,800 m for £1,286 (6 nights), both verified live. A dedicated beginner zone sits at the door, the beginner pass costs €30.50, and the 265 km Grand Massif is there for the advanced pair. Avoriaz lost because it has almost no short-stay supply.",
+   "pros": [
+    "Snow-sure home runs at 1,600–1,800 m in a north-facing bowl; no thin-snow download risk",
+    "True ski-in/ski-out: click into skis at the door, no buses for the beginners",
+    "Gentle beginner zone and ESF meeting points at the foot of the residences; Flaine beginner pass €30.50/day or €27.50 for 4 h",
+    "Short stays bookable: Tue→Sun, Wed→Sun, Thu→Sun and Sun→Sat all priced live today",
+    "Value 2-bed ski-in/out flats £24–26 pppn; 3-bed wooden chalet with sauna and own beds for everyone £36 pppn (Sun→Sat)",
+    "1 h 15–1 h 30 from Geneva, so a Sunday-morning ski before an evening flight still works",
+    "265 km Grand Massif for the advanced pair: Grandes Platières, Gers bowl, 14 km Cascades run",
+    "Per-day pass pricing (€63) with no short-stay premium"
+   ],
+   "cons": [
+    "Cold and shady in late January (north-facing bowl at altitude); a beginner who feels the cold needs serious layers",
+    "ESF group courses start Sunday only (true beginners must start day 1), so short trips need a private instructor",
+    "Brutalist 1960s concrete resort; small, quiet après scene",
+    "Own-bed comfort flats are scarce for 3–4-night stays; the 3-bed chalet seems to need 6 nights",
+    "Cheapest flat has 1 review and puts two people on a living-room sofa bed",
+    "Exposed bowl: wind can close upper lifts; resort shops pricier than the valley",
+    "About £35–110 pp dearer than the low-village alternative"
+   ],
+   "food": [
+    {
+     "name": "Le Michet",
+     "what": "Savoyard fondue/raclette in a century-old converted sheepfold; group dinner",
+     "price": "€€ (~€30–40 pp)"
+    },
+    {
+     "name": "Brasserie Les Cimes",
+     "what": "Big family brasserie, south terrace, pizzas and regional dishes, good value",
+     "price": "€–€€"
+    },
+    {
+     "name": "La Pente à Jules",
+     "what": "Foot of the Aup de Véran cable car; DJs from 15:00, liveliest après",
+     "price": "€€"
+    },
+    {
+     "name": "Flying Dutchman / Le White Pub",
+     "what": "Forum bars, busy from 15:00, cheap pitchers and sport on screens",
+     "price": "€"
+    },
+    {
+     "name": "RockyPop / Totem bars",
+     "what": "Design-hotel lounges; RockyPop has pool, karaoke and games 16:00–00:00",
+     "price": "€€"
+    }
+   ],
+   "vibe": "A high, snow-sure concrete amphitheatre where you click into skis at the door: learners on the gentle bowl floor, the couple up the Grandes Platières, fondue in the Forum. Wrap up warm.",
+   "transfer": "1 h 15–1 h 30 by private minibus from Geneva airport; weekend Eurobus line; train + bus via Cluses ~2 h 30",
+   "images": [
+    {
+     "subject": "Flaine overview in ski season",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Flaine_overview.jpg/1920px-Flaine_overview.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Flaine_overview.jpg",
+     "author": "DimiTalen",
+     "license": "CC0",
+     "src": "Wikimedia Commons"
+    },
+    {
+     "subject": "Flaine front de neige & Tête Pelouse",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flaine_Front_de_Neige_and_T%C3%AAte_Pelouse.jpg/1920px-Flaine_Front_de_Neige_and_T%C3%AAte_Pelouse.jpg",
+     "page": "https://commons.wikimedia.org/wiki/File:Flaine_Front_de_Neige_and_T%C3%AAte_Pelouse.jpg",
+     "author": "DimiTalen",
+     "license": "CC0",
+     "src": "Wikimedia Commons"
+    },
+    {
+     "subject": "Cheese fondue pot shared at the table",
+     "url": "https://images.unsplash.com/photo-1754910568188-6f303fd38d81?w=1600&q=80&auto=format&fit=crop",
+     "page": "https://unsplash.com/photos/people-dipping-bread-into-a-cheese-fondue-pot-JuSDnZwZnTk",
+     "author": "Andri Aeschlimann",
+     "license": "Unsplash License",
+     "src": "Unsplash"
+    }
+   ],
+   "photoNote": ""
+  },
+  {
+   "kanji": "五",
+   "name": "La Plagne (Paradiski)",
+   "why": "Highest-village, cheapest-flat option in the Tarentaise: villages at 1,970–2,100 m with glacier skiing to 3,250 m, 16 free beginner lifts at the village fronts, same Paradiski network as Les Arcs, and 2–3 BR ski-in/out flats from €927 (4 nights) — €100–200 pp cheaper than Les Arcs on every shape.",
+   "pros": [
+    "Villages at 1,970–2,100 m (higher than Arc 1800), glacier to 3,250 m — best snow insurance in Paradiski",
+    "16 free beginner lifts + CoolSki protected zones (~€38/day) right at the village fronts, no bus",
+    "Ski-in/out flats from €35–51 pppn VERIFIED-LIVE — roughly half Les Arcs prices",
+    "ESF private 3h for 3 people €231 (vs €250 at Les Arcs); 2h private €145",
+    "6-day pass €370; Paradiski upgrade (€412) lets the advanced pair ski Les Arcs too",
+    "Rental ~10% cheaper than Arc 1800 (4-day pack + helmet ~€104 online)",
+    "LS fits ESF Mon–Fri group courses; Saturday return by Ben's Bus from the village door"
+   ],
+   "cons": [
+    "Group lessons only start Sun/Mon — M/S/XS need a private instructor",
+    "No midweek shared shuttle; Ben's Bus on Sundays only reaches Aime in the valley",
+    "Thin short-stay stock (12 homes for S, 4 for XS); value duplex is a single point of failure",
+    "XS needs a Wed–Sun booking (Thursday check-in min-stay rules) — pay one unused night",
+    "Plagne Centre/Aime 2000 architecture is 1970s functional; less charm than Arc 1950/Belle Plagne",
+    "High and treeless around the villages: cold and flat light on bad days for a beginner who feels the cold",
+    "Après is decent (La Bergerie) but calmer than Les Arcs/Val Thorens"
+   ],
+   "food": [
+    {
+     "name": "La Bergerie (Plagne Villages, 2,180 m on the Mira piste)",
+     "what": "Savoyard terrace lunch that turns into La Plagne's dance-on-the-tables après from ~14:30–17:00",
+     "price": "€€ — 2 beers + nachos ~€18"
+    },
+    {
+     "name": "Le Bonnet",
+     "what": "Slopeside bar, happy hour 16:30–18:30, burgers",
+     "price": "€ — pints ~€5 in happy hour, burgers €11–17"
+    },
+    {
+     "name": "Les Killis (Champagny side)",
+     "what": "Mountain restaurant at the Quillis/Carella chairs, daily lunch special",
+     "price": "€€ — ~€20 special"
+    },
+    {
+     "name": "Le Refuge (Plagne Centre)",
+     "what": "Fondue/raclette evening in one of the original Plagne Centre restaurants",
+     "price": "€€€ ~€30–40 pp (ESTIMATE)"
+    },
+    {
+     "name": "Village supermarkets (Plagne Centre / Villages)",
+     "what": "Self-catering staples, raclette kits; cheaper to stock up in Aime on the transfer",
+     "price": "€ ~€15–20 pp/day"
+    }
+   ],
+   "vibe": "High, snow-sure, no-nonsense family-resort Paradiski: ski-in/out flats at half Les Arcs prices, beginner carpets at the door, calmer evenings.",
+   "transfer": "~2h20–3h by private minibus (midweek ~€50 pp, Sunday ~€62 pp); Ben's Bus shared Saturdays only",
+   "images": [
+    {
+     "subject": "Bellecôte and Glacier gondola, La Plagne",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Bellec%C3%B4te_et_T%C3%A9l%C3%A9cabine_Glacier_%C3%A0_La_Plagne_en_hiver_%28f%C3%A9vrier_2024%29.JPG/1920px-Bellec%C3%B4te_et_T%C3%A9l%C3%A9cabine_Glacier_%C3%A0_La_Plagne_en_hiver_%28f%C3%A9vrier_2024%29.JPG",
+     "page": "https://commons.wikimedia.org/wiki/File:Bellec%C3%B4te_et_T%C3%A9l%C3%A9cabine_Glacier_%C3%A0_La_Plagne_en_hiver_(f%C3%A9vrier_2024).JPG",
+     "author": "Florian Pépellin",
+     "license": "CC BY-SA 4.0",
+     "src": "Wikimedia Commons"
+    },
+    {
+     "subject": "La Plagne ski domain from the Roche de Mio gondola",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Domaine_skiable_de_La_Plagne_enneig%C3%A9_%28hiver_2024%29.JPG/1920px-Domaine_skiable_de_La_Plagne_enneig%C3%A9_%28hiver_2024%29.JPG",
+     "page": "https://commons.wikimedia.org/wiki/File:Domaine_skiable_de_La_Plagne_enneig%C3%A9_(hiver_2024).JPG",
+     "author": "Florian Pépellin",
+     "license": "CC BY-SA 4.0",
+     "src": "Wikimedia Commons"
+    },
+    {
+     "subject": "Skiers on a sunny mountain terrace under Alpine peaks",
+     "url": "https://images.unsplash.com/photo-1781461565715-887bd369f481?w=1600&q=80&auto=format&fit=crop",
+     "page": "https://unsplash.com/photos/people-enjoying-drinks-at-an-outdoor-bar-in-snowy-mountains-wut8LONuFHE",
+     "author": "Barney Goodman",
+     "license": "Unsplash License",
+     "src": "Unsplash"
+    }
+   ],
+   "photoNote": ""
+  }
+ ],
  "decisions": [
   {
    "id": "lengths",
    "type": "multi",
    "required": true,
+   "anon": true,
    "short": "Lengths that work",
    "title": "Which trip lengths could you do?",
-   "help": "Tick every one you could do, including leave. This is about what’s possible, not what you prefer.",
+   "help": "Tick every one you could do, including leave. This is about what’s possible, not what you prefer. Results show counts only.",
    "options": [
     {
      "id": "LS",
@@ -2995,9 +3083,41 @@ window.ROUND2 = {
    ]
   },
   {
+   "id": "leave",
+   "type": "single",
+   "required": false,
+   "anon": true,
+   "short": "Leave you could take",
+   "title": "How many days of leave could you take for this trip?",
+   "help": "Be honest; nobody sees individual answers on the page, only counts.",
+   "options": [
+    {
+     "id": "2",
+     "label": "2 days"
+    },
+    {
+     "id": "3",
+     "label": "3 days"
+    },
+    {
+     "id": "4",
+     "label": "4 days"
+    },
+    {
+     "id": "5",
+     "label": "5 days"
+    },
+    {
+     "id": "unsure",
+     "label": "Not sure yet"
+    }
+   ]
+  },
+  {
    "id": "favourite",
    "type": "single",
    "required": false,
+   "anon": true,
    "short": "Favourite length",
    "title": "Which length would you prefer?",
    "options": [
@@ -3036,12 +3156,12 @@ window.ROUND2 = {
      "label": "Les Arcs 1800 (France)"
     },
     {
-     "id": "B",
-     "label": "Stubai, Fulpmes (Austria)"
+     "id": "F",
+     "label": "Flaine, Grand Massif (France)"
     },
     {
-     "id": "P",
-     "label": "Les Carroz, Grand Massif (France)"
+     "id": "L",
+     "label": "La Plagne, Paradiski (France)"
     }
    ]
   },
@@ -3079,6 +3199,7 @@ window.ROUND2 = {
    "id": "levers",
    "type": "multi",
    "required": false,
+   "anon": true,
    "short": "Cost levers",
    "title": "Which cost levers would you accept?",
    "help": "Try them on the price table above first.",
@@ -3113,6 +3234,7 @@ window.ROUND2 = {
    "id": "flex",
    "type": "single",
    "required": false,
+   "anon": true,
    "short": "Part of a longer trip",
    "title": "If the group picks a longer trip than suits you, would you join for part of it?",
    "options": [

@@ -2,7 +2,22 @@
 import json, os, datetime
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 gen = json.load(open(os.path.join(ROOT, 'data2.generated.json')))
-piv = json.load(open(os.path.join(ROOT, 'research', 'round2_pivot.json')))
+def maybe(key):
+    path = os.path.join(ROOT, 'research', f'round2_{key}.json')
+    return json.load(open(path)) if os.path.exists(path) else None
+EXTRAS = [x for x in (maybe('geneva2'), maybe('tarentaise')) if x and '_resort' in x]
+# Photos per candidate resort (all licence-checked in research/images*.json)
+PHOTOS = {
+  'Avoriaz': lambda: [ui('avoriaz', 0), ui('avoriaz', 2), wi('avoriaz', 1)],
+  'Flaine': lambda: [wi('flaine', 0), wi('flaine', 1), ui('mood_fondue', 2)],
+  'La Plagne': lambda: [wi('la_plagne', 0), wi('la_plagne', 1), ui('mood_apres', 0)],
+  'Les Menuires': lambda: [ui('les_menuires', 1), ui('les_menuires', 2), wi('3vallees', 4)],
+}
+def photos_for(name):
+    for k, f in PHOTOS.items():
+        if k.lower() in name.lower():
+            return f()
+    return []
 W = json.load(open(os.path.join(ROOT, 'research', 'images.json')))
 U = json.load(open(os.path.join(ROOT, 'research', 'images_unsplash.json')))
 def wi(k, i): x = dict(W[k][i]); x['src'] = 'Wikimedia Commons'; return x
@@ -13,34 +28,37 @@ R2.update({
   'closeLabel': 'Wed 14 Oct',
   'lead': 'Round 1 gave us a favourite and two practical problems. Round 2 keeps the best of round 1, adds shorter and cheaper trips, and asks only about length, leave and resort. Every price is live for our dates (checked 4 October).',
   'changes': [
-    {'k': 'Round 1', 't': 'Les Arcs came first', 'd': 'Les Arcs 7 points, Val Thorens 6, Stubai 5, with 4 of 6 votes in. Val Thorens is the most expensive, so it drops out of round 2.'},
+    {'k': 'Round 1', 't': 'Les Arcs came first', 'd': 'Les Arcs 7 points, Val Thorens 6, Stubai 5, with 4 of 6 votes in. Val Thorens and Stubai drop out: Val Thorens has the priciest flats, and Innsbruck flights cost two to three times Geneva’s.'},
     {'k': 'Flying together', 't': 'Every trip now starts on Sunday or later', 'd': 'One of us can only fly from Sunday afternoon, so the full week now runs Sunday to Saturday and we all travel together. Same leave as before, and the flats are cheaper.'},
     {'k': 'Price', 't': 'Shorter, cheaper options', 'd': 'Some of us asked for a cheaper version. There are now 3–5 night trips using 2–3.5 days of leave, a budget tier, and cost levers to switch on.'},
-    {'k': 'New option', 't': 'Les Carroz, an hour from Geneva', 'd': 'Built for short trips: sheltered, tree-lined beginner slopes, a €63 day pass, and flats from £16 a night.'},
+    {'k': 'New options', 't': 'Two snow-sure alternatives', 'd': 'Both villages sit at 1,600 m or higher, so the snow is reliable, and both are priced against Les Arcs. Details below the price table.'},
   ],
   'matrixHelp': 'Per person, all-in except food: flights, bag, transfer, flat, lift pass, lessons, rental and insurance. Budget is the cheapest flat that fits the rules, plus group lessons where they run. Comfort is an own-bed flat plus a private instructor for the beginners. Tap a price for the full breakdown.',
-  'voteLead': 'Two questions are needed: which lengths you could do, and your resort ranking. The rest is optional. Budget answers are shown as counts only. Vote by Wednesday 14 October.',
+  'voteLead': 'Two questions are needed: which lengths you could do, and your resort ranking. The rest is optional. Answers about dates, leave and budget appear as counts only, never next to names. Vote by Wednesday 14 October.',
   'flexRule': 'Anyone who joins for only part of the week pays for the flat by the night, plus their own flights, pass and lessons. Full-week flats (Sun → Sat), split six ways:',
   'rules': [
     'Length: the longest trip everyone ticked. If no length works for everyone, the one most people ticked, and the rest join for part of it.',
     'Resort: most points wins (3 for first, 2 for second, 1 for third).',
-    'Budget or comfort: decided from the budget answers and accepted levers, shown as counts rather than names.',
+    'Budget or comfort: decided from the budget answers and accepted levers.',
+    'Privacy: dates, leave, budget, lever and part-trip answers are shown as counts only. Only the resort ranking shows names.',
     'Booking: within 48 hours of the vote closing, on refundable rates.',
   ],
-  'pivot': {'name': 'Les Carroz, Grand Massif', 'why': piv['why'], 'pros': piv['pros'], 'cons': piv['cons'], 'food': piv['food'], 'vibe': piv['vibe'], 'transfer': piv['transfer_time'],
-            'images': [wi('flaine', 0), wi('flaine', 1), ui('mood_fondue', 2)]},
+  'newOptions': [{'kanji': x['_resort']['kanji'], 'name': x['_resort']['short'], 'why': x['why'], 'pros': x['pros'], 'cons': x['cons'], 'food': x['food'], 'vibe': x['vibe'],
+                  'transfer': x['transfer_time'], 'images': photos_for(x['_resort']['short']), 'photoNote': ''} for x in EXTRAS],
   'decisions': [
-    {'id': 'lengths', 'type': 'multi', 'required': True, 'short': 'Lengths that work', 'title': 'Which trip lengths could you do?', 'help': 'Tick every one you could do, including leave. This is about what’s possible, not what you prefer.',
+    {'id': 'lengths', 'type': 'multi', 'required': True, 'anon': True, 'short': 'Lengths that work', 'title': 'Which trip lengths could you do?', 'help': 'Tick every one you could do, including leave. This is about what’s possible, not what you prefer. Results show counts only.',
      'options': [{'id': 'LS', 'label': 'Sun 24 → Sat 30 · 6 nights', 'hint': '5 days of leave'}, {'id': 'M', 'label': 'Tue 26 → Sun 31 · 5 nights', 'hint': '3–3.5 days of leave'}, {'id': 'S', 'label': 'Wed 27 → Sun 31 · 4 nights', 'hint': '3 days of leave'}, {'id': 'XS', 'label': 'Thu 28 → Sun 31 · 3 nights', 'hint': '2 days of leave'}]},
-    {'id': 'favourite', 'type': 'single', 'required': False, 'short': 'Favourite length', 'title': 'Which length would you prefer?',
+    {'id': 'leave', 'type': 'single', 'required': False, 'anon': True, 'short': 'Leave you could take', 'title': 'How many days of leave could you take for this trip?', 'help': 'Be honest; nobody sees individual answers on the page, only counts.',
+     'options': [{'id': '2', 'label': '2 days'}, {'id': '3', 'label': '3 days'}, {'id': '4', 'label': '4 days'}, {'id': '5', 'label': '5 days'}, {'id': 'unsure', 'label': 'Not sure yet'}]},
+    {'id': 'favourite', 'type': 'single', 'required': False, 'anon': True, 'short': 'Favourite length', 'title': 'Which length would you prefer?',
      'options': [{'id': 'LS', 'label': '6 nights, Sun → Sat'}, {'id': 'M', 'label': '5 nights, Tue → Sun'}, {'id': 'S', 'label': '4 nights, Wed → Sun'}, {'id': 'XS', 'label': '3 nights, Thu → Sun'}, {'id': 'any', 'label': 'I don’t mind'}]},
     {'id': 'resort', 'type': 'rank', 'required': True, 'short': 'Resort', 'title': 'Rank the resorts', 'help': 'Put your favourite first.',
-     'options': [{'id': 'C', 'label': 'Les Arcs 1800 (France)'}, {'id': 'B', 'label': 'Stubai, Fulpmes (Austria)'}, {'id': 'P', 'label': 'Les Carroz, Grand Massif (France)'}]},
+     'options': [{'id': r['id'], 'label': r['label']} for r in gen['resorts']]},
     {'id': 'budget', 'type': 'single', 'required': False, 'anon': True, 'short': 'Comfortable budget', 'title': 'What all-in budget feels comfortable, excluding food?',
      'options': [{'id': 'u700', 'label': 'Under £700'}, {'id': '700', 'label': '£700–1,000'}, {'id': '1000', 'label': '£1,000–1,300'}, {'id': '1300', 'label': 'Over £1,300'}, {'id': 'skip', 'label': 'Prefer not to say'}]},
-    {'id': 'levers', 'type': 'multi', 'required': False, 'short': 'Cost levers', 'title': 'Which cost levers would you accept?', 'help': 'Try them on the price table above first.',
+    {'id': 'levers', 'type': 'multi', 'required': False, 'anon': True, 'short': 'Cost levers', 'title': 'Which cost levers would you accept?', 'help': 'Try them on the price table above first.',
      'options': [{'id': 'ski1', 'label': 'Ski one day less (rest or sightseeing day instead)'}, {'id': 'lessons', 'label': 'Fewer lesson days'}, {'id': 'group', 'label': 'Group lessons instead of a private instructor'}, {'id': 'share', 'label': 'Share a room or double bed for a cheaper flat'}, {'id': 'bags', 'label': 'Share hold bags'}, {'id': 'none', 'label': 'None of these'}]},
-    {'id': 'flex', 'type': 'single', 'required': False, 'short': 'Part of a longer trip', 'title': 'If the group picks a longer trip than suits you, would you join for part of it?',
+    {'id': 'flex', 'type': 'single', 'required': False, 'anon': True, 'short': 'Part of a longer trip', 'title': 'If the group picks a longer trip than suits you, would you join for part of it?',
      'options': [{'id': 'yes', 'label': 'Yes, I’d join for part of it'}, {'id': 'same', 'label': 'I’d rather we all do the same dates'}, {'id': 'any', 'label': 'I don’t mind'}]},
   ],
 })

@@ -35,7 +35,11 @@ def flight_item(airport: str, shape: str) -> dict:
 SHORT_NAMES = [('Alpages du Chantel', 'Alpages du Chantel flat (ski-in/out, pool)'), ('Arcs 1800 60', 'Arc 1800 3-bed by the slopes'),
                ('La Nova', 'La Nova 3-bed, Villards'), ('Königin Serles', 'Königin Serles'), ('Kirchplatz', 'Kirchplatz Type C'),
                ('Ansitz Hofer', 'Ansitz Hofer'), ('Adler', 'Adler Boutique Hotel (B&B, pool)'), ('Bel Appartement', 'Bel Appartement 2-bed'),
-               ('Chalet Éline', 'Chalet Éline, 4-star'), ('Duplex', 'Duplex Center 3-bed')]
+               ('Chalet Éline', 'Chalet Éline, 4-star'), ('Duplex – Center', 'Duplex Center 3-bed'),
+               ('Hameau de Flaine', 'Hameau de Flaine chalet, 3-bed'), ('Cozy chalet, direct ski access', 'Ski-in/out chalet, 3-bed'),
+               ('Flaine Forêt', 'Flaine Forêt 2-bed, ski-in/out'), ('Petite Ourse', 'Petite Ourse 2-bed'),
+               ('Beautiful duplex at the foot', 'Plagne Centre duplex, ski-in/out'), ('Plagne Villages duplex', 'Plagne Villages duplex, on the slopes'),
+               ('La Plagne Village duplex', 'Plagne Villages duplex for 8')]
 
 def short_name(name: str) -> str:
     """Readable flat name for the matrix; the full listing name stays in the breakdown note."""
@@ -58,7 +62,7 @@ def build_cell(resort: dict, shape: dict, d: dict, tier: str, school_override: d
     items = [flight_item(resort['airport'], sh),
              {'label': '23 kg hold bag, both ways', 'note': 'easyJet/BA estimate. On short trips two people can share one bag.', 'adv': 85, 'beg': 85, 'cur': 'GBP', 'status': 'ESTIMATE', 'kind': 'bag', 'days': 1},
              {'label': 'Airport transfer, return', 'note': d.get('transfer_note', ''), 'adv': num(d['transfer_pp']), 'beg': num(d['transfer_pp']), 'cur': 'EUR', 'status': 'ESTIMATE' if 'ESTIMATE' in d.get('transfer_note', '') else 'PUBLISHED'},
-             {'label': f"{short_name(st['name'])}, {shape['nights']} nights", 'note': f"{st.get('beds', '')}. {st.get('lift', '')} to the lift. Rated {st.get('rating', 'n/a')}. {st.get('cancel', '')}", 'group': True, 'amount': num(st['total']), 'cur': st.get('cur', 'EUR'), 'status': 'VERIFIED' if 'VERIFIED' in str(st.get('status', '')) else 'ESTIMATE', 'src': st.get('url')}]
+             {'label': f"{short_name(st['name'])}, {shape['nights']} nights", 'note': ("Booked for a longer stay than we use, because of the flat's minimum stay; the price is for the full booking. " if '(booked' in st.get('name', '') else '') + f"{st.get('beds', '')}. {st.get('lift', '')} to the lift. Rated {st.get('rating', 'n/a')}. {st.get('cancel', '')}", 'group': True, 'amount': num(st['total']), 'cur': st.get('cur', 'EUR'), 'status': 'VERIFIED' if 'VERIFIED' in str(st.get('status', '')) else 'ESTIMATE', 'src': st.get('url')}]
     if resort.get('touristTax'):
         tt = resort['touristTax'] * shape['nights']
         items.append({'label': 'Tourist tax', 'note': f"€{resort['touristTax']:.2f} per person per night, paid locally", 'adv': tt, 'beg': tt, 'cur': 'EUR', 'status': 'PUBLISHED'})
@@ -66,7 +70,12 @@ def build_cell(resort: dict, shape: dict, d: dict, tier: str, school_override: d
     if resort.get('carre'):
         c = 3.5 * shape['skiDays']
         items.append({'label': 'Carré Neige piste-rescue cover', 'intAs': 'adv', 'adv': c, 'beg': c, 'cur': 'EUR', 'status': 'PUBLISHED'})
-    so = school_override[tier]
+    so = dict(school_override[tier])
+    # consistent labels across resorts
+    if not so['beg_label'].startswith('Beginners'):
+        so['beg_label'] = 'Beginners: ' + so['beg_label']
+    if so.get('int_label'):
+        so['int_label'] = 'Natasha: ' + so['int_label'].split(': ', 1)[-1] if so['int_label'].startswith(('Intermediate', 'Natasha')) else 'Natasha: ' + so['int_label']
     items.append({'label': so['beg_label'], 'note': so.get('beg_note', d.get('school_note', '')), 'intAs': 0, 'adv': 0, 'beg': so['beg'], 'cur': 'EUR', 'status': so.get('status', 'PUBLISHED'), 'kind': 'school', 'days': shape['lessonDays']})
     if so.get('int'):
         items.append({'label': so['int_label'], 'note': so.get('int_note', ''), 'adv': 0, 'beg': 0, 'int': so['int'], 'cur': 'EUR', 'status': so.get('int_status', 'PUBLISHED'), 'kind': 'school', 'days': shape['lessonDays']})
@@ -101,17 +110,20 @@ SCHOOL = {
 
 RESORTS = [
     {'id': 'C', 'key': 'arcs', 'kanji': '三', 'short': 'Les Arcs 1800', 'sub': 'France · fly Geneva · ≈3 h transfer', 'airport': 'GVA', 'carre': True, 'food': 65},
-    {'id': 'B', 'key': 'stubai', 'kanji': '二', 'short': 'Stubai (Fulpmes)', 'sub': 'Austria · fly Innsbruck · 25 min transfer', 'airport': 'INN', 'touristTax': 4.8, 'food': 60},
 ]
+# Extra resorts carry their own metadata (_resort) and lesson plan (_school) in their research JSON.
+EXTRA_KEYS = ['geneva2', 'tarentaise']
 
 def main() -> None:
     cells, notes = {}, {}
     resorts = list(RESORTS)
-    pivot_path = os.path.join(R, 'round2_pivot.json')
-    if os.path.exists(pivot_path):
-        P = load('round2_pivot.json')
-        resorts.append(P['_resort'])
-        SCHOOL['pivot'] = P['_school']
+    for key in EXTRA_KEYS:
+        path = os.path.join(R, f'round2_{key}.json')
+        if os.path.exists(path):
+            X = load(f'round2_{key}.json')
+            if '_resort' in X:
+                resorts.append(X['_resort'])
+                SCHOOL[key] = X['_school']
     for r in resorts:
         data = load(f"round2_{r['key']}.json")
         cells[r['id']] = {}
@@ -129,7 +141,7 @@ def main() -> None:
     with urllib.request.urlopen(VOTE_API) as resp:
         live = json.load(resp)
     r1 = [b for b in live['ballots'] if not b['answers'].get('round')]
-    out = {'resorts': [{k: r[k] for k in ('id', 'kanji', 'short', 'sub')} for r in resorts], 'shapes': SHAPES, 'cells': cells,
+    out = {'resorts': [dict({k: r[k] for k in ('id', 'kanji', 'short', 'sub')}, label=r.get('label', r['short'] + ' (France)')) for r in resorts], 'shapes': SHAPES, 'cells': cells,
            'round1': {'ballots': r1}}
     with open(os.path.join(ROOT, 'data2.generated.json'), 'w') as f:
         json.dump(out, f, ensure_ascii=False, indent=1)

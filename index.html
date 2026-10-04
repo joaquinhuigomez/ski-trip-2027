@@ -690,7 +690,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
 
 <script src="data.js?v=4"></script>
 <script src="images.js?v=4"></script>
-<script src="data2.js?v=4"></script>
+<script src="data2.js?v=5"></script>
 <script>
 (() => {
   'use strict';
@@ -966,13 +966,12 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
     const LEV = [['ski1', 'Ski one day less'], ['les1', 'One fewer lesson day'], ['les2', 'Two fewer lesson days'], ['bags', 'Share hold bags']];
     $('#levers').innerHTML = `<span class="label">Cost levers</span>` + LEV.map(([k, l]) => `<label class="lev"><input type="checkbox" data-lev="${k}" id="lev-${k}">${esc(l)}</label>`).join('') + `<span class="small muted">Tick to see the saving in every price.</span>`;
     $('#levers').addEventListener('change', e => { const k = e.target.dataset.lev; if (!k) return; if (e.target.checked) { levers.add(k); if (k === 'les1') { levers.delete('les2'); $('#lev-les2').checked = false; } if (k === 'les2') { levers.delete('les1'); $('#lev-les1').checked = false; } } else levers.delete(k); drawMatrix(); });
-    const pv = R2.pivot;
-    $('#pivot').innerHTML = `<div class="sub-h"><span class="kj" lang="zh-Hant">四</span><h3>New option: ${esc(pv.name)}</h3><span class="label">${esc(pv.transfer.split(';')[0])}</span></div>
+    $('#pivot').innerHTML = R2.newOptions.map(pv => `<div class="sub-h"><span class="kj" lang="zh-Hant">${pv.kanji}</span><h3>New option: ${esc(pv.name)}</h3><span class="label">${esc(pv.transfer.split(';')[0])}</span></div>
       <div class="body2"><div class="prose"><p class="lead">${esc(pv.vibe)}</p><p>${esc(pv.why)}</p>
         <div class="pc"><div class="pro"><span class="label">Why it works</span><ul style="margin-top:.6rem">${pv.pros.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div><div class="con"><span class="label">Watch-outs</span><ul style="margin-top:.6rem">${pv.cons.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div></div></div>
-        <div style="display:grid;gap:1rem"><div class="gallery">${pv.images.map(im => `<figure class="photo">${photo(im)}<span class="cap">${esc(im.author)}</span></figure>`).join('')}</div>
+        <div style="display:grid;gap:1rem">${pv.images.length ? `<div class="gallery">${pv.images.map(im => `<figure class="photo">${photo(im)}<span class="cap">${esc(im.author)}</span></figure>`).join('')}</div>` : ''}
         <ul class="menu">${pv.food.map(f => `<li><b>${esc(f.name)}</b><span class="pr">${esc(f.price)}</span><span class="w">${esc(f.what)}</span></li>`).join('')}</ul>
-        <p class="small muted">Photos show the Grand Massif ski area (Flaine), which Les Carroz links into.</p></div></div>`;
+        ${pv.photoNote ? `<p class="small muted">${esc(pv.photoNote)}</p>` : ''}</div></div>`).join('<div style="height:2.5rem"></div>');
     $('#mx').addEventListener('click', e => { const b = e.target.closest('button.cell'); if (!b) return; sel = sel === b.dataset.key ? null : b.dataset.key; drawMatrix(); });
     drawMatrix();
     // flexible attendance: per-night share of the full-week flat
