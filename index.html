@@ -1117,8 +1117,10 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
     const a = collect(); const miss = Q.filter(q => q.required && (a[q.id] == null || (Array.isArray(a[q.id]) && !a[q.id].length))).map(q => `${KANJI[Q.indexOf(q)]} (${Q.indexOf(q) + 1})`);
     if (miss.length) { setStatus(`Still to answer: question ${miss.join(', ')}.`, 'err'); return; }
     const btn = $('#submit'); btn.disabled = true; setStatus('Stamping…');
-    try { state = await api('POST', { name: n, type: 'ballot', answers: a, comment: $('#comment').value.trim() }); $('#comment').value = ''; try { const v = votedHere(); if (!v.includes(n)) localStorage.setItem('yuki-voted', JSON.stringify(v.concat(n))); } catch (e) {} setStatus(`Stamped. Thanks, ${n}. You can re-vote until ${closeLabel}.`, 'ok'); renderResults(); }
-    catch (err) { setStatus('Couldn’t reach the vote server. Tap “Copy for WhatsApp” and paste your vote into the group chat instead.', 'err'); }
+    // One automatic retry: Apps Script occasionally fails a single request (cold start / brief hiccup).
+    const send = () => api('POST', { name: n, type: 'ballot', answers: a, comment: $('#comment').value.trim() });
+    try { try { state = await send(); } catch (first) { setStatus('Server was slow, trying again…'); await new Promise(r => setTimeout(r, 1500)); state = await send(); } $('#comment').value = ''; try { const v = votedHere(); if (!v.includes(n)) localStorage.setItem('yuki-voted', JSON.stringify(v.concat(n))); } catch (e) {} setStatus(`Stamped. Thanks, ${n}. You can re-vote until ${closeLabel}.`, 'ok'); renderResults(); }
+    catch (err) { setStatus('The vote server didn’t answer. Wait a minute and tap “Stamp my vote” again. If it still fails, tap “Copy for WhatsApp” and paste your vote into the group chat.', 'err'); }
     finally { btn.disabled = false; } });
   // Shared tally renderer (used for live round 2 and the frozen round-1 snapshot)
   function tallyHTML(questions, bs, opts = {}) {
