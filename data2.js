@@ -3008,7 +3008,7 @@ window.ROUND2 = {
     },
     {
      "id": "1300",
-     "label": "Over £1,300"
+     "label": "I don’t mind"
     },
     {
      "id": "skip",

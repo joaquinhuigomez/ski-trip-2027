@@ -64,7 +64,7 @@ R2.update({
     {'id': 'resort', 'type': 'rank', 'required': True, 'short': 'Resort', 'title': 'Rank the resorts', 'help': 'Put your favourite first.',
      'options': [{'id': r['id'], 'label': r['label']} for r in gen['resorts']]},
     {'id': 'budget', 'type': 'single', 'required': False, 'anon': True, 'short': 'Comfortable budget', 'title': 'What all-in budget feels comfortable, excluding food?',
-     'options': [{'id': 'u700', 'label': 'Under £700'}, {'id': '700', 'label': '£700–1,000'}, {'id': '1000', 'label': '£1,000–1,300'}, {'id': '1300', 'label': 'Over £1,300'}, {'id': 'skip', 'label': 'Prefer not to say'}]},
+     'options': [{'id': 'u700', 'label': 'Under £700'}, {'id': '700', 'label': '£700–1,000'}, {'id': '1000', 'label': '£1,000–1,300'}, {'id': '1300', 'label': 'I don’t mind'}, {'id': 'skip', 'label': 'Prefer not to say'}]},
     {'id': 'levers', 'type': 'multi', 'required': False, 'anon': True, 'short': 'Cost levers', 'title': 'Which cost levers would you accept?', 'help': 'Try them on the price table above first.',
      'options': [{'id': 'ski1', 'label': 'Ski one day less (rest or sightseeing day instead)'}, {'id': 'lessons', 'label': 'Fewer lesson days'}, {'id': 'group', 'label': 'Group lessons instead of a private instructor for the girls'}, {'id': 'share', 'label': 'Share a room or double bed for a cheaper flat'}, {'id': 'bags', 'label': 'Share hold bags'}, {'id': 'none', 'label': 'None of these'}]},
     {'id': 'flex', 'type': 'single', 'required': False, 'anon': True, 'short': 'Part of a longer trip', 'title': 'If the group picks a longer trip than suits you, would you join for part of it?',
