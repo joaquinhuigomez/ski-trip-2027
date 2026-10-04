@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>雪旅 · Alps Ski Trip 2027</title>
+<title>滑雪團 · Alps Ski Trip 2027</title>
 <meta name="description" content="Three researched ski proposals for late January 2027 — Val Thorens, Stubai, Les Arcs — with costs, and a live vote.">
-<meta property="og:title" content="雪旅 · Alps Ski Trip 2027">
+<meta property="og:title" content="滑雪團 · Alps Ski Trip 2027">
 <meta property="og:description" content="Val Thorens, Stubai or Les Arcs? Compare and stamp your vote.">
 <meta property="og:image" content="https://images.unsplash.com/photo-1527770442287-92793b984a60?w=1200&q=80&auto=format&fit=crop">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Jost:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Noto+Serif+TC:wght@500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Jost:wght@400;500;600&display=swap">
 <style>
 /* Concept: 余白 — a winter issue of a Japanese travel magazine laid over a Shinkai dusk. Indigo ink on snow paper; one vermilion seal marks every decision. */
 :root{
@@ -27,6 +27,7 @@
   --f-display:"Shippori Mincho","Hiragino Mincho ProN","Songti TC",Georgia,serif;
   --f-body:"Zen Kaku Gothic New","Hiragino Sans","PingFang TC",system-ui,sans-serif;
   --f-label:"Jost","Futura","Avenir Next",system-ui,sans-serif;
+  --f-zh:"Noto Serif TC","Songti TC","PMingLiU",serif;
   --fs-label:.6875rem; --fs-small:.8125rem; --fs-body:.9375rem; --fs-lead:1.0625rem; --fs-h3:1.25rem;
   --fs-h2:clamp(1.625rem,1.1rem + 1.6vw,2.25rem); --fs-h1:clamp(2.25rem,1.4rem + 3vw,3.5rem); --fs-kanji:clamp(4.5rem,3rem + 7vw,9rem);
   --maxw:72rem; --gutter:clamp(16px,3vw,32px); --sec:clamp(4.5rem,9vw,8rem);
@@ -116,6 +117,7 @@ section.sec{padding-block:var(--sec)}
 .ticket > div + div{border-left:1px dashed rgba(27,31,42,.35)}
 .ticket .t-l{font:500 .625rem/1.2 var(--f-label);letter-spacing:.18em;text-transform:uppercase;color:#555C6B}
 .ticket .t-v{font:500 1.6rem/1 var(--f-label)}
+.pcard .ticket .t-v,.glance .ticket .t-v{font-size:1.25rem}.pcard .ticket > div,.glance .ticket > div{padding:.65rem .8rem}
 .ticket .t-v small{font-size:.75rem;letter-spacing:.06em}
 .ticket .t-k{font:700 .8rem/1 var(--f-display);color:#1F3A5F}
 
@@ -166,7 +168,7 @@ a.photo:hover img,.photo:hover img{transform:scale(1.035)}
 .card .mon.adv{color:var(--shu)}
 .card .nm{font:700 1.1rem/1.2 var(--f-display)}
 .card .cls{font:500 .625rem/1.3 var(--f-label);letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2);display:flex;align-items:center;gap:.4rem}
-.stat{display:grid;grid-template-columns:1.6rem 1fr;align-items:center;font-size:var(--fs-small)}
+.stat{display:grid;align-items:center;font-size:var(--fs-small)}
 .stat .kj{font:700 .95rem/1 var(--f-display);color:var(--ai)}
 .pips{display:flex;gap:.25rem}.pips i{width:.6rem;height:.6rem;border-radius:50%;border:1px solid var(--ai)}.pips i.on{background:var(--ai)}
 .lvl{height:.35rem;background:var(--washi);position:relative;overflow:hidden}
@@ -405,6 +407,9 @@ footer .credits{columns:2 18rem;gap:2rem;font-size:.72rem}
 footer .credits div{break-inside:avoid;margin-bottom:.3rem}
 .theme{background:transparent;border:1px solid rgba(255,255,255,.3);color:var(--on-ai);font:500 var(--fs-label)/1 var(--f-label);letter-spacing:.18em;text-transform:uppercase;padding:.6rem .8rem;cursor:pointer;justify-self:start}
 
+/* Chinese glyphs use a Traditional Chinese face so HK readers see native forms */
+.zh,.brand b,.yuki,.tate,.sub-h .kj,.hanko,.canto q,.pcard .kanji,.opener .big,.q-n,.rank-row .pos,.step::before,.glance h4 b,.links a.k,.ctable thead th.p b,.stub .l .zh{font-family:var(--f-zh)}
+.mon.int{color:#9DD3FF}.card .mon.int{color:var(--blue)}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -412,7 +417,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
 
 <header class="nav" id="nav">
   <div class="wrap">
-    <a class="brand" href="#top">雪旅 <span>Alps 2027</span></a>
+    <a class="brand" href="#top"><b lang="zh-Hant">滑雪團</b> <span>Alps 2027</span></a>
     <nav class="links" aria-label="Sections" id="links">
       <a href="#brief">Brief</a><a href="#party">Party</a><a href="#compare">Compare</a>
       <span id="nav-p" style="display:contents"></span>
@@ -452,7 +457,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
     <g id="village"></g>
   </svg>
   <canvas id="snow" aria-hidden="true"></canvas>
-  <div class="yuki" aria-hidden="true">雪旅<small>Yuki-tabi</small></div>
+  <div class="yuki" lang="zh-Hant" aria-hidden="true">滑雪團</div>
   <div class="wrap">
     <p class="label">Alps · last week of January 2027</p>
     <h1>Late January, above the clouds</h1>
@@ -460,8 +465,8 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
     <div class="hero-row">
       <div class="mons" id="mons" aria-label="Travelling party"></div>
       <div class="ticket" aria-label="Countdown">
-        <div><span class="t-l">雪 First lift in</span><span class="t-v"><span id="cd">—</span> <small>days</small></span></div>
-        <div><span class="t-l">投票 Votes close</span><span class="t-k" id="cd-vote">—</span></div>
+        <div><span class="t-l">First lift in</span><span class="t-v"><span id="cd">—</span> <small>days</small></span></div>
+        <div><span class="t-l">Votes close</span><span class="t-k" id="cd-vote">—</span></div>
         <div><span class="t-l">Book by</span><span class="t-k" id="cd-book">—</span></div>
       </div>
     </div>
@@ -471,11 +476,11 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
 
 <!-- BRIEF -->
 <section class="sec washi" id="brief"><div class="wrap frame">
-  <aside class="tate">方針<small>The brief</small></aside>
+  <aside class="tate" lang="zh-Hant">要求<small>The brief</small></aside>
   <div>
     <div class="head">
       <h2>What we asked of the mountains</h2>
-      <p class="lead">Every resort had to pass the same five tests. Verbier, St Anton and Chamonix fell at the first: wonderful, but too steep for four people on their first week.</p>
+      <p class="lead">Every resort had to pass the same five tests. Verbier, St Anton and Chamonix fell at the first: wonderful, but too steep for three beginners.</p>
     </div>
     <div class="rules">
       <div class="rule-list" id="rules"></div>
@@ -495,24 +500,24 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
 
 <!-- PARTY -->
 <section class="sec" id="party"><div class="wrap frame">
-  <aside class="tate">同行<small>The party</small></aside>
+  <aside class="tate" lang="zh-Hant">成員<small>The party</small></aside>
   <div>
     <div class="head">
       <h2>The travelling party</h2>
-      <p class="lead">Two skiers who will vanish up the Aiguille Rouge, four who will own the nursery slope by Tuesday. Whoever can come, comes. Late arrivals and early exits are allowed.</p>
+      <p class="lead">Two advanced skiers, one intermediate and three beginners who have each had a few days on skis. Whoever can come, comes. Late arrivals and early exits are allowed.</p>
     </div>
     <div class="party" id="crew"></div>
-    <div class="canto"><q lang="yue">跌親都要靚</q><span>Even when you fall, fall fabulously. Ski-school motto, unofficial.</span></div>
+    <div class="canto"><q lang="zh-Hant-HK">慢慢嚟，唔使驚</q><span>Take it slow, nothing to be scared of. The lesson group’s only rule.</span></div>
   </div>
 </div></section>
 
 <!-- COMPARE -->
 <section class="sec washi" id="compare"><div class="wrap frame">
-  <aside class="tate">比較<small>Side by side</small></aside>
+  <aside class="tate" lang="zh-Hant">比較<small>Side by side</small></aside>
   <div>
     <div class="head">
       <h2>Weighing up the mountains</h2>
-      <p class="lead">All-in per person for Sat 23 → Sat 30 January, covering flight, bag, transfer, flat, lift pass, rental, insurance and the girls’ lessons. Food is extra and shown below.</p>
+      <p class="lead">All-in per person for Sat 23 → Sat 30 January, covering flight, bag, transfer, flat, lift pass, rental, insurance and lessons for the three beginners. Food is extra and shown below.</p>
     </div>
     <div class="pcards" id="pcards"></div>
     <div class="ctable-wrap"><table class="ctable" id="ctable"></table></div>
@@ -524,7 +529,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
 
 <!-- DATES -->
 <section class="sec washi" id="dates"><div class="wrap frame">
-  <aside class="tate">日程<small>Dates</small></aside>
+  <aside class="tate" lang="zh-Hant">日程<small>Dates</small></aside>
   <div>
     <div class="head">
       <h2>Choosing the week</h2>
@@ -545,7 +550,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
     <path d="M300 40c130 6 250 96 256 230s-90 270-246 290S38 470 34 300 170 34 300 40z"/>
   </svg>
   <div class="wrap frame" style="position:relative">
-    <aside class="tate">投票<small>Vote</small></aside>
+    <aside class="tate" lang="zh-Hant">投票<small>Vote</small></aside>
     <div>
       <div class="head">
         <h2>Stamp your choice</h2>
@@ -578,7 +583,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
 
 <!-- NEXT -->
 <section class="sec" id="next"><div class="wrap frame">
-  <aside class="tate">準備<small>Next</small></aside>
+  <aside class="tate" lang="zh-Hant">準備<small>Next</small></aside>
   <div>
     <div class="head">
       <h2>Before the first lift</h2>
@@ -621,15 +626,18 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
   const KANJI = ['一','二','三','四','五','六','七'];
 
   /* ---------- cost engine ---------- */
-  const crewN = D.crew.length, nAdv = D.crew.filter(c => c.level === 'adv').length, nBeg = crewN - nAdv;
+  const crewN = D.crew.length, nAdv = D.crew.filter(c => c.level === 'adv').length, nInt = D.crew.filter(c => c.level === 'int').length, nBeg = crewN - nAdv - nInt;
+  // Intermediate skiers pay what each item says via intAs: 'adv' (full lift pass), 'beg' (rental), 0 (no lessons); default = beginner value.
   function linePP(it, role, n = crewN) {
     if (it.group) return toEur(it.amount, it.cur) / n;
-    const v = role === 'adv' ? it.adv : it.beg; return v == null ? 0 : toEur(v, it.cur);
+    let v = role === 'adv' ? it.adv : role === 'int' ? (it.intAs === 'adv' ? it.adv : it.intAs === 0 ? 0 : it.beg) : it.beg;
+    return v == null ? 0 : toEur(v, it.cur);
   }
   function totals(p, scen = 'S1', n = crewN) {
-    let adv = 0, beg = 0;
-    (p.costs[scen] || p.costs.S1).forEach(it => { if (it.optional) return; adv += linePP(it, 'adv', n); beg += linePP(it, 'beg', n); });
-    return { adv, beg, group: adv * nAdv + beg * nBeg, avg: (adv * nAdv + beg * nBeg) / crewN };
+    let adv = 0, int = 0, beg = 0;
+    (p.costs[scen] || p.costs.S1).forEach(it => { if (it.optional) return; adv += linePP(it, 'adv', n); int += linePP(it, 'int', n); beg += linePP(it, 'beg', n); });
+    const group = adv * nAdv + int * nInt + beg * nBeg;
+    return { adv, int, beg, group, avg: group / crewN };
   }
 
   /* ---------- hero scene (cel-shaded peaks: lit west face, shadow east face) ---------- */
@@ -683,8 +691,8 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
 
   /* brief */
   const RULES = [
-    ['First-timers welcome', 'Gentle, close-by nursery slopes and a ski school with good English, so four beginners can reach blue runs by Friday.'],
-    ['Still fun for experts', 'Proper steeps and vertical for two 6–7-season skiers.'],
+    ['Beginner-friendly', 'Gentle, close-by slopes and a patient English-speaking ski school, so three beginners (one nervous after a fall, and she feels the cold) can reach blue runs by Friday.'],
+    ['Still fun for the rest', 'Long blues and reds for Natasha; proper steeps and vertical for two 6–7-season skiers.'],
     ['No car', 'Airport to door by shuttle, minibus or train, then walk to the lift. Under 5 minutes is the goal.'],
     ['Budget', 'Under £100 per person per night for the flat, ideally; never over £200. No hostels and no five-star hotels.'],
     ['The week', 'Last week of January, using the same five days of leave (Mon 25 – Fri 29), plus one or both weekends.']
@@ -692,15 +700,11 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
   $('#rules').innerHTML = RULES.map(([k, v]) => `<div class="rule-row"><span class="k">${k}</span><span>${v}</span></div>`).join('');
 
   /* party */
-  const progW = ['14%', '14%', '14%', '14%'];
-  $('#crew').innerHTML = D.crew.map(c => {
-    const adv = c.level === 'adv';
-    return `<article class="card"><div class="card-top"><span class="mon ${c.level}">${esc(c.name[0])}</span><div><div class="nm">${esc(c.name)}</div><div class="cls"><i class="pm ${adv ? 'k' : 'g'}" aria-hidden="true"></i>${esc(c.role)} · ${adv ? 'advanced' : 'first-timer'}</div></div></div>
-      <div class="stat"><span class="kj" title="Skill">技</span><span class="pips" aria-label="Skill ${adv ? 4 : 1} of 5">${[1,2,3,4,5].map(i => `<i class="${i <= (adv ? 4 : 1) ? 'on' : ''}"></i>`).join('')}</span></div>
-      ${adv ? `<div class="stat"><span class="kj" title="Lessons">課</span><span class="small muted">No lessons needed</span></div>`
-            : `<div class="stat"><span class="kj" title="Progress">進</span><div><div class="lvl" style="--w:${progW[0]}"></div><span class="small muted">Day 1 → blue run by Friday</span></div></div>`}
-      <p class="passive">${esc(c.tag)}</p></article>`;
-  }).join('');
+  const LV = { adv: ['k', 'advanced'], int: ['b', 'intermediate'], beg: ['g', 'beginner'] };
+  $('#crew').innerHTML = D.crew.map(c => `<article class="card"><div class="card-top"><span class="mon ${c.level}">${esc(c.name[0])}</span><div><div class="nm">${esc(c.name)}</div><div class="cls"><i class="pm ${LV[c.level][0]}" aria-hidden="true"></i>${esc(c.role)}</div></div></div>
+      <div class="stat"><span class="small muted" style="grid-column:1/-1;display:flex;gap:.6rem;align-items:center">Level <span class="pips" aria-label="Level ${c.skill} of 5">${[1,2,3,4,5].map(i => `<i class="${i <= c.skill ? 'on' : ''}"></i>`).join('')}</span></span></div>
+      <div class="small muted">${esc(c.status)}</div>
+      <p class="passive">${esc(c.tag)}</p></article>`).join('');
 
   /* compare */
   const P = D.proposals;
@@ -709,13 +713,14 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
     return `<a class="pcard" href="#p-${p.id}"><figure class="photo">${photo(im.card)}<span class="corner">${esc(p.country)} · ${esc(p.airport)}</span><span class="kanji" aria-hidden="true">${p.kanji}</span></figure>
       ${p.recommended ? '<span class="hanko stamp" aria-label="Planner’s pick">推薦</span>' : ''}
       <div><div class="label">Proposal ${p.letter}</div><h3>${esc(p.name)}</h3><p class="small muted">${esc(p.feel)}</p></div>
-      <div class="ticket"><div><span class="t-l">Advanced pp</span><span class="t-v">${G(t.adv / FX)}</span></div><div><span class="t-l">Beginner pp</span><span class="t-v">${G(t.beg / FX)}</span></div></div></a>`; }).join('');
-  const rows = [['Fly into', 'fly'], ['Transfer', 'transfer'], ['Base', 'base'], ['For beginners', 'beginner'], ['For advanced', 'advanced'], ['Snow, late Jan', 'snow'], ['Flat to lift', 'lift'], ['Bedrooms', 'beds'], ['Après', 'apres'], ['That week', 'week'], ['Main catch', 'watch']];
+      <div class="ticket"><div><span class="t-l">Advanced</span><span class="t-v">${G(t.adv / FX)}</span></div><div><span class="t-l">Intermediate</span><span class="t-v">${G(t.int / FX)}</span></div><div><span class="t-l">Beginner</span><span class="t-v">${G(t.beg / FX)}</span></div></div></a>`; }).join('');
+  const rows = [['Fly into', 'fly'], ['Transfer', 'transfer'], ['Base', 'base'], ['For beginners', 'beginner'], ['For advanced', 'advanced'], ['Snow, late Jan', 'snow'], ['Flat to lift', 'lift'], ['Bedrooms', 'beds'], ['Cold & confidence', 'cold'], ['Après', 'apres'], ['That week', 'week'], ['Main catch', 'watch']];
   const cell = v => v == null ? '<td>—</td>' : (typeof v === 'object' ? `<td>${rating(v)}</td>` : `<td>${esc(v)}</td>`);
   $('#ctable').innerHTML = `<thead><tr><th></th>${P.map(p => `<th class="p" scope="col"><b>${p.kanji}</b>${esc(p.short)}</th>`).join('')}</tr></thead><tbody>
     ${rows.map(([l, k]) => `<tr><th scope="row">${l}</th>${P.map(p => cell(p.compare[k])).join('')}</tr>`).join('')}
     <tr class="money"><th scope="row">Advanced, all-in pp</th>${P.map(p => { const t = totals(p); return `<td class="num">${G(t.adv / FX)}<small>${E(t.adv)}</small></td>`; }).join('')}</tr>
-    <tr class="money"><th scope="row">Beginner, all-in pp</th>${P.map(p => { const t = totals(p); return `<td class="num">${G(t.beg / FX)}<small>${E(t.beg)} · lessons + rental included</small></td>`; }).join('')}</tr>
+    <tr class="money"><th scope="row">Intermediate, all-in pp</th>${P.map(p => { const t = totals(p); return `<td class="num">${G(t.int / FX)}<small>${E(t.int)} · Natasha: full pass, rental, no lessons</small></td>`; }).join('')}</tr>
+    <tr class="money"><th scope="row">Beginner, all-in pp</th>${P.map(p => { const t = totals(p); return `<td class="num">${G(t.beg / FX)}<small>${E(t.beg)} · lessons for 3 + rental included</small></td>`; }).join('')}</tr>
     <tr class="money"><th scope="row">Whole group</th>${P.map(p => { const t = totals(p); return `<td class="num">${G(t.group / FX)}<small>${E(t.group)} for ${crewN}</small></td>`; }).join('')}</tr>
     <tr><th scope="row">If only 5 / 4 come</th>${P.map(p => { const a = totals(p, 'S1', 5).avg, b = totals(p, 'S1', 4).avg, s = totals(p).avg; return `<td class="num">+${G((a - s) / FX)} / +${G((b - s) / FX)} pp<br><span class="muted">the flat costs the same, split fewer ways</span></td>`; }).join('')}</tr>
     <tr><th scope="row">Food, 7 days pp</th>${P.map(p => `<td class="num">${G(p.foodPerDay * 7 / FX)} <span class="muted">(${E(p.foodPerDay)}/day)</span></td>`).join('')}</tr>
@@ -724,7 +729,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
 
   /* proposals */
   const ridge = (from, to, rim = true) => `<svg class="ridge" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="background:${from}"><path d="M0 80V52l120-30 90 22 140-40 110 34 80-14 150 26 130-44 120 30 100-12 160 34 140-28 100 18V80z" fill="${to}"/>${rim ? '<path d="M350 4l110 34 80-14" fill="none" stroke="var(--kin)" stroke-width="1" opacity=".55"/>' : ''}</svg>`;
-  const subH = (kj, title, label) => `<div class="sub-h"><span class="kj">${kj}</span><h3>${title}</h3>${label ? `<span class="label">${label}</span>` : ''}</div>`;
+  const subH = (kj, title, label) => `<div class="sub-h"><span class="kj" lang="zh-Hant">${kj}</span><h3>${title}</h3>${label ? `<span class="label">${label}</span>` : ''}</div>`;
   const DAYS = [['Sat', '23'], ['Sun', '24'], ['Mon–Tue', '25–26'], ['Wed–Thu', '27–28'], ['Fri', '29'], ['Sat', '30']];
   $('#nav-p').innerHTML = P.map(p => `<a class="k" href="#p-${p.id}" title="${esc(p.short)}">${p.kanji}</a>`).join('');
   $('#proposals').innerHTML = P.map((p, idx) => {
@@ -736,14 +741,14 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
         <div class="top"><span class="tier">${tierLabel}</span><h4>${esc(s.name)}</h4><span class="small muted">${esc(s.where)}</span></div>
         <div class="mid"><div class="beds">${s.beds.split(' · ').map(b => `<span>${esc(b)}</span>`).join('')}</div><span><b>Lift:</b> ${esc(s.lift)}</span><span class="muted">${esc(s.rating)} · ${esc(s.note || '')}</span></div>
         <div class="bot"><div class="price num">${G(tot / FX / 6 / 7)}<small>pp / night · ${G(tot / FX)} (${E(tot)}) total, 7 nights</small></div><div style="display:grid;gap:.4rem;justify-items:end">${pill(s.status)}<a href="${esc(s.url)}" target="_blank" rel="noopener">View listing ↗</a></div></div></article>`; }).join('');
-    const costRows = p.costs.S1.map(it => { const a = linePP(it, 'adv'), b = linePP(it, 'beg'); const grp = it.group ? toEur(it.amount, it.cur) : a * nAdv + b * nBeg;
-      return `<tr class="${it.optional ? 'optrow' : ''}"><td>${esc(it.label)}${it.note ? `<small>${esc(it.note)}</small>` : ''}${it.src ? `<small><a href="${esc(it.src)}" target="_blank" rel="noopener">source ↗</a></small>` : ''}</td><td>${pill(it.status)}</td><td class="r num">${a ? E(a) : '—'}</td><td class="r num">${b ? E(b) : '—'}</td><td class="r num">${E(grp)}</td></tr>`; }).join('');
+    const costRows = p.costs.S1.map(it => { const a = linePP(it, 'adv'), m = linePP(it, 'int'), b = linePP(it, 'beg'); const grp = it.group ? toEur(it.amount, it.cur) : a * nAdv + m * nInt + b * nBeg;
+      return `<tr class="${it.optional ? 'optrow' : ''}"><td>${esc(it.label)}${it.note ? `<small>${esc(it.note)}</small>` : ''}${it.src ? `<small><a href="${esc(it.src)}" target="_blank" rel="noopener">source ↗</a></small>` : ''}</td><td>${pill(it.status)}</td><td class="r num">${a ? E(a) : '—'}</td><td class="r num">${m ? E(m) : '—'}</td><td class="r num">${b ? E(b) : '—'}</td><td class="r num">${E(grp)}</td></tr>`; }).join('');
     const sc = p.school;
     const week = DAYS.map(([dn, dd], i) => {
       if (i === 0) return `<div class="day edge"><span class="dn">${dn}</span><span class="dd">${dd}</span><span>Fly ${esc(p.airport)}, transfer up, supermarket run, first fondue.</span></div>`;
       if (i === 5) return `<div class="day edge"><span class="dn">${dn}</span><span class="dd">${dd}</span><span>Pack, transfer down, fly home. (Sunday option: one more ski day.)</span></div>`;
       const r = sc.ladder[i - 1];
-      return `<div class="day"><span class="dn">${dn}</span><span class="dd">${dd}</span><span class="who"><i class="pm ${r.piste}"></i>Girls</span><span>${esc(r.what)}</span><span class="who"><i class="pm k"></i>Boys</span><span>${esc(p.boys[i - 1])}</span></div>`;
+      return `<div class="day"><span class="dn">${dn}</span><span class="dd">${dd}</span><span class="who"><i class="pm ${r.piste}"></i>Chloe, Kannes, Ina</span><span>${esc(r.what)}</span><span class="who"><i class="pm k"></i>Joaquin, Juan${i > 1 ? ', Natasha' : ''}</span><span>${esc(p.boys[i - 1])}</span></div>`;
     }).join('');
     const tr = p.transport;
     const routeMid = p.airport === 'Innsbruck' ? ['25 min minibus', 'Fulpmes'] : (p.id === 'les-arcs' ? ['≈3 h bus', 'Arc 1800'] : ['≈3 h bus', 'Val Thorens']);
@@ -759,18 +764,18 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
             <div class="gallery">${['g1', 'g2', 'g3'].map(k => `<figure class="photo">${photo(im[k])}<span class="cap">${esc(im[k].author)}</span></figure>`).join('')}</div>
             <div class="pc"><div class="pro"><span class="label">Why it works</span><ul style="margin-top:.6rem">${p.pros.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div><div class="con"><span class="label">Watch-outs</span><ul style="margin-top:.6rem">${p.cons.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div></div>
           </div>
-          <aside class="glance"><h4>概要 <span>At a glance</span></h4>
+          <aside class="glance"><h4><b lang="zh-Hant" style="font-weight:700">概要</b> <span>At a glance</span></h4>
             <dl><dt>Base</dt><dd>${esc(p.compare.base)}</dd><dt>Airport</dt><dd>${esc(p.compare.fly)}</dd><dt>Transfer</dt><dd>${esc(p.compare.transfer)}</dd><dt>To lift</dt><dd>${esc(p.compare.lift)}</dd><dt>The flat</dt><dd>${esc(pick.name)}</dd><dt>That week</dt><dd>${esc(p.compare.week)}</dd><dt>Feel</dt><dd>${esc(p.feel)}</dd></dl>
-            <div class="ticket"><div><span class="t-l">Advanced pp</span><span class="t-v">${G(t.adv / FX)}</span></div><div><span class="t-l">Beginner pp</span><span class="t-v">${G(t.beg / FX)}</span></div></div>
-            <span class="small muted">All-in for Sat 23 → Sat 30, excluding food.</span>
+            <div class="ticket"><div><span class="t-l">Advanced</span><span class="t-v">${G(t.adv / FX)}</span></div><div><span class="t-l">Intermediate</span><span class="t-v">${G(t.int / FX)}</span></div><div><span class="t-l">Beginner</span><span class="t-v">${G(t.beg / FX)}</span></div></div>
+            <span class="small muted">All-in per person for Sat 23 → Sat 30, excluding food.</span>
           </aside>
         </div>
 
         <div class="sub" id="${p.id}-week">${subH('旅程', 'A week, as we’d spend it', 'Saturday to Saturday')}<div class="week">${week}</div></div>
 
-        <div class="sub" id="${p.id}-stay">${subH('宿', 'Where we’d wake up', 'Sat 23 → Sat 30 · 6 adults')}<div class="stays">${stays}</div><p class="small muted">${esc(p.stayNote)}</p></div>
+        <div class="sub" id="${p.id}-stay">${subH('住宿', 'Where we’d wake up', 'Sat 23 → Sat 30 · 6 adults')}<div class="stays">${stays}</div><p class="small muted">${esc(p.stayNote)}</p></div>
 
-        <div class="sub" id="${p.id}-school">${subH('入門', 'First turns, gently taken', 'For Chloe, Kannes, Ina & Natasha')}
+        <div class="sub" id="${p.id}-school">${subH('滑雪課', 'First turns, gently taken', 'For Chloe, Kannes & Ina')}
           <div class="school"><div style="display:grid;gap:1rem">
             <div class="rec"><span class="hanko sm" aria-label="Recommended">推薦</span><p class="small">${esc(sc.rec)}</p></div>
             <div style="overflow-x:auto"><table class="opts-t"><thead><tr><th>School</th><th>Schedule</th><th class="r">Per girl</th><th>Size</th><th>Reviews</th><th></th></tr></thead><tbody>
@@ -778,10 +783,10 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
             </tbody></table></div>
             <div class="prog">${sc.ladder.map(r => `<div class="${r.piste}"><div class="bar"></div><b>${esc(r.day)}</b><span>${esc(r.what)}</span></div>`).join('')}</div>
           </div>
-          <div style="display:grid;gap:.9rem"><figure class="photo">${photo(im.lesson)}<span class="cap">${esc(im.lesson.author)}</span></figure><ul class="tips">${sc.tips.map(x => `<li>${esc(x)}</li>`).join('')}</ul><p class="small muted"><b>Kit:</b> ${esc(p.kitNote)}</p></div></div>
+          <div style="display:grid;gap:.9rem"><figure class="photo">${photo(im.lesson)}<span class="cap">${esc(im.lesson.author)}</span></figure><ul class="tips">${sc.tips.map(x => `<li>${esc(x)}</li>`).join('')}<li>Ina: ask for an instructor who is good with nervous returners, and keep the first two days on the gentlest slope. Warm layers matter more than skill here.</li><li>Natasha is intermediate, so no lessons. She can warm up with the beginners on Sunday, then ski blues and reds with Joaquin and Juan.</li></ul><p class="small muted"><b>Kit:</b> ${esc(p.kitNote)}</p></div></div>
         </div>
 
-        <div class="sub" id="${p.id}-food">${subH('食・酒', 'Fondue first, dancing later', `About ${E(p.foodPerDay)} pp a day`)}
+        <div class="sub" id="${p.id}-food">${subH('飲食', 'Fondue first, dancing later', `About ${E(p.foodPerDay)} pp a day`)}
           <div class="food"><ul class="menu">${p.food.map(f => `<li>${f.url ? `<a href="${esc(f.url)}" target="_blank" rel="noopener"><b>${esc(f.name)}</b></a>` : `<b>${esc(f.name)}</b>`}<span class="pr">${esc(f.price)}</span><span class="w">${esc(f.what)}</span></li>`).join('')}</ul>
           <div class="foodpics"><figure class="photo">${photo(im.food)}<span class="cap">${esc(im.food.author)}</span></figure><figure class="photo">${photo(idx === 1 ? I.B.g2 : I.interior)}<span class="cap">${esc((idx === 1 ? I.B.g2 : I.interior).author)}</span></figure></div></div>
           <p class="small muted">${esc(p.foodNote)}</p>
@@ -793,8 +798,8 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
         </div>
 
         <div class="sub" id="${p.id}-cost">${subH('費用', 'What it costs, line by line', 'Sat 23 → Sat 30 · 6 people')}
-          <div style="overflow-x:auto"><table class="costs"><thead><tr><th>Item</th><th>Data</th><th class="r">Advanced pp</th><th class="r">Beginner pp</th><th class="r">Group</th></tr></thead><tbody>${costRows}</tbody>
-          <tfoot><tr><td>Total, excluding food and optional rows</td><td></td><td class="r num">${E(t.adv)}</td><td class="r num">${E(t.beg)}</td><td class="r num">${E(t.group)}</td></tr><tr class="gbp"><td>In pounds</td><td></td><td class="r num">${G(t.adv / FX)}</td><td class="r num">${G(t.beg / FX)}</td><td class="r num">${G(t.group / FX)}</td></tr></tfoot></table></div>
+          <div style="overflow-x:auto"><table class="costs"><thead><tr><th>Item</th><th>Data</th><th class="r">Advanced pp</th><th class="r">Intermediate pp</th><th class="r">Beginner pp</th><th class="r">Group</th></tr></thead><tbody>${costRows}</tbody>
+          <tfoot><tr><td>Total, excluding food and optional rows</td><td></td><td class="r num">${E(t.adv)}</td><td class="r num">${E(t.int)}</td><td class="r num">${E(t.beg)}</td><td class="r num">${E(t.group)}</td></tr><tr class="gbp"><td>In pounds</td><td></td><td class="r num">${G(t.adv / FX)}</td><td class="r num">${G(t.int / FX)}</td><td class="r num">${G(t.beg / FX)}</td><td class="r num">${G(t.group / FX)}</td></tr></tfoot></table></div>
           <div class="srcs">${p.sources.map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)} ↗</a>`).join('')}</div>
         </div>
       </div>
@@ -809,8 +814,8 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
   $('#stubs').innerHTML = Object.keys(D.dates.scenarios).map((k, i) => {
     const nights = D.dates.nights[k];
     return `<article class="stub">${k === 'S1' ? '<span class="hanko sm" aria-label="Recommended">推薦</span>' : ''}<div class="l"><span class="d">${esc(D.dates.scenarios[k])}</span><span class="n">${nights}<small>nights · ${nights - 1} ski days</small></span></div>
-      <div class="rp"><table><thead><tr><th></th><th class="r">Adv pp</th><th class="r">Beg pp</th></tr></thead><tbody>${P.map(p => { const t = totals(p, k), b = totals(p, 'S1');
-        return `<tr><td><b>${p.kanji} ${esc(p.short)}</b><br><span class="muted small">${esc(p.dateNote[k])}</span></td><td class="r num">${G(t.adv / FX)}${k !== 'S1' ? `<br><span class="muted small">+${G((t.adv - b.adv) / FX)}</span>` : ''}</td><td class="r num">${G(t.beg / FX)}${k !== 'S1' ? `<br><span class="muted small">${t.beg >= b.beg ? '+' : '−'}${G(Math.abs(t.beg - b.beg) / FX)}</span>` : ''}</td></tr>`; }).join('')}</tbody></table></div></article>`;
+      <div class="rp"><table><thead><tr><th></th><th class="r">Adv</th><th class="r">Int</th><th class="r">Beg</th></tr></thead><tbody>${P.map(p => { const t = totals(p, k), b = totals(p, 'S1');
+        return `<tr><td><b>${p.kanji} ${esc(p.short)}</b><br><span class="muted small">${esc(p.dateNote[k])}</span></td><td class="r num">${G(t.adv / FX)}${k !== 'S1' ? `<br><span class="muted small">+${G((t.adv - b.adv) / FX)}</span>` : ''}</td><td class="r num">${G(t.int / FX)}${k !== 'S1' ? `<br><span class="muted small">${t.int >= b.int ? '+' : '−'}${G(Math.abs(t.int - b.int) / FX)}</span>` : ''}</td><td class="r num">${G(t.beg / FX)}${k !== 'S1' ? `<br><span class="muted small">${t.beg >= b.beg ? '+' : '−'}${G(Math.abs(t.beg - b.beg) / FX)}</span>` : ''}</td></tr>`; }).join('')}</tbody></table></div></article>`;
   }).join('');
   $('#partials').innerHTML = `<div><span class="label">Fri 22 → Sun 31?</span><span>Checked and ruled out. Val Thorens and Les Arcs flats only rent Saturday to Saturday, and Stubai's best flats refuse a Sunday checkout. It would also cost everyone an extra day of leave.</span></div>
     <div><span class="label">Joining late or leaving early</span><span>Fine at all three. Geneva has cheap one-way flights (Sunday out £38, Friday 18:55 back £39). Innsbruck's last Friday flight is at 15:10. Les Arcs has no weekday shuttle, so a late arrival takes the train.</span></div>
@@ -819,7 +824,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
   /* vote */
   const API = D.voteApi, Q = D.decisions;
   let me = null; try { me = localStorage.getItem('yuki-me'); } catch (e) {}
-  $('#who').innerHTML = D.crew.map(c => `<label><input type="radio" name="who" id="who-${c.name}" value="${esc(c.name)}" ${me === c.name ? 'checked' : ''}><span><i class="pm ${c.level === 'adv' ? 'k' : 'g'}"></i>${esc(c.name)}</span></label>`).join('');
+  $('#who').innerHTML = D.crew.map(c => `<label><input type="radio" name="who" id="who-${c.name}" value="${esc(c.name)}" ${me === c.name ? 'checked' : ''}><span><i class="pm ${({adv:'k',int:'b',beg:'g'})[c.level]}"></i>${esc(c.name)}</span></label>`).join('');
   const rankState = {};
   function renderQs() {
     $('#qs').innerHTML = Q.map((q, i) => {
@@ -855,7 +860,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
     renderQs(); restore(mine.answers); setStatus(`Loaded your vote from ${new Date(mine.ts).toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short' })}. Change anything and stamp again.`); }
   $('#who').addEventListener('change', loadMine);
   const label = (q, id) => q.options.find(o => o.id === id)?.label || '—';
-  function ballotText(n, a, c) { const L = [`雪旅 vote: ${n}`]; Q.forEach((q, i) => { const v = a[q.id];
+  function ballotText(n, a, c) { const L = [`滑雪團 vote: ${n}`]; Q.forEach((q, i) => { const v = a[q.id];
     const t = q.type === 'rank' ? (v === 'any' ? 'happy with any' : v.map((id, k) => `${k + 1}. ${label(q, id)}`).join('  ')) : (v ? label(q, v) : '—');
     L.push(`${i + 1}) ${q.short}: ${t}`); }); if (c) L.push(`Note: ${c}`); return L.join('\n'); }
   $('#copy').addEventListener('click', async () => { const t = ballotText(name() || '(your name)', collect(), $('#comment').value.trim());
@@ -870,7 +875,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
     catch (err) { setStatus('Couldn’t reach the vote server. Tap “Copy for WhatsApp” and paste your vote into the group chat instead.', 'err'); }
     finally { btn.disabled = false; } });
   function renderResults() { const bs = state.ballots, voted = new Set(bs.map(b => b.name));
-    $('#turnout').innerHTML = D.crew.map(c => `<span class="${voted.has(c.name) ? 'done' : ''}">${voted.has(c.name) ? '印 ' : ''}${esc(c.name)}</span>`).join('');
+    $('#turnout').innerHTML = D.crew.map(c => `<span class="${voted.has(c.name) ? 'done' : ''}">${voted.has(c.name) ? '✓ ' : ''}${esc(c.name)}</span>`).join('');
     $('#tallies').innerHTML = Q.map((q, qi) => { let sc, max;
       if (q.type === 'rank') { const n = q.options.length;
         sc = q.options.map(o => { let pts = 0; const f = []; bs.forEach(b => { const arr = b.answers[q.id]; if (!Array.isArray(arr)) return; const pos = arr.indexOf(o.id); if (pos >= 0) pts += n - pos; if (pos === 0) f.push(b.name); }); return { o, pts, who: f.length ? 'First choice: ' + f.join(', ') : '' }; });
