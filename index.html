@@ -411,6 +411,53 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
 /* Chinese glyphs use a Traditional Chinese face so HK readers see native forms */
 .zh,.brand b,.yuki,.tate,.sub-h .kj,.hanko,.canto q,.pcard .kanji,.opener .big,.q-n,.rank-row .pos,.step::before,.glance h4 b,.links a.k,.ctable thead th.p b,.stub .l .zh{font-family:var(--f-zh)}
 .mon.int{color:#9DD3FF}.card .mon.int{color:var(--blue)}
+
+/* round 2 */
+.r2-banner{background:var(--shu);color:var(--shu-ink);text-align:center;font:600 var(--fs-label)/1.4 var(--f-label);letter-spacing:.16em;text-transform:uppercase;padding:.7rem var(--gutter)}
+.r2-banner a{color:inherit}
+.changes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:1rem;margin-bottom:2rem}
+.change{background:var(--card);border:1px solid var(--rule);border-top:3px solid var(--shu);padding:1.1rem;display:grid;gap:.4rem;font-size:var(--fs-small)}
+.change b{font:700 1.05rem/1.3 var(--f-display)}
+.r1box{border-radius:2px;padding:1.4rem;margin-bottom:2.5rem}
+.r1box .results{grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));display:grid;gap:1rem 1.5rem}
+.shapes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr));gap:1rem;margin-bottom:2rem}
+.shape{background:var(--card);border:1px solid var(--rule);display:grid;grid-template-rows:auto 1fr}
+.shape .top{background:var(--ai);color:var(--on-ai);padding:.9rem 1rem;display:flex;justify-content:space-between;align-items:baseline;gap:.5rem}
+.shape .top b{font:700 1.6rem/1 var(--f-display)}
+.shape .top span{font:500 .62rem/1.2 var(--f-label);letter-spacing:.16em;text-transform:uppercase}
+.shape .body{padding:.9rem 1rem;display:grid;gap:.35rem;font-size:var(--fs-small);align-content:start}
+.shape .al{font:500 1rem/1.2 var(--f-label)}
+.shape .al b{color:var(--shu);font-size:1.35rem}
+.ok{color:var(--ok)} .warn{color:var(--warn)}
+.mx-controls{display:flex;flex-wrap:wrap;gap:.75rem 1.5rem;align-items:center;margin-bottom:1rem}
+.seg{display:inline-flex;border:1px solid var(--rule);background:var(--card);padding:3px;gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:transparent;color:var(--ink-2);font:500 .7rem/1 var(--f-label);letter-spacing:.14em;text-transform:uppercase;padding:.6rem .8rem;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ai);color:var(--on-ai)}
+.mx-wrap{overflow-x:auto;border-top:1px solid var(--ink)}
+.mx th,.mx td{padding:.75rem .8rem}
+.mx thead th.rs{font:700 1rem/1.25 var(--f-display);letter-spacing:0;text-transform:none;color:var(--ink);min-width:11rem}
+.mx thead th.rs small{display:block;font:400 .72rem/1.3 var(--f-body);color:var(--ink-2)}
+.mx tbody th{white-space:normal;min-width:9rem}
+.mx tbody th b{display:block;font:700 1rem/1.2 var(--f-display);letter-spacing:0;text-transform:none;color:var(--ink)}
+.mx td button.cell{all:unset;cursor:pointer;display:grid;gap:.2rem;padding:.35rem .5rem;border:1px solid transparent;width:100%;box-sizing:border-box}
+.mx td button.cell:hover,.mx td button.cell:focus-visible{border-color:var(--ai)}
+.mx td button.cell[aria-pressed="true"]{border-color:var(--shu);background:var(--shu-soft)}
+.mx .pp{font:500 1.35rem/1 var(--f-label)}
+.mx .sub2{font-size:.72rem;color:var(--ink-2);line-height:1.4}
+.mx td.na{color:var(--ink-2);font-size:.75rem}
+.mx tr.cheapest-row td{}
+.cheap{font:600 .55rem/1 var(--f-label);letter-spacing:.14em;text-transform:uppercase;color:var(--ok)}
+.levers{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem;align-items:center}
+.levers .label{margin-right:.4rem}
+.lev{display:inline-flex;gap:.45rem;align-items:center;border:1px solid var(--rule);background:var(--card);padding:.5rem .7rem;font-size:.8rem;cursor:pointer}
+.lev:has(input:checked){border-color:var(--green);background:color-mix(in srgb,var(--green) 12%,transparent)}
+.lev input{accent-color:var(--green)}
+.breakdown{margin-top:1.25rem;background:var(--card);border:1px solid var(--rule);padding:1.1rem;display:grid;gap:.8rem}
+.breakdown h4{display:flex;gap:.6rem;align-items:baseline;flex-wrap:wrap}
+.pivot{margin-top:3rem;display:grid;gap:1.25rem}
+.pivot .gallery{grid-template-rows:repeat(2,minmax(0,10rem))}
+.flex{margin-top:2rem;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.25rem}
+@media (max-width:820px){.flex{grid-template-columns:minmax(0,1fr)}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -420,15 +467,16 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
   <div class="wrap">
     <a class="brand" href="#top"><b lang="zh-Hant">滑雪團</b> <span>Alps 2027</span></a>
     <nav class="links" aria-label="Sections" id="links">
-      <a href="#brief">Brief</a><a href="#party">Party</a><a href="#compare">Compare</a>
+      <a href="#round2">Round 2</a><a href="#vote">Vote</a><a href="#compare">Compare</a>
       <span id="nav-p" style="display:contents"></span>
-      <a href="#dates">Dates</a><a href="#vote">Vote</a><a href="#next">Next</a>
+      <a href="#dates">Dates</a><a href="#next">Next</a>
     </nav>
     <a class="cta" href="#vote">Stamp your vote</a>
   </div>
 </header>
 
 <main id="top">
+<div class="r2-banner" id="r2-top" style="padding-top:calc(56px + .7rem + env(safe-area-inset-top,0px))">Round 2 is open. <a href="#round2">Shorter and cheaper options</a> · vote by <span id="r2-close"></span></div>
 <!-- HERO: hand-built SVG scene; drawn in script from peak coordinates -->
 <section class="hero" aria-label="Introduction">
   <svg class="scene" id="scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
@@ -471,10 +519,83 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
         <div><span class="t-l">Book by</span><span class="t-k" id="cd-book">—</span></div>
       </div>
     </div>
-    <div class="hero-row"><a class="btn" href="#compare">Compare the mountains</a><a class="btn line" href="#vote">Go straight to the vote</a></div>
+    <div class="hero-row"><a class="btn" href="#round2">See round 2</a><a class="btn line" href="#vote">Go straight to the vote</a></div>
   </div>
 </section>
 
+
+<!-- ROUND 2 -->
+<section class="sec" id="round2"><div class="wrap frame">
+  <aside class="tate" lang="zh-Hant">第二輪<small>Round 2</small></aside>
+  <div>
+    <div class="head">
+      <h2>Round two: length, leave and price</h2>
+      <p class="lead" id="r2-lead"></p>
+    </div>
+    <div class="changes" id="r2-changes"></div>
+    <div class="r1box ink-band">
+      <div class="label" style="margin-bottom:.8rem">Round 1 · closed · <span id="r1-count"></span></div>
+      <div class="results" id="r1-results"></div>
+      <p class="vote-note" style="margin-top:1rem" id="r1-note"></p>
+    </div>
+    <h3 style="font-weight:500;margin-bottom:1rem">Four trip lengths</h3>
+    <div class="shapes" id="shapes"></div>
+    <h3 style="font-weight:500;margin-bottom:.4rem">What each one costs</h3>
+    <p class="small muted" style="margin-bottom:1rem" id="mx-help"></p>
+    <div class="mx-controls">
+      <div class="seg" role="group" aria-label="Whose price" id="seg-role"></div>
+      <div class="seg" role="group" aria-label="Budget or comfort" id="seg-tier"></div>
+    </div>
+    <div class="levers" id="levers"></div>
+    <div class="mx-wrap"><table class="mx" id="mx"></table></div>
+    <div class="breakdown" id="breakdown"></div>
+    <div class="flex" id="flex"></div>
+    <div class="pivot" id="pivot"></div>
+  </div>
+</div></section>
+
+<!-- VOTE -->
+<section class="sec ink-band" id="vote">
+  <svg class="contour" viewBox="0 0 600 600" aria-hidden="true" fill="none" stroke="var(--on-ai-2)" stroke-width="1.2">
+    <path d="M300 90c96 4 190 70 196 170s-62 196-176 214S96 420 92 300 204 86 300 90z"/>
+    <path d="M300 140c72 3 146 54 150 130s-48 150-134 164-168-44-172-136 84-160 156-158z"/>
+    <path d="M302 190c52 2 102 38 104 92s-34 106-94 114-118-30-120-94 58-114 110-112z"/>
+    <path d="M304 238c32 1 60 22 62 54s-20 62-56 66-70-18-72-56 34-66 66-64z"/>
+    <path d="M300 40c130 6 250 96 256 230s-90 270-246 290S38 470 34 300 170 34 300 40z"/>
+  </svg>
+  <div class="wrap frame" style="position:relative">
+    <aside class="tate" lang="zh-Hant">投票<small>Vote</small></aside>
+    <div>
+      <div class="head">
+        <h2>Stamp your round-two choice</h2>
+        <p class="lead" style="color:var(--on-ai)" id="vote-lead"></p>
+      </div>
+      <div class="vote-grid">
+        <form class="ballot" id="ballot" novalidate>
+          <div class="b-head">
+            <span class="label">Who’s voting?</span>
+            <div class="who" id="who" role="radiogroup" aria-label="Your name"></div>
+          </div>
+          <div id="qs"></div>
+          <div class="q"><div class="q-top"><span class="q-n">✎</span><span class="q-t">Anything else?</span><span class="req o">optional</span></div>
+            <textarea id="comment" maxlength="1000" placeholder="Dealbreakers, dates you can’t do, a resort we missed…"></textarea></div>
+          <div class="b-foot">
+            <button class="btn" type="submit" id="submit">Stamp my vote</button>
+            <button class="btn line" type="button" id="copy" style="color:var(--ink)">Copy for WhatsApp</button>
+            <span class="status" id="status" role="status" aria-live="polite"></span>
+          </div>
+        </form>
+        <div class="results">
+          <div class="res"><h4>Who’s voted</h4><div class="turnout" id="turnout"></div><p class="vote-note" id="sync">Loading live results…</p></div>
+          <div id="tallies" class="results"></div>
+          <div class="res"><h4>Notes from the group</h4><div class="comments" id="comments"><p class="vote-note">No notes yet.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="r2-banner" style="background:var(--ai);color:var(--on-ai)">Below: the round-1 proposals in full. They are still the “full week” option in round 2.</div>
 <!-- BRIEF -->
 <section class="sec washi" id="brief"><div class="wrap frame">
   <aside class="tate" lang="zh-Hant">要求<small>The brief</small></aside>
@@ -541,47 +662,6 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
   </div>
 </div></section>
 
-<!-- VOTE -->
-<section class="sec ink-band" id="vote">
-  <svg class="contour" viewBox="0 0 600 600" aria-hidden="true" fill="none" stroke="var(--on-ai-2)" stroke-width="1.2">
-    <path d="M300 90c96 4 190 70 196 170s-62 196-176 214S96 420 92 300 204 86 300 90z"/>
-    <path d="M300 140c72 3 146 54 150 130s-48 150-134 164-168-44-172-136 84-160 156-158z"/>
-    <path d="M302 190c52 2 102 38 104 92s-34 106-94 114-118-30-120-94 58-114 110-112z"/>
-    <path d="M304 238c32 1 60 22 62 54s-20 62-56 66-70-18-72-56 34-66 66-64z"/>
-    <path d="M300 40c130 6 250 96 256 230s-90 270-246 290S38 470 34 300 170 34 300 40z"/>
-  </svg>
-  <div class="wrap frame" style="position:relative">
-    <aside class="tate" lang="zh-Hant">投票<small>Vote</small></aside>
-    <div>
-      <div class="head">
-        <h2>Stamp your choice</h2>
-        <p class="lead" style="color:var(--on-ai)">Four questions lock the booking. The rest are optional, and “I don’t mind” is a perfectly good answer. Majority wins. Change your mind any time before Sunday 11 October.</p>
-      </div>
-      <div class="vote-grid">
-        <form class="ballot" id="ballot" novalidate>
-          <div class="b-head">
-            <span class="label">Who’s voting?</span>
-            <div class="who" id="who" role="radiogroup" aria-label="Your name"></div>
-          </div>
-          <div id="qs"></div>
-          <div class="q"><div class="q-top"><span class="q-n">✎</span><span class="q-t">Anything else?</span><span class="req o">optional</span></div>
-            <textarea id="comment" maxlength="1000" placeholder="Dealbreakers, dates you can’t do, a resort we missed…"></textarea></div>
-          <div class="b-foot">
-            <button class="btn" type="submit" id="submit">Stamp my vote</button>
-            <button class="btn line" type="button" id="copy" style="color:var(--ink)">Copy for WhatsApp</button>
-            <span class="status" id="status" role="status" aria-live="polite"></span>
-          </div>
-        </form>
-        <div class="results">
-          <div class="res"><h4>Who’s voted</h4><div class="turnout" id="turnout"></div><p class="vote-note" id="sync">Loading live results…</p></div>
-          <div id="tallies" class="results"></div>
-          <div class="res"><h4>Notes from the group</h4><div class="comments" id="comments"><p class="vote-note">No notes yet.</p></div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- NEXT -->
 <section class="sec" id="next"><div class="wrap frame">
   <aside class="tate" lang="zh-Hant">準備<small>Next</small></aside>
@@ -610,10 +690,12 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
 
 <script src="data.js?v=4"></script>
 <script src="images.js?v=4"></script>
+<script src="data2.js?v=4"></script>
 <script>
 (() => {
   'use strict';
   const D = window.TRIP, I = window.TRIP_IMG;
+  const R2 = window.ROUND2 || null;
   const $ = (s, el = document) => el.querySelector(s);
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const FX = D.fx.eurPerGbp;
@@ -822,8 +904,87 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
     <div><span class="label">Joining late or leaving early</span><span>Fine at all three. Geneva has cheap one-way flights (Sunday out £38, Friday 18:55 back £39). Innsbruck's last Friday flight is at 15:10. Les Arcs has no weekday shuttle, so a late arrival takes the train.</span></div>
     <div><span class="label">If fewer of us come</span><span>Flats cost the same whatever the headcount, so with 4 people each share rises by about £20–30 a night. Every pick is refundable until 24 Dec or 9 Jan, so we can resize then.</span></div>`;
 
-  /* vote */
-  const API = D.voteApi, Q = D.decisions;
+  /* round 2: trip shapes × resorts matrix */
+  function itemsTotal(items, n = crewN) { let adv = 0, int = 0, beg = 0;
+    items.forEach(it => { if (it.optional) return; adv += linePP(it, 'adv', n); int += linePP(it, 'int', n); beg += linePP(it, 'beg', n); });
+    return { adv, int, beg, group: adv * nAdv + int * nInt + beg * nBeg }; }
+  if (R2) {
+    $('#r2-close').textContent = R2.closeLabel;
+    $('#r2-lead').textContent = R2.lead;
+    $('#vote-lead').textContent = R2.voteLead;
+    $('#r2-changes').innerHTML = R2.changes.map(c => `<div class="change"><span class="label">${esc(c.k)}</span><b>${esc(c.t)}</b><span>${esc(c.d)}</span></div>`).join('');
+    $('#r1-count').textContent = `${R2.round1.ballots.length} of ${crewN} voted · snapshot ${R2.round1.taken}`;
+    $('#r1-note').textContent = R2.round1.note;
+    $('#shapes').innerHTML = R2.shapes.map(sh => `<article class="shape"><div class="top"><b>${esc(sh.nights)} nights</b><span>${esc(sh.dates)}</span></div>
+      <div class="body"><span class="al"><b>${esc(sh.al)}</b> days of leave <span class="muted small">(${esc(sh.alDays)})</span></span><span>${esc(sh.ski)}</span><span class="ok">Travel: ${esc(sh.kannes)}</span><span class="muted">${esc(sh.note)}</span></div></article>`).join('');
+    $('#mx-help').textContent = R2.matrixHelp;
+    const ROLES = [['beg', 'Beginner (Chloe, Kannes, Ina)'], ['int', 'Natasha'], ['adv', 'Joaquin & Juan']];
+    const TIERS = [['budget', 'Budget'], ['comfort', 'Comfort']];
+    let role = 'beg', tier = 'budget', sel = null; const levers = new Set();
+    // Cost levers: pro-rata savings on items tagged with kind/days (lift, rental, school, bag).
+    function withLevers(items) {
+      if (!levers.size) return items;
+      const adj = [];
+      const scaled = (kinds, frac, label, note) => { let a = 0, m = 0, b = 0;
+        items.forEach(it => { if (!kinds.includes(it.kind) || it.optional || !it.days) return; const f = frac(it); a += linePP(it, 'adv') * f; m += linePP(it, 'int') * f; b += linePP(it, 'beg') * f; });
+        if (a || m || b) adj.push({ label, note, adv: -a, int: -m, beg: -b, cur: 'EUR', status: 'ESTIMATE', lever: true }); };
+      if (levers.has('ski1')) scaled(['lift', 'rental'], it => 1 / it.days, 'Lever: ski one day less', 'One lift and rental day swapped for a free day (Annecy, Innsbruck, spa, sledging). Pro-rata, so multi-day pass savings can be smaller.');
+      if (levers.has('les1') || levers.has('les2')) { const k = levers.has('les2') ? 2 : 1; scaled(['school'], it => Math.min(k, it.days - 1) / it.days, `Lever: ${k} fewer lesson day${k > 1 ? 's' : ''}`, 'Lessons on the first days only, then practise together. Saving pro-rata to the instructor price.'); }
+      if (levers.has('bags')) scaled(['bag'], () => .5, 'Lever: share hold bags', 'One 23 kg bag between two people; everyone else cabin bag only.');
+      return items.concat(adj);
+    }
+    const seg = (el, opts, cur, cb) => { el.innerHTML = opts.map(([k, l]) => `<button type="button" data-k="${k}" aria-pressed="${k === cur}">${esc(l)}</button>`).join(''); el.onclick = e => { const b = e.target.closest('button'); if (!b) return; cb(b.dataset.k); }; };
+    const cellOf = (r, sh) => (R2.cells[r] || {})[sh];
+    function drawMatrix() {
+      seg($('#seg-role'), ROLES, role, k => { role = k; drawMatrix(); });
+      seg($('#seg-tier'), TIERS, tier, k => { tier = k; drawMatrix(); });
+      // cheapest feasible cell per shape row for the current role/tier
+      $('#mx').innerHTML = `<thead><tr><th>Length</th>${R2.resorts.map(r => `<th class="rs" scope="col"><span lang="zh-Hant" class="zh" style="color:var(--shu);margin-right:.3rem">${r.kanji}</span>${esc(r.short)}<small>${esc(r.sub)}</small></th>`).join('')}</tr></thead><tbody>` +
+        R2.shapes.map(sh => {
+          const vals = R2.resorts.map(r => { const c = cellOf(r.id, sh.id); return c && c.feasible ? itemsTotal(withLevers(c[tier].items))[role] : Infinity; });
+          const min = Math.min(...vals);
+          return `<tr><th scope="row"><b>${esc(sh.nights)} nights</b>${esc(sh.dates)}<br>${esc(sh.al)} days leave</th>${R2.resorts.map((r, i) => { const c = cellOf(r.id, sh.id);
+            if (!c || !c.feasible) return `<td class="na">Not workable<br>${esc(c ? c.note : 'not researched')}</td>`;
+            const key = r.id + '|' + sh.id, v = vals[i];
+            return `<td><button type="button" class="cell" data-key="${key}" aria-pressed="${sel === key}"><span class="pp num">${G(v / FX)}</span><span class="sub2">${E(v)} pp${v === min ? ' · <span class="cheap">cheapest</span>' : ''}</span><span class="sub2">${esc(c[tier].stay.name)}</span></button></td>`; }).join('')}</tr>`;
+        }).join('') + '</tbody>';
+      drawBreakdown();
+    }
+    function drawBreakdown() {
+      const el = $('#breakdown');
+      if (!sel) { el.innerHTML = '<p class="small muted">Tap any price above to see exactly what is in it, with links to the flat, flights and lessons.</p>'; return; }
+      const [rid, sid] = sel.split('|'); const r = R2.resorts.find(x => x.id === rid), sh = R2.shapes.find(x => x.id === sid), c = cellOf(rid, sid), t = c[tier];
+      const its = withLevers(t.items), tt = itemsTotal(its);
+      const rows = its.map(it => { const a = linePP(it, 'adv'), m = linePP(it, 'int'), b = linePP(it, 'beg'); const grp = it.group ? toEur(it.amount, it.cur) : a * nAdv + m * nInt + b * nBeg;
+        return `<tr class="${it.optional ? 'optrow' : ''}" ${it.lever ? 'style="color:var(--ok)"' : ''}><td>${esc(it.label)}${it.note ? `<small>${esc(it.note)}</small>` : ''}${it.src ? `<small><a href="${esc(it.src)}" target="_blank" rel="noopener">source ↗</a></small>` : ''}</td><td>${pill(it.status)}</td><td class="r num">${a ? E(a) : '—'}</td><td class="r num">${m ? E(m) : '—'}</td><td class="r num">${b ? E(b) : '—'}</td><td class="r num">${E(grp)}</td></tr>`; }).join('');
+      el.innerHTML = `<h4><span class="zh" lang="zh-Hant" style="color:var(--shu)">${r.kanji}</span> ${esc(r.short)} · ${esc(sh.nights)} nights, ${esc(sh.dates)} · ${tier === 'budget' ? 'Budget' : 'Comfort'}</h4>
+        ${c.note ? `<p class="small muted">${esc(c.note)}</p>` : ''}
+        <div style="overflow-x:auto"><table class="costs"><thead><tr><th>Item</th><th>Data</th><th class="r">Advanced</th><th class="r">Natasha</th><th class="r">Beginner</th><th class="r">Group</th></tr></thead><tbody>${rows}</tbody>
+        <tfoot><tr><td>Total per person, excluding food</td><td></td><td class="r num">${E(tt.adv)}</td><td class="r num">${E(tt.int)}</td><td class="r num">${E(tt.beg)}</td><td class="r num">${E(tt.group)}</td></tr><tr class="gbp"><td>In pounds</td><td></td><td class="r num">${G(tt.adv / FX)}</td><td class="r num">${G(tt.int / FX)}</td><td class="r num">${G(tt.beg / FX)}</td><td class="r num">${G(tt.group / FX)}</td></tr></tfoot></table></div>
+        <p class="small muted">Food is extra: about ${E((c.food || 60) * sh.foodDays)} per person for ${sh.foodDays} days.</p>`;
+    }
+    const LEV = [['ski1', 'Ski one day less'], ['les1', 'One fewer lesson day'], ['les2', 'Two fewer lesson days'], ['bags', 'Share hold bags']];
+    $('#levers').innerHTML = `<span class="label">Cost levers</span>` + LEV.map(([k, l]) => `<label class="lev"><input type="checkbox" data-lev="${k}" id="lev-${k}">${esc(l)}</label>`).join('') + `<span class="small muted">Tick to see the saving in every price.</span>`;
+    $('#levers').addEventListener('change', e => { const k = e.target.dataset.lev; if (!k) return; if (e.target.checked) { levers.add(k); if (k === 'les1') { levers.delete('les2'); $('#lev-les2').checked = false; } if (k === 'les2') { levers.delete('les1'); $('#lev-les1').checked = false; } } else levers.delete(k); drawMatrix(); });
+    const pv = R2.pivot;
+    $('#pivot').innerHTML = `<div class="sub-h"><span class="kj" lang="zh-Hant">四</span><h3>New option: ${esc(pv.name)}</h3><span class="label">${esc(pv.transfer.split(';')[0])}</span></div>
+      <div class="body2"><div class="prose"><p class="lead">${esc(pv.vibe)}</p><p>${esc(pv.why)}</p>
+        <div class="pc"><div class="pro"><span class="label">Why it works</span><ul style="margin-top:.6rem">${pv.pros.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div><div class="con"><span class="label">Watch-outs</span><ul style="margin-top:.6rem">${pv.cons.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div></div></div>
+        <div style="display:grid;gap:1rem"><div class="gallery">${pv.images.map(im => `<figure class="photo">${photo(im)}<span class="cap">${esc(im.author)}</span></figure>`).join('')}</div>
+        <ul class="menu">${pv.food.map(f => `<li><b>${esc(f.name)}</b><span class="pr">${esc(f.price)}</span><span class="w">${esc(f.what)}</span></li>`).join('')}</ul>
+        <p class="small muted">Photos show the Grand Massif ski area (Flaine), which Les Carroz links into.</p></div></div>`;
+    $('#mx').addEventListener('click', e => { const b = e.target.closest('button.cell'); if (!b) return; sel = sel === b.dataset.key ? null : b.dataset.key; drawMatrix(); });
+    drawMatrix();
+    // flexible attendance: per-night share of the full-week flat
+    $('#flex').innerHTML = `<div class="plan"><div class="label">Joining part of a longer trip</div><p class="small">${esc(R2.flexRule)}</p>
+      <table><thead><tr><th>Full-week flat</th><th class="r">Per person per night</th></tr></thead><tbody>${R2.resorts.map(r => { const c = cellOf(r.id, 'LS'); if (!c || !c.feasible) return ''; const st = c.comfort.stay; const nightly = toEur(st.total, st.cur) / (crewN * 6);
+        return `<tr><td><span class="zh" lang="zh-Hant" style="color:var(--shu)">${r.kanji}</span> ${esc(r.short)} · ${esc(st.name)}</td><td class="r num">${G(nightly / FX)}</td></tr>`; }).join('')}</tbody></table></div>
+      <div class="plan"><div class="label">How round 2 decides</div><ul class="check">${R2.rules.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>`;
+  }
+
+  /* vote — round 2 is live; round 1 is a frozen snapshot rendered with the same tally code */
+  const API = D.voteApi, Q = R2 ? R2.decisions : D.decisions, ROUND = R2 ? 'r2' : null;
+  const closeLabel = R2 ? R2.closeLabel : D.dates.voteCloseLabel;
   let me = null; try { me = localStorage.getItem('yuki-me'); } catch (e) {}
   $('#who').innerHTML = D.crew.map(c => `<label><input type="radio" name="who" id="who-${c.name}" value="${esc(c.name)}" ${me === c.name ? 'checked' : ''}><span><i class="pm ${({adv:'k',int:'b',beg:'g'})[c.level]}"></i>${esc(c.name)}</span></label>`).join('');
   const rankState = {};
@@ -832,22 +993,25 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
       let body;
       if (q.type === 'rank') {
         if (!rankState[q.id]) rankState[q.id] = q.options.map(o => o.id);
-        body = `<label class="opt"><input type="checkbox" id="q-${q.id}-any" data-any="${q.id}"><span>I’m happy with any of them<span class="h">Your ballot won’t add points to any resort</span></span></label>
+        body = `<label class="opt"><input type="checkbox" id="q-${q.id}-any" data-any="${q.id}"><span>I’m happy with any of them<span class="h">Your ballot won’t add points to any option</span></span></label>
           <div class="rank" id="rank-${q.id}">${rankState[q.id].map((oid, k) => { const o = q.options.find(x => x.id === oid);
             return `<div class="rank-row"><span class="pos">${KANJI[k]}</span><span>${esc(o.label)}</span><span class="mv"><button type="button" data-q="${q.id}" data-i="${k}" data-d="-1" aria-label="Move ${esc(o.label)} up">↑</button><button type="button" data-q="${q.id}" data-i="${k}" data-d="1" aria-label="Move ${esc(o.label)} down">↓</button></span></div>`; }).join('')}</div>`;
       } else {
-        body = `<div class="opts">${q.options.map(o => `<label class="opt"><input type="radio" name="q-${q.id}" id="q-${q.id}-${o.id}" value="${esc(o.id)}"><span>${esc(o.label)}${o.hint ? `<span class="h">${esc(o.hint)}</span>` : ''}</span></label>`).join('')}</div>`;
+        const t = q.type === 'multi' ? 'checkbox' : 'radio';
+        body = `<div class="opts">${q.options.map(o => `<label class="opt"><input type="${t}" name="q-${q.id}" id="q-${q.id}-${o.id}" value="${esc(o.id)}"><span>${esc(o.label)}${o.hint ? `<span class="h">${esc(o.hint)}</span>` : ''}</span></label>`).join('')}</div>`;
       }
-      return `<div class="q"><div class="q-top"><span class="q-n">${KANJI[i]}</span><span class="q-t">${esc(q.title)}</span><span class="req ${q.required ? '' : 'o'}">${q.required ? 'locks booking' : 'optional'}</span>${q.who ? `<span class="req o">${esc(q.who)}</span>` : ''}</div>${q.help ? `<p class="q-h">${esc(q.help)}</p>` : ''}${body}</div>`;
+      const tags = `<span class="req ${q.required ? '' : 'o'}">${q.required ? 'needed' : 'optional'}</span>${q.type === 'multi' ? '<span class="req o">tick all that apply</span>' : ''}${q.anon ? '<span class="req o">shown as counts only</span>' : ''}${q.who ? `<span class="req o">${esc(q.who)}</span>` : ''}`;
+      return `<div class="q"><div class="q-top"><span class="q-n">${KANJI[i]}</span><span class="q-t">${esc(q.title)}</span>${tags}</div>${q.help ? `<p class="q-h">${esc(q.help)}</p>` : ''}${body}</div>`;
     }).join('');
   }
   renderQs();
-  function collect() { const a = {}; Q.forEach(q => {
+  function collect() { const a = ROUND ? { round: ROUND } : {}; Q.forEach(q => {
     if (q.type === 'rank') a[q.id] = document.getElementById(`q-${q.id}-any`)?.checked ? 'any' : rankState[q.id].slice();
+    else if (q.type === 'multi') a[q.id] = [...document.querySelectorAll(`input[name="q-${q.id}"]:checked`)].map(x => x.value);
     else { const x = document.querySelector(`input[name="q-${q.id}"]:checked`); a[q.id] = x ? x.value : null; } }); return a; }
   function restore(a) { if (!a) return; Q.forEach(q => { const v = a[q.id]; if (v == null) return;
     if (q.type === 'rank') { const el = document.getElementById(`q-${q.id}-any`); if (v === 'any') { el.checked = true; document.getElementById(`rank-${q.id}`).classList.add('off'); } return; }
-    const el = document.getElementById(`q-${q.id}-${v}`); if (el) el.checked = true; }); }
+    (Array.isArray(v) ? v : [v]).forEach(id => { const el = document.getElementById(`q-${q.id}-${id}`); if (el) el.checked = true; }); }); }
   $('#qs').addEventListener('click', e => { const b = e.target.closest('button[data-q]'); if (!b) return;
     const arr = rankState[b.dataset.q], i = +b.dataset.i, j = i + +b.dataset.d; if (j < 0 || j >= arr.length) return;
     const snap = collect(); [arr[i], arr[j]] = [arr[j], arr[i]]; renderQs(); restore(snap); });
@@ -855,42 +1019,49 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
   const name = () => document.querySelector('input[name="who"]:checked')?.value || null;
   const setStatus = (m, c = '') => { const s = $('#status'); s.textContent = m; s.className = 'status ' + c; };
   let state = { ballots: [], comments: [] };
+  const roundBallots = () => state.ballots.filter(b => ROUND ? b.answers.round === ROUND : !b.answers.round);
   function loadMine() { const n = name(); if (!n) return; try { localStorage.setItem('yuki-me', n); } catch (e) {}
-    const mine = state.ballots.find(b => b.name === n); if (!mine) return;
+    const mine = roundBallots().find(b => b.name === n); if (!mine) return;
     Q.forEach(q => { if (q.type === 'rank' && Array.isArray(mine.answers[q.id])) rankState[q.id] = mine.answers[q.id].slice(); });
-    renderQs(); restore(mine.answers); setStatus(`Loaded your vote from ${new Date(mine.ts).toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short' })}. Change anything and stamp again.`); }
+    renderQs(); restore(mine.answers); setStatus(`Loaded your round-2 vote from ${new Date(mine.ts).toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short' })}. Change anything and stamp again.`); }
   $('#who').addEventListener('change', loadMine);
   const label = (q, id) => q.options.find(o => o.id === id)?.label || '—';
-  function ballotText(n, a, c) { const L = [`滑雪團 vote: ${n}`]; Q.forEach((q, i) => { const v = a[q.id];
-    const t = q.type === 'rank' ? (v === 'any' ? 'happy with any' : v.map((id, k) => `${k + 1}. ${label(q, id)}`).join('  ')) : (v ? label(q, v) : '—');
+  function ballotText(n, a, c) { const L = [`滑雪團 round 2 vote: ${n}`]; Q.forEach((q, i) => { const v = a[q.id];
+    const t = q.type === 'rank' ? (v === 'any' ? 'happy with any' : v.map((id, k) => `${k + 1}. ${label(q, id)}`).join('  ')) : Array.isArray(v) ? (v.map(id => label(q, id)).join(', ') || '—') : (v ? label(q, v) : '—');
     L.push(`${i + 1}) ${q.short}: ${t}`); }); if (c) L.push(`Note: ${c}`); return L.join('\n'); }
   $('#copy').addEventListener('click', async () => { const t = ballotText(name() || '(your name)', collect(), $('#comment').value.trim());
     try { await navigator.clipboard.writeText(t); setStatus('Copied. Paste it into the group chat.', 'ok'); } catch (e) { const ta = $('#comment'); ta.value = t; ta.select(); setStatus('Your browser blocked copying. The text is selected in the note box, so copy it manually.', 'err'); } });
   async function api(method, body) { if (!API) throw new Error('no_api'); const r = await fetch(API, method === 'POST' ? { method: 'POST', body: JSON.stringify(body) } : {}); const j = await r.json(); if (!j.ok) throw new Error(j.error || 'failed'); return j; }
   $('#ballot').addEventListener('submit', async e => { e.preventDefault(); const n = name();
     if (!n) { setStatus('Pick your name at the top of the ballot first.', 'err'); return; }
-    const a = collect(); const miss = Q.filter(q => q.required && (a[q.id] == null)).map(q => `${KANJI[Q.indexOf(q)]} (${Q.indexOf(q) + 1})`);
+    const a = collect(); const miss = Q.filter(q => q.required && (a[q.id] == null || (Array.isArray(a[q.id]) && !a[q.id].length))).map(q => `${KANJI[Q.indexOf(q)]} (${Q.indexOf(q) + 1})`);
     if (miss.length) { setStatus(`Still to answer: question ${miss.join(', ')}.`, 'err'); return; }
     const btn = $('#submit'); btn.disabled = true; setStatus('Stamping…');
-    try { state = await api('POST', { name: n, type: 'ballot', answers: a, comment: $('#comment').value.trim() }); $('#comment').value = ''; setStatus(`Stamped. Thanks, ${n}. You can re-vote until Sunday 11 October.`, 'ok'); renderResults(); }
+    try { state = await api('POST', { name: n, type: 'ballot', answers: a, comment: $('#comment').value.trim() }); $('#comment').value = ''; setStatus(`Stamped. Thanks, ${n}. You can re-vote until ${closeLabel}.`, 'ok'); renderResults(); }
     catch (err) { setStatus('Couldn’t reach the vote server. Tap “Copy for WhatsApp” and paste your vote into the group chat instead.', 'err'); }
     finally { btn.disabled = false; } });
-  function renderResults() { const bs = state.ballots, voted = new Set(bs.map(b => b.name));
-    $('#turnout').innerHTML = D.crew.map(c => `<span class="${voted.has(c.name) ? 'done' : ''}">${voted.has(c.name) ? '✓ ' : ''}${esc(c.name)}</span>`).join('');
-    $('#tallies').innerHTML = Q.map((q, qi) => { let sc, max;
+  // Shared tally renderer (used for live round 2 and the frozen round-1 snapshot)
+  function tallyHTML(questions, bs, opts = {}) {
+    return questions.map((q, qi) => { let sc, max;
       if (q.type === 'rank') { const n = q.options.length;
         sc = q.options.map(o => { let pts = 0; const f = []; bs.forEach(b => { const arr = b.answers[q.id]; if (!Array.isArray(arr)) return; const pos = arr.indexOf(o.id); if (pos >= 0) pts += n - pos; if (pos === 0) f.push(b.name); }); return { o, pts, who: f.length ? 'First choice: ' + f.join(', ') : '' }; });
         max = Math.max(1, bs.filter(b => Array.isArray(b.answers[q.id])).length * n);
-      } else { sc = q.options.map(o => { const w = bs.filter(b => b.answers[q.id] === o.id).map(b => b.name); return { o, pts: w.length, who: w.join(', ') }; }); max = Math.max(1, bs.length); }
+      } else { sc = q.options.map(o => { const w = bs.filter(b => { const v = b.answers[q.id]; return Array.isArray(v) ? v.includes(o.id) : v === o.id; }).map(b => b.name); return { o, pts: w.length, who: q.anon ? '' : w.join(', ') }; }); max = Math.max(1, bs.length); }
       const top = Math.max(...sc.map(s => s.pts)); const anyW = q.type === 'rank' ? bs.filter(b => b.answers[q.id] === 'any').map(b => b.name) : [];
-      return `<div class="res"><h4>${KANJI[qi]} ${esc(q.short)} ${q.required ? '<span class="req">locks booking</span>' : ''}</h4>${q.type === 'rank' ? '<p class="vote-note">Ranked: 1st = 3 points, 2nd = 2, 3rd = 1.</p>' : ''}
+      const pts = q.type === 'rank' ? `<p class="vote-note">Ranked: 1st = ${q.options.length} points, down to 1 for last.</p>` : '';
+      return `<div class="res"><h4>${KANJI[qi]} ${esc(q.short)} ${q.required && !opts.frozen ? '<span class="req">needed</span>' : ''}</h4>${pts}
         ${sc.map(s => `<div class="bar ${s.pts === top && top > 0 ? 'top' : ''}"><span>${esc(s.o.label)}</span><span class="num">${s.pts}${q.type === 'rank' ? ' pts' : ''}</span><div class="track"><div class="fill" style="width:${(s.pts / max * 100).toFixed(0)}%"></div></div>${s.who ? `<span class="w">${esc(s.who)}</span>` : ''}</div>`).join('')}
         ${anyW.length ? `<p class="vote-note">Happy with any: ${esc(anyW.join(', '))}</p>` : ''}</div>`; }).join('');
+  }
+  function renderResults() { const bs = roundBallots(), voted = new Set(bs.map(b => b.name));
+    $('#turnout').innerHTML = D.crew.map(c => `<span class="${voted.has(c.name) ? 'done' : ''}">${voted.has(c.name) ? '✓ ' : ''}${esc(c.name)}</span>`).join('');
+    $('#tallies').innerHTML = tallyHTML(Q, bs);
     const cm = state.comments.slice().reverse();
     $('#comments').innerHTML = cm.length ? cm.map(c => `<div class="cmt"><b>${esc(c.name)}</b><time>${new Date(c.ts).toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short' })}</time><div>${esc(c.text)}</div></div>`).join('') : '<p class="vote-note">No notes yet.</p>'; }
-  async function refresh() { try { state = await api('GET'); $('#sync').textContent = `Live · ${state.ballots.length} of ${crewN} voted · refreshed ${new Date().toLocaleTimeString('en-GB', { timeStyle: 'short' })}`; renderResults(); loadMine(); }
+  async function refresh() { try { state = await api('GET'); $('#sync').textContent = `Live · ${roundBallots().length} of ${crewN} voted in round 2 · refreshed ${new Date().toLocaleTimeString('en-GB', { timeStyle: 'short' })}`; renderResults(); loadMine(); }
     catch (e) { $('#sync').textContent = 'Live results are unavailable right now. Use “Copy for WhatsApp” as a backup.'; renderResults(); } }
   refresh(); setInterval(() => { if (!document.hidden) refresh(); }, 60000);
+  if (R2 && $('#r1-results')) { $('#r1-results').innerHTML = tallyHTML(D.decisions, R2.round1.ballots, { frozen: true }); }
 
   /* next */
   $('#steps').innerHTML = D.steps.map((s, i) => `<div class="step" data-k="${KANJI[i]}"><span class="when">${esc(s.when)}</span><span class="what">${esc(s.what)}</span><span class="det">${esc(s.detail)}</span></div>`).join('');
