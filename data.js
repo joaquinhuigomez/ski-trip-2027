@@ -17,6 +17,7 @@
     { label: 'Lift pass', note: 'Advanced and Natasha: 3 Vallées 6-day (Méribel and Courchevel included). Beginners: free village carpets on Sunday, then EasyRider beginner pass Mon–Fri.', intAs: 'adv', adv: 421, beg: 184, cur: 'EUR', status: 'PUBLISHED', src: 'https://www.les3vallees.com/en/skipass/adult-week-solo-pass' },
     { label: 'Carré Neige piste-rescue cover', note: '€3.50 a day, added to the lift pass', intAs: 'adv', adv: 21, beg: 17.5, cur: 'EUR', status: 'PUBLISHED', src: 'https://ski.valthorens.com/en/ski-insurance-carre-neige/' },
     { label: 'Ski school: private ESF instructor for Chloe, Kannes & Ina', note: '6 mornings × 2h45, Sun–Fri, about €1,485 for the instructor, split 3 ways', intAs: 0, adv: 0, beg: 495, cur: 'EUR', status: 'ESTIMATE', src: 'https://www.ski-school-valthorens.co.uk/private-lessons/skiing/' },
+    { label: 'Ski school for Natasha: Evolution 2 intermediate group', note: '5–6 mornings, groups of max 8. Price is the published “from” rate.', adv: 0, beg: 0, int: 295, cur: 'EUR', status: 'PUBLISHED', src: 'https://evolution2.com/en/val-thorens/adults-ski-group-lessons' },
     { intAs: 'beg', label: 'Rental for beginners and Natasha: skis, boots, poles, helmet', note: 'Skiset in-store €186; online prebook usually 20–50% off', adv: 0, beg: 150, cur: 'EUR', status: 'ESTIMATE', src: 'https://www.skiset.co.uk/ski-resort/val-thorens/shops/goitschel-sports-2' },
     insurance,
     { intAs: 0, label: 'Performance ski rental (if not bringing your own)', adv: 220, beg: 0, cur: 'EUR', status: 'VERIFIED', optional: true }
@@ -34,6 +35,7 @@
     { label: 'Tourist tax', note: '€4.80 per person per night, paid locally', adv: 33.6, beg: 33.6, cur: 'EUR', status: 'PUBLISHED' },
     { label: 'Lift pass', note: 'Advanced and Natasha: 6-day Stubai Skipass, which covers the glacier and Schlick 2000. Beginners: 3 days of beginner tickets, then a 3-day Schlick pass.', intAs: 'adv', adv: 355, beg: 296, cur: 'EUR', status: 'PUBLISHED', src: 'https://www.stubaier-gletscher.com/fileadmin/userdaten/stubaier-gletscher/Downloads/Downloads_DE/Preisliste-DE.pdf' },
     { label: 'Ski school: private Skischule Stubai instructor for Chloe, Kannes & Ina', note: '5 mornings × 2 h, Sun–Thu. €270 a day for 3 people (€190 + €40 per extra person), €1,350 total.', intAs: 0, adv: 0, beg: 450, cur: 'EUR', status: 'PUBLISHED', src: 'https://www.schischule-stubai.at/en/courses/privatelessons.html' },
+    { label: 'Ski school for Natasha: Skischule Stubai Tirol adult group', note: 'Sun–Thu, 4 h a day, grouped by level. Same school and meeting point as the beginners.', adv: 0, beg: 0, int: 290, cur: 'EUR', status: 'PUBLISHED', src: 'https://www.schischule-stubai.at/en/courses/ski.html' },
     { intAs: 'beg', label: 'Rental for beginners and Natasha: skis, boots, helmet', note: 'Intersport Pittl, at the Schlick valley station', adv: 0, beg: 226, cur: 'EUR', status: 'VERIFIED', src: 'https://www.intersportrent.at/skirent-fulpmes-stubaital/intersport-pittl_12610' },
     insurance,
     { intAs: 0, label: 'Performance ski rental (if not bringing your own)', adv: 239, beg: 0, cur: 'EUR', status: 'VERIFIED', optional: true }
@@ -51,6 +53,7 @@
     { label: 'Lift pass', note: 'Advanced and Natasha: Paradiski Essential 6-day (Les Arcs + La Plagne). Beginners: free lifts on Sunday, then the €45 beginner day pass Mon–Fri.', intAs: 'adv', adv: 412, beg: 225, cur: 'EUR', status: 'PUBLISHED', src: 'https://www.lesarcs-peiseyvallandry.com/en/forfaits_offre' },
     { label: 'Carré Neige piste-rescue cover', intAs: 'adv', adv: 21, beg: 21, cur: 'EUR', status: 'PUBLISHED' },
     { label: 'Ski school: private ESF instructor for Chloe, Kannes & Ina', note: '5 mornings × 3h30. €1,250 for the instructor (same price for 1 to 4 people), split 3 ways.', intAs: 0, adv: 0, beg: 416.67, cur: 'EUR', status: 'VERIFIED', src: 'https://www.ski-school-arc1800.co.uk/private-lessons/book-an-instructor/' },
+    { label: 'Ski school for Natasha: ESF Arc 1800 adult group', note: '6 mornings × 2h30, Sun–Fri. Priced at the published beginner-course rate; ESF prices adult groups the same across levels.', adv: 0, beg: 0, int: 236, cur: 'EUR', status: 'ESTIMATE', src: 'https://www.ski-school-arc1800.co.uk/adults/alpine-ski/beginners/' },
     { intAs: 'beg', label: 'Rental for beginners and Natasha: skis, boots, poles, helmet', note: 'Sport 2000 published rate €200, online about 20% off', adv: 0, beg: 160, cur: 'EUR', status: 'ESTIMATE', src: 'https://www.sport2000rent.com/en/skirental/destinations/france/savoie/arcs-1800' },
     insurance,
     { intAs: 0, label: 'Performance ski rental (if not bringing your own)', adv: 176, beg: 0, cur: 'EUR', status: 'ESTIMATE', optional: true }
@@ -70,7 +73,7 @@
     crew: [
       { name: 'Joaquin', level: 'adv', skill: 3, role: 'Organiser · advanced', status: 'No lessons needed', tag: 'Snores, so he sleeps at the far end of the flat.' },
       { name: 'Juan', level: 'adv', skill: 3, role: 'Advanced', status: 'No lessons needed', tag: 'Six-plus seasons. Skis with Joaquin and meets everyone for lunch.' },
-      { name: 'Natasha', level: 'int', skill: 2, role: 'Intermediate', status: 'Blues from day one', tag: 'Skips lessons. Skis with the boys or at her own pace.' },
+      { name: 'Natasha', level: 'int', skill: 2, role: 'Intermediate', status: 'Intermediate group lessons in the mornings', tag: 'Lessons at her level, then afternoons on blues and reds with the boys.' },
       { name: 'Chloe', level: 'beg', skill: 1, role: 'Beginner · has skied before', status: 'Lessons, then blues by Friday', tag: 'A few days on skis already. This week is about confidence.' },
       { name: 'Kannes', level: 'beg', skill: 1, role: 'Beginner · has skied before', status: 'Lessons, then blues by Friday', tag: 'A few days on skis already. This week is about confidence.' },
       { name: 'Ina', level: 'beg', skill: 1, role: 'Beginner · has skied before', status: 'Lessons at her own pace', tag: 'Had a fall last time and feels the cold. Patient instructor, warm layers, hot-chocolate breaks.' }
@@ -139,6 +142,7 @@
             { name: 'ESF Val Thorens, shared private', format: 'One instructor for the 3 of you', schedule: '6 mornings × 2h45, Sun–Fri', pp: 495, size: '3 (just you)', reviews: '4.9★ (172) for private lessons', status: 'ESTIMATE', pick: true, url: 'https://www.ski-school-valthorens.co.uk/private-lessons/skiing/' },
             { name: 'Prosneige, shared private', format: 'Independent school', schedule: '5 mornings × 3 h', pp: 498, size: '3', reviews: '4.8★ (1,148) TripAdvisor', status: 'PUBLISHED', url: 'https://en.prosneige.fr/info-prices-and-lesson-times-val-thorens/' },
             { name: 'ESF group beginner course', format: 'Mixed group', schedule: '6 mornings 9:00–11:30', pp: 285, size: '≈10–12', reviews: '4.9★ (47) CheckYeti', status: 'VERIFIED', url: 'https://www.ski-school-valthorens.co.uk/adults-discover-and-progress/alpine-skiing/beginners/' },
+            { name: 'Evolution 2 group (Natasha)', format: 'Intermediate group, always max 8', schedule: '5–6 mornings 9:00–11:30/12:00', pp: 295, size: 'max 8', reviews: '4.7–4.9★ (91) CheckYeti', status: 'PUBLISHED', natasha: true, url: 'https://evolution2.com/en/val-thorens/adults-ski-group-lessons' },
             { name: 'Ski Cool group', format: 'Small group, max 8', schedule: 'Sun + 5 mornings 9–12', pp: 270, size: 'max 8', reviews: '4.9★ (503) TripAdvisor', status: 'PUBLISHED', url: 'https://www.ski-cool.com/en/book/Cours-Collectifs-Ski-1.html' }
           ],
           ladder: [
@@ -230,6 +234,7 @@
           options: [
             { name: 'Skischule Stubai Tirol, shared private', format: 'One instructor for the 3 of you', schedule: '5 mornings × 2 h, Sun–Thu', pp: 450, size: '3 (just you)', reviews: '4.9★ (1,807) CheckYeti', status: 'PUBLISHED', pick: true, url: 'https://www.schischule-stubai.at/en/courses/privatelessons.html' },
             { name: 'Schischule Fulpmes, shared private', format: 'Office next to the flat', schedule: '5 mornings × 2 h', pp: 350, size: '3', reviews: '4.9★ (176) CheckYeti', status: 'PUBLISHED', url: 'https://www.schischule-fulpmes.at/preise/' },
+            { name: 'Skischule Stubai Tirol, adult group (Natasha)', format: 'Grouped by level, intermediate', schedule: 'Sun–Thu 10–12 + 13–15', pp: 290, size: 'by level', reviews: '4.9★ (1,807) school-wide', status: 'PUBLISHED', natasha: true, url: 'https://www.schischule-stubai.at/en/courses/ski.html' },
             { name: 'Skischule Stubai Tirol, beginner group', format: 'Absolute beginners, 4 h/day', schedule: 'Sun–Thu 10–12 + 13–15', pp: 290, size: 'mixed group', reviews: '4.9★ (140) first-timer course', status: 'PUBLISHED', url: 'https://www.schischule-stubai.at/en/courses/ski.html' }
           ],
           ladder: [
@@ -320,6 +325,7 @@
           options: [
             { name: 'ESF Arc 1800, shared private', format: 'One instructor for the 3 of you', schedule: '5 mornings × 3h30', pp: 416.67, size: '3 (just you)', reviews: '4.1★ (62) TripAdvisor, ESF Arc 1800', status: 'VERIFIED', pick: true, url: 'https://www.ski-school-arc1800.co.uk/private-lessons/book-an-instructor/' },
             { name: 'Arc Aventures (Evolution 2), private', format: 'Independent, max 4', schedule: '5 × 2h30', pp: 275, size: '≤4', reviews: '4.7★ (16)', status: 'PUBLISHED', url: 'https://arc-aventures.com/en/product/private-ski-lesson/' },
+            { name: 'ESF Arc 1800, adult group (Natasha)', format: 'Intermediate level group', schedule: '6 × 2h30, Sun–Fri', pp: 236, size: '≈12–14', reviews: '4.1★ (62) TripAdvisor', status: 'ESTIMATE', natasha: true, url: 'https://www.ski-school-arc1800.co.uk/adults/alpine-ski/beginners/' },
             { name: 'ESF Arc 1800, group “Ski discovery”', format: 'Mixed group', schedule: '6 × 2h30, Sun–Fri 9:15', pp: 236, size: '≈12–14', reviews: 'Some complaints about first-day sorting', status: 'PUBLISHED', url: 'https://www.ski-school-arc1800.co.uk/adults/alpine-ski/beginners/' },
             { name: 'Maison Sport freelancers', format: 'Pick a named instructor', schedule: 'Flexible', pp: 400, size: '≤6', reviews: '4.8–4.9★ (400–2,100)', status: 'ESTIMATE', url: 'https://maisonsport.com/en/resort/les-arcs-1800/skiing-lessons' }
           ],
@@ -368,7 +374,7 @@
         options: [{ id: 'own-bed', label: 'Each girl has her own bed (planner’s picks)', hint: 'Le Tikal · Kirchplatz · Belles Challes' }, { id: 'value', label: 'Cheapest that still fits the rules', hint: 'Girls may share a double or walk a bit further' }, { id: 'comfort', label: 'Pay more for a nicer flat', hint: 'On-snow / two separate flats / pool and sauna' }, { id: 'any', label: 'I don’t mind' }] },
       { id: 'flight', type: 'single', required: false, short: 'Flights', title: 'Flight times', help: 'Optional. We’ll book one booking for everyone.',
         options: [{ id: 'cheap', label: 'Cheapest, any London airport (Southend, Luton…)' }, { id: 'comfort', label: 'Gatwick or Heathrow at sensible times (+£30–100)' }, { id: 'any', label: 'I don’t mind' }] },
-      { id: 'lessons', type: 'single', required: false, short: 'Lessons', title: 'Lessons (Chloe, Kannes, Ina)', who: 'Chloe · Kannes · Ina', help: 'Optional. Natasha, Joaquin and Juan can skip this.',
+      { id: 'lessons', type: 'single', required: false, short: 'Lessons', title: 'Lessons for the beginners (Chloe, Kannes, Ina)', who: 'Chloe · Kannes · Ina', help: 'Optional. Natasha’s intermediate group class is budgeted either way. Joaquin and Juan can skip this.',
         options: [{ id: 'private', label: 'One private instructor for the three of us (recommended)' }, { id: 'group', label: 'Group classes, about £135–180 cheaper each' }, { id: 'any', label: 'I don’t mind' }] }
     ],
     steps: [
@@ -376,7 +382,7 @@
       { when: 'by Sun 11 Oct', what: 'Vote', detail: 'Resort, dates, can you come, and what matters in the flat. Majority wins; nobody needs to agree on everything.' },
       { when: 'Mon 12 Oct', what: 'Book the flat on a refundable rate', detail: 'Joaquin books; everyone sends their share. Free cancellation until 24 Dec or 9 Jan, depending on the flat.' },
       { when: 'by Wed 14 Oct', what: 'Book flights as one booking', detail: 'Within 48 h of the flat. Fares for 6 seats are already thinner than for 1.' },
-      { when: 'by end Oct', what: 'Book the beginners’ instructor', detail: 'Six consecutive private mornings fill first. Free cancellation where possible.' },
+      { when: 'by end Oct', what: 'Book lessons', detail: 'The beginners’ private instructor first (six consecutive mornings fill fast), then Natasha’s intermediate group. Free cancellation where possible.' },
       { when: 'Nov', what: 'Transfers, insurance, GHIC', detail: 'Book Ben’s Bus or the minibus. Each person buys winter-sports insurance.' },
       { when: 'Early Jan', what: 'Pre-book rental and lift passes online', detail: 'Online rental saves 20–50%. Last chance to cancel the flat free: 24 Dec / 9 Jan.' }
     ],

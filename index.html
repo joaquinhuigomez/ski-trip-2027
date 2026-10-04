@@ -517,7 +517,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
   <div>
     <div class="head">
       <h2>Weighing up the mountains</h2>
-      <p class="lead">All-in per person for Sat 23 → Sat 30 January, covering flight, bag, transfer, flat, lift pass, rental, insurance and lessons for the three beginners. Food is extra and shown below.</p>
+      <p class="lead">All-in per person for Sat 23 → Sat 30 January, covering flight, bag, transfer, flat, lift pass, rental, insurance and lessons (private for the three beginners, a group class for Natasha). Food is extra and shown below.</p>
     </div>
     <div class="pcards" id="pcards"></div>
     <div class="ctable-wrap"><table class="ctable" id="ctable"></table></div>
@@ -607,8 +607,8 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
   </div>
 </footer>
 
-<script src="data.js?v=3"></script>
-<script src="images.js?v=3"></script>
+<script src="data.js?v=4"></script>
+<script src="images.js?v=4"></script>
 <script>
 (() => {
   'use strict';
@@ -627,10 +627,10 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
 
   /* ---------- cost engine ---------- */
   const crewN = D.crew.length, nAdv = D.crew.filter(c => c.level === 'adv').length, nInt = D.crew.filter(c => c.level === 'int').length, nBeg = crewN - nAdv - nInt;
-  // Intermediate skiers pay what each item says via intAs: 'adv' (full lift pass), 'beg' (rental), 0 (no lessons); default = beginner value.
+  // Intermediate price: explicit `int`, else intAs: 'adv' (full lift pass), 'beg' (rental), 0 (beginners' private lessons); default = beginner value.
   function linePP(it, role, n = crewN) {
     if (it.group) return toEur(it.amount, it.cur) / n;
-    let v = role === 'adv' ? it.adv : role === 'int' ? (it.intAs === 'adv' ? it.adv : it.intAs === 0 ? 0 : it.beg) : it.beg;
+    let v = role === 'adv' ? it.adv : role === 'int' ? (it.int != null ? it.int : it.intAs === 'adv' ? it.adv : it.intAs === 0 ? 0 : it.beg) : it.beg;
     return v == null ? 0 : toEur(v, it.cur);
   }
   function totals(p, scen = 'S1', n = crewN) {
@@ -719,7 +719,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
   $('#ctable').innerHTML = `<thead><tr><th></th>${P.map(p => `<th class="p" scope="col"><b>${p.kanji}</b>${esc(p.short)}</th>`).join('')}</tr></thead><tbody>
     ${rows.map(([l, k]) => `<tr><th scope="row">${l}</th>${P.map(p => cell(p.compare[k])).join('')}</tr>`).join('')}
     <tr class="money"><th scope="row">Advanced, all-in pp</th>${P.map(p => { const t = totals(p); return `<td class="num">${G(t.adv / FX)}<small>${E(t.adv)}</small></td>`; }).join('')}</tr>
-    <tr class="money"><th scope="row">Intermediate, all-in pp</th>${P.map(p => { const t = totals(p); return `<td class="num">${G(t.int / FX)}<small>${E(t.int)} · Natasha: full pass, rental, no lessons</small></td>`; }).join('')}</tr>
+    <tr class="money"><th scope="row">Intermediate, all-in pp</th>${P.map(p => { const t = totals(p); return `<td class="num">${G(t.int / FX)}<small>${E(t.int)} · Natasha: full pass, rental, intermediate group lessons</small></td>`; }).join('')}</tr>
     <tr class="money"><th scope="row">Beginner, all-in pp</th>${P.map(p => { const t = totals(p); return `<td class="num">${G(t.beg / FX)}<small>${E(t.beg)} · lessons for 3 + rental included</small></td>`; }).join('')}</tr>
     <tr class="money"><th scope="row">Whole group</th>${P.map(p => { const t = totals(p); return `<td class="num">${G(t.group / FX)}<small>${E(t.group)} for ${crewN}</small></td>`; }).join('')}</tr>
     <tr><th scope="row">If only 5 / 4 come</th>${P.map(p => { const a = totals(p, 'S1', 5).avg, b = totals(p, 'S1', 4).avg, s = totals(p).avg; return `<td class="num">+${G((a - s) / FX)} / +${G((b - s) / FX)} pp<br><span class="muted">the flat costs the same, split fewer ways</span></td>`; }).join('')}</tr>
@@ -748,7 +748,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
       if (i === 0) return `<div class="day edge"><span class="dn">${dn}</span><span class="dd">${dd}</span><span>Fly ${esc(p.airport)}, transfer up, supermarket run, first fondue.</span></div>`;
       if (i === 5) return `<div class="day edge"><span class="dn">${dn}</span><span class="dd">${dd}</span><span>Pack, transfer down, fly home. (Sunday option: one more ski day.)</span></div>`;
       const r = sc.ladder[i - 1];
-      return `<div class="day"><span class="dn">${dn}</span><span class="dd">${dd}</span><span class="who"><i class="pm ${r.piste}"></i>Chloe, Kannes, Ina</span><span>${esc(r.what)}</span><span class="who"><i class="pm k"></i>Joaquin, Juan${i > 1 ? ', Natasha' : ''}</span><span>${esc(p.boys[i - 1])}</span></div>`;
+      return `<div class="day"><span class="dn">${dn}</span><span class="dd">${dd}</span><span class="who"><i class="pm ${r.piste}"></i>Chloe, Kannes, Ina</span><span>${esc(r.what)}</span><span class="who"><i class="pm k"></i>Joaquin, Juan${i > 1 ? ' (Natasha after her lesson)' : ''}</span><span>${esc(p.boys[i - 1])}</span></div>`;
     }).join('');
     const tr = p.transport;
     const routeMid = p.airport === 'Innsbruck' ? ['25 min minibus', 'Fulpmes'] : (p.id === 'les-arcs' ? ['≈3 h bus', 'Arc 1800'] : ['≈3 h bus', 'Val Thorens']);
@@ -775,15 +775,15 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
 
         <div class="sub" id="${p.id}-stay">${subH('住宿', 'Where we’d wake up', 'Sat 23 → Sat 30 · 6 adults')}<div class="stays">${stays}</div><p class="small muted">${esc(p.stayNote)}</p></div>
 
-        <div class="sub" id="${p.id}-school">${subH('滑雪課', 'First turns, gently taken', 'For Chloe, Kannes & Ina')}
+        <div class="sub" id="${p.id}-school">${subH('滑雪課', 'First turns, gently taken', 'Chloe, Kannes & Ina · plus Natasha’s group')}
           <div class="school"><div style="display:grid;gap:1rem">
             <div class="rec"><span class="hanko sm" aria-label="Recommended">推薦</span><p class="small">${esc(sc.rec)}</p></div>
-            <div style="overflow-x:auto"><table class="opts-t"><thead><tr><th>School</th><th>Schedule</th><th class="r">Per girl</th><th>Size</th><th>Reviews</th><th></th></tr></thead><tbody>
-              ${sc.options.map(o => `<tr class="${o.pick ? 'pick' : ''}"><td><a href="${esc(o.url)}" target="_blank" rel="noopener"><b>${esc(o.name)}</b></a><br><span class="muted">${esc(o.format)}</span></td><td>${esc(o.schedule)}</td><td class="r num">${E(toEur(o.pp, o.cur || 'EUR'))}<br><span class="muted">${G(toEur(o.pp, o.cur || 'EUR') / FX)}</span></td><td>${esc(o.size)}</td><td>${esc(o.reviews)}</td><td>${pill(o.status)}</td></tr>`).join('')}
+            <div style="overflow-x:auto"><table class="opts-t"><thead><tr><th>School</th><th>Schedule</th><th class="r">Per person</th><th>Size</th><th>Reviews</th><th></th></tr></thead><tbody>
+              ${sc.options.map(o => `<tr class="${o.pick || o.natasha ? 'pick' : ''}"><td><a href="${esc(o.url)}" target="_blank" rel="noopener"><b>${esc(o.name)}</b></a><br><span class="muted">${esc(o.format)}</span></td><td>${esc(o.schedule)}</td><td class="r num">${E(toEur(o.pp, o.cur || 'EUR'))}<br><span class="muted">${G(toEur(o.pp, o.cur || 'EUR') / FX)}</span></td><td>${esc(o.size)}</td><td>${esc(o.reviews)}</td><td>${pill(o.status)}</td></tr>`).join('')}
             </tbody></table></div>
             <div class="prog">${sc.ladder.map(r => `<div class="${r.piste}"><div class="bar"></div><b>${esc(r.day)}</b><span>${esc(r.what)}</span></div>`).join('')}</div>
           </div>
-          <div style="display:grid;gap:.9rem"><figure class="photo">${photo(im.lesson)}<span class="cap">${esc(im.lesson.author)}</span></figure><ul class="tips">${sc.tips.map(x => `<li>${esc(x)}</li>`).join('')}<li>Ina: ask for an instructor who is good with nervous returners, and keep the first two days on the gentlest slope. Warm layers matter more than skill here.</li><li>Natasha is intermediate, so no lessons. She can warm up with the beginners on Sunday, then ski blues and reds with Joaquin and Juan.</li></ul><p class="small muted"><b>Kit:</b> ${esc(p.kitNote)}</p></div></div>
+          <div style="display:grid;gap:.9rem"><figure class="photo">${photo(im.lesson)}<span class="cap">${esc(im.lesson.author)}</span></figure><ul class="tips">${sc.tips.map(x => `<li>${esc(x)}</li>`).join('')}<li>Ina: ask for an instructor who is good with nervous returners, and keep the first two days on the gentlest slope. Warm layers matter more than skill here.</li><li>Natasha takes an intermediate group class in the mornings (row marked “Natasha”, included in her total), then skis blues and reds with Joaquin and Juan in the afternoons.</li></ul><p class="small muted"><b>Kit:</b> ${esc(p.kitNote)}</p></div></div>
         </div>
 
         <div class="sub" id="${p.id}-food">${subH('飲食', 'Fondue first, dancing later', `About ${E(p.foodPerDay)} pp a day`)}
