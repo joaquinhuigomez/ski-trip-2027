@@ -74,11 +74,14 @@ R2.update({
 # Strip names that came from offline notes (only vote results may name people)
 def scrub(o):
     if isinstance(o, str):
-        for a, b in [('(warmer for Ina)', '(warmer and less exposed)'), ('warmer for Ina', 'warmer and less exposed'), ('Kannes', 'a late joiner'), ('for Ina', 'for a nervous beginner'), ('Adv + Natasha', 'Advanced'), ('Natasha', 'the intermediate skier')]:
+        for a, b in [('Double room (couple)', 'Double room'), ('double (couple)', 'double room'), ('Double (couple)', 'Double room'), (' (couple)', ''),
+                     ('ski with couple', 'ski with the advanced pair'), ('the couple', 'the advanced pair'), ('The couple', 'The advanced pair'), ('couple', 'advanced pair'),
+                     ('; no specific LGBTQ scene', ''), ('no specific LGBTQ scene', ''), ('LGBTQ', ''), ('gay-friendly', 'lively'),
+                     ('(warmer for Ina)', '(warmer and less exposed)'), ('warmer for Ina', 'warmer and less exposed'), ('Kannes', 'a late joiner'), ('for Ina', 'for a nervous beginner'), ('Adv + Natasha', 'Advanced'), ('Natasha', 'the intermediate skier')]:
             o = o.replace(a, b)
         return o
     if isinstance(o, list): return [scrub(x) for x in o]
-    if isinstance(o, dict): return {k: (v if k == 'round1' else scrub(v)) for k, v in o.items()}
+    if isinstance(o, dict): return {k: (v if k in ('round1', 'url', 'page', 'src') else scrub(v)) for k, v in o.items()}
     return o
 R2 = scrub(R2)
 R2['round1']['taken'] = '4 Oct 2026, 20:45'

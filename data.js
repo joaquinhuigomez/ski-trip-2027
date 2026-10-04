@@ -101,8 +101,8 @@
           beginner: { score: 4, text: 'Free carpets in the village; exposed and cold on bad days' },
           advanced: { score: 5, text: 'Whole 3 Vallées, 600 km' },
           snow: { score: 5, text: 'Highest resort in Europe' },
-          lift: '0 min, ski-to-door', beds: 'Couple’s double + 2 twin rooms; 3 bathrooms',
-          apres: { score: 5, text: 'Folie Douce, Malaysia club, gay-friendly bars' },
+          lift: '0 min, ski-to-door', beds: 'A room for the boys + 2 twin rooms for the girls; 3 bathrooms',
+          apres: { score: 5, text: 'Folie Douce, Malaysia club, lively bars' },
           week: 'Freeride World Tour in town, 24–30 Jan', cold: { score: 2, text: 'Coldest of the three: 2,300 m and no trees' },
           watch: 'Most expensive flat; extra night costs ≈ £75 pp'
         },
@@ -121,9 +121,9 @@
           'Snow is close to guaranteed in late January: the village sits at 2,300 m',
           'Ski-in/ski-out is normal here, even in budget flats',
           'Free beginner carpets in the village, and beginner lift tickets come to only about €184',
-          'Le Tikal gives the couple a double and each girl her own single bed, with 3 bathrooms',
+          'Le Tikal gives the boys their own room and each girl her own single bed, with 3 bathrooms',
           '600 km of linked pistes for Joaquin and Juan: Cime Caron, Orelle, Méribel, Courchevel',
-          'The best après in the Alps, with gay-friendly bars in the village',
+          'The best après in the Alps',
           'Freeride World Tour in town 24–30 Jan: free big-screen village, concerts, parties'
         ],
         cons: [
@@ -193,7 +193,7 @@
           beginner: { score: 5, text: 'Schlick 2000: wide, gentle, among trees' },
           advanced: { score: 3, text: 'Schlick is small; glacier days are 50 min away' },
           snow: { score: 4, text: 'Glacier guaranteed; Schlick 90% snowmaking' },
-          lift: '5 min ski bus (≈10 min walk)', beds: 'Couple’s queen; each girl her own bed; 2 baths',
+          lift: '5 min ski bus (≈10 min walk)', beds: 'A room for the boys; each girl her own bed; 2 baths',
           apres: { score: 2, text: 'Quiet village; Innsbruck bars 30 min away' },
           week: 'Quiet low-season week', cold: { score: 5, text: 'Warmest: Schlick is 1,000–2,240 m, among trees' },
           watch: 'Innsbruck flights cost 3× Geneva and can divert in bad weather'
@@ -201,7 +201,7 @@
         baseWhy: 'Fulpmes beat Neustift, the glacier station and Innsbruck city on our weighted score (4.2 of 5). Nowhere in the valley is walkable to the glacier, so we chose the village whose own ski area is best for first-timers. The pass still covers the glacier for big days.',
         stays: [
           { name: 'Apartments on Kirchplatz, Type C', where: 'Fulpmes centre, 135 m²', beds: 'Queen · queen + single · queen + single · 2 baths', lift: '5 min ski bus from the door', total: 3410, cur: 'EUR', rating: 'Airbnb 4.94', status: 'VERIFIED', pick: true, url: 'https://www.airbnb.co.uk/rooms/876679139510040180?check_in=2027-01-23&check_out=2027-01-30&adults=6&currency=EUR', tier: 'own-bed', note: 'Free cancellation until 24 Dec. Plus €202 tourist tax.' },
-          { name: 'Aparthotel Krösbacher (2 flats)', where: 'Bahnstraße, 9 min walk to the gondola', beds: 'Flat 1: couple + 2 girls in a twin · Flat 2: 2 girls in a twin', lift: '9 min walk', total: 3629, cur: 'EUR', rating: 'Booking 8.7 (317)', status: 'VERIFIED', url: 'https://www.booking.com/hotel/at/aparthotel-krosbacher.en-gb.html?checkin=2027-01-23&checkout=2027-01-30&group_adults=6&no_rooms=3&group_children=0&selected_currency=EUR', tier: 'comfort', note: 'Two separate flats, so the snoring stays in another flat' },
+          { name: 'Aparthotel Krösbacher (2 flats)', where: 'Bahnstraße, 9 min walk to the gondola', beds: 'Flat 1: the boys + 2 girls in a twin · Flat 2: 2 girls in a twin', lift: '9 min walk', total: 3629, cur: 'EUR', rating: 'Booking 8.7 (317)', status: 'VERIFIED', url: 'https://www.booking.com/hotel/at/aparthotel-krosbacher.en-gb.html?checkin=2027-01-23&checkout=2027-01-30&group_adults=6&no_rooms=3&group_children=0&selected_currency=EUR', tier: 'comfort', note: 'Two separate flats, so the snoring stays in another flat' },
           { name: 'Königin Serles', where: 'Fulpmes, Gröbenweg', beds: '3 bedrooms, each with one large double · 2 baths', lift: '12 min walk / 6 min to bus', total: 2668, cur: 'EUR', rating: 'Booking 9.9 (10)', status: 'VERIFIED', url: 'https://www.booking.com/hotel/at/haus-dorfblick-apartment-serles-co2-neutral.en-gb.html?checkin=2027-01-23&checkout=2027-01-30&group_adults=6&no_rooms=1&group_children=0&selected_currency=EUR', tier: 'value', note: 'Girls share two doubles in pairs. Free cancellation until 9 Jan.' }
         ],
         stayNote: 'Fulpmes rents Saturday to Saturday. Kirchplatz costs the same for 4 people (€3,410); Königin Serles drops to €2,354 for 4.',
@@ -215,7 +215,7 @@
           'Shortest transfer of the three: 25 minutes, about €48 per person return by private minibus',
           'Good 3-bedroom flats at €64–86 per person per night, with free cancellation into December or January',
           'Largest ski-school review base of any option: 4.9★ from 1,807 reviews',
-          'Innsbruck’s old town and small LGBTQ+ bar scene are 30 minutes away by bus'
+          'Innsbruck’s old town and bars are 30 minutes away by bus'
         ],
         cons: [
           'Innsbruck flights cost about 3× Geneva (£214 vs £72 per person), and there are far fewer of them',
@@ -250,7 +250,7 @@
           { name: 'Galtalm', what: 'The sunniest terrace on Schlick, with game and Tyrolean dishes', price: '€€' },
           { name: 'Jochdohle, 3,150 m', what: 'Tyrol’s highest restaurant, famous for its XXL schnitzel (glacier days)', price: '€€', url: 'https://www.stubaier-gletscher.com/en/winter/restaurants/' },
           { name: 'Dorfkrug · Zur Huisler Stube', what: 'Valley dinners, both 4.5★', price: '€€–€€€' },
-          { name: 'Innsbruck: Dom Café-Bar, Bacchus', what: 'A city night out on the gay-friendly circuit; 30 min by bus', price: '€€' }
+          { name: 'Innsbruck old town', what: 'A city night out; 30 min by bus', price: '€€' }
         ],
         transport: [
           { text: 'Fly London → Innsbruck. A seasonal ski route, mostly Saturdays: TUI from Gatwick, £214 return.', url: 'https://www.google.com/travel/flights?q=Flights%20from%20London%20to%20Innsbruck%20on%202027-01-23%20through%202027-01-30%20for%206%20adults&hl=en-GB&curr=GBP' },
@@ -283,14 +283,14 @@
           beginner: { score: 5, text: 'Lessons at the door, free weekend lifts, €45 beginner pass' },
           advanced: { score: 5, text: 'Paradiski 425 km, Aiguille Rouge' },
           snow: { score: 4, text: '1,800 m base, ski area up to 3,226 m' },
-          lift: '0 min, ski-in/ski-out', beds: 'Couple’s king; girls each have a single in one room; 2 baths',
+          lift: '0 min, ski-in/ski-out', beds: 'A room for the boys; girls each have a single in one room; 2 baths',
           apres: { score: 4, text: 'Folie Douce, Red Hot Saloon' },
           week: 'Quiet low-season week', cold: { score: 4, text: '1,800 m base; tree-lined runs at Arc 1600 on cold days' },
           watch: 'Saturday-only rentals; no shuttle on weekdays'
         },
         baseWhy: 'Arc 1800 is where the beginner set-up is best. ESF meets on the snow in front of the flat, the Piste des Minis is one gondola away, and most bars are here. The Transarc gondola takes the advanced pair to 2,600 m.',
         stays: [
-          { name: 'Belles Challes, Charvet', where: 'Arc 1800, south-facing 5th floor, renovated', beds: 'King (couple) · room with 4 singles · spare double · 2 baths', lift: '0 min (skis on at the door)', total: 2709, cur: 'GBP', rating: 'Airbnb 4.84 (57), Superhost', status: 'VERIFIED', pick: true, url: 'https://www.airbnb.co.uk/rooms/16923511?check_in=2027-01-23&check_out=2027-01-30&adults=6', tier: 'own-bed', note: 'Free cancellation until 9 Jan. The spare double lets two girls split off.' },
+          { name: 'Belles Challes, Charvet', where: 'Arc 1800, south-facing 5th floor, renovated', beds: 'King room · room with 4 singles · spare double · 2 baths', lift: '0 min (skis on at the door)', total: 2709, cur: 'GBP', rating: 'Airbnb 4.84 (57), Superhost', status: 'VERIFIED', pick: true, url: 'https://www.airbnb.co.uk/rooms/16923511?check_in=2027-01-23&check_out=2027-01-30&adults=6', tier: 'own-bed', note: 'Free cancellation until 9 Jan. The spare double lets two girls split off.' },
           { name: 'Le Ridge “best view” duplex', where: 'Arc 1600, 5-crystal residence with indoor pool, sauna and gym', beds: 'Queen · queen · double + 2 bunks · 3 baths', lift: '0 min (on the piste)', total: 3018, cur: 'GBP', rating: 'Airbnb 4.98 (57)', status: 'VERIFIED', url: 'https://www.airbnb.co.uk/rooms/41788990?check_in=2027-01-23&check_out=2027-01-30&adults=6', tier: 'comfort', note: 'The only top flat that also takes Sat 23 → Sun 31 (£3,451)' },
           { name: 'Chalet Yves', where: 'Arc 1800 Charmettoger, standalone chalet with log fire', beds: 'Double · twin · single + bunk · 1 bath', lift: '6–10 min walk', total: 1951, cur: 'GBP', rating: 'Airbnb 4.95 (39)', status: 'VERIFIED', url: 'https://www.airbnb.co.uk/rooms/52664023?check_in=2027-01-23&check_out=2027-01-30&adults=6', tier: 'value', note: 'Cheapest, and free to cancel until 22 Jan' }
         ],
@@ -303,7 +303,7 @@
           'The cheapest good flat of the three: ski-in/ski-out, each girl in her own bed, £64 per person per night',
           'Beginner set-up at the door: ESF meets on the snow outside, there are free lifts at weekends and a €45 beginner pass',
           'The private instructor costs the same for 1 to 4 people, so 5 private mornings come to €312.50 each for the four girls',
-          'Serious terrain for the couple: Aiguille Rouge (3,226 m), 2,000 m of vertical, and La Plagne on the same pass',
+          'Serious terrain for the advanced pair: Aiguille Rouge (3,226 m), 2,000 m of vertical, and La Plagne on the same pass',
           'Tree-lined runs at Arc 1600 and Peisey for flat-light days',
           'Proper après (Folie Douce, Red Hot Saloon) at lower prices than Val Thorens',
           'Car-free from the train: a funicular runs from Bourg-St-Maurice station'
