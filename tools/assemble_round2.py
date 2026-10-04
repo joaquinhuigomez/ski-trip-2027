@@ -57,8 +57,8 @@ R2.update({
   'decisions': [
     {'id': 'lengths', 'type': 'multi', 'required': True, 'anon': True, 'short': 'Lengths that work', 'title': 'Which trip lengths could you do?', 'help': 'Tick every one you could do, including leave. This is about what’s possible, not what you prefer. Results show counts only.',
      'options': [{'id': 'LS', 'label': 'Sun 24 → Sat 30 · 6 nights', 'hint': '5 days of leave'}, {'id': 'M', 'label': 'Tue 26 → Sun 31 · 5 nights', 'hint': '3–3.5 days of leave'}, {'id': 'S', 'label': 'Wed 27 → Sun 31 · 4 nights', 'hint': '3 days of leave'}, {'id': 'XS', 'label': 'Thu 28 → Sun 31 · 3 nights', 'hint': '2 days of leave'}]},
-    {'id': 'leave', 'type': 'single', 'required': False, 'anon': True, 'short': 'Leave you could take', 'title': 'How many days of leave could you take for this trip?', 'help': 'Be honest; nobody sees individual answers on the page, only counts.',
-     'options': [{'id': '2', 'label': '2 days'}, {'id': '3', 'label': '3 days'}, {'id': '4', 'label': '4 days'}, {'id': '5', 'label': '5 days'}, {'id': 'unsure', 'label': 'Not sure yet'}]},
+    {'id': 'leave', 'type': 'single', 'required': False, 'anon': True, 'short': 'Leave you could take', 'title': 'How many days of leave could you take, at most?', 'help': 'Pick the most you could take. It’s a ceiling, not a commitment: we can always do fewer days depending on what suits the group. Results show counts only.',
+     'options': [{'id': '2', 'label': 'Up to 2 days'}, {'id': '3', 'label': 'Up to 3 days'}, {'id': '4', 'label': 'Up to 4 days'}, {'id': '5', 'label': 'Up to 5 days'}, {'id': 'unsure', 'label': 'Not sure yet'}]},
     {'id': 'favourite', 'type': 'single', 'required': False, 'anon': True, 'short': 'Favourite length', 'title': 'Which length would you prefer?',
      'options': [{'id': 'LS', 'label': '6 nights, Sun → Sat'}, {'id': 'M', 'label': '5 nights, Tue → Sun'}, {'id': 'S', 'label': '4 nights, Wed → Sun'}, {'id': 'XS', 'label': '3 nights, Thu → Sun'}, {'id': 'any', 'label': 'I don’t mind'}]},
     {'id': 'resort', 'type': 'rank', 'required': True, 'short': 'Resort', 'title': 'Rank the resorts', 'help': 'Put your favourite first.',

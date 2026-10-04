@@ -2909,24 +2909,24 @@ window.ROUND2 = {
    "required": false,
    "anon": true,
    "short": "Leave you could take",
-   "title": "How many days of leave could you take for this trip?",
-   "help": "Be honest; nobody sees individual answers on the page, only counts.",
+   "title": "How many days of leave could you take, at most?",
+   "help": "Pick the most you could take. It’s a ceiling, not a commitment: we can always do fewer days depending on what suits the group. Results show counts only.",
    "options": [
     {
      "id": "2",
-     "label": "2 days"
+     "label": "Up to 2 days"
     },
     {
      "id": "3",
-     "label": "3 days"
+     "label": "Up to 3 days"
     },
     {
      "id": "4",
-     "label": "4 days"
+     "label": "Up to 4 days"
     },
     {
      "id": "5",
-     "label": "5 days"
+     "label": "Up to 5 days"
     },
     {
      "id": "unsure",
