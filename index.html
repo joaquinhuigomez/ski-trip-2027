@@ -458,6 +458,15 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
 .pivot .gallery{grid-template-rows:repeat(2,minmax(0,10rem))}
 .flex{margin-top:2rem;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.25rem}
 @media (max-width:820px){.flex{grid-template-columns:minmax(0,1fr)}}
+.archive{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.archive > summary{list-style:none;cursor:pointer;padding-block:2rem;background:var(--washi)}
+.archive > summary::-webkit-details-marker{display:none}
+.archive > summary .wrap{display:grid;gap:.4rem;position:relative;padding-right:3rem}
+.archive > summary .wrap::after{content:"+";position:absolute;right:var(--gutter);top:50%;transform:translateY(-50%);font:500 1.8rem/1 var(--f-label);color:var(--shu)}
+.archive[open] > summary .wrap::after{content:"–"}
+.arch-t{font:500 1.35rem/1.3 var(--f-display)}
+.arch-s{font-size:var(--fs-small);color:var(--ink-2)}
+.dropped{font:500 .55rem/1 var(--f-label);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);border:1px solid var(--rule);padding:.25rem .4rem;margin-left:.4rem;vertical-align:middle}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -467,9 +476,8 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
   <div class="wrap">
     <a class="brand" href="#top"><b lang="zh-Hant">滑雪團</b> <span>Alps 2027</span></a>
     <nav class="links" aria-label="Sections" id="links">
-      <a href="#round2">Round 2</a><a href="#vote">Vote</a><a href="#compare">Compare</a>
-      <span id="nav-p" style="display:contents"></span>
-      <a href="#dates">Dates</a><a href="#next">Next</a>
+      <a href="#round2">Round 2</a><a href="#vote">Vote</a><a href="#party">Party</a><a href="#archive">Round 1</a><a href="#next">Next</a>
+      <span id="nav-p" hidden></span>
     </nav>
     <a class="cta" href="#vote">Stamp your vote</a>
   </div>
@@ -595,7 +603,22 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
   </div>
 </section>
 
-<div class="r2-banner" style="background:var(--ai);color:var(--on-ai)">Below: the round-1 proposals in full. They are still the “full week” option in round 2.</div>
+<section class="sec" id="party"><div class="wrap frame">
+  <aside class="tate" lang="zh-Hant">成員<small>The party</small></aside>
+  <div>
+    <div class="head">
+      <h2>The travelling party</h2>
+      <p class="lead">Two advanced skiers, one intermediate and three beginners who have each had a few days on skis. Whoever can come, comes. Late arrivals and early exits are allowed.</p>
+    </div>
+    <div class="party" id="crew"></div>
+    <div class="canto"><q lang="zh-Hant-HK">慢慢嚟，唔使驚</q><span>Take it slow, nothing to be scared of. The lesson group’s only rule.</span></div>
+  </div>
+</div></section>
+
+
+<!-- ROUND 1 ARCHIVE (collapsed) -->
+<details class="archive" id="archive">
+  <summary><div class="wrap"><span class="label">Round 1 archive</span><span class="arch-t">The original brief, comparison and Les Arcs proposal</span><span class="arch-s">Kept for reference. Val Thorens and Stubai were dropped after round 1. Tap to open.</span></div></summary>
 <!-- BRIEF -->
 <section class="sec washi" id="brief"><div class="wrap frame">
   <aside class="tate" lang="zh-Hant">要求<small>The brief</small></aside>
@@ -621,18 +644,6 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
 </div></section>
 
 <!-- PARTY -->
-<section class="sec" id="party"><div class="wrap frame">
-  <aside class="tate" lang="zh-Hant">成員<small>The party</small></aside>
-  <div>
-    <div class="head">
-      <h2>The travelling party</h2>
-      <p class="lead">Two advanced skiers, one intermediate and three beginners who have each had a few days on skis. Whoever can come, comes. Late arrivals and early exits are allowed.</p>
-    </div>
-    <div class="party" id="crew"></div>
-    <div class="canto"><q lang="zh-Hant-HK">慢慢嚟，唔使驚</q><span>Take it slow, nothing to be scared of. The lesson group’s only rule.</span></div>
-  </div>
-</div></section>
-
 <!-- COMPARE -->
 <section class="sec washi" id="compare"><div class="wrap frame">
   <aside class="tate" lang="zh-Hant">比較<small>Side by side</small></aside>
@@ -662,6 +673,8 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
   </div>
 </div></section>
 
+</details>
+
 <!-- NEXT -->
 <section class="sec" id="next"><div class="wrap frame">
   <aside class="tate" lang="zh-Hant">準備<small>Next</small></aside>
@@ -690,7 +703,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
 
 <script src="data.js?v=4"></script>
 <script src="images.js?v=4"></script>
-<script src="data2.js?v=5"></script>
+<script src="data2.js?v=6"></script>
 <script>
 (() => {
   'use strict';
@@ -763,6 +776,9 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
     new IntersectionObserver(([e]) => { const was = run; run = e.isIntersecting; c.hidden = !run; if (run && !was) tick(); }).observe($('.hero'));
     addEventListener('resize', size); size(); tick(); })();
 
+  /* archive: open automatically when a link targets something inside it */
+  const openArchiveFor = h => { const t = h && document.getElementById(h.slice(1)); const a = $('#archive'); if (t && a && a.contains(t) && !a.open) { a.open = true; setTimeout(() => t.scrollIntoView(), 80); } };
+  addEventListener('hashchange', () => openArchiveFor(location.hash)); openArchiveFor(location.hash);
   /* nav */
   const nav = $('#nav'); const onScroll = () => nav.classList.toggle('solid', scrollY > innerHeight * .6); addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
@@ -793,13 +809,13 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
   const P = D.proposals;
   const rating = (o) => `<span class="rating" aria-label="${o.score} of 5">${[1,2,3,4,5].map(i => `<i class="${i <= o.score ? 'on' : ''}"></i>`).join('')}</span> <span class="muted">${esc(o.text)}</span>`;
   $('#pcards').innerHTML = P.map((p, i) => { const t = totals(p); const im = I[p.letter];
-    return `<a class="pcard" href="#p-${p.id}"><figure class="photo">${photo(im.card)}<span class="corner">${esc(p.country)} · ${esc(p.airport)}</span><span class="kanji" aria-hidden="true">${p.kanji}</span></figure>
+    return `<a class="pcard" href="${p.dropped ? '#round2' : '#p-' + p.id}" ${p.dropped ? 'style="opacity:.55"' : ''}><figure class="photo">${photo(im.card)}<span class="corner">${esc(p.country)} · ${esc(p.airport)}</span><span class="kanji" aria-hidden="true">${p.kanji}</span></figure>
       ${p.recommended ? '<span class="hanko stamp" aria-label="Planner’s pick">推薦</span>' : ''}
-      <div><div class="label">Proposal ${p.letter}</div><h3>${esc(p.name)}</h3><p class="small muted">${esc(p.feel)}</p></div>
+      <div><div class="label">Proposal ${p.letter}${p.dropped ? ' · dropped after round 1' : ''}</div><h3>${esc(p.name)}</h3><p class="small muted">${esc(p.feel)}</p></div>
       <div class="ticket"><div><span class="t-l">Advanced</span><span class="t-v">${G(t.adv / FX)}</span></div><div><span class="t-l">Intermediate</span><span class="t-v">${G(t.int / FX)}</span></div><div><span class="t-l">Beginner</span><span class="t-v">${G(t.beg / FX)}</span></div></div></a>`; }).join('');
   const rows = [['Fly into', 'fly'], ['Transfer', 'transfer'], ['Base', 'base'], ['For beginners', 'beginner'], ['For advanced', 'advanced'], ['Snow, late Jan', 'snow'], ['Flat to lift', 'lift'], ['Bedrooms', 'beds'], ['Cold & confidence', 'cold'], ['Après', 'apres'], ['That week', 'week'], ['Main catch', 'watch']];
   const cell = v => v == null ? '<td>—</td>' : (typeof v === 'object' ? `<td>${rating(v)}</td>` : `<td>${esc(v)}</td>`);
-  $('#ctable').innerHTML = `<thead><tr><th></th>${P.map(p => `<th class="p" scope="col"><b>${p.kanji}</b>${esc(p.short)}</th>`).join('')}</tr></thead><tbody>
+  $('#ctable').innerHTML = `<thead><tr><th></th>${P.map(p => `<th class="p" scope="col"><b>${p.kanji}</b>${esc(p.short)}${p.dropped ? '<span class="dropped">dropped</span>' : ''}</th>`).join('')}</tr></thead><tbody>
     ${rows.map(([l, k]) => `<tr><th scope="row">${l}</th>${P.map(p => cell(p.compare[k])).join('')}</tr>`).join('')}
     <tr class="money"><th scope="row">Advanced, all-in pp</th>${P.map(p => { const t = totals(p); return `<td class="num">${G(t.adv / FX)}<small>${E(t.adv)}</small></td>`; }).join('')}</tr>
     <tr class="money"><th scope="row">Intermediate, all-in pp</th>${P.map(p => { const t = totals(p); return `<td class="num">${G(t.int / FX)}<small>${E(t.int)} · Natasha: full pass, rental, intermediate group lessons</small></td>`; }).join('')}</tr>
@@ -814,8 +830,8 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
   const ridge = (from, to, rim = true) => `<svg class="ridge" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" style="background:${from}"><path d="M0 80V52l120-30 90 22 140-40 110 34 80-14 150 26 130-44 120 30 100-12 160 34 140-28 100 18V80z" fill="${to}"/>${rim ? '<path d="M350 4l110 34 80-14" fill="none" stroke="var(--kin)" stroke-width="1" opacity=".55"/>' : ''}</svg>`;
   const subH = (kj, title, label) => `<div class="sub-h"><span class="kj" lang="zh-Hant">${kj}</span><h3>${title}</h3>${label ? `<span class="label">${label}</span>` : ''}</div>`;
   const DAYS = [['Sat', '23'], ['Sun', '24'], ['Mon–Tue', '25–26'], ['Wed–Thu', '27–28'], ['Fri', '29'], ['Sat', '30']];
-  $('#nav-p').innerHTML = P.map(p => `<a class="k" href="#p-${p.id}" title="${esc(p.short)}">${p.kanji}</a>`).join('');
-  $('#proposals').innerHTML = P.map((p, idx) => {
+  const PL = P.filter(p => !p.dropped);
+  $('#proposals').innerHTML = PL.map((p, idx) => {
     const t = totals(p), im = I[p.letter];
     const pick = p.stays.find(s => s.pick);
     const stays = p.stays.map(s => { const tot = toEur(s.total, s.cur);
@@ -835,7 +851,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
     }).join('');
     const tr = p.transport;
     const routeMid = p.airport === 'Innsbruck' ? ['25 min minibus', 'Fulpmes'] : (p.id === 'les-arcs' ? ['≈3 h bus', 'Arc 1800'] : ['≈3 h bus', 'Val Thorens']);
-    const next = idx < P.length - 1;
+    const next = idx < PL.length - 1;
     return `<section id="p-${p.id}" aria-label="Proposal ${p.letter}: ${esc(p.name)}">
       <figure class="photo opener">${photo(im.opener, '', idx === 0)}<span class="big" aria-hidden="true">${p.kanji}</span><span class="corner">${esc(p.country)} · ${esc(p.name.split(',')[1] || p.short)}</span><span class="cap">${esc(im.opener.author)} · ${esc(im.opener.src)}</span></figure>
       <div class="wrap">

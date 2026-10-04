@@ -2852,7 +2852,7 @@ window.ROUND2 = {
     }
    }
   ],
-  "taken": "4 Oct 2026, 21:01",
+  "taken": "4 Oct 2026, 21:06",
   "note": "Round 1 is kept as a record. Everyone votes again in round 2, which uses new options and prices."
  },
  "closeLabel": "Wed 14 Oct",
@@ -3291,5 +3291,6 @@ window.TRIP.steps = [
   "detail": "Online rental saves 10–50%. Last free-cancellation dates fall between late Dec and mid Jan, depending on the flat."
  }
 ];
+window.TRIP.proposals.forEach(p => { if (p.id === 'val-thorens' || p.id === 'stubai') p.dropped = true; });
 window.TRIP.dates.voteCloseLabel = 'Wed 14 Oct';
 window.TRIP.dates.bookByLabel = 'Sun 18 Oct';
