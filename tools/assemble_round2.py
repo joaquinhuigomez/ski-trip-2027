@@ -33,7 +33,7 @@ R2.update({
     {'k': 'Price', 't': 'Shorter, cheaper options', 'd': 'Some of us asked for a cheaper version. There are now 3–5 night trips using 2–3.5 days of leave, a budget tier, and cost levers to switch on.'},
     {'k': 'New options', 't': 'Two snow-sure alternatives', 'd': 'Both villages sit at 1,600 m or higher, so the snow is reliable, and both are priced against Les Arcs. Details below the price table.'},
   ],
-  'matrixHelp': 'Per person, all-in except food: flights, bag, transfer, flat, lift pass, lessons, rental and insurance. Budget is the cheapest flat that fits the rules, plus group lessons where they run. Comfort is an own-bed flat plus a private instructor for the beginners. Tap a price for the full breakdown.',
+  'matrixHelp': 'Per person, all-in except food: flights, bag, transfer, flat, lift pass, lessons, rental and insurance. Budget is the cheapest flat that fits the rules, plus group lessons where they run. Comfort is an own-bed flat plus a private instructor for the four girls. Natasha learns with the girls, so she has the girls’ price. Tap a price for the full breakdown.',
   'voteLead': 'Two questions are needed: which lengths you could do, and your resort ranking. The rest is optional. Answers about dates, leave and budget appear as counts only, never next to names. Vote by Wednesday 14 October.',
   'flexRule': 'Anyone who joins for only part of the week pays for the flat by the night, plus their own flights, pass and lessons. Full-week flats (Sun → Sat), split six ways:',
   'rules': [
@@ -66,7 +66,7 @@ R2.update({
     {'id': 'budget', 'type': 'single', 'required': False, 'anon': True, 'short': 'Comfortable budget', 'title': 'What all-in budget feels comfortable, excluding food?',
      'options': [{'id': 'u700', 'label': 'Under £700'}, {'id': '700', 'label': '£700–1,000'}, {'id': '1000', 'label': '£1,000–1,300'}, {'id': '1300', 'label': 'Over £1,300'}, {'id': 'skip', 'label': 'Prefer not to say'}]},
     {'id': 'levers', 'type': 'multi', 'required': False, 'anon': True, 'short': 'Cost levers', 'title': 'Which cost levers would you accept?', 'help': 'Try them on the price table above first.',
-     'options': [{'id': 'ski1', 'label': 'Ski one day less (rest or sightseeing day instead)'}, {'id': 'lessons', 'label': 'Fewer lesson days'}, {'id': 'group', 'label': 'Group lessons instead of a private instructor'}, {'id': 'share', 'label': 'Share a room or double bed for a cheaper flat'}, {'id': 'bags', 'label': 'Share hold bags'}, {'id': 'none', 'label': 'None of these'}]},
+     'options': [{'id': 'ski1', 'label': 'Ski one day less (rest or sightseeing day instead)'}, {'id': 'lessons', 'label': 'Fewer lesson days'}, {'id': 'group', 'label': 'Group lessons instead of a private instructor for the girls'}, {'id': 'share', 'label': 'Share a room or double bed for a cheaper flat'}, {'id': 'bags', 'label': 'Share hold bags'}, {'id': 'none', 'label': 'None of these'}]},
     {'id': 'flex', 'type': 'single', 'required': False, 'anon': True, 'short': 'Part of a longer trip', 'title': 'If the group picks a longer trip than suits you, would you join for part of it?',
      'options': [{'id': 'yes', 'label': 'Yes, I’d join for part of it'}, {'id': 'same', 'label': 'I’d rather we all do the same dates'}, {'id': 'any', 'label': 'I don’t mind'}]},
   ],
@@ -74,14 +74,14 @@ R2.update({
 # Strip names that came from offline notes (only vote results may name people)
 def scrub(o):
     if isinstance(o, str):
-        for a, b in [('(warmer for Ina)', '(warmer and less exposed)'), ('warmer for Ina', 'warmer and less exposed'), ('Kannes', 'a late joiner'), ('for Ina', 'for a nervous beginner')]:
+        for a, b in [('(warmer for Ina)', '(warmer and less exposed)'), ('warmer for Ina', 'warmer and less exposed'), ('Kannes', 'a late joiner'), ('for Ina', 'for a nervous beginner'), ('Adv + Natasha', 'Advanced'), ('Natasha', 'the intermediate skier')]:
             o = o.replace(a, b)
         return o
     if isinstance(o, list): return [scrub(x) for x in o]
     if isinstance(o, dict): return {k: (v if k == 'round1' else scrub(v)) for k, v in o.items()}
     return o
 R2 = scrub(R2)
-R2['round1']['taken'] = datetime.datetime.now().strftime('%-d %b %Y, %H:%M')
+R2['round1']['taken'] = '4 Oct 2026, 20:45'
 R2['round1']['note'] = 'Round 1 is kept as a record. Everyone votes again in round 2, which uses new options and prices.'
 
 steps = [
@@ -89,7 +89,7 @@ steps = [
   {'when': 'by Wed 14 Oct', 'what': 'Round 2 vote', 'detail': 'Lengths you could do, resort ranking, and optional budget and levers.'},
   {'when': 'Thu 15 Oct', 'what': 'Book the flat on a refundable rate', 'detail': 'Joaquin books; everyone sends their share.'},
   {'when': 'by Sat 17 Oct', 'what': 'Book flights as one booking', 'detail': 'Within 48 hours of the flat. Fares for 6 seats are already thinner than for 1.'},
-  {'when': 'by end Oct', 'what': 'Book lessons', 'detail': 'Beginners’ instructor or group course first, then Natasha’s class.'},
+  {'when': 'by end Oct', 'what': 'Book lessons', 'detail': 'One instructor or group course for the four girls.'},
   {'when': 'Nov', 'what': 'Transfer and insurance', 'detail': 'Book the minibus or shuttle. Everyone buys winter-sports insurance.'},
   {'when': 'Early Jan', 'what': 'Pre-book rental and passes online', 'detail': 'Online rental saves 10–50%. Last free-cancellation dates fall between late Dec and mid Jan, depending on the flat.'},
 ]

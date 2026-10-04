@@ -71,15 +71,15 @@ def build_cell(resort: dict, shape: dict, d: dict, tier: str, school_override: d
         c = 3.5 * shape['skiDays']
         items.append({'label': 'Carré Neige piste-rescue cover', 'intAs': 'adv', 'adv': c, 'beg': c, 'cur': 'EUR', 'status': 'PUBLISHED'})
     so = dict(school_override[tier])
-    # consistent labels across resorts
-    if not so['beg_label'].startswith('Beginners'):
-        so['beg_label'] = 'Beginners: ' + so['beg_label']
-    if so.get('int_label'):
-        so['int_label'] = 'Natasha: ' + so['int_label'].split(': ', 1)[-1] if so['int_label'].startswith(('Intermediate', 'Natasha')) else 'Natasha: ' + so['int_label']
-    items.append({'label': so['beg_label'], 'note': so.get('beg_note', d.get('school_note', '')), 'intAs': 0, 'adv': 0, 'beg': so['beg'], 'cur': 'EUR', 'status': so.get('status', 'PUBLISHED'), 'kind': 'school', 'days': shape['lessonDays']})
-    if so.get('int'):
-        items.append({'label': so['int_label'], 'note': so.get('int_note', ''), 'adv': 0, 'beg': 0, 'int': so['int'], 'cur': 'EUR', 'status': so.get('int_status', 'PUBLISHED'), 'kind': 'school', 'days': shape['lessonDays']})
-    items.append({'intAs': 'beg', 'label': 'Rental for beginners and Natasha', 'note': d.get('rental_note', ''), 'adv': 0, 'beg': num(d['rental_beg']), 'cur': 'EUR', 'status': 'ESTIMATE' if 'ESTIMATE' in d.get('rental_note', '') else 'VERIFIED', 'kind': 'rental', 'days': shape['skiDays']})
+    # All four girls (incl. the intermediate) share the same lessons. Research priced privates for 3,
+    # and instructor prices here are flat for up to 4-6 people, so a private becomes 3/4 of the per-person price.
+    label = so['beg_label'].split(': ', 1)[-1] if so['beg_label'].startswith('Beginners') else so['beg_label']
+    beg = so['beg']
+    if 'private' in label.lower():
+        beg = round(beg * 3 / 4, 2)
+        label = label.replace('for 3', 'for 4').replace('3 people', '4 people').replace('÷ 3', '÷ 4')
+    items.append({'label': 'The girls: ' + label, 'note': so.get('beg_note', d.get('school_note', '')), 'intAs': 0, 'adv': 0, 'beg': beg, 'cur': 'EUR', 'status': so.get('status', 'PUBLISHED'), 'kind': 'school', 'days': shape['lessonDays']})
+    items.append({'intAs': 'beg', 'label': 'Rental for the girls', 'note': d.get('rental_note', ''), 'adv': 0, 'beg': num(d['rental_beg']), 'cur': 'EUR', 'status': 'ESTIMATE' if 'ESTIMATE' in d.get('rental_note', '') else 'VERIFIED', 'kind': 'rental', 'days': shape['skiDays']})
     ins = 27 if shape['nights'] >= 6 else 22
     items.append({'label': 'Travel insurance with winter-sports cover', 'adv': ins, 'beg': ins, 'cur': 'GBP', 'status': 'ESTIMATE'})
     return items
@@ -137,10 +137,10 @@ def main() -> None:
                 'budget': {'stay': stay(d['stay_value']), 'items': build_cell(r, sh, d, 'budget', SCHOOL[r['key']][sh['id']])},
                 'comfort': {'stay': stay(d['stay_comfort']), 'items': build_cell(r, sh, d, 'comfort', SCHOOL[r['key']][sh['id']])},
             }
-    # Freeze round-1 ballots (live snapshot at build time)
-    with urllib.request.urlopen(VOTE_API) as resp:
-        live = json.load(resp)
-    r1 = [b for b in live['ballots'] if not b['answers'].get('round')]
+    # Round-1 ballots are frozen in research/round1_frozen.json. Never re-fetch: a person's round-2 vote
+    # replaces their round-1 row in the live feed (latest ballot per name), which would drop them.
+    frozen = load('round1_frozen.json')
+    r1 = frozen['ballots']
     out = {'resorts': [dict({k: r[k] for k in ('id', 'kanji', 'short', 'sub')}, label=r.get('label', r['short'] + ' (France)')) for r in resorts], 'shapes': SHAPES, 'cells': cells,
            'round1': {'ballots': r1}}
     with open(os.path.join(ROOT, 'data2.generated.json'), 'w') as f:

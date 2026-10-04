@@ -676,7 +676,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
   <div>
     <div class="head">
       <h2>Weighing up the mountains</h2>
-      <p class="lead">All-in per person for Sat 23 → Sat 30 January, covering flight, bag, transfer, flat, lift pass, rental, insurance and lessons (private for the three beginners, a group class for Natasha). Food is extra and shown below.</p>
+      <p class="lead">All-in per person for Sat 23 → Sat 30 January, covering flight, bag, transfer, flat, lift pass, rental, insurance and lessons for the four girls. Food is extra and shown below.</p>
     </div>
     <div class="pcards" id="pcards"></div>
     <div class="ctable-wrap"><table class="ctable" id="ctable"></table></div>
@@ -727,9 +727,9 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
   </div>
 </footer>
 
-<script src="data.js?v=4"></script>
+<script src="data.js?v=5"></script>
 <script src="images.js?v=4"></script>
-<script src="data2.js?v=8"></script>
+<script src="data2.js?v=9"></script>
 <script>
 (() => {
   'use strict';
@@ -748,7 +748,8 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
   const KANJI = ['一','二','三','四','五','六','七'];
 
   /* ---------- cost engine ---------- */
-  const crewN = D.crew.length, nAdv = D.crew.filter(c => c.level === 'adv').length, nInt = D.crew.filter(c => c.level === 'int').length, nBeg = crewN - nAdv - nInt;
+  // Natasha (intermediate) takes the same lessons and pass plan as the other girls, so she is costed as one of 'the girls'.
+  const crewN = D.crew.length, nAdv = D.crew.filter(c => c.level === 'adv').length, nInt = 0, nBeg = crewN - nAdv;
   // Intermediate price: explicit `int`, else intAs: 'adv' (full lift pass), 'beg' (rental), 0 (beginners' private lessons); default = beginner value.
   function linePP(it, role, n = crewN) {
     if (it.group) return toEur(it.amount, it.cur) / n;
@@ -817,7 +818,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
   /* brief */
   const RULES = [
     ['Beginner-friendly', 'Gentle, close-by slopes and a patient English-speaking ski school, so three beginners (one nervous after a fall, and she feels the cold) can reach blue runs by Friday.'],
-    ['Still fun for the rest', 'Long blues and reds for Natasha; proper steeps and vertical for two 6–7-season skiers.'],
+    ['Still fun for the advanced pair', 'Proper steeps and vertical for two 6–7-season skiers.'],
     ['No car', 'Airport to door by shuttle, minibus or train, then walk to the lift. Under 5 minutes is the goal.'],
     ['Budget', 'Under £100 per person per night for the flat, ideally; never over £200. No hostels and no five-star hotels.'],
     ['The week', 'Last week of January, using the same five days of leave (Mon 25 – Fri 29), plus one or both weekends.']
@@ -838,14 +839,13 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
     return `<a class="pcard" href="${p.dropped ? '#round2' : '#p-' + p.id}" ${p.dropped ? 'style="opacity:.55"' : ''}><figure class="photo">${photo(im.card)}<span class="corner">${esc(p.country)} · ${esc(p.airport)}</span><span class="kanji" aria-hidden="true">${p.kanji}</span></figure>
       ${p.recommended ? '<span class="hanko stamp" aria-label="Planner’s pick">推薦</span>' : ''}
       <div><div class="label">Proposal ${p.letter}${p.dropped ? ' · dropped after round 1' : ''}</div><h3>${esc(p.name)}</h3><p class="small muted">${esc(p.feel)}</p></div>
-      <div class="ticket"><div><span class="t-l">Advanced</span><span class="t-v">${G(t.adv / FX)}</span></div><div><span class="t-l">Intermediate</span><span class="t-v">${G(t.int / FX)}</span></div><div><span class="t-l">Beginner</span><span class="t-v">${G(t.beg / FX)}</span></div></div></a>`; }).join('');
+      <div class="ticket"><div><span class="t-l">Advanced</span><span class="t-v">${G(t.adv / FX)}</span></div><div><span class="t-l">The girls</span><span class="t-v">${G(t.beg / FX)}</span></div></div></a>`; }).join('');
   const rows = [['Fly into', 'fly'], ['Transfer', 'transfer'], ['Base', 'base'], ['For beginners', 'beginner'], ['For advanced', 'advanced'], ['Snow, late Jan', 'snow'], ['Flat to lift', 'lift'], ['Bedrooms', 'beds'], ['Cold & confidence', 'cold'], ['Après', 'apres'], ['That week', 'week'], ['Main catch', 'watch']];
   const cell = v => v == null ? '<td>—</td>' : (typeof v === 'object' ? `<td>${rating(v)}</td>` : `<td>${esc(v)}</td>`);
   $('#ctable').innerHTML = `<thead><tr><th></th>${P.map(p => `<th class="p" scope="col"><b>${p.kanji}</b>${esc(p.short)}${p.dropped ? '<span class="dropped">dropped</span>' : ''}</th>`).join('')}</tr></thead><tbody>
     ${rows.map(([l, k]) => `<tr><th scope="row">${l}</th>${P.map(p => cell(p.compare[k])).join('')}</tr>`).join('')}
     <tr class="money"><th scope="row">Advanced, all-in pp</th>${P.map(p => { const t = totals(p); return `<td class="num">${G(t.adv / FX)}<small>${E(t.adv)}</small></td>`; }).join('')}</tr>
-    <tr class="money"><th scope="row">Intermediate, all-in pp</th>${P.map(p => { const t = totals(p); return `<td class="num">${G(t.int / FX)}<small>${E(t.int)} · Natasha: full pass, rental, intermediate group lessons</small></td>`; }).join('')}</tr>
-    <tr class="money"><th scope="row">Beginner, all-in pp</th>${P.map(p => { const t = totals(p); return `<td class="num">${G(t.beg / FX)}<small>${E(t.beg)} · lessons for 3 + rental included</small></td>`; }).join('')}</tr>
+    <tr class="money"><th scope="row">Beginner, all-in pp</th>${P.map(p => { const t = totals(p); return `<td class="num">${G(t.beg / FX)}<small>${E(t.beg)} · lessons for 4 + rental included</small></td>`; }).join('')}</tr>
     <tr class="money"><th scope="row">Whole group</th>${P.map(p => { const t = totals(p); return `<td class="num">${G(t.group / FX)}<small>${E(t.group)} for ${crewN}</small></td>`; }).join('')}</tr>
     <tr><th scope="row">If only 5 / 4 come</th>${P.map(p => { const a = totals(p, 'S1', 5).avg, b = totals(p, 'S1', 4).avg, s = totals(p).avg; return `<td class="num">+${G((a - s) / FX)} / +${G((b - s) / FX)} pp<br><span class="muted">the flat costs the same, split fewer ways</span></td>`; }).join('')}</tr>
     <tr><th scope="row">Food, 7 days pp</th>${P.map(p => `<td class="num">${G(p.foodPerDay * 7 / FX)} <span class="muted">(${E(p.foodPerDay)}/day)</span></td>`).join('')}</tr>
@@ -867,13 +867,13 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
         <div class="mid"><div class="beds">${s.beds.split(' · ').map(b => `<span>${esc(b)}</span>`).join('')}</div><span><b>Lift:</b> ${esc(s.lift)}</span><span class="muted">${esc(s.rating)} · ${esc(s.note || '')}</span></div>
         <div class="bot"><div class="price num">${G(tot / FX / 6 / 7)}<small>pp / night · ${G(tot / FX)} (${E(tot)}) total, 7 nights</small></div><div style="display:grid;gap:.4rem;justify-items:end">${pill(s.status)}<a href="${esc(s.url)}" target="_blank" rel="noopener">View listing ↗</a></div></div></article>`; }).join('');
     const costRows = p.costs.S1.map(it => { const a = linePP(it, 'adv'), m = linePP(it, 'int'), b = linePP(it, 'beg'); const grp = it.group ? toEur(it.amount, it.cur) : a * nAdv + m * nInt + b * nBeg;
-      return `<tr class="${it.optional ? 'optrow' : ''}"><td>${esc(it.label)}${it.note ? `<small>${esc(it.note)}</small>` : ''}${it.src ? `<small><a href="${esc(it.src)}" target="_blank" rel="noopener">source ↗</a></small>` : ''}</td><td>${pill(it.status)}</td><td class="r num">${a ? E(a) : '—'}</td><td class="r num">${m ? E(m) : '—'}</td><td class="r num">${b ? E(b) : '—'}</td><td class="r num">${E(grp)}</td></tr>`; }).join('');
+      return `<tr class="${it.optional ? 'optrow' : ''}"><td>${esc(it.label)}${it.note ? `<small>${esc(it.note)}</small>` : ''}${it.src ? `<small><a href="${esc(it.src)}" target="_blank" rel="noopener">source ↗</a></small>` : ''}</td><td>${pill(it.status)}</td><td class="r num">${a ? E(a) : '—'}</td><td class="r num">${b ? E(b) : '—'}</td><td class="r num">${E(grp)}</td></tr>`; }).join('');
     const sc = p.school;
     const week = DAYS.map(([dn, dd], i) => {
       if (i === 0) return `<div class="day edge"><span class="dn">${dn}</span><span class="dd">${dd}</span><span>Fly ${esc(p.airport)}, transfer up, supermarket run, first fondue.</span></div>`;
       if (i === 5) return `<div class="day edge"><span class="dn">${dn}</span><span class="dd">${dd}</span><span>Pack, transfer down, fly home. (Sunday option: one more ski day.)</span></div>`;
       const r = sc.ladder[i - 1];
-      return `<div class="day"><span class="dn">${dn}</span><span class="dd">${dd}</span><span class="who"><i class="pm ${r.piste}"></i>Chloe, Kannes, Ina</span><span>${esc(r.what)}</span><span class="who"><i class="pm k"></i>Joaquin, Juan${i > 1 ? ' (Natasha after her lesson)' : ''}</span><span>${esc(p.boys[i - 1])}</span></div>`;
+      return `<div class="day"><span class="dn">${dn}</span><span class="dd">${dd}</span><span class="who"><i class="pm ${r.piste}"></i>The girls</span><span>${esc(r.what)}</span><span class="who"><i class="pm k"></i>Joaquin, Juan</span><span>${esc(p.boys[i - 1])}</span></div>`;
     }).join('');
     const tr = p.transport;
     const routeMid = p.airport === 'Innsbruck' ? ['25 min minibus', 'Fulpmes'] : (p.id === 'les-arcs' ? ['≈3 h bus', 'Arc 1800'] : ['≈3 h bus', 'Val Thorens']);
@@ -891,7 +891,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
           </div>
           <aside class="glance"><h4><b lang="zh-Hant" style="font-weight:700">概要</b> <span>At a glance</span></h4>
             <dl><dt>Base</dt><dd>${esc(p.compare.base)}</dd><dt>Airport</dt><dd>${esc(p.compare.fly)}</dd><dt>Transfer</dt><dd>${esc(p.compare.transfer)}</dd><dt>To lift</dt><dd>${esc(p.compare.lift)}</dd><dt>The flat</dt><dd>${esc(pick.name)}</dd><dt>That week</dt><dd>${esc(p.compare.week)}</dd><dt>Feel</dt><dd>${esc(p.feel)}</dd></dl>
-            <div class="ticket"><div><span class="t-l">Advanced</span><span class="t-v">${G(t.adv / FX)}</span></div><div><span class="t-l">Intermediate</span><span class="t-v">${G(t.int / FX)}</span></div><div><span class="t-l">Beginner</span><span class="t-v">${G(t.beg / FX)}</span></div></div>
+            <div class="ticket"><div><span class="t-l">Advanced</span><span class="t-v">${G(t.adv / FX)}</span></div><div><span class="t-l">The girls</span><span class="t-v">${G(t.beg / FX)}</span></div></div>
             <span class="small muted">All-in per person for Sat 23 → Sat 30, excluding food.</span>
           </aside>
         </div>
@@ -900,7 +900,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
 
         <div class="sub" id="${p.id}-stay">${subH('住宿', 'Where we’d wake up', 'Sat 23 → Sat 30 · 6 adults')}<div class="stays">${stays}</div><p class="small muted">${esc(p.stayNote)}</p></div>
 
-        <div class="sub" id="${p.id}-school">${subH('滑雪課', 'First turns, gently taken', 'Chloe, Kannes & Ina · plus Natasha’s group')}
+        <div class="sub" id="${p.id}-school">${subH('滑雪課', 'First turns, gently taken', 'Chloe, Kannes, Ina & Natasha')}
           <div class="school"><div style="display:grid;gap:1rem">
             <div class="rec"><span class="hanko sm" aria-label="Recommended">推薦</span><p class="small">${esc(sc.rec)}</p></div>
             <div style="overflow-x:auto"><table class="opts-t"><thead><tr><th>School</th><th>Schedule</th><th class="r">Per person</th><th>Size</th><th>Reviews</th><th></th></tr></thead><tbody>
@@ -908,7 +908,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
             </tbody></table></div>
             <div class="prog">${sc.ladder.map(r => `<div class="${r.piste}"><div class="bar"></div><b>${esc(r.day)}</b><span>${esc(r.what)}</span></div>`).join('')}</div>
           </div>
-          <div style="display:grid;gap:.9rem"><figure class="photo">${photo(im.lesson)}<span class="cap">${esc(im.lesson.author)}</span></figure><ul class="tips">${sc.tips.map(x => `<li>${esc(x)}</li>`).join('')}<li>Ina: ask for an instructor who is good with nervous returners, and keep the first two days on the gentlest slope. Warm layers matter more than skill here.</li><li>Natasha takes an intermediate group class in the mornings (row marked “Natasha”, included in her total), then skis blues and reds with Joaquin and Juan in the afternoons.</li></ul><p class="small muted"><b>Kit:</b> ${esc(p.kitNote)}</p></div></div>
+          <div style="display:grid;gap:.9rem"><figure class="photo">${photo(im.lesson)}<span class="cap">${esc(im.lesson.author)}</span></figure><ul class="tips">${sc.tips.map(x => `<li>${esc(x)}</li>`).join('')}<li>Ina: ask for an instructor who is good with nervous returners, and keep the first two days on the gentlest slope. Warm layers matter more than skill here.</li><li>Natasha learns with the other three. She’s a level ahead, so the instructor can stretch her on the afternoons or she can ski with Joaquin and Juan.</li></ul><p class="small muted"><b>Kit:</b> ${esc(p.kitNote)}</p></div></div>
         </div>
 
         <div class="sub" id="${p.id}-food">${subH('飲食', 'Fondue first, dancing later', `About ${E(p.foodPerDay)} pp a day`)}
@@ -923,8 +923,8 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
         </div>
 
         <div class="sub" id="${p.id}-cost">${subH('費用', 'What it costs, line by line', 'Sat 23 → Sat 30 · 6 people')}
-          <div style="overflow-x:auto"><table class="costs"><thead><tr><th>Item</th><th>Data</th><th class="r">Advanced pp</th><th class="r">Intermediate pp</th><th class="r">Beginner pp</th><th class="r">Group</th></tr></thead><tbody>${costRows}</tbody>
-          <tfoot><tr><td>Total, excluding food and optional rows</td><td></td><td class="r num">${E(t.adv)}</td><td class="r num">${E(t.int)}</td><td class="r num">${E(t.beg)}</td><td class="r num">${E(t.group)}</td></tr><tr class="gbp"><td>In pounds</td><td></td><td class="r num">${G(t.adv / FX)}</td><td class="r num">${G(t.int / FX)}</td><td class="r num">${G(t.beg / FX)}</td><td class="r num">${G(t.group / FX)}</td></tr></tfoot></table></div>
+          <div style="overflow-x:auto"><table class="costs"><thead><tr><th>Item</th><th>Data</th><th class="r">Advanced pp</th><th class="r">The girls pp</th><th class="r">Group</th></tr></thead><tbody>${costRows}</tbody>
+          <tfoot><tr><td>Total, excluding food and optional rows</td><td></td><td class="r num">${E(t.adv)}</td><td class="r num">${E(t.beg)}</td><td class="r num">${E(t.group)}</td></tr><tr class="gbp"><td>In pounds</td><td></td><td class="r num">${G(t.adv / FX)}</td><td class="r num">${G(t.beg / FX)}</td><td class="r num">${G(t.group / FX)}</td></tr></tfoot></table></div>
           <div class="srcs">${p.sources.map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)} ↗</a>`).join('')}</div>
         </div>
       </div>
@@ -939,8 +939,8 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
   $('#stubs').innerHTML = Object.keys(D.dates.scenarios).map((k, i) => {
     const nights = D.dates.nights[k];
     return `<article class="stub">${k === 'S1' ? '<span class="hanko sm" aria-label="Recommended">推薦</span>' : ''}<div class="l"><span class="d">${esc(D.dates.scenarios[k])}</span><span class="n">${nights}<small>nights · ${nights - 1} ski days</small></span></div>
-      <div class="rp"><table><thead><tr><th></th><th class="r">Adv</th><th class="r">Int</th><th class="r">Beg</th></tr></thead><tbody>${P.map(p => { const t = totals(p, k), b = totals(p, 'S1');
-        return `<tr><td><b>${p.kanji} ${esc(p.short)}</b><br><span class="muted small">${esc(p.dateNote[k])}</span></td><td class="r num">${G(t.adv / FX)}${k !== 'S1' ? `<br><span class="muted small">+${G((t.adv - b.adv) / FX)}</span>` : ''}</td><td class="r num">${G(t.int / FX)}${k !== 'S1' ? `<br><span class="muted small">${t.int >= b.int ? '+' : '−'}${G(Math.abs(t.int - b.int) / FX)}</span>` : ''}</td><td class="r num">${G(t.beg / FX)}${k !== 'S1' ? `<br><span class="muted small">${t.beg >= b.beg ? '+' : '−'}${G(Math.abs(t.beg - b.beg) / FX)}</span>` : ''}</td></tr>`; }).join('')}</tbody></table></div></article>`;
+      <div class="rp"><table><thead><tr><th></th><th class="r">Adv</th><th class="r">Girls</th></tr></thead><tbody>${P.map(p => { const t = totals(p, k), b = totals(p, 'S1');
+        return `<tr><td><b>${p.kanji} ${esc(p.short)}</b><br><span class="muted small">${esc(p.dateNote[k])}</span></td><td class="r num">${G(t.adv / FX)}${k !== 'S1' ? `<br><span class="muted small">+${G((t.adv - b.adv) / FX)}</span>` : ''}</td><td class="r num">${G(t.beg / FX)}${k !== 'S1' ? `<br><span class="muted small">${t.beg >= b.beg ? '+' : '−'}${G(Math.abs(t.beg - b.beg) / FX)}</span>` : ''}</td></tr>`; }).join('')}</tbody></table></div></article>`;
   }).join('');
   $('#partials').innerHTML = `<div><span class="label">Fri 22 → Sun 31?</span><span>Checked and ruled out. Val Thorens and Les Arcs flats only rent Saturday to Saturday, and Stubai's best flats refuse a Sunday checkout. It would also cost everyone an extra day of leave.</span></div>
     <div><span class="label">Joining late or leaving early</span><span>Fine at all three. Geneva has cheap one-way flights (Sunday out £38, Friday 18:55 back £39). Innsbruck's last Friday flight is at 15:10. Les Arcs has no weekday shuttle, so a late arrival takes the train.</span></div>
@@ -960,7 +960,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
     $('#shapes').innerHTML = R2.shapes.map(sh => `<article class="shape"><div class="top"><b>${esc(sh.nights)} nights</b><span>${esc(sh.dates)}</span></div>
       <div class="body"><span class="al"><b>${esc(sh.al)}</b> days of leave <span class="muted small">(${esc(sh.alDays)})</span></span><span>${esc(sh.ski)}</span><span class="ok">Travel: ${esc(sh.kannes)}</span><span class="muted">${esc(sh.note)}</span></div></article>`).join('');
     $('#mx-help').textContent = R2.matrixHelp;
-    const ROLES = [['beg', 'Beginner (Chloe, Kannes, Ina)'], ['int', 'Natasha'], ['adv', 'Joaquin & Juan']];
+    const ROLES = [['beg', 'The girls (Chloe, Kannes, Ina, Natasha)'], ['adv', 'Joaquin & Juan']];
     const TIERS = [['budget', 'Budget'], ['comfort', 'Comfort']];
     let role = 'beg', tier = 'budget', sel = null; const levers = new Set();
     // Cost levers: pro-rata savings on items tagged with kind/days (lift, rental, school, bag).
@@ -998,11 +998,11 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
       const [rid, sid] = sel.split('|'); const r = R2.resorts.find(x => x.id === rid), sh = R2.shapes.find(x => x.id === sid), c = cellOf(rid, sid), t = c[tier];
       const its = withLevers(t.items), tt = itemsTotal(its);
       const rows = its.map(it => { const a = linePP(it, 'adv'), m = linePP(it, 'int'), b = linePP(it, 'beg'); const grp = it.group ? toEur(it.amount, it.cur) : a * nAdv + m * nInt + b * nBeg;
-        return `<tr class="${it.optional ? 'optrow' : ''}" ${it.lever ? 'style="color:var(--ok)"' : ''}><td>${esc(it.label)}${it.note ? `<small>${esc(it.note)}</small>` : ''}${it.src ? `<small><a href="${esc(it.src)}" target="_blank" rel="noopener">source ↗</a></small>` : ''}</td><td>${pill(it.status)}</td><td class="r num">${a ? E(a) : '—'}</td><td class="r num">${m ? E(m) : '—'}</td><td class="r num">${b ? E(b) : '—'}</td><td class="r num">${E(grp)}</td></tr>`; }).join('');
+        return `<tr class="${it.optional ? 'optrow' : ''}" ${it.lever ? 'style="color:var(--ok)"' : ''}><td>${esc(it.label)}${it.note ? `<small>${esc(it.note)}</small>` : ''}${it.src ? `<small><a href="${esc(it.src)}" target="_blank" rel="noopener">source ↗</a></small>` : ''}</td><td>${pill(it.status)}</td><td class="r num">${a ? E(a) : '—'}</td><td class="r num">${b ? E(b) : '—'}</td><td class="r num">${E(grp)}</td></tr>`; }).join('');
       el.innerHTML = `<h4><span class="zh" lang="zh-Hant" style="color:var(--shu)">${r.kanji}</span> ${esc(r.short)} · ${esc(sh.nights)} nights, ${esc(sh.dates)} · ${tier === 'budget' ? 'Budget' : 'Comfort'}</h4>
         ${c.note ? `<p class="small muted">${esc(c.note)}</p>` : ''}
-        <div style="overflow-x:auto"><table class="costs"><thead><tr><th>Item</th><th>Data</th><th class="r">Advanced</th><th class="r">Natasha</th><th class="r">Beginner</th><th class="r">Group</th></tr></thead><tbody>${rows}</tbody>
-        <tfoot><tr><td>Total per person, excluding food</td><td></td><td class="r num">${E(tt.adv)}</td><td class="r num">${E(tt.int)}</td><td class="r num">${E(tt.beg)}</td><td class="r num">${E(tt.group)}</td></tr><tr class="gbp"><td>In pounds</td><td></td><td class="r num">${G(tt.adv / FX)}</td><td class="r num">${G(tt.int / FX)}</td><td class="r num">${G(tt.beg / FX)}</td><td class="r num">${G(tt.group / FX)}</td></tr></tfoot></table></div>
+        <div style="overflow-x:auto"><table class="costs"><thead><tr><th>Item</th><th>Data</th><th class="r">Advanced</th><th class="r">The girls</th><th class="r">Group</th></tr></thead><tbody>${rows}</tbody>
+        <tfoot><tr><td>Total per person, excluding food</td><td></td><td class="r num">${E(tt.adv)}</td><td class="r num">${E(tt.beg)}</td><td class="r num">${E(tt.group)}</td></tr><tr class="gbp"><td>In pounds</td><td></td><td class="r num">${G(tt.adv / FX)}</td><td class="r num">${G(tt.beg / FX)}</td><td class="r num">${G(tt.group / FX)}</td></tr></tfoot></table></div>
         <p class="small muted">Food is extra: about ${E((c.food || 60) * sh.foodDays)} per person for ${sh.foodDays} days.</p>`;
     }
     const LEV = [['ski1', 'Ski one day less'], ['les1', 'One fewer lesson day'], ['les2', 'Two fewer lesson days'], ['bags', 'Share hold bags']];
@@ -1021,7 +1021,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
         <div class="top"><span class="tier">${tierName}</span><h4>${esc(st.name)}</h4><span class="small muted">${esc(st.lift || '')}</span></div>
         <div class="mid"><div class="beds">${String(st.beds || '').split(/ · |; /).filter(Boolean).map(b => `<span>${esc(b)}</span>`).join('')}</div><span class="muted">Rated ${esc(st.rating || 'n/a')} · ${esc(st.cancel || '')}</span></div>
         <div class="bot"><div class="price num">${G(tot / FX / crewN / nights)}<small>pp / night · ${G(tot / FX)} (${E(tot)}) total for 6</small></div><div style="display:grid;gap:.4rem;justify-items:end">${pill(/VERIFIED/.test(st.status || '') ? 'VERIFIED' : 'ESTIMATE')}<a href="${esc(st.url)}" target="_blank" rel="noopener">View listing ↗</a></div></div></article>`; };
-    const lessonRows = (items) => items.filter(it => it.kind === 'school').map(it => { const v = it.int != null ? it.int : it.beg; return `<div class="row"><span>${esc(it.label)}</span><b>${E(v)} pp</b></div>`; }).join('');
+    const lessonRows = (items) => items.filter(it => it.kind === 'school' && it.beg).map(it => { const v = it.beg; return `<div class="row"><span>${esc(it.label)}</span><b>${E(v)} pp</b></div>`; }).join('');
     function drawGuide(g) {
       const c = cellOf(g.r.id, gLen[g.r.id]), sh = SH.find(x => x.id === gLen[g.r.id]);
       const body = !c || !c.feasible ? `<p class="small muted">Not workable for this length: ${esc(c ? c.note : '')}</p>` : `
@@ -1097,7 +1097,10 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
   const setStatus = (m, c = '') => { const s = $('#status'); s.textContent = m; s.className = 'status ' + c; };
   let state = { ballots: [], comments: [] };
   const roundBallots = () => state.ballots.filter(b => ROUND ? b.answers.round === ROUND : !b.answers.round);
+  // Only pre-fill a ballot that was submitted from this device, so picking someone else's name never reveals their answers.
+  const votedHere = () => { try { return JSON.parse(localStorage.getItem('yuki-voted') || '[]'); } catch (e) { return []; } };
   function loadMine() { const n = name(); if (!n) return; try { localStorage.setItem('yuki-me', n); } catch (e) {}
+    if (!votedHere().includes(n)) return;
     const mine = roundBallots().find(b => b.name === n); if (!mine) return;
     Q.forEach(q => { if (q.type === 'rank' && Array.isArray(mine.answers[q.id])) rankState[q.id] = mine.answers[q.id].slice(); });
     renderQs(); restore(mine.answers); setStatus(`Loaded your round-2 vote from ${new Date(mine.ts).toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short' })}. Change anything and stamp again.`); }
@@ -1114,7 +1117,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
     const a = collect(); const miss = Q.filter(q => q.required && (a[q.id] == null || (Array.isArray(a[q.id]) && !a[q.id].length))).map(q => `${KANJI[Q.indexOf(q)]} (${Q.indexOf(q) + 1})`);
     if (miss.length) { setStatus(`Still to answer: question ${miss.join(', ')}.`, 'err'); return; }
     const btn = $('#submit'); btn.disabled = true; setStatus('Stamping…');
-    try { state = await api('POST', { name: n, type: 'ballot', answers: a, comment: $('#comment').value.trim() }); $('#comment').value = ''; setStatus(`Stamped. Thanks, ${n}. You can re-vote until ${closeLabel}.`, 'ok'); renderResults(); }
+    try { state = await api('POST', { name: n, type: 'ballot', answers: a, comment: $('#comment').value.trim() }); $('#comment').value = ''; try { const v = votedHere(); if (!v.includes(n)) localStorage.setItem('yuki-voted', JSON.stringify(v.concat(n))); } catch (e) {} setStatus(`Stamped. Thanks, ${n}. You can re-vote until ${closeLabel}.`, 'ok'); renderResults(); }
     catch (err) { setStatus('Couldn’t reach the vote server. Tap “Copy for WhatsApp” and paste your vote into the group chat instead.', 'err'); }
     finally { btn.disabled = false; } });
   // Shared tally renderer (used for live round 2 and the frozen round-1 snapshot)

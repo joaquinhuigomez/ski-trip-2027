@@ -156,7 +156,7 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: ESF group course (join Monday)",
+       "label": "The girls: ESF group course (join Monday)",
        "note": "ESF 6-day Sun–Fri group courses can start Monday at same price (€236). Private ESF 5×3h30 €1,250/3. Recommend group for LS.",
        "intAs": 0,
        "adv": 0,
@@ -167,19 +167,8 @@ window.ROUND2 = {
        "days": 5
       },
       {
-       "label": "Natasha: ESF adult group at her level",
-       "note": "",
-       "adv": 0,
-       "beg": 0,
-       "int": 236,
-       "cur": "EUR",
-       "status": "ESTIMATE",
-       "kind": "school",
-       "days": 5
-      },
-      {
        "intAs": "beg",
-       "label": "Rental for beginners and Natasha",
+       "label": "Rental for the girls",
        "note": "6-day 3★ pack €175 + helmet €25 walk-in (PUBLISHED Sport 2000), ~−20% online (ESTIMATE).",
        "adv": 0,
        "beg": 160.0,
@@ -266,30 +255,19 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: private ESF instructor for 3, 5 mornings × 3h30",
+       "label": "The girls: private ESF instructor for 4, 5 mornings × 3h30",
        "note": "ESF 6-day Sun–Fri group courses can start Monday at same price (€236). Private ESF 5×3h30 €1,250/3. Recommend group for LS.",
        "intAs": 0,
        "adv": 0,
-       "beg": 417,
+       "beg": 312.75,
        "cur": "EUR",
        "status": "VERIFIED",
        "kind": "school",
        "days": 5
       },
       {
-       "label": "Natasha: ESF adult group at her level",
-       "note": "",
-       "adv": 0,
-       "beg": 0,
-       "int": 236,
-       "cur": "EUR",
-       "status": "ESTIMATE",
-       "kind": "school",
-       "days": 5
-      },
-      {
        "intAs": "beg",
-       "label": "Rental for beginners and Natasha",
+       "label": "Rental for the girls",
        "note": "6-day 3★ pack €175 + helmet €25 walk-in (PUBLISHED Sport 2000), ~−20% online (ESTIMATE).",
        "adv": 0,
        "beg": 160.0,
@@ -381,30 +359,19 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: Arc Aventures private for 3, 4 × 2h30",
+       "label": "The girls: Arc Aventures private for 4, 4 × 2h30",
        "note": "No group course starts midweek, so a budget private is the cheapest option.",
        "intAs": 0,
        "adv": 0,
-       "beg": 220,
+       "beg": 165.0,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
        "days": 4
       },
       {
-       "label": "Natasha: 2 private sessions × 2 h",
-       "note": "",
-       "adv": 0,
-       "beg": 0,
-       "int": 260,
-       "cur": "EUR",
-       "status": "ESTIMATE",
-       "kind": "school",
-       "days": 4
-      },
-      {
        "intAs": "beg",
-       "label": "Rental for beginners and Natasha",
+       "label": "Rental for the girls",
        "note": "5-day 3★ pack €152 + helmet €24 = €176 walk-in, ~€141 online (ESTIMATE −20%).",
        "adv": 0,
        "beg": 141.0,
@@ -491,30 +458,19 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: private ESF instructor for 3, 4 × 3h30",
-       "note": "Group courses start Sunday only (ESF Sun–Fri, Arc Aventures Sun–Tue) — none fits. ESF private 4×3h30 €1,000/3; budget Arc Aventures 4×2h30 €660/3 = €220 pp. Natasha: private 3×2h ≈ €390 or ski with couple.",
+       "label": "The girls: private ESF instructor for 4, 4 × 3h30",
+       "note": "Group courses start Sunday only (ESF Sun–Fri, Arc Aventures Sun–Tue) — none fits. ESF private 4×3h30 €1,000/3; budget Arc Aventures 4×2h30 €660/3 = €220 pp. the intermediate skier: private 3×2h ≈ €390 or ski with couple.",
        "intAs": 0,
        "adv": 0,
-       "beg": 333,
+       "beg": 249.75,
        "cur": "EUR",
        "status": "VERIFIED",
        "kind": "school",
        "days": 4
       },
       {
-       "label": "Natasha: 3 private sessions × 2 h",
-       "note": "",
-       "adv": 0,
-       "beg": 0,
-       "int": 390,
-       "cur": "EUR",
-       "status": "ESTIMATE",
-       "kind": "school",
-       "days": 4
-      },
-      {
        "intAs": "beg",
-       "label": "Rental for beginners and Natasha",
+       "label": "Rental for the girls",
        "note": "5-day 3★ pack €152 + helmet €24 = €176 walk-in, ~€141 online (ESTIMATE −20%).",
        "adv": 0,
        "beg": 141.0,
@@ -606,30 +562,19 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: Arc Aventures private for 3, 3 × 2h30",
+       "label": "The girls: Arc Aventures private for 4, 3 × 2h30",
        "note": "No group course starts midweek.",
        "intAs": 0,
        "adv": 0,
-       "beg": 165,
+       "beg": 123.75,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
        "days": 3
       },
       {
-       "label": "Natasha: 1 private session × 2 h",
-       "note": "",
-       "adv": 0,
-       "beg": 0,
-       "int": 130,
-       "cur": "EUR",
-       "status": "ESTIMATE",
-       "kind": "school",
-       "days": 3
-      },
-      {
        "intAs": "beg",
-       "label": "Rental for beginners and Natasha",
+       "label": "Rental for the girls",
        "note": "4-day 3★ €122 + helmet €19 = €141 walk-in, ~€113 online (ESTIMATE).",
        "adv": 0,
        "beg": 113.0,
@@ -716,30 +661,19 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: private ESF instructor for 3, 3 × 3h30",
-       "note": "No midweek group start. ESF private 3×3h30 €750/3; budget Arc Aventures 3×2h30 = €165 pp. Natasha private 2×2h ≈ €260.",
+       "label": "The girls: private ESF instructor for 4, 3 × 3h30",
+       "note": "No midweek group start. ESF private 3×3h30 €750/3; budget Arc Aventures 3×2h30 = €165 pp. the intermediate skier private 2×2h ≈ €260.",
        "intAs": 0,
        "adv": 0,
-       "beg": 250,
+       "beg": 187.5,
        "cur": "EUR",
        "status": "VERIFIED",
        "kind": "school",
        "days": 3
       },
       {
-       "label": "Natasha: 2 private sessions × 2 h",
-       "note": "",
-       "adv": 0,
-       "beg": 0,
-       "int": 260,
-       "cur": "EUR",
-       "status": "ESTIMATE",
-       "kind": "school",
-       "days": 3
-      },
-      {
        "intAs": "beg",
-       "label": "Rental for beginners and Natasha",
+       "label": "Rental for the girls",
        "note": "4-day 3★ €122 + helmet €19 = €141 walk-in, ~€113 online (ESTIMATE).",
        "adv": 0,
        "beg": 113.0,
@@ -831,30 +765,19 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: Arc Aventures private for 3 (Thu pm, Fri, Sat)",
-       "note": "No group option. Thu pm 2h private (€130) + Fri/Sat ESF 3h30 (€500) /3; budget all-Arc Aventures ≈ €153 pp. Natasha private 1–2×2h €130–260.",
+       "label": "The girls: Arc Aventures private for 4 (Thu pm, Fri, Sat)",
+       "note": "No group option. Thu pm 2h private (€130) + Fri/Sat ESF 3h30 (€500) /3; budget all-Arc Aventures ≈ €153 pp. the intermediate skier private 1–2×2h €130–260.",
        "intAs": 0,
        "adv": 0,
-       "beg": 153,
+       "beg": 114.75,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
        "days": 3
       },
       {
-       "label": "Natasha: 1 private session × 2 h",
-       "note": "",
-       "adv": 0,
-       "beg": 0,
-       "int": 130,
-       "cur": "EUR",
-       "status": "ESTIMATE",
-       "kind": "school",
-       "days": 3
-      },
-      {
        "intAs": "beg",
-       "label": "Rental for beginners and Natasha",
+       "label": "Rental for the girls",
        "note": "4 rental days (Thu–Sun): €141 walk-in, ~€113 online (ESTIMATE).",
        "adv": 0,
        "beg": 113.0,
@@ -941,30 +864,19 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: ESF private for 3 (Thu pm 2 h, Fri & Sat 3h30)",
-       "note": "No group option. Thu pm 2h private (€130) + Fri/Sat ESF 3h30 (€500) /3; budget all-Arc Aventures ≈ €153 pp. Natasha private 1–2×2h €130–260.",
+       "label": "The girls: ESF private for 4 (Thu pm 2 h, Fri & Sat 3h30)",
+       "note": "No group option. Thu pm 2h private (€130) + Fri/Sat ESF 3h30 (€500) /3; budget all-Arc Aventures ≈ €153 pp. the intermediate skier private 1–2×2h €130–260.",
        "intAs": 0,
        "adv": 0,
-       "beg": 210,
+       "beg": 157.5,
        "cur": "EUR",
        "status": "VERIFIED",
        "kind": "school",
        "days": 3
       },
       {
-       "label": "Natasha: 2 private sessions × 2 h",
-       "note": "",
-       "adv": 0,
-       "beg": 0,
-       "int": 260,
-       "cur": "EUR",
-       "status": "ESTIMATE",
-       "kind": "school",
-       "days": 3
-      },
-      {
        "intAs": "beg",
-       "label": "Rental for beginners and Natasha",
+       "label": "Rental for the girls",
        "note": "4 rental days (Thu–Sun): €141 walk-in, ~€113 online (ESTIMATE).",
        "adv": 0,
        "beg": 113.0,
@@ -1058,7 +970,7 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: ESF Flaine group, 5 mornings Mon–Fri (Class 1; confirm entry)",
+       "label": "The girls: ESF Flaine group, 5 mornings Mon–Fri (Class 1; confirm entry)",
        "note": "ESF Flaine 5 mornings Mon–Fri ~€230 (ESTIMATE from €260 for 6; not for true first-timers, so confirm the returning beginners can join). Private 5 × 3 h for 3 (~€216/session ÷ 3)",
        "intAs": 0,
        "adv": 0,
@@ -1069,19 +981,8 @@ window.ROUND2 = {
        "days": 5
       },
       {
-       "label": "Natasha: ESF group Mon–Fri at her level",
-       "note": "",
-       "adv": 0,
-       "beg": 0,
-       "int": 230,
-       "cur": "EUR",
-       "status": "PUBLISHED",
-       "kind": "school",
-       "days": 5
-      },
-      {
        "intAs": "beg",
-       "label": "Rental for beginners and Natasha",
+       "label": "Rental for the girls",
        "note": "5 days kit + helmet, Sport 2000-type (ESTIMATE from Les Carroz published prices)",
        "adv": 0,
        "beg": 132.0,
@@ -1168,30 +1069,19 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: private instructor for 3, 5 × 3 h",
+       "label": "The girls: private instructor for 4, 5 × 3 h",
        "note": "ESF Flaine 5 mornings Mon–Fri ~€230 (ESTIMATE from €260 for 6; not for true first-timers, so confirm the returning beginners can join). Private 5 × 3 h for 3 (~€216/session ÷ 3)",
        "intAs": 0,
        "adv": 0,
-       "beg": 360,
+       "beg": 270.0,
        "cur": "EUR",
        "status": "ESTIMATE",
        "kind": "school",
        "days": 5
       },
       {
-       "label": "Natasha: ESF group Mon–Fri at her level",
-       "note": "",
-       "adv": 0,
-       "beg": 0,
-       "int": 230,
-       "cur": "EUR",
-       "status": "PUBLISHED",
-       "kind": "school",
-       "days": 5
-      },
-      {
        "intAs": "beg",
-       "label": "Rental for beginners and Natasha",
+       "label": "Rental for the girls",
        "note": "5 days kit + helmet, Sport 2000-type (ESTIMATE from Les Carroz published prices)",
        "adv": 0,
        "beg": 132.0,
@@ -1283,30 +1173,19 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: private for 3, 4 × 2 h (no midweek group start)",
-       "note": "ESF groups start Sunday only. Budget 'group' figure = private 4 × 2 h for 3 (~€144 ÷ 3). Comfort 4 × 3 h. Natasha 1 private 2 h (€125) or 2 sessions €250",
+       "label": "The girls: private for 4, 4 × 2 h (no midweek group start)",
+       "note": "ESF groups start Sunday only. Budget 'group' figure = private 4 × 2 h for 3 (~€144 ÷ 3). Comfort 4 × 3 h. the intermediate skier 1 private 2 h (€125) or 2 sessions €250",
        "intAs": 0,
        "adv": 0,
-       "beg": 192,
+       "beg": 144.0,
        "cur": "EUR",
        "status": "ESTIMATE",
        "kind": "school",
        "days": 4
       },
       {
-       "label": "Natasha: 1 private 2 h session",
-       "note": "",
-       "adv": 0,
-       "beg": 0,
-       "int": 125,
-       "cur": "EUR",
-       "status": "PUBLISHED",
-       "kind": "school",
-       "days": 4
-      },
-      {
        "intAs": "beg",
-       "label": "Rental for beginners and Natasha",
+       "label": "Rental for the girls",
        "note": "5 days kit + helmet (ESTIMATE)",
        "adv": 0,
        "beg": 132.0,
@@ -1393,30 +1272,19 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: private for 3, 4 × 3 h",
-       "note": "ESF groups start Sunday only. Budget 'group' figure = private 4 × 2 h for 3 (~€144 ÷ 3). Comfort 4 × 3 h. Natasha 1 private 2 h (€125) or 2 sessions €250",
+       "label": "The girls: private for 4, 4 × 3 h",
+       "note": "ESF groups start Sunday only. Budget 'group' figure = private 4 × 2 h for 3 (~€144 ÷ 3). Comfort 4 × 3 h. the intermediate skier 1 private 2 h (€125) or 2 sessions €250",
        "intAs": 0,
        "adv": 0,
-       "beg": 288,
+       "beg": 216.0,
        "cur": "EUR",
        "status": "ESTIMATE",
        "kind": "school",
        "days": 4
       },
       {
-       "label": "Natasha: 2 private 2 h sessions",
-       "note": "",
-       "adv": 0,
-       "beg": 0,
-       "int": 250,
-       "cur": "EUR",
-       "status": "PUBLISHED",
-       "kind": "school",
-       "days": 4
-      },
-      {
        "intAs": "beg",
-       "label": "Rental for beginners and Natasha",
+       "label": "Rental for the girls",
        "note": "5 days kit + helmet (ESTIMATE)",
        "adv": 0,
        "beg": 132.0,
@@ -1508,30 +1376,19 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: private for 3, 3 × 2 h Thu–Sat",
-       "note": "No midweek ESF group start. Budget = private 3 × 2 h for 3; comfort 3 × 3 h. Natasha 1–2 private 2 h sessions (€125 each)",
+       "label": "The girls: private for 4, 3 × 2 h Thu–Sat",
+       "note": "No midweek ESF group start. Budget = private 3 × 2 h for 3; comfort 3 × 3 h. the intermediate skier 1–2 private 2 h sessions (€125 each)",
        "intAs": 0,
        "adv": 0,
-       "beg": 144,
+       "beg": 108.0,
        "cur": "EUR",
        "status": "ESTIMATE",
        "kind": "school",
        "days": 3
       },
       {
-       "label": "Natasha: 1 private 2 h session",
-       "note": "",
-       "adv": 0,
-       "beg": 0,
-       "int": 125,
-       "cur": "EUR",
-       "status": "PUBLISHED",
-       "kind": "school",
-       "days": 3
-      },
-      {
        "intAs": "beg",
-       "label": "Rental for beginners and Natasha",
+       "label": "Rental for the girls",
        "note": "4 days kit + helmet (ESTIMATE)",
        "adv": 0,
        "beg": 111.0,
@@ -1618,30 +1475,19 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: private for 3, 3 × 3 h Thu–Sat",
-       "note": "No midweek ESF group start. Budget = private 3 × 2 h for 3; comfort 3 × 3 h. Natasha 1–2 private 2 h sessions (€125 each)",
+       "label": "The girls: private for 4, 3 × 3 h Thu–Sat",
+       "note": "No midweek ESF group start. Budget = private 3 × 2 h for 3; comfort 3 × 3 h. the intermediate skier 1–2 private 2 h sessions (€125 each)",
        "intAs": 0,
        "adv": 0,
-       "beg": 216,
+       "beg": 162.0,
        "cur": "EUR",
        "status": "ESTIMATE",
        "kind": "school",
        "days": 3
       },
       {
-       "label": "Natasha: 2 private 2 h sessions",
-       "note": "",
-       "adv": 0,
-       "beg": 0,
-       "int": 250,
-       "cur": "EUR",
-       "status": "PUBLISHED",
-       "kind": "school",
-       "days": 3
-      },
-      {
        "intAs": "beg",
-       "label": "Rental for beginners and Natasha",
+       "label": "Rental for the girls",
        "note": "4 days kit + helmet (ESTIMATE)",
        "adv": 0,
        "beg": 111.0,
@@ -1733,30 +1579,19 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: private for 3, 2 h Thu pm + 2 × 2 h",
-       "note": "No group fits. Budget = private 2 h Thu pm + 2 × 2 h for 3; comfort 2 h + 2 × 3 h. Natasha 1–2 private 2 h sessions",
+       "label": "The girls: private for 4, 2 h Thu pm + 2 × 2 h",
+       "note": "No group fits. Budget = private 2 h Thu pm + 2 × 2 h for 3; comfort 2 h + 2 × 3 h. the intermediate skier 1–2 private 2 h sessions",
        "intAs": 0,
        "adv": 0,
-       "beg": 144,
+       "beg": 108.0,
        "cur": "EUR",
        "status": "ESTIMATE",
        "kind": "school",
        "days": 3
       },
       {
-       "label": "Natasha: 1 private 2 h session",
-       "note": "",
-       "adv": 0,
-       "beg": 0,
-       "int": 125,
-       "cur": "EUR",
-       "status": "PUBLISHED",
-       "kind": "school",
-       "days": 3
-      },
-      {
        "intAs": "beg",
-       "label": "Rental for beginners and Natasha",
+       "label": "Rental for the girls",
        "note": "3–4 days kit + helmet (ESTIMATE)",
        "adv": 0,
        "beg": 111.0,
@@ -1843,30 +1678,19 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: private for 3, 2 h Thu pm + 2 × 3 h",
-       "note": "No group fits. Budget = private 2 h Thu pm + 2 × 2 h for 3; comfort 2 h + 2 × 3 h. Natasha 1–2 private 2 h sessions",
+       "label": "The girls: private for 4, 2 h Thu pm + 2 × 3 h",
+       "note": "No group fits. Budget = private 2 h Thu pm + 2 × 2 h for 3; comfort 2 h + 2 × 3 h. the intermediate skier 1–2 private 2 h sessions",
        "intAs": 0,
        "adv": 0,
-       "beg": 192,
+       "beg": 144.0,
        "cur": "EUR",
        "status": "ESTIMATE",
        "kind": "school",
        "days": 3
       },
       {
-       "label": "Natasha: 2 private 2 h sessions",
-       "note": "",
-       "adv": 0,
-       "beg": 0,
-       "int": 250,
-       "cur": "EUR",
-       "status": "PUBLISHED",
-       "kind": "school",
-       "days": 3
-      },
-      {
        "intAs": "beg",
-       "label": "Rental for beginners and Natasha",
+       "label": "Rental for the girls",
        "note": "3–4 days kit + helmet (ESTIMATE)",
        "adv": 0,
        "beg": 111.0,
@@ -1960,7 +1784,7 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: ESF group, Mon–Fri 5 mornings 09:15–12:00 (high-season rate; €224 if low)",
+       "label": "The girls: ESF group, Mon–Fri 5 mornings 09:15–12:00 (high-season rate; €224 if low)",
        "note": "ESF La Plagne Centre group Mon–Fri 5 mornings 09:15–12:00: €273 high / €224 low season (late-Jan band unconfirmed). Private 3h for 3 people €231 ×5 /3 = €385.",
        "intAs": 0,
        "adv": 0,
@@ -1971,19 +1795,8 @@ window.ROUND2 = {
        "days": 5
       },
       {
-       "label": "Natasha: ESF intermediate group, Mon–Fri 5 mornings",
-       "note": "",
-       "adv": 0,
-       "beg": 0,
-       "int": 273,
-       "cur": "EUR",
-       "status": "PUBLISHED",
-       "kind": "school",
-       "days": 5
-      },
-      {
        "intAs": "beg",
-       "label": "Rental for beginners and Natasha",
+       "label": "Rental for the girls",
        "note": "5-day 3★ pack €139 + helmet €24 = €163 walk-in (PUBLISHED Sport 2000 Plagne Villages), ~€130 online −20% (ESTIMATE).",
        "adv": 0,
        "beg": 130.0,
@@ -2070,22 +1883,11 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: ESF private 3h × 5 mornings, 3 people (€231/session ÷ 3)",
+       "label": "The girls: ESF private 3h × 5 mornings, 4 people (€231/session ÷ 4)",
        "note": "ESF La Plagne Centre group Mon–Fri 5 mornings 09:15–12:00: €273 high / €224 low season (late-Jan band unconfirmed). Private 3h for 3 people €231 ×5 /3 = €385.",
        "intAs": 0,
        "adv": 0,
-       "beg": 385,
-       "cur": "EUR",
-       "status": "PUBLISHED",
-       "kind": "school",
-       "days": 5
-      },
-      {
-       "label": "Natasha: ESF intermediate group, Mon–Fri 5 mornings",
-       "note": "",
-       "adv": 0,
-       "beg": 0,
-       "int": 273,
+       "beg": 288.75,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
@@ -2093,7 +1895,7 @@ window.ROUND2 = {
       },
       {
        "intAs": "beg",
-       "label": "Rental for beginners and Natasha",
+       "label": "Rental for the girls",
        "note": "5-day 3★ pack €139 + helmet €24 = €163 walk-in (PUBLISHED Sport 2000 Plagne Villages), ~€130 online −20% (ESTIMATE).",
        "adv": 0,
        "beg": 130.0,
@@ -2185,22 +1987,11 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: ESF private 2h × 4 (Wed–Sat), 3 people (€145 ÷ 3)",
+       "label": "The girls: ESF private 2h × 4 (Wed–Sat), 4 people (€145 ÷ 4)",
        "note": "ESF groups start Sun/Mon only. Private 3h (3 people) €231 ×4 /3 = €308; budget 2h €145 ×4 /3 = €193. Intermediate: private 2h €124 ×2 = €248.",
        "intAs": 0,
        "adv": 0,
-       "beg": 193,
-       "cur": "EUR",
-       "status": "PUBLISHED",
-       "kind": "school",
-       "days": 4
-      },
-      {
-       "label": "Natasha: ESF private 2h × 2 sessions (no midweek group)",
-       "note": "",
-       "adv": 0,
-       "beg": 0,
-       "int": 248,
+       "beg": 144.75,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
@@ -2208,7 +1999,7 @@ window.ROUND2 = {
       },
       {
        "intAs": "beg",
-       "label": "Rental for beginners and Natasha",
+       "label": "Rental for the girls",
        "note": "5-day 3★ + helmet €163 walk-in, ~€130 online (ESTIMATE −20%).",
        "adv": 0,
        "beg": 130.0,
@@ -2295,22 +2086,11 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: ESF private 3h × 4 mornings, 3 people (€231 ÷ 3)",
+       "label": "The girls: ESF private 3h × 4 mornings, 4 people (€231 ÷ 4)",
        "note": "ESF groups start Sun/Mon only. Private 3h (3 people) €231 ×4 /3 = €308; budget 2h €145 ×4 /3 = €193. Intermediate: private 2h €124 ×2 = €248.",
        "intAs": 0,
        "adv": 0,
-       "beg": 308,
-       "cur": "EUR",
-       "status": "PUBLISHED",
-       "kind": "school",
-       "days": 4
-      },
-      {
-       "label": "Natasha: ESF private 2h × 3 sessions",
-       "note": "",
-       "adv": 0,
-       "beg": 0,
-       "int": 372,
+       "beg": 231.0,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
@@ -2318,7 +2098,7 @@ window.ROUND2 = {
       },
       {
        "intAs": "beg",
-       "label": "Rental for beginners and Natasha",
+       "label": "Rental for the girls",
        "note": "5-day 3★ + helmet €163 walk-in, ~€130 online (ESTIMATE −20%).",
        "adv": 0,
        "beg": 130.0,
@@ -2410,22 +2190,11 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: ESF private 2h × 3 (Thu–Sat), 3 people (€145 ÷ 3)",
+       "label": "The girls: ESF private 2h × 3 (Thu–Sat), 4 people (€145 ÷ 4)",
        "note": "No midweek group start. ESF private 3h ×3 = €693 /3 = €231; budget 2h ×3 /3 = €145. Intermediate private 2h ×2 = €248.",
        "intAs": 0,
        "adv": 0,
-       "beg": 145,
-       "cur": "EUR",
-       "status": "PUBLISHED",
-       "kind": "school",
-       "days": 3
-      },
-      {
-       "label": "Natasha: ESF private 2h × 2 sessions (no midweek group)",
-       "note": "",
-       "adv": 0,
-       "beg": 0,
-       "int": 248,
+       "beg": 108.75,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
@@ -2433,7 +2202,7 @@ window.ROUND2 = {
       },
       {
        "intAs": "beg",
-       "label": "Rental for beginners and Natasha",
+       "label": "Rental for the girls",
        "note": "4-day 3★ €111 + helmet €19 = €130 walk-in, ~€104 online (ESTIMATE).",
        "adv": 0,
        "beg": 104.0,
@@ -2520,22 +2289,11 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: ESF private 3h × 3 mornings, 3 people (€231 ÷ 3)",
+       "label": "The girls: ESF private 3h × 3 mornings, 4 people (€231 ÷ 4)",
        "note": "No midweek group start. ESF private 3h ×3 = €693 /3 = €231; budget 2h ×3 /3 = €145. Intermediate private 2h ×2 = €248.",
        "intAs": 0,
        "adv": 0,
-       "beg": 231,
-       "cur": "EUR",
-       "status": "PUBLISHED",
-       "kind": "school",
-       "days": 3
-      },
-      {
-       "label": "Natasha: ESF private 2h × 3 sessions",
-       "note": "",
-       "adv": 0,
-       "beg": 0,
-       "int": 372,
+       "beg": 173.25,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
@@ -2543,7 +2301,7 @@ window.ROUND2 = {
       },
       {
        "intAs": "beg",
-       "label": "Rental for beginners and Natasha",
+       "label": "Rental for the girls",
        "note": "4-day 3★ €111 + helmet €19 = €130 walk-in, ~€104 online (ESTIMATE).",
        "adv": 0,
        "beg": 104.0,
@@ -2635,22 +2393,11 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: ESF private 2h × 3 (Thu pm, Fri, Sat), 3 people (€145 ÷ 3)",
+       "label": "The girls: ESF private 2h × 3 (Thu pm, Fri, Sat), 4 people (€145 ÷ 4)",
        "note": "No group option. Thu pm 2h (€145) + Fri/Sat 3h (2×€231) = €607 /3 = €202; budget 3×2h = €145 pp. Intermediate private 2h ×1 = €124.",
        "intAs": 0,
        "adv": 0,
-       "beg": 145,
-       "cur": "EUR",
-       "status": "PUBLISHED",
-       "kind": "school",
-       "days": 3
-      },
-      {
-       "label": "Natasha: ESF private 2h × 1 session",
-       "note": "",
-       "adv": 0,
-       "beg": 0,
-       "int": 124,
+       "beg": 108.75,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
@@ -2658,7 +2405,7 @@ window.ROUND2 = {
       },
       {
        "intAs": "beg",
-       "label": "Rental for beginners and Natasha",
+       "label": "Rental for the girls",
        "note": "4 rental days (Thu–Sun): €130 walk-in, ~€104 online (ESTIMATE).",
        "adv": 0,
        "beg": 104.0,
@@ -2745,22 +2492,11 @@ window.ROUND2 = {
        "status": "PUBLISHED"
       },
       {
-       "label": "Beginners: ESF private Thu pm 2h + Fri/Sat 3h, 3 people",
+       "label": "The girls: ESF private Thu pm 2h + Fri/Sat 3h, 4 people",
        "note": "No group option. Thu pm 2h (€145) + Fri/Sat 3h (2×€231) = €607 /3 = €202; budget 3×2h = €145 pp. Intermediate private 2h ×1 = €124.",
        "intAs": 0,
        "adv": 0,
-       "beg": 202,
-       "cur": "EUR",
-       "status": "PUBLISHED",
-       "kind": "school",
-       "days": 3
-      },
-      {
-       "label": "Natasha: ESF private 2h × 2 sessions",
-       "note": "",
-       "adv": 0,
-       "beg": 0,
-       "int": 248,
+       "beg": 151.5,
        "cur": "EUR",
        "status": "PUBLISHED",
        "kind": "school",
@@ -2768,7 +2504,7 @@ window.ROUND2 = {
       },
       {
        "intAs": "beg",
-       "label": "Rental for beginners and Natasha",
+       "label": "Rental for the girls",
        "note": "4 rental days (Thu–Sun): €130 walk-in, ~€104 online (ESTIMATE).",
        "adv": 0,
        "beg": 104.0,
@@ -2852,7 +2588,7 @@ window.ROUND2 = {
     }
    }
   ],
-  "taken": "4 Oct 2026, 21:09",
+  "taken": "4 Oct 2026, 20:45",
   "note": "Round 1 is kept as a record. Everyone votes again in round 2, which uses new options and prices."
  },
  "closeLabel": "Wed 14 Oct",
@@ -2879,7 +2615,7 @@ window.ROUND2 = {
    "d": "Both villages sit at 1,600 m or higher, so the snow is reliable, and both are priced against Les Arcs. Details below the price table."
   }
  ],
- "matrixHelp": "Per person, all-in except food: flights, bag, transfer, flat, lift pass, lessons, rental and insurance. Budget is the cheapest flat that fits the rules, plus group lessons where they run. Comfort is an own-bed flat plus a private instructor for the beginners. Tap a price for the full breakdown.",
+ "matrixHelp": "Per person, all-in except food: flights, bag, transfer, flat, lift pass, lessons, rental and insurance. Budget is the cheapest flat that fits the rules, plus group lessons where they run. Comfort is an own-bed flat plus a private instructor for the four girls. the intermediate skier learns with the girls, so she has the girls’ price. Tap a price for the full breakdown.",
  "voteLead": "Two questions are needed: which lengths you could do, and your resort ranking. The rest is optional. Answers about dates, leave and budget appear as counts only, never next to names. Vote by Wednesday 14 October.",
  "flexRule": "Anyone who joins for only part of the week pays for the flat by the night, plus their own flights, pass and lessons. Full-week flats (Sun → Sat), split six ways:",
  "rules": [
@@ -3299,7 +3035,7 @@ window.ROUND2 = {
     },
     {
      "id": "group",
-     "label": "Group lessons instead of a private instructor"
+     "label": "Group lessons instead of a private instructor for the girls"
     },
     {
      "id": "share",
@@ -3363,7 +3099,7 @@ window.TRIP.steps = [
  {
   "when": "by end Oct",
   "what": "Book lessons",
-  "detail": "Beginners’ instructor or group course first, then Natasha’s class."
+  "detail": "One instructor or group course for the four girls."
  },
  {
   "when": "Nov",
