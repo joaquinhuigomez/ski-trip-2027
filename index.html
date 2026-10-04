@@ -467,6 +467,21 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
 .arch-t{font:500 1.35rem/1.3 var(--f-display)}
 .arch-s{font-size:var(--fs-small);color:var(--ink-2)}
 .dropped{font:500 .55rem/1 var(--f-label);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);border:1px solid var(--rule);padding:.25rem .4rem;margin-left:.4rem;vertical-align:middle}
+.guide{background:var(--paper);border:1px solid var(--rule);margin-bottom:2.5rem}
+.guide .opener{aspect-ratio:21/8;min-height:220px;max-height:420px}
+.guide .opener .big{font-size:clamp(3.5rem,2rem + 6vw,6.5rem)}
+.g-in{padding:clamp(1.1rem,3vw,2rem);display:grid;gap:1.5rem}
+.g-head{display:grid;gap:.6rem}
+.g-head h3{font:500 clamp(1.5rem,1.1rem + 1.4vw,2.1rem)/1.2 var(--f-display)}
+.g-len{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center}
+.g-stays{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+@media (max-width:760px){.g-stays{grid-template-columns:minmax(0,1fr)}}
+.g-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;font-size:var(--fs-small)}
+@media (max-width:900px){.g-meta{grid-template-columns:minmax(0,1fr)}}
+.g-meta > div{border-top:2px solid var(--ai);padding-top:.7rem;display:grid;gap:.45rem;align-content:start}
+.g-meta .row{display:flex;justify-content:space-between;gap:.8rem}
+.g-meta .row b{font:500 .95rem/1.3 var(--f-label);white-space:nowrap}
+@media (max-width:640px){.opener .big{display:none}.opener .cap{display:none}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -476,7 +491,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
   <div class="wrap">
     <a class="brand" href="#top"><b lang="zh-Hant">滑雪團</b> <span>Alps 2027</span></a>
     <nav class="links" aria-label="Sections" id="links">
-      <a href="#round2">Round 2</a><a href="#vote">Vote</a><a href="#party">Party</a><a href="#archive">Round 1</a><a href="#next">Next</a>
+      <a href="#round2">Round 2</a><a href="#guides">Resorts</a><a href="#vote">Vote</a><a href="#party">Party</a><a href="#archive">Round 1</a><a href="#next">Next</a>
       <span id="nav-p" hidden></span>
     </nav>
     <a class="cta" href="#vote">Stamp your vote</a>
@@ -558,10 +573,21 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
     <div class="mx-wrap"><table class="mx" id="mx"></table></div>
     <div class="breakdown" id="breakdown"></div>
     <div class="flex" id="flex"></div>
-    <div class="pivot" id="pivot"></div>
   </div>
 </div></section>
 
+
+<!-- RESORT GUIDES (round 2) -->
+<section class="sec washi" id="guides"><div class="wrap frame">
+  <aside class="tate" lang="zh-Hant">指南<small>Resort guides</small></aside>
+  <div>
+    <div class="head">
+      <h2>The three resorts, up close</h2>
+      <p class="lead">Where we would stay, how lessons work and how we get there, for each trip length. Every flat links to the live listing for our exact dates.</p>
+    </div>
+    <div id="guide-list"></div>
+  </div>
+</div></section>
 <!-- VOTE -->
 <section class="sec ink-band" id="vote">
   <svg class="contour" viewBox="0 0 600 600" aria-hidden="true" fill="none" stroke="var(--on-ai-2)" stroke-width="1.2">
@@ -703,7 +729,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
 
 <script src="data.js?v=4"></script>
 <script src="images.js?v=4"></script>
-<script src="data2.js?v=6"></script>
+<script src="data2.js?v=8"></script>
 <script>
 (() => {
   'use strict';
@@ -955,7 +981,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
       seg($('#seg-role'), ROLES, role, k => { role = k; drawMatrix(); });
       seg($('#seg-tier'), TIERS, tier, k => { tier = k; drawMatrix(); });
       // cheapest feasible cell per shape row for the current role/tier
-      $('#mx').innerHTML = `<thead><tr><th>Length</th>${R2.resorts.map(r => `<th class="rs" scope="col"><span lang="zh-Hant" class="zh" style="color:var(--shu);margin-right:.3rem">${r.kanji}</span>${esc(r.short)}<small>${esc(r.sub)}</small></th>`).join('')}</tr></thead><tbody>` +
+      $('#mx').innerHTML = `<thead><tr><th>Length</th>${R2.resorts.map(r => `<th class="rs" scope="col"><span lang="zh-Hant" class="zh" style="color:var(--shu);margin-right:.3rem">${r.kanji}</span><a href="#guide-${r.id}">${esc(r.short)}</a><small>${esc(r.sub)}</small></th>`).join('')}</tr></thead><tbody>` +
         R2.shapes.map(sh => {
           const vals = R2.resorts.map(r => { const c = cellOf(r.id, sh.id); return c && c.feasible ? itemsTotal(withLevers(c[tier].items))[role] : Infinity; });
           const min = Math.min(...vals);
@@ -982,12 +1008,48 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
     const LEV = [['ski1', 'Ski one day less'], ['les1', 'One fewer lesson day'], ['les2', 'Two fewer lesson days'], ['bags', 'Share hold bags']];
     $('#levers').innerHTML = `<span class="label">Cost levers</span>` + LEV.map(([k, l]) => `<label class="lev"><input type="checkbox" data-lev="${k}" id="lev-${k}">${esc(l)}</label>`).join('') + `<span class="small muted">Tick to see the saving in every price.</span>`;
     $('#levers').addEventListener('change', e => { const k = e.target.dataset.lev; if (!k) return; if (e.target.checked) { levers.add(k); if (k === 'les1') { levers.delete('les2'); $('#lev-les2').checked = false; } if (k === 'les2') { levers.delete('les1'); $('#lev-les1').checked = false; } } else levers.delete(k); drawMatrix(); });
-    $('#pivot').innerHTML = R2.newOptions.map(pv => `<div class="sub-h"><span class="kj" lang="zh-Hant">${pv.kanji}</span><h3>New option: ${esc(pv.name)}</h3><span class="label">${esc(pv.transfer.split(';')[0])}</span></div>
-      <div class="body2"><div class="prose"><p class="lead">${esc(pv.vibe)}</p><p>${esc(pv.why)}</p>
-        <div class="pc"><div class="pro"><span class="label">Why it works</span><ul style="margin-top:.6rem">${pv.pros.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div><div class="con"><span class="label">Watch-outs</span><ul style="margin-top:.6rem">${pv.cons.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div></div></div>
-        <div style="display:grid;gap:1rem">${pv.images.length ? `<div class="gallery">${pv.images.map(im => `<figure class="photo">${photo(im)}<span class="cap">${esc(im.author)}</span></figure>`).join('')}</div>` : ''}
-        <ul class="menu">${pv.food.map(f => `<li><b>${esc(f.name)}</b><span class="pr">${esc(f.price)}</span><span class="w">${esc(f.what)}</span></li>`).join('')}</ul>
-        ${pv.photoNote ? `<p class="small muted">${esc(pv.photoNote)}</p>` : ''}</div></div>`).join('<div style="height:2.5rem"></div>');
+    /* resort guides: one card per round-2 resort, with a per-guide length switch */
+    const SH = R2.shapes;
+    const guideData = R2.resorts.map(r => {
+      if (r.id === 'C') { const p = D.proposals.find(x => x.id === 'les-arcs'), gc = (R2.guideCopy || {}).C || {}; return { r, vibe: p.tagline, why: gc.why || p.baseWhy, pros: gc.pros || p.pros, cons: gc.cons || p.cons, food: p.food, facts: p.stats, images: [I.C.opener, I.C.g1, I.C.g2, I.C.g3] }; }
+      const o = R2.newOptions.find(x => x.id === r.id) || {};
+      return { r, vibe: o.vibe, why: o.why, pros: o.pros || [], cons: o.cons || [], food: o.food || [], facts: R2.guideFacts[r.id] || [], images: o.images || [] };
+    });
+    const gLen = {}; guideData.forEach(g => { gLen[g.r.id] = 'S'; });
+    const stayCard = (st, nights, tierName, pick) => { const tot = toEur(st.total, st.cur);
+      return `<article class="stay ${pick ? 'pick' : ''}">${pick ? '<span class="hanko sm" aria-label="Comfort pick">推薦</span>' : ''}
+        <div class="top"><span class="tier">${tierName}</span><h4>${esc(st.name)}</h4><span class="small muted">${esc(st.lift || '')}</span></div>
+        <div class="mid"><div class="beds">${String(st.beds || '').split(/ · |; /).filter(Boolean).map(b => `<span>${esc(b)}</span>`).join('')}</div><span class="muted">Rated ${esc(st.rating || 'n/a')} · ${esc(st.cancel || '')}</span></div>
+        <div class="bot"><div class="price num">${G(tot / FX / crewN / nights)}<small>pp / night · ${G(tot / FX)} (${E(tot)}) total for 6</small></div><div style="display:grid;gap:.4rem;justify-items:end">${pill(/VERIFIED/.test(st.status || '') ? 'VERIFIED' : 'ESTIMATE')}<a href="${esc(st.url)}" target="_blank" rel="noopener">View listing ↗</a></div></div></article>`; };
+    const lessonRows = (items) => items.filter(it => it.kind === 'school').map(it => { const v = it.int != null ? it.int : it.beg; return `<div class="row"><span>${esc(it.label)}</span><b>${E(v)} pp</b></div>`; }).join('');
+    function drawGuide(g) {
+      const c = cellOf(g.r.id, gLen[g.r.id]), sh = SH.find(x => x.id === gLen[g.r.id]);
+      const body = !c || !c.feasible ? `<p class="small muted">Not workable for this length: ${esc(c ? c.note : '')}</p>` : `
+        <div class="g-stays">${stayCard(c.budget.stay, sh.nights, 'Budget pick', false)}${stayCard(c.comfort.stay, sh.nights, 'Comfort pick', true)}</div>
+        <div class="g-meta">
+          <div><span class="label">Lessons · budget</span>${lessonRows(c.budget.items)}</div>
+          <div><span class="label">Lessons · comfort</span>${lessonRows(c.comfort.items)}</div>
+          <div><span class="label">Getting there & passes</span><span>${esc((c.budget.items.find(i => i.label.startsWith('Airport')) || {}).note || '')}</span><span class="muted">${esc((c.budget.items.find(i => i.kind === 'lift') || {}).note || '')}</span></div>
+        </div>
+        ${c.note ? `<p class="small muted">${esc(c.note)}</p>` : ''}`;
+      document.getElementById('g-body-' + g.r.id).innerHTML = body;
+      seg(document.getElementById('g-len-' + g.r.id), SH.map(x => [x.id, `${x.nights} nights · ${x.dates.replace(' Jan', '')}`]), gLen[g.r.id], k => { gLen[g.r.id] = k; drawGuide(g); });
+    }
+    $('#guide-list').innerHTML = guideData.map(g => `<article class="guide" id="guide-${g.r.id}">
+      ${g.images[0] ? `<figure class="photo opener">${photo(g.images[0])}<span class="big" aria-hidden="true" lang="zh-Hant">${g.r.kanji}</span><span class="corner">${esc(g.r.sub)}</span><span class="cap">${esc(g.images[0].author)} · ${esc(g.images[0].src || '')}</span></figure>` : ''}
+      <div class="g-in">
+        <div class="g-head"><span class="label">Round 2 option</span><h3>${esc(g.r.label.replace(' (France)', ''))}</h3><p class="lead">${esc(g.vibe || '')}</p></div>
+        ${g.facts.length ? `<div class="facts" style="margin:0">${g.facts.map(f => `<div><span class="label">${esc(f.k)}</span><span class="v">${esc(f.v)}</span><span class="s">${esc(f.s || '')}</span></div>`).join('')}</div>` : ''}
+        ${g.images.length > 1 ? `<div class="gallery">${g.images.slice(1, 4).map(im => `<figure class="photo">${photo(im)}<span class="cap">${esc(im.author)}</span></figure>`).join('')}</div>` : ''}
+        <div class="sub-h"><span class="kj" lang="zh-Hant">住宿</span><h3>Where we’d stay</h3><span class="label">Pick a trip length</span></div>
+        <div class="seg g-len" id="g-len-${g.r.id}" role="group" aria-label="Trip length"></div>
+        <div id="g-body-${g.r.id}"></div>
+        ${g.why ? `<p>${esc(g.why)}</p>` : ''}
+        <div class="pc"><div class="pro"><span class="label">Why it works</span><ul style="margin-top:.6rem">${g.pros.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div><div class="con"><span class="label">Watch-outs</span><ul style="margin-top:.6rem">${g.cons.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div></div>
+        <div class="sub-h"><span class="kj" lang="zh-Hant">飲食</span><h3>Eat, drink, après</h3></div>
+        <ul class="menu">${g.food.map(f => `<li>${f.url ? `<a href="${esc(f.url)}" target="_blank" rel="noopener"><b>${esc(f.name)}</b></a>` : `<b>${esc(f.name)}</b>`}<span class="pr">${esc(f.price)}</span><span class="w">${esc(f.what)}</span></li>`).join('')}</ul>
+      </div></article>`).join('');
+    guideData.forEach(drawGuide);
     $('#mx').addEventListener('click', e => { const b = e.target.closest('button.cell'); if (!b) return; sel = sel === b.dataset.key ? null : b.dataset.key; drawMatrix(); });
     drawMatrix();
     // flexible attendance: per-night share of the full-week flat

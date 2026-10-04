@@ -9,8 +9,8 @@ EXTRAS = [x for x in (maybe('geneva2'), maybe('tarentaise')) if x and '_resort' 
 # Photos per candidate resort (all licence-checked in research/images*.json)
 PHOTOS = {
   'Avoriaz': lambda: [ui('avoriaz', 0), ui('avoriaz', 2), wi('avoriaz', 1)],
-  'Flaine': lambda: [wi('flaine', 0), wi('flaine', 1), ui('mood_fondue', 2)],
-  'La Plagne': lambda: [wi('la_plagne', 0), wi('la_plagne', 1), ui('mood_apres', 0)],
+  'Flaine': lambda: [wi('flaine', 0), wi('flaine', 1), ui('mood_fondue', 2), ui('mood_lesson', 0)],
+  'La Plagne': lambda: [wi('la_plagne', 0), wi('la_plagne', 1), ui('mood_apres', 0), ui('mood_gondola', 1)],
   'Les Menuires': lambda: [ui('les_menuires', 1), ui('les_menuires', 2), wi('3vallees', 4)],
 }
 def photos_for(name):
@@ -43,8 +43,17 @@ R2.update({
     'Privacy: dates, leave, budget, lever and part-trip answers are shown as counts only. Only the resort ranking shows names.',
     'Booking: within 48 hours of the vote closing, on refundable rates.',
   ],
-  'newOptions': [{'kanji': x['_resort']['kanji'], 'name': x['_resort']['short'], 'why': x['why'], 'pros': x['pros'], 'cons': x['cons'], 'food': x['food'], 'vibe': x['vibe'],
+  'newOptions': [{'id': x['_resort']['id'], 'kanji': x['_resort']['kanji'], 'name': x['_resort']['short'], 'why': x['why'], 'pros': x['pros'], 'cons': x['cons'], 'food': x['food'], 'vibe': x['vibe'],
                   'transfer': x['transfer_time'], 'images': photos_for(x['_resort']['short']), 'photoNote': ''} for x in EXTRAS],
+  'guideCopy': {'C': {
+    'why': 'Arc 1800 has the best beginner set-up of the three: lessons meet on the snow in front of the flat, and most of the bars are here. Flexible agencies make Sunday and midweek check-ins possible.',
+    'pros': ['Came first in round 1', 'Ski-in/ski-out flats for every trip length, from about £50 per person per night', 'Beginner set-up at the door: ESF meets outside, free beginner chairlifts at weekends, €45 beginner day pass', 'Serious terrain for the advanced pair: Aiguille Rouge (3,226 m), 2,000 m of vertical, La Plagne on the same pass', 'Tree-lined runs at Arc 1600 and Peisey for cold or flat-light days', 'Proper après: Folie Douce, Red Hot Saloon'],
+    'cons': ['Longest transfer of the three: about 3 hours from Geneva', 'No shared shuttle midweek, so short trips use a private minibus', 'Group lessons only start on Sundays, so the shorter trips need a private instructor', 'Late-January cold on exposed lifts: −10 to −20 °C', 'The cheapest flats are compact 1970s apartments']}},
+  'guideFacts': {
+    'C': None,
+    'F': [{'k': 'Village altitude', 'v': '1,600 m', 's': 'Chalets up to 1,800 m'}, {'k': 'Pistes', 'v': '265 km', 's': 'Grand Massif'}, {'k': 'Door to slope', 'v': '0 min', 's': 'Ski-in/ski-out flats'}, {'k': 'Geneva transfer', 'v': '≈1h15', 's': 'Private minibus'}],
+    'L': [{'k': 'Village altitude', 'v': '1,970–2,100 m', 's': 'Higher than Arc 1800'}, {'k': 'Pistes', 'v': '425 km', 's': 'Paradiski, with Les Arcs'}, {'k': 'Door to slope', 'v': '0 min', 's': 'Ski-in/ski-out duplexes'}, {'k': 'Geneva transfer', 'v': '≈2h45', 's': 'Private minibus or Ben’s Bus (Sat)'}],
+  },
   'decisions': [
     {'id': 'lengths', 'type': 'multi', 'required': True, 'anon': True, 'short': 'Lengths that work', 'title': 'Which trip lengths could you do?', 'help': 'Tick every one you could do, including leave. This is about what’s possible, not what you prefer. Results show counts only.',
      'options': [{'id': 'LS', 'label': 'Sun 24 → Sat 30 · 6 nights', 'hint': '5 days of leave'}, {'id': 'M', 'label': 'Tue 26 → Sun 31 · 5 nights', 'hint': '3–3.5 days of leave'}, {'id': 'S', 'label': 'Wed 27 → Sun 31 · 4 nights', 'hint': '3 days of leave'}, {'id': 'XS', 'label': 'Thu 28 → Sun 31 · 3 nights', 'hint': '2 days of leave'}]},

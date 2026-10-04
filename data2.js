@@ -2852,7 +2852,7 @@ window.ROUND2 = {
     }
    }
   ],
-  "taken": "4 Oct 2026, 21:06",
+  "taken": "4 Oct 2026, 21:09",
   "note": "Round 1 is kept as a record. Everyone votes again in round 2, which uses new options and prices."
  },
  "closeLabel": "Wed 14 Oct",
@@ -2891,6 +2891,7 @@ window.ROUND2 = {
  ],
  "newOptions": [
   {
+   "id": "F",
    "kanji": "四",
    "name": "Flaine (Grand Massif)",
    "why": "The snow-sure, ski-in/out alternative at 1,600–1,800 m that still fits the budget: ski-in/out 2-bed flats for Wed→Sun at £594 and a 3-bedroom own-bed chalet at 1,800 m for £1,286 (6 nights), both verified live. A dedicated beginner zone sits at the door, the beginner pass costs €30.50, and the 265 km Grand Massif is there for the advanced pair. Avoriaz lost because it has almost no short-stay supply.",
@@ -2966,11 +2967,20 @@ window.ROUND2 = {
      "author": "Andri Aeschlimann",
      "license": "Unsplash License",
      "src": "Unsplash"
+    },
+    {
+     "subject": "Ski instructor teaching an adult beginner (Davos)",
+     "url": "https://images.unsplash.com/photo-1703080138499-f1f0dbc7da42?w=1600&q=80&auto=format&fit=crop",
+     "page": "https://unsplash.com/photos/a-couple-of-people-riding-skis-on-top-of-a-snow-covered-slope-SCXuSA6-Szg",
+     "author": "Nejc Peternelj",
+     "license": "Unsplash License",
+     "src": "Unsplash"
     }
    ],
    "photoNote": ""
   },
   {
+   "id": "L",
    "kanji": "五",
    "name": "La Plagne (Paradiski)",
    "why": "Highest-village, cheapest-flat option in the Tarentaise: villages at 1,970–2,100 m with glacier skiing to 3,250 m, 16 free beginner lifts at the village fronts, same Paradiski network as Les Arcs, and 2–3 BR ski-in/out flats from €927 (4 nights) — €100–200 pp cheaper than Les Arcs on every shape.",
@@ -3045,11 +3055,86 @@ window.ROUND2 = {
      "author": "Barney Goodman",
      "license": "Unsplash License",
      "src": "Unsplash"
+    },
+    {
+     "subject": "Cable car rising through snowy trees — portrait",
+     "url": "https://images.unsplash.com/photo-1743179072434-c1840510ee78?w=1600&q=80&auto=format&fit=crop",
+     "page": "https://unsplash.com/photos/a-cable-car-ascends-through-trees-to-the-snowy-slope-8XLFhmvzqSQ",
+     "author": "Michael McKay",
+     "license": "Unsplash License",
+     "src": "Unsplash"
     }
    ],
    "photoNote": ""
   }
  ],
+ "guideCopy": {
+  "C": {
+   "why": "Arc 1800 has the best beginner set-up of the three: lessons meet on the snow in front of the flat, and most of the bars are here. Flexible agencies make Sunday and midweek check-ins possible.",
+   "pros": [
+    "Came first in round 1",
+    "Ski-in/ski-out flats for every trip length, from about £50 per person per night",
+    "Beginner set-up at the door: ESF meets outside, free beginner chairlifts at weekends, €45 beginner day pass",
+    "Serious terrain for the advanced pair: Aiguille Rouge (3,226 m), 2,000 m of vertical, La Plagne on the same pass",
+    "Tree-lined runs at Arc 1600 and Peisey for cold or flat-light days",
+    "Proper après: Folie Douce, Red Hot Saloon"
+   ],
+   "cons": [
+    "Longest transfer of the three: about 3 hours from Geneva",
+    "No shared shuttle midweek, so short trips use a private minibus",
+    "Group lessons only start on Sundays, so the shorter trips need a private instructor",
+    "Late-January cold on exposed lifts: −10 to −20 °C",
+    "The cheapest flats are compact 1970s apartments"
+   ]
+  }
+ },
+ "guideFacts": {
+  "C": null,
+  "F": [
+   {
+    "k": "Village altitude",
+    "v": "1,600 m",
+    "s": "Chalets up to 1,800 m"
+   },
+   {
+    "k": "Pistes",
+    "v": "265 km",
+    "s": "Grand Massif"
+   },
+   {
+    "k": "Door to slope",
+    "v": "0 min",
+    "s": "Ski-in/ski-out flats"
+   },
+   {
+    "k": "Geneva transfer",
+    "v": "≈1h15",
+    "s": "Private minibus"
+   }
+  ],
+  "L": [
+   {
+    "k": "Village altitude",
+    "v": "1,970–2,100 m",
+    "s": "Higher than Arc 1800"
+   },
+   {
+    "k": "Pistes",
+    "v": "425 km",
+    "s": "Paradiski, with Les Arcs"
+   },
+   {
+    "k": "Door to slope",
+    "v": "0 min",
+    "s": "Ski-in/ski-out duplexes"
+   },
+   {
+    "k": "Geneva transfer",
+    "v": "≈2h45",
+    "s": "Private minibus or Ben’s Bus (Sat)"
+   }
+  ]
+ },
  "decisions": [
   {
    "id": "lengths",
