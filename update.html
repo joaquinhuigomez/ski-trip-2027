@@ -156,25 +156,6 @@ tfoot td{font:700 1rem/1.3 var(--f-display);border-top:1px solid var(--ink);bord
 .step h4{font-size:1.08rem;margin-bottom:.3rem}
 .step p{font-size:.88rem}
 
-/* cta */
-.cta{background:var(--ai-deep);color:var(--on-ai);position:relative;overflow:hidden}
-.cta .head h2,.cta .lead{color:var(--on-ai)}
-.cta .box{background:var(--paper);color:var(--ink);padding:clamp(1.1rem,3vw,1.6rem);display:grid;gap:1rem;max-width:40rem}
-.who{display:flex;flex-wrap:wrap;gap:.4rem}
-.who label{cursor:pointer}
-.who input{position:absolute;opacity:0;pointer-events:none}
-.who span{display:inline-block;padding:.55rem .85rem;border:1px solid var(--rule);background:var(--card);font:500 .85rem/1 var(--f-body)}
-.who input:checked + span{background:var(--ai);color:var(--paper);border-color:var(--ai)}
-.who input:focus-visible + span{outline:2px solid var(--shu);outline-offset:2px}
-.answers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem}
-@media (max-width:560px){.answers{grid-template-columns:minmax(0,1fr)}}
-.answers button{font:600 .72rem/1.3 var(--f-label);letter-spacing:.14em;text-transform:uppercase;padding:1rem .8rem;border:1px solid var(--rule);background:var(--card);color:var(--ink);cursor:pointer}
-.answers button.main{background:var(--shu);color:var(--shu-ink);border-color:var(--shu)}
-.answers button:disabled{opacity:.5;cursor:not-allowed}
-.status{font-size:.82rem;color:var(--ink-2)} .status.ok{color:var(--green)} .status.err{color:var(--shu)}
-.count{display:flex;flex-wrap:wrap;gap:1.4rem;font:500 .9rem/1.3 var(--f-label);color:var(--on-ai)}
-.count b{font-size:1.6rem;color:var(--glow);margin-right:.3rem}
-
 footer{background:var(--ai-deep);color:var(--on-ai-2);font-size:.78rem;border-top:1px solid rgba(255,255,255,.08)}
 footer .wrap{padding-block:2.5rem;display:grid;gap:.8rem}
 footer a{color:var(--on-ai)}
@@ -193,7 +174,7 @@ footer a{color:var(--on-ai)}
     <h1>Four nights in Flaine</h1>
     <p class="tag">Wednesday 27 to Sunday 31 January. Snow at 1,600 metres, Mont Blanc across the valley, lessons at the door and fondue by the fire. Here is where we landed, what it costs today, and what happens next.</p>
     <div class="chips"><span class="chip"><b id="cd">—</b> days to go</span><span class="chip">Wed 27 → Sun 31 Jan</span><span class="chip">Fly Geneva · 1h15 to the snow</span></div>
-    <div style="display:flex;flex-wrap:wrap;gap:.7rem"><a class="btn" href="#cta">Are you in?</a><a class="btn line" href="#days">See the days</a></div>
+    <div style="display:flex;flex-wrap:wrap;gap:.7rem"><a class="btn" href="#days">See the days</a><a class="btn line" href="#cost">What it costs</a></div>
   </div>
   <span class="cap" id="hero-cap" style="position:absolute;right:.8rem;bottom:.6rem;z-index:2;font:400 .6rem/1.2 var(--f-label);color:rgba(255,255,255,.75)"></span>
 </section>
@@ -218,7 +199,7 @@ footer a{color:var(--on-ai)}
   <div class="flats" id="flats"></div>
 </div></section>
 
-<section style="background:var(--washi)"><div class="wrap">
+<section id="cost" style="background:var(--washi)"><div class="wrap">
   <div class="head"><p class="label"><span class="kj">費用</span>Checked again today</p><h2>What it costs now</h2><p class="lead" id="cost-lead"></p></div>
   <div class="cost">
     <div class="bigprice">
@@ -235,15 +216,6 @@ footer a{color:var(--on-ai)}
   <div class="steps" id="steps"></div>
 </div></section>
 
-<section class="cta" id="cta"><div class="wrap">
-  <div class="head"><p class="label" style="color:var(--on-ai-2)"><span class="kj">同行</span>One tap</p><h2>Are you in for 27–31 January?</h2><p class="lead">So we know how many beds and seats to hold. You can change your answer any time; the page only shows totals.</p></div>
-  <div class="count" id="count"></div>
-  <div class="box" style="margin-top:1.5rem">
-    <div><span class="label">Who are you?</span><div class="who" id="who" style="margin-top:.5rem"></div></div>
-    <div class="answers"><button type="button" class="main" data-a="in">I’m in</button><button type="button" data-a="check">Need a day to check</button><button type="button" data-a="no">Can’t make it</button></div>
-    <span class="status" id="status" role="status" aria-live="polite"></span>
-  </div>
-</div></section>
 </main>
 
 <footer><div class="wrap">
@@ -320,28 +292,9 @@ footer a{color:var(--on-ai)}
   const out = U.flights.out[0], back = U.flights.back[0];
   $('#steps').innerHTML = [
     ['Hold the two flats', `Free to cancel until 28 December, so holding them now costs nothing and protects us from the thin supply. One person books, everyone sends their share. <a href="${esc(U.flats[0].url)}" target="_blank" rel="noopener">Boys’ flat ↗</a> · <a href="${esc(U.flats[1].url)}" target="_blank" rel="noopener">Girls’ flat ↗</a>`],
-    ['Book six seats together', `Once everyone has said they’re in: easyJet ${esc(out.from)} ${esc(out.dep)} out (£${out.pp_gbp}) and Geneva ${esc(back.dep)} back (£${back.pp_gbp}). Flights can’t be refunded, so this step waits for six yeses. <a href="${esc(out.url)}" target="_blank" rel="noopener">Check fares ↗</a>`],
+    ['Book six seats together', `As one booking for all six: easyJet ${esc(out.from)} ${esc(out.dep)} out (£${out.pp_gbp}) and Geneva ${esc(back.dep)} back (£${back.pp_gbp}). Flights can’t be refunded, and the £29 fare is the last one before £46.50. <a href="${esc(out.url)}" target="_blank" rel="noopener">Check fares ↗</a>`],
     ['Lessons, minibus, rental', `Book the girls’ instructor at ESF Flaine (three mornings, Thu–Sat), the minibus and the skis online in November. All three cancel freely. <a href="${esc(U.lessons[0].url)}" target="_blank" rel="noopener">ESF ↗</a>`],
   ].map(([h, p]) => `<div class="step"><div><h4>${h}</h4><p>${p}</p></div></div>`).join('');
-
-  /* I'm in (round 3), counts only */
-  const NAMES = ['Joaquin', 'Juan', 'Chloe', 'Kannes', 'Ina', 'Natasha'];
-  let me = null; try { me = localStorage.getItem('yuki-me'); } catch (e) {}
-  $('#who').innerHTML = NAMES.map(n => `<label><input type="radio" name="who" value="${n}" ${me === n ? 'checked' : ''}><span>${n}</span></label>`).join('');
-  const setStatus = (m, c = '') => { const s = $('#status'); s.textContent = m; s.className = 'status ' + c; };
-  const api = async body => { const r = await fetch(U.voteApi, body ? { method: 'POST', body: JSON.stringify(body) } : {}); const j = await r.json(); if (!j.ok) throw new Error(j.error); return j; };
-  const draw = st => { const r3 = st.ballots.filter(b => b.answers.round === 'r3'); const c = { in: 0, check: 0, no: 0 }; r3.forEach(b => { if (b.answers.going in c) c[b.answers.going]++; });
-    $('#count').innerHTML = `<span><b>${c.in}</b>in</span><span><b>${c.check}</b>checking</span><span><b>${c.no}</b>can’t</span><span style="color:var(--on-ai-2)">of 6</span>`; };
-  api().then(draw).catch(() => { $('#count').textContent = ''; });
-  document.querySelector('.answers').addEventListener('click', async e => { const b = e.target.closest('button[data-a]'); if (!b) return;
-    const n = document.querySelector('input[name="who"]:checked')?.value; if (!n) { setStatus('Tap your name first.', 'err'); return; }
-    try { localStorage.setItem('yuki-me', n); } catch (x) {}
-    document.querySelectorAll('.answers button').forEach(x => x.disabled = true); setStatus('Saving…');
-    const send = () => api({ name: n, type: 'ballot', answers: { round: 'r3', going: b.dataset.a } });
-    try { let st; try { st = await send(); } catch (first) { await new Promise(r => setTimeout(r, 1500)); st = await send(); }
-      draw(st); setStatus(b.dataset.a === 'in' ? `Lovely, ${n}. See you on the mountain.` : b.dataset.a === 'check' ? `No problem, ${n}. Change it whenever you know.` : `Thanks for letting us know, ${n}.`, 'ok'); }
-    catch (x) { setStatus('That didn’t save. Wait a minute and tap again, or just tell the group chat.', 'err'); }
-    finally { document.querySelectorAll('.answers button').forEach(x => x.disabled = false); } });
 
   /* credits */
   $('#credits').innerHTML = [...credits.values()].map(c => `<div><a href="${esc(c.page)}" target="_blank" rel="noopener">${esc(c.subject.replace(/\s*\(.*?\)\s*/g, ' ').trim())}</a>, ${esc(c.author)}, ${esc(c.license)}</div>`).join('');
