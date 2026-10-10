@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>滑雪團 · Four nights in Flaine</title>
+<meta name="description" content="Round 2 is in: Flaine, Wed 27 → Sun 31 January 2027. Fresh prices, what we'll do, and what happens next.">
+<meta property="og:title" content="滑雪團 · Four nights in Flaine">
+<meta property="og:description" content="Wed 27 → Sun 31 January. Fresh prices, what we'll do up there, and what happens next.">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Mont_Blanc_from_Flaine%2C_2009.jpg/1280px-Mont_Blanc_from_Flaine%2C_2009.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2712%27 fill=%27%2312233B%27/%3E%3Cpath d=%27M6 50 26 18l8 12 6-8 18 28z%27 fill=%27%237C88B4%27/%3E%3Cpath d=%27M26 18l-6 10 6-3 4 4z%27 fill=%27%23F3F1FA%27/%3E%3Ccircle cx=%2748%27 cy=%2716%27 r=%275%27 fill=%27%23E0482B%27/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Noto+Serif+TC:wght@500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Jost:wght@400;500;600&display=swap">
+<style>
+/* Same family as the proposal page, warmer: golden-hour light on snow. One vermilion seal for the decision. */
+:root{
+  --paper:#F7F8FA; --washi:#EFEDEA; --card:#FFFFFF; --ink:#1B1F2A; --ink-2:#585D69; --rule:#DCDDE2;
+  --ai:#1F3A5F; --ai-deep:#12233B; --on-ai:#F2F0EC; --on-ai-2:#B9BED0;
+  --shu:#E0482B; --shu-ink:#FFFFFF; --kin:#C8963E; --kin-soft:#F6EAD6; --glow:#F5D3AE;
+  --green:#2E9E5B; --blue:#2A6FDB;
+  --f-display:"Shippori Mincho","Hiragino Mincho ProN",Georgia,serif;
+  --f-zh:"Noto Serif TC","Songti TC","PMingLiU",serif;
+  --f-body:"Zen Kaku Gothic New","Hiragino Sans","PingFang TC",system-ui,sans-serif;
+  --f-label:"Jost","Futura","Avenir Next",system-ui,sans-serif;
+  --gutter:clamp(16px,3vw,32px); --maxw:68rem; --sec:clamp(4rem,9vw,7.5rem);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0E1220; --washi:#151A28; --card:#1A2135; --ink:#ECEAE6; --ink-2:#A6ABB9; --rule:#2A3147;
+  --ai:#A9C0E8; --ai-deep:#080B15; --on-ai:#F2F0EC; --on-ai-2:#9AA3BA; --shu:#FF6B4E; --shu-ink:#1B0D08; --kin:#E2B866; --kin-soft:#2E2618; --glow:#6B4E35; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0E1220; --washi:#151A28; --card:#1A2135; --ink:#ECEAE6; --ink-2:#A6ABB9; --rule:#2A3147;
+  --ai:#A9C0E8; --ai-deep:#080B15; --on-ai:#F2F0EC; --on-ai-2:#9AA3BA; --shu:#FF6B4E; --shu-ink:#1B0D08; --kin:#E2B866; --kin-soft:#2E2618; --glow:#6B4E35; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 .9375rem/1.8 var(--f-body);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--ai);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{color:var(--shu)}
+:focus-visible{outline:2px solid var(--shu);outline-offset:3px}
+[hidden]{display:none!important}
+h1,h2,h3,h4{font-family:var(--f-display);font-weight:500;line-height:1.25;margin:0;text-wrap:balance}
+h2{font-size:clamp(1.6rem,1.1rem + 1.6vw,2.3rem)}
+p{margin:0}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter)}
+.label{font:500 .6875rem/1.3 var(--f-label);letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2)}
+.lead{font:500 1.0625rem/1.8 var(--f-display);max-width:36em}
+.zh{font-family:var(--f-zh)}
+.muted{color:var(--ink-2)} .small{font-size:.8125rem}
+.num{font-variant-numeric:tabular-nums}
+section{padding-block:var(--sec)}
+.head{display:grid;gap:.8rem;margin-bottom:2.25rem;max-width:42em}
+.kj{font:700 1.3rem/1 var(--f-zh);color:var(--kin);margin-right:.6rem}
+
+/* top bar */
+.top{position:fixed;inset:0 0 auto 0;z-index:20;padding-top:env(safe-area-inset-top,0px);background:linear-gradient(rgba(8,11,21,.55),rgba(8,11,21,0))}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+.top a{color:#fff;text-decoration:none;font:800 1.05rem/1 var(--f-zh)}
+.top .back{font:500 .66rem/1 var(--f-label);letter-spacing:.18em;text-transform:uppercase;opacity:.85}
+
+/* hero */
+.hero{position:relative;min-height:clamp(560px,88svh,880px);display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:#1a1f33}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.05)}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(245,211,174,.18) 0%,rgba(217,154,160,.10) 35%,rgba(20,27,58,.35) 60%,rgba(10,13,28,.86) 100%);z-index:1}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-block:7rem 3rem;display:grid;gap:1.1rem}
+.hero .label{color:#F6E2C6}
+.hero h1{font-size:clamp(2.6rem,1.6rem + 4vw,4.4rem);line-height:1.08;max-width:11em}
+.hero .tag{max-width:34em;color:#EDE9E3;font-size:1.02rem}
+.seal{position:absolute;right:clamp(14px,4vw,56px);top:clamp(80px,13vh,140px);z-index:2;writing-mode:vertical-rl;font:900 clamp(3rem,2rem + 4vw,5.8rem)/1 var(--f-zh);color:#F7F1E8;letter-spacing:.1em;text-shadow:0 2px 30px rgba(10,13,28,.4)}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{font:500 .7rem/1 var(--f-label);letter-spacing:.14em;text-transform:uppercase;padding:.55rem .75rem;border:1px solid rgba(255,255,255,.45);color:#fff;background:rgba(10,13,28,.25);backdrop-filter:blur(4px)}
+.chip b{color:var(--glow)}
+.btn{display:inline-flex;align-items:center;gap:.6rem;font:600 .7rem/1 var(--f-label);letter-spacing:.2em;text-transform:uppercase;padding:1rem 1.35rem;border:1px solid transparent;text-decoration:none;cursor:pointer;background:var(--shu);color:var(--shu-ink);border-radius:2px}
+.btn.line{background:transparent;color:inherit;border-color:currentColor}
+@media (max-width:640px){.seal{font-size:2.6rem;top:72px}}
+
+/* decision strip */
+.decide{background:var(--ai-deep);color:var(--on-ai)}
+.decide .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:rgba(255,255,255,.12)}
+@media (max-width:820px){.decide .grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.decide .cell{background:var(--ai-deep);padding:1.2rem 1.1rem;display:grid;gap:.35rem;align-content:start}
+.decide .k{font:500 .62rem/1.2 var(--f-label);letter-spacing:.18em;text-transform:uppercase;color:var(--on-ai-2)}
+.decide .v{font:700 1.25rem/1.25 var(--f-display)}
+.decide .s{font-size:.78rem;color:var(--on-ai-2);line-height:1.5}
+.decide .head h2,.decide .head .lead{color:var(--on-ai)}
+.hanko{display:inline-grid;place-items:center;width:3.4rem;height:3.4rem;border:2px solid var(--shu);outline:1px solid var(--shu);outline-offset:3px;border-radius:5px;color:var(--shu);font:900 1rem/1.02 var(--f-zh);writing-mode:vertical-rl;transform:rotate(-8deg)}
+
+/* days */
+.days{display:grid;gap:clamp(1.5rem,4vw,2.5rem)}
+.day{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(1rem,3vw,2.5rem);align-items:center}
+.day:nth-child(even) .ph{order:2}
+@media (max-width:760px){.day{grid-template-columns:minmax(0,1fr)}.day:nth-child(even) .ph{order:0}}
+.ph{position:relative;margin:0;aspect-ratio:4/3;overflow:hidden;background:var(--washi);border-radius:2px}
+.ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.ph:hover img{transform:scale(1.03)}
+.ph .cap{position:absolute;right:.6rem;bottom:.5rem;font:400 .6rem/1.2 var(--f-label);color:rgba(255,255,255,.85);text-shadow:0 1px 3px rgba(0,0,0,.6)}
+.day .txt{display:grid;gap:.6rem}
+.day .when{font:500 .7rem/1.2 var(--f-label);letter-spacing:.2em;text-transform:uppercase;color:var(--kin)}
+.day h3{font-size:1.45rem}
+.day ul{margin:.2rem 0 0;padding:0;list-style:none;display:grid;gap:.4rem;font-size:.88rem}
+.day li{display:grid;grid-template-columns:3.6rem 1fr;gap:.6rem}
+.day li b{font:500 .7rem/1.9 var(--f-label);letter-spacing:.08em;color:var(--ink-2)}
+
+/* joys */
+.joys{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,15rem),1fr));gap:1rem}
+.joy{background:var(--card);border:1px solid var(--rule);display:grid;grid-template-rows:auto 1fr}
+.joy .ph{aspect-ratio:16/10;border-radius:0}
+.joy .in{padding:1rem 1.05rem;display:grid;gap:.45rem;align-content:start}
+.joy h4{font-size:1.05rem;font-weight:700}
+.joy .who{font:500 .58rem/1.2 var(--f-label);letter-spacing:.16em;text-transform:uppercase;color:var(--kin)}
+.joy p{font-size:.84rem;line-height:1.65}
+.joy a{font-size:.75rem}
+
+/* flats */
+.flats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+@media (max-width:900px){.flats{grid-template-columns:minmax(0,1fr)}}
+.flat{background:var(--card);border:1px solid var(--rule);padding:1.15rem;display:grid;gap:.6rem;align-content:start;position:relative}
+.flat.rec{border:2px solid var(--shu)}
+.flat .hanko{position:absolute;top:-1rem;right:1rem;width:2.6rem;height:2.6rem;font-size:.72rem;background:var(--card)}
+.flat .tier{font:500 .6rem/1 var(--f-label);letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2)}
+.flat h4{font-size:1.1rem}
+.flat .price{font:500 1.6rem/1 var(--f-label)}
+.flat .price small{display:block;font:400 .72rem/1.5 var(--f-body);color:var(--ink-2);margin-top:.25rem}
+.flat .meta{font-size:.8rem;color:var(--ink-2);line-height:1.6}
+.pill{display:inline-block;font:500 .56rem/1 var(--f-label);letter-spacing:.14em;text-transform:uppercase;padding:.3rem .45rem;border:1px solid currentColor;border-radius:2px}
+.pill.ok{color:var(--green)} .pill.est{color:#B7791F} .pill.pub{color:var(--blue)}
+
+/* cost */
+.cost{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(1.25rem,4vw,3rem);align-items:start}
+@media (max-width:860px){.cost{grid-template-columns:minmax(0,1fr)}}
+.bigprice{display:grid;gap:1rem}
+.ticket{display:grid;grid-template-columns:1fr 1fr;background:var(--kin-soft);border:1px solid var(--kin);border-radius:3px}
+.ticket > div{padding:1.1rem 1.2rem;display:grid;gap:.3rem}
+.ticket > div + div{border-left:1px dashed var(--kin)}
+.ticket .t{font:500 .62rem/1.2 var(--f-label);letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
+.ticket .v{font:500 2.2rem/1 var(--f-label)}
+.ticket .s{font-size:.74rem;color:var(--ink-2)}
+table{border-collapse:collapse;width:100%;font-size:.84rem}
+th,td{text-align:left;padding:.65rem .5rem;border-bottom:1px solid var(--rule);vertical-align:top}
+thead th{font:500 .6rem/1.3 var(--f-label);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+td.r,th.r{text-align:right}
+td small{display:block;color:var(--ink-2);font-size:.72rem;line-height:1.45}
+tfoot td{font:700 1rem/1.3 var(--f-display);border-top:1px solid var(--ink);border-bottom:0}
+.chg{font:500 .66rem/1 var(--f-label);letter-spacing:.06em}
+.chg.up{color:#B7791F} .chg.dn{color:var(--green)} .chg.eq{color:var(--ink-2)}
+.tw{overflow-x:auto}
+
+/* changes + steps */
+.changes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:1rem}
+.change{border-top:2px solid var(--kin);padding-top:.8rem;display:grid;gap:.35rem;font-size:.86rem}
+.change b{font:700 1rem/1.3 var(--f-display)}
+.steps{display:grid;gap:1rem;counter-reset:s}
+.step{display:grid;grid-template-columns:3rem minmax(0,1fr);gap:1rem;align-items:start;background:var(--card);border:1px solid var(--rule);padding:1.1rem}
+.step::before{counter-increment:s;content:counter(s);width:2.4rem;height:2.4rem;border-radius:50%;display:grid;place-items:center;border:1px solid var(--ai);font:700 1rem/1 var(--f-display);color:var(--ai)}
+.step h4{font-size:1.08rem;margin-bottom:.3rem}
+.step p{font-size:.88rem}
+
+/* cta */
+.cta{background:var(--ai-deep);color:var(--on-ai);position:relative;overflow:hidden}
+.cta .head h2,.cta .lead{color:var(--on-ai)}
+.cta .box{background:var(--paper);color:var(--ink);padding:clamp(1.1rem,3vw,1.6rem);display:grid;gap:1rem;max-width:40rem}
+.who{display:flex;flex-wrap:wrap;gap:.4rem}
+.who label{cursor:pointer}
+.who input{position:absolute;opacity:0;pointer-events:none}
+.who span{display:inline-block;padding:.55rem .85rem;border:1px solid var(--rule);background:var(--card);font:500 .85rem/1 var(--f-body)}
+.who input:checked + span{background:var(--ai);color:var(--paper);border-color:var(--ai)}
+.who input:focus-visible + span{outline:2px solid var(--shu);outline-offset:2px}
+.answers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem}
+@media (max-width:560px){.answers{grid-template-columns:minmax(0,1fr)}}
+.answers button{font:600 .72rem/1.3 var(--f-label);letter-spacing:.14em;text-transform:uppercase;padding:1rem .8rem;border:1px solid var(--rule);background:var(--card);color:var(--ink);cursor:pointer}
+.answers button.main{background:var(--shu);color:var(--shu-ink);border-color:var(--shu)}
+.answers button:disabled{opacity:.5;cursor:not-allowed}
+.status{font-size:.82rem;color:var(--ink-2)} .status.ok{color:var(--green)} .status.err{color:var(--shu)}
+.count{display:flex;flex-wrap:wrap;gap:1.4rem;font:500 .9rem/1.3 var(--f-label);color:var(--on-ai)}
+.count b{font-size:1.6rem;color:var(--glow);margin-right:.3rem}
+
+footer{background:var(--ai-deep);color:var(--on-ai-2);font-size:.78rem;border-top:1px solid rgba(255,255,255,.08)}
+footer .wrap{padding-block:2.5rem;display:grid;gap:.8rem}
+footer a{color:var(--on-ai)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap"><a href="index.html" lang="zh-Hant">滑雪團</a><a class="back" href="index.html#round2">Full proposal ↗</a></div></header>
+
+<main>
+<section class="hero" style="padding:0">
+  <img id="hero-img" alt="Mont Blanc seen from the slopes of Flaine">
+  <div class="seal" lang="zh-Hant" aria-hidden="true">出發</div>
+  <div class="wrap">
+    <p class="label">Round 2 is in · all six voted</p>
+    <h1>Four nights in Flaine</h1>
+    <p class="tag">Wednesday 27 to Sunday 31 January. Snow at 1,600 metres, Mont Blanc across the valley, lessons at the door and fondue by the fire. Here is where we landed, what it costs today, and what happens next.</p>
+    <div class="chips"><span class="chip"><b id="cd">—</b> days to go</span><span class="chip">Wed 27 → Sun 31 Jan</span><span class="chip">Fly Geneva · 1h15 to the snow</span></div>
+    <div style="display:flex;flex-wrap:wrap;gap:.7rem"><a class="btn" href="#cta">Are you in?</a><a class="btn line" href="#days">See the days</a></div>
+  </div>
+  <span class="cap" id="hero-cap" style="position:absolute;right:.8rem;bottom:.6rem;z-index:2;font:400 .6rem/1.2 var(--f-label);color:rgba(255,255,255,.75)"></span>
+</section>
+
+<section class="decide"><div class="wrap">
+  <div class="head"><p class="label" style="color:var(--on-ai-2)"><span class="kj">決定</span>How we decided</p><h2>Six votes, one plan</h2><p class="lead">Every option started on Sunday or later so we fly together, and we voted on length, leave and resort. Results are counts only.</p></div>
+  <div class="grid" id="decide"></div>
+</div></section>
+
+<section id="days"><div class="wrap">
+  <div class="head"><p class="label"><span class="kj">日程</span>The trip</p><h2>Five days, as we picture them</h2><p class="lead">A loose plan, not a timetable. The girls learn together each morning; Joaquin and Juan go exploring and meet everyone for lunch.</p></div>
+  <div class="days" id="day-list"></div>
+</div></section>
+
+<section style="background:var(--washi)"><div class="wrap">
+  <div class="head"><p class="label"><span class="kj">回憶</span>Small joys</p><h2>Things we’ll remember</h2><p class="lead">All real and close to the flats, checked this week. Most need no skiing at all.</p></div>
+  <div class="joys" id="joys"></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="head"><p class="label"><span class="kj">住宿</span>Where we’d sleep</p><h2>Two flats in the forest</h2><p class="lead">Checked again today for Wed 27 → Sun 31, six adults. Every pick is free to cancel for weeks, so holding one costs nothing.</p></div>
+  <div class="flats" id="flats"></div>
+</div></section>
+
+<section style="background:var(--washi)"><div class="wrap">
+  <div class="head"><p class="label"><span class="kj">費用</span>Checked again today</p><h2>What it costs now</h2><p class="lead" id="cost-lead"></p></div>
+  <div class="cost">
+    <div class="bigprice">
+      <div class="ticket"><div><span class="t">Per girl</span><span class="v num" id="p-girl"></span><span class="s">lessons, pass and rental included</span></div><div><span class="t">Per boy</span><span class="v num" id="p-boy"></span><span class="s">own skis or boots, no lessons</span></div></div>
+      <p class="small muted" id="p-notes"></p>
+      <div class="changes" id="changes"></div>
+    </div>
+    <div class="tw"><table id="cost-table"></table></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="head"><p class="label"><span class="kj">建議</span>What we suggest</p><h2>Booking, in the right order</h2><p class="lead">Nothing here needs doing today. This is the order that keeps everything flexible for longest, by Sun 18 Oct.</p></div>
+  <div class="steps" id="steps"></div>
+</div></section>
+
+<section class="cta" id="cta"><div class="wrap">
+  <div class="head"><p class="label" style="color:var(--on-ai-2)"><span class="kj">同行</span>One tap</p><h2>Are you in for 27–31 January?</h2><p class="lead">So we know how many beds and seats to hold. You can change your answer any time; the page only shows totals.</p></div>
+  <div class="count" id="count"></div>
+  <div class="box" style="margin-top:1.5rem">
+    <div><span class="label">Who are you?</span><div class="who" id="who" style="margin-top:.5rem"></div></div>
+    <div class="answers"><button type="button" class="main" data-a="in">I’m in</button><button type="button" data-a="check">Need a day to check</button><button type="button" data-a="no">Can’t make it</button></div>
+    <span class="status" id="status" role="status" aria-live="polite"></span>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <p>Prices checked live on <span id="checked"></span> on Airbnb, Booking.com, Google Flights, Alps2Alps, Skiset and ESF. They move, so re-check the links before paying. <a href="index.html#round2">Full proposal and round-2 results ↗</a></p>
+  <details><summary style="cursor:pointer;color:var(--on-ai)">Photo credits</summary><div id="credits" style="margin-top:.6rem;columns:2 16rem;font-size:.72rem"></div></details>
+</div></footer>
+
+<script>window.UPD = {"voteApi": "https://script.google.com/macros/s/AKfycbx0xpQ9m3imgIU_5_4CmxtLu7ZN25M8bm75yihH3UCwl_4WYvLk50gJM9m-LfPcY2tR8w/exec", "checked": "10 Oct 2026", "pricePerson": {"girl": 772, "boy": 687, "budgetGirl": 676, "budgetBoy": 591, "foodPerDayEur": 60}, "lines": [{"k": "Flights", "d": "easyJet SEN 10:40 → Geneva, back 18:25 → Gatwick", "girl": 95.0, "boy": 95.0, "was": 94.17, "tag": "live"}, {"k": "Hold bag", "d": "23 kg, both ways (or share one between two)", "girl": 85, "boy": 85, "was": 85, "tag": "estimate"}, {"k": "Minibus", "d": "Private for 6, Geneva ⇄ Flaine, about 1h15", "girl": 68.36, "boy": 68.36, "was": 68.57, "tag": "live"}, {"k": "Flats", "d": "Two flats in Flaine Forêt, split six ways", "girl": 194.67, "boy": 194.67, "was": null, "tag": "live"}, {"k": "Lift pass", "d": "Beginner pass for the girls · Grand Massif for the boys", "girl": 102.86, "boy": 210.56, "was": null, "tag": "published"}, {"k": "Lessons", "d": "Private ESF instructor for the four girls, Thu–Sat mornings", "girl": 102.01, "boy": 0, "was": 91.81, "tag": "published"}, {"k": "Rental", "d": "Skis, boots, poles, helmet, booked online (−30%)", "girl": 90.45, "boy": 0, "was": null, "tag": "live"}, {"k": "Insurance", "d": "Winter-sports cover", "girl": 33.9, "boy": 33.9, "was": null, "tag": "estimate"}], "flats": [{"rank": 1, "tier": "best-value", "name": "Two flats, Flaine Forêt: value flat (4 women) + Nid Alpin (the boys)", "url": "https://www.airbnb.co.uk/rooms/1575089927683645728?check_in=2027-01-27&check_out=2027-01-31&adults=2&currency=GBP", "url_women": "https://www.airbnb.co.uk/rooms/1496957851675922721?check_in=2027-01-27&check_out=2027-01-31&adults=4&currency=GBP", "total": 1168, "cur": "GBP", "beds": "Women's flat: bunk (2) in BR1, double (1 alone) in BR2, 140 sofa bed (1 alone), so each woman has her own bed. The boys: separate flat with a double bed (bunk room behind a door)", "lift": "Value flat listed ski-in/out; Nid Alpin 'close to the slopes' in Forêt (walk time unverified)", "rating": "4.0 (1) + 5.0 (7)", "cancel": "Both free before 28 Dec 2026 (Nid Alpin partial refund before 20 Jan)", "available": true, "note": "£592 + £576. The boys get their own flat, each woman her own bed, £76 less than Petite Ourse. Swap: Doris Studio Cabin 4.65 (34), 4 single bunks, £667 for the women (total £1,243)", "total_gbp": 1168}, {"rank": 2, "tier": "budget", "name": "Apartment for 4 to 6, Flaine Forêt (2-bed)", "url": "https://www.airbnb.co.uk/rooms/1496957851675922721?check_in=2027-01-27&check_out=2027-01-31&adults=6&currency=GBP", "total": 592, "cur": "GBP", "beds": "BR1 bunk (2 women); BR2 double (boys); living-room 140 sofa bed (2 women share); 1 bathroom", "lift": "Listed ski-in/out, next to shops", "rating": "4.0 (1)", "cancel": "Free before 28 Dec 2026", "available": true, "note": "£24.7 pppn; 2 women share a sofa bed in the living room", "total_gbp": 592}, {"rank": 3, "tier": "comfort", "name": "Totem Friendly Hotel & Spa, family suite, half board", "url": "https://www.booking.com/hotel/fr/le-totem-terminal-neige.en-gb.html?checkin=2027-01-27&checkout=2027-01-31&group_adults=6&no_rooms=1&group_children=0&selected_currency=GBP", "total": 4143, "cur": "GBP", "beds": "BR1 XL double; BR2 XL double; living-room sofa bed; 2 bathrooms (women share in pairs)", "lift": "150 yd, ski-to-door", "rating": "9.1 (222)", "cancel": "Free before 13 Jan 2027 (non-refundable £3,297)", "available": true, "note": "£172.6 pppn incl. breakfast + dinner, spa and hot tub; '1 left'. Petite Ourse £1,239 (9.2) is the mid option but has the same bunk/sofa layout as the budget flat", "total_gbp": 4143}], "flights": {"out": [{"label": "cheapest + late-morning", "airline": "easyJet (U2 5741)", "from": "SEN", "dep": "10:40", "arr": "13:15", "pp_gbp": 29.0, "url": "https://www.google.com/travel/flights?q=One%20way%20flights%20from%20London%20to%20Geneva%20on%202027-01-27%20for%206%20adults&hl=en-GB&curr=GBP", "note": "GBP 174 for 6 (was GBP 28 pp). Bottom bucket; next easyJet fare is GBP 46.50. The next late-morning alternative is LTN 11:15 at GBP 98 pp."}, {"label": "afternoon (best fallback)", "airline": "easyJet (U2 2543)", "from": "LTN", "dep": "13:40", "arr": "16:25", "pp_gbp": 46.5, "url": "https://www.google.com/travel/flights?q=One%20way%20flights%20from%20London%20to%20Geneva%20on%202027-01-27%20for%206%20adults&hl=en-GB&curr=GBP", "note": "GBP 279 for 6; down from GBP 52 pp"}], "back": [{"label": "PICK (Flaine ideal)", "airline": "easyJet (U2 8490)", "from": "GVA", "dep": "18:25", "arr": "19:05 LGW", "pp_gbp": 66.0, "url": "https://www.google.com/travel/flights?q=One%20way%20flights%20from%20Geneva%20to%20London%20on%202027-01-31%20for%206%20adults&hl=en-GB&curr=GBP", "note": "GBP 396 for 6 (was GBP 66.17 pp). Flaine pickup 14:45; Arcs pickup 13:25"}, {"label": "Flaine early", "airline": "Jet2 (LS 4132)", "from": "GVA", "dep": "16:45", "arr": "17:35 LGW", "pp_gbp": 50.17, "url": "https://www.google.com/travel/flights?q=One%20way%20flights%20from%20Geneva%20to%20London%20on%202027-01-31%20for%206%20adults&hl=en-GB&curr=GBP", "note": "GBP 301 for 6, confirmed on Google's booking page; was GBP 44.67; leave the resort ~13:15; free carry-on"}]}, "lessons": [{"school": "ESF Flaine", "format": "Private, 3 x 2h mornings Thu-Sat (recommended)", "price_total_eur": 480, "pp_eur": 120, "max_people": 8, "url": "https://www.ski-school-flaine.co.uk/private-lessons/private-tuition/", "note": "PUBLISHED €160/2h morning; availability not confirmed (calendar unresponsive); ask for an English-speaking instructor who is patient with nervous adults"}, {"school": "ESF Flaine", "format": "Private, 3 x 3h mornings Thu-Sat", "price_total_eur": 705, "pp_eur": 176.25, "max_people": 8, "url": "https://www.ski-school-flaine.co.uk/private-lessons/private-tuition/", "note": "PUBLISHED €235/3h; €275 holiday rate does not apply"}], "experiences": [{"title": "Mont Blanc from the Grandes Platières, 2,500 m", "what": "Pedestrian return on the cable car (€23 in winter, 2025/26 price; about 12 min up), then lunch on the Désert Blanc terrace at the top station (dishes from about €17)", "why": "The best Mont Blanc view in the area, a 360° panorama over the Aravis and the Jura. Non-skiers and beginners can ride up too, so all six can share it", "who": "everyone", "source": "https://www.flaine.com/en/360-panorama-mont-blanc/"}, {"title": "Les Cascades: 14 km to Sixt-Fer-à-Cheval", "what": "A red run, about 1,720 m of descent with no lifts, through the Sixt nature reserve. Back by the free ski bus to Samoëns (about every 20 min), then the Grand Massif Express and lifts. Allow about 3 h for the round trip and start by 13:00. Needs a Grand Massif pass", "why": "The longest run in the Grand Massif: nearly an hour of skiing past frozen waterfalls", "who": "advanced (the intermediate only if she is confident on reds and has stamina; not the near-beginners)", "source": "https://www.flaine.com/en/?p=19369"}, {"title": "Open-air art walk in the Forum", "what": "Picasso's 12 m Tête de femme by the cable car and the Totem, Dubuffet's 9.2 m Boqueteau des 7 arbres in the Forum, Vasarely's Trois hexagones (his tribute to the Bauhaus) on the gallery roof, plus works by Pol Bury and others", "why": "A ski resort built as a modernist art project, with Marcel Breuer's buildings carrying a French state heritage label. Free, flat, about an hour", "who": "everyone", "source": "https://www.flaine.com/wp-content/uploads/2025/09/FLAINE-DOSSIER-DE-PRESSE_26_FR.pdf"}, {"title": "Snowshoe to an igloo for fondue", "what": "About 30 min on snowshoes (100 m climb) from Col de Pierre Carrée at lunch or sunset, then a Savoyard meal inside an igloo. €63 per adult with gear, guide and drinks; book by phone; runs 10 Dec 2026 to 30 Apr 2027", "why": "Fondue by candlelight in an igloo, then a head-torch walk back. Gentle, with no skis, so it suits the nervous learner", "who": "everyone", "source": "https://www.flaine.com/en/fiche/fondue-in-the-igloo-and-snowshoeing-adventure/"}, {"title": "Warm-up at the Centaure aquatic centre", "what": "25 m pool, sauna, hammam and hot tubs, open to everyone staying in the resort (prices not verified)", "why": "The answer to a cold north-facing bowl in January: thaw out after lessons", "who": "everyone, especially the learner who feels the cold", "source": "https://www.flaine.com/en/faq/"}, {"title": "Drive your own husky team", "what": "Évasion Nordique at Les Molliets: a briefing, then each person drives a sled pulled by 3–4 huskies. From €80 for an hour (2025/26)", "why": "You drive instead of riding as a passenger, through quiet forest", "who": "everyone", "source": "https://www.flaine.com/wp-content/uploads/2025/09/FLAINE-DOSSIER-DE-PRESSE_26_FR.pdf"}, {"title": "Sledging", "what": "Glisse à Gogo: a free, gentle, enclosed slope in the Forum beside the Pré carpet. Col de Pierre Carrée has steeper runs (helmets required)", "why": "Pure silliness on snow with no skill needed, and good for confidence", "who": "everyone, including beginners", "source": "https://www.belambra.fr/guides/destinations/flaine/luge-flaine"}, {"title": "Evening ice rink in the Forum", "what": "Drop-in rink beside Chez Daniel, opposite the tourist office. The instructors' torchlight descent finishes near the Picasso (January 2027 dates and rink hours not yet confirmed)", "why": "Village-square evening by the lights of the Forum", "who": "everyone", "source": "https://www.flaine.com/en/non-skiing-activities/ice/"}, {"title": "Fondue night at Le Michet", "what": "Savoyard cooking and fondue by the fire in a sheepfold more than 100 years old, at the foot of the Forum slopes, about 5 min on foot. Mid-to-high price (€€–€€€, not verified); book ahead", "why": "The oldest building in the resort, and the cosiest dinner of the trip", "who": "everyone", "source": "https://www.flaine.com/en/le-michet/"}, {"title": "Après: La Pente à Jules, then Le White Pub", "what": "On-slope terrace with afternoon DJ sets, then the Forum's late pub opposite the ice rink (€–€€)", "why": "Covers sunny terrace drinks through to a late night out", "who": "everyone", "source": "https://www.igluski.com/blog/post/flaine-best-apres-nightlife"}], "arcs": {"girl": 796, "boy": 719}, "photos": {"hero": {"subject": "Mont Blanc from Flaine's slopes", "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Mont_Blanc_from_Flaine%2C_2009.jpg/1920px-Mont_Blanc_from_Flaine%2C_2009.jpg", "page": "https://commons.wikimedia.org/wiki/File:Mont_Blanc_from_Flaine,_2009.jpg", "author": "DimiTalen", "license": "CC0", "src": "Wikimedia Commons"}, "platieres": {"subject": "View from the Grandes Platières (30 Jan 2011)", "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flaines_-_Vue_depuis_les_Grandes_Platieres_-_panoramio.jpg/1920px-Flaines_-_Vue_depuis_les_Grandes_Platieres_-_panoramio.jpg", "page": "https://commons.wikimedia.org/wiki/File:Flaines_-_Vue_depuis_les_Grandes_Platieres_-_panoramio.jpg", "author": "Patrick Nouhailler", "license": "CC BY-SA 3.0", "src": "Wikimedia Commons"}, "forum": {"subject": "Flaine village in winter, Forum and Forêt overview", "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Flaine_overview.jpg/1920px-Flaine_overview.jpg", "page": "https://commons.wikimedia.org/wiki/File:Flaine_overview.jpg", "author": "DimiTalen", "license": "CC0", "src": "Wikimedia Commons"}, "village": {"subject": "Flaine village in winter, Forum and Forêt overview", "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Flaine_overview.jpg/1920px-Flaine_overview.jpg", "page": "https://commons.wikimedia.org/wiki/File:Flaine_overview.jpg", "author": "DimiTalen", "license": "CC0", "src": "Wikimedia Commons"}, "cascade": {"subject": "Frozen Cascade du Rouget, Sixt-Fer-à-Cheval (where Les Cascades ends)", "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Cascade_du_Rouget_gel%C3%A9e.jpg/1920px-Cascade_du_Rouget_gel%C3%A9e.jpg", "page": "https://commons.wikimedia.org/wiki/File:Cascade_du_Rouget_gel%C3%A9e.jpg", "author": "Frank Miramand", "license": "CC BY-SA 4.0", "src": "Wikimedia Commons"}, "fondue": {"subject": "Friends dipping bread into cheese fondue (Switzerland)", "url": "https://images.unsplash.com/photo-1754910568106-e71804067c2c?w=1600&q=80&auto=format&fit=crop", "page": "https://unsplash.com/photos/people-dipping-bread-into-a-pot-of-cheese-fondue-rxbiOsQAxkE", "author": "Andri Aeschlimann", "license": "Unsplash License", "src": "Unsplash"}, "apres": {"subject": "Skiers on a sunny mountain terrace under Alpine peaks", "url": "https://images.unsplash.com/photo-1781461565715-887bd369f481?w=1600&q=80&auto=format&fit=crop", "page": "https://unsplash.com/photos/people-enjoying-drinks-at-an-outdoor-bar-in-snowy-mountains-wut8LONuFHE", "author": "Barney Goodman", "license": "Unsplash License", "src": "Unsplash"}, "lesson": {"subject": "Ski instructor teaching an adult beginner (Davos)", "url": "https://images.unsplash.com/photo-1703080138499-f1f0dbc7da42?w=1600&q=80&auto=format&fit=crop", "page": "https://unsplash.com/photos/a-couple-of-people-riding-skis-on-top-of-a-snow-covered-slope-SCXuSA6-Szg", "author": "Nejc Peternelj", "license": "Unsplash License", "src": "Unsplash"}, "chalet": {"subject": "Minimal cabin living room with stove — portrait (fits Japanese restraint)", "url": "https://images.unsplash.com/photo-1631941150945-837cb81fc7e2?w=1600&q=80&auto=format&fit=crop", "page": "https://unsplash.com/photos/a-living-room-with-a-wood-burning-stove-33ML-Z9JsLo", "author": "Hans", "license": "Unsplash License", "src": "Unsplash"}, "night": {"subject": "Star trails over snowy Les Arcs at night (Shinkai-sky mood)", "url": "https://images.unsplash.com/photo-1528548942723-66b3fa3cdf8f?w=1600&q=80&auto=format&fit=crop", "page": "https://unsplash.com/photos/meteor-rain-XjQoe6YXiDU", "author": "Tomas Yates", "license": "Unsplash License", "src": "Unsplash"}}};</script>
+<script>
+(() => {
+  'use strict';
+  const U = window.UPD, $ = s => document.querySelector(s);
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const G = n => '£' + Math.round(n).toLocaleString('en-GB');
+  const credits = new Map();
+  const img = (p, alt) => { if (!p) return ''; credits.set(p.url, p); return `<img src="${esc(p.url)}" alt="${esc(alt || p.subject)}" loading="lazy" decoding="async">`; };
+  const ph = (p, alt) => p ? `<figure class="ph">${img(p, alt)}<span class="cap">${esc(p.author)}</span></figure>` : '';
+
+  /* hero */
+  const H = U.photos.hero; credits.set(H.url, H); $('#hero-img').src = H.url; $('#hero-cap').textContent = `Photo: ${H.author} · ${H.license}`;
+  $('#cd').textContent = Math.max(0, Math.ceil((new Date('2027-01-27T10:40:00Z') - new Date()) / 864e5));
+  $('#checked').textContent = U.checked;
+
+  /* decision strip (counts only) */
+  $('#decide').innerHTML = [
+    ['Turnout', '6 of 6', 'Everyone voted in round 2.'],
+    ['Length', 'Wed 27 → Sun 31', 'Works for 5 of 6, the most of any length. 3 named it their favourite; 3 didn’t mind.'],
+    ['Resort', 'Flaine', 'Tied with Les Arcs on 12 points. Flaine had more first choices (3 to 2), and it’s cheaper with a shorter transfer.'],
+    ['Budget', 'Up to £1,000', '5 of 6 chose up to £1,000 all-in. The plan below fits that.'],
+  ].map(([k, v, s]) => `<div class="cell"><span class="k">${k}</span><span class="v">${v}</span><span class="s">${s}</span></div>`).join('');
+
+  /* days */
+  const P = U.photos;
+  const DAYS = [
+    { when: 'Wednesday 27', title: 'Up the mountain', photo: P.village, alt: 'Flaine village in winter', items: [['10:40', 'easyJet from Southend, landing in Geneva at 13:15'], ['14:00', 'Minibus up the valley, about 1h15'], ['16:30', 'Keys, boots and skis from the shop in the Forum'], ['Evening', 'First fondue by the fire at Le Michet, five minutes on foot']] },
+    { when: 'Thursday 28', title: 'First turns, Mont Blanc for lunch', photo: P.platieres, alt: 'View from the Grandes Platières', items: [['Morning', 'The girls’ first private lesson, starting at the door'], ['Morning', 'Joaquin and Juan up to the Grandes Platières, 2,500 m'], ['Lunch', 'Everyone meets at the top for the Mont Blanc view (the cable car works on foot too)'], ['Late', 'Sledging in the Forum, then the pool, sauna and hot tubs at the aquatic centre']] },
+    { when: 'Friday 29', title: 'Waterfalls and an igloo', photo: P.cascade, alt: 'Frozen waterfall at Sixt-Fer-à-Cheval', items: [['Morning', 'Lesson two; the girls start linking turns'], ['Day', 'The boys take Les Cascades: 14 km of red run past frozen waterfalls to Sixt'], ['Sunset', 'Snowshoes to an igloo for fondue by candlelight, back by head torch']] },
+    { when: 'Saturday 30', title: 'Skiing together', photo: P.forum, alt: 'Flaine Forum and its modernist buildings', items: [['Morning', 'Lesson three, then the girls ski the easy runs with the boys'], ['Afternoon', 'Optional husky sledding, each of us driving our own team'], ['Après', 'DJ terrace at La Pente à Jules, then the pub by the ice rink']] },
+    { when: 'Sunday 31', title: 'Last runs, and the art walk', photo: P.hero, alt: 'Mont Blanc from Flaine', items: [['Morning', 'Last runs while the snow is fresh'], ['Midday', 'A walk past the Picasso, Dubuffet and Vasarely sculptures in the Forum'], ['14:45', 'Minibus to Geneva'], ['18:25', 'Home to Gatwick by 19:05']] },
+  ];
+  $('#day-list').innerHTML = DAYS.map(d => `<article class="day">${ph(d.photo, d.alt)}<div class="txt"><span class="when">${d.when}</span><h3>${esc(d.title)}</h3><ul>${d.items.map(([t, x]) => `<li><b>${esc(t)}</b><span>${esc(x)}</span></li>`).join('')}</ul></div></article>`).join('');
+
+  /* joys */
+  const joyPhotos = { 'Mont Blanc': P.platieres, 'Cascades': P.cascade, 'art walk': P.forum, 'igloo': P.fondue, 'aquatic': P.chalet, 'Fondue night': P.fondue, 'Après': P.apres };
+  const pickPhoto = t => { for (const k in joyPhotos) if (t.includes(k)) return joyPhotos[k]; return null; };
+  const seen = new Set();
+  $('#joys').innerHTML = U.experiences.map(e => { let p = pickPhoto(e.title); if (p && seen.has(p.url)) p = null; if (p) seen.add(p.url);
+    return `<article class="joy">${p ? ph(p, e.title) : ''}<div class="in"><span class="who">${esc(e.who.split('(')[0].trim())}</span><h4>${esc(e.title)}</h4><p>${esc(e.what)}</p><p class="muted">${esc(e.why)}</p><a href="${esc(e.source)}" target="_blank" rel="noopener">More ↗</a></div></article>`; }).join('');
+
+  /* flats */
+  const TIER = { 'best-value': ['Our pick', true], 'budget': ['Cheapest', false], 'comfort': ['Treat', false] };
+  $('#flats').innerHTML = U.flats.map(f => { const [t, rec] = TIER[f.tier] || [f.tier, false]; const pp = f.total / 6, ppn = pp / 4;
+    return `<article class="flat ${rec ? 'rec' : ''}">${rec ? '<span class="hanko" lang="zh-Hant" aria-label="Recommended">推薦</span>' : ''}<span class="tier">${t}</span><h4>${esc(f.name)}</h4>
+      <span class="price num">${G(pp)}<small>each for 4 nights (${G(ppn)} a night) · ${G(f.total)} in total</small></span>
+      <p class="meta">${esc(f.beds)}</p><p class="meta">${esc(f.lift)} · rated ${esc(f.rating)}</p><p class="meta">${esc(f.cancel)}</p>${f.note ? `<p class="meta">${esc(f.note)}</p>` : ''}
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:.6rem"><span class="pill ok">${f.available ? 'available today' : 'check'}</span><a href="${esc(f.url)}" target="_blank" rel="noopener">View listing ↗</a></div></article>`; }).join('');
+
+  /* cost */
+  const pp = U.pricePerson;
+  $('#p-girl').textContent = G(pp.girl); $('#p-boy').textContent = G(pp.boy);
+  $('#cost-lead').textContent = `All-in per person with our pick of flats, excluding food (about ${G(pp.foodPerDayEur * 4 / 1.1764)} for four days). All six in the single cheapest flat would be ${G(pp.budgetGirl)} per girl and ${G(pp.budgetBoy)} per boy, with two girls sharing a sofa bed.`;
+  $('#p-notes').innerHTML = `Les Arcs, the close second, would be about ${G(U.arcs.girl)} per girl and ${G(U.arcs.boy)} per boy on the same flights, with a 3-hour transfer.`;
+  const tag = t => `<span class="pill ${t === 'live' ? 'ok' : t === 'published' ? 'pub' : 'est'}">${t}</span>`;
+  const chg = l => { if (l.was == null) return '<span class="chg eq">new</span>'; const d = l.girl - l.was; return Math.abs(d) < 1 ? '<span class="chg eq">no change</span>' : d > 0 ? `<span class="chg up">+${G(d)}</span>` : `<span class="chg dn">−${G(-d)}</span>`; };
+  $('#cost-table').innerHTML = `<thead><tr><th>Item</th><th class="r">Girl</th><th class="r">Boy</th><th class="r">vs 4 Oct</th></tr></thead><tbody>${U.lines.map(l => `<tr><td>${esc(l.k)} ${tag(l.tag)}<small>${esc(l.d)}</small></td><td class="r num">${l.girl ? G(l.girl) : '—'}</td><td class="r num">${l.boy ? G(l.boy) : '—'}</td><td class="r">${chg(l)}</td></tr>`).join('')}</tbody><tfoot><tr><td>Per person</td><td class="r num">${G(pp.girl)}</td><td class="r num">${G(pp.boy)}</td><td></td></tr></tfoot>`;
+  $('#changes').innerHTML = [
+    ['Steady prices', 'Flats, flights and minibus moved by less than £2 each in a week. Every flat is still available.'],
+    ['Better rooms', 'A second flat next door, for the boys, gives every girl her own bed. It adds about £96 each.'],
+    ['Lessons corrected', 'The school’s published rate is €160 per 2-hour private, so €120 per girl for three mornings.'],
+    ['Thin supply', 'Only one 2-bedroom flat on Airbnb takes six people for these dates. The cheapest flight fare is the last one at £29 before £46.50.'],
+  ].map(([b, t]) => `<div class="change"><b>${b}</b><span>${t}</span></div>`).join('');
+
+  /* steps */
+  const out = U.flights.out[0], back = U.flights.back[0];
+  $('#steps').innerHTML = [
+    ['Hold the two flats', `Free to cancel until 28 December, so holding them now costs nothing and protects us from the thin supply. One person books, everyone sends their share. <a href="${esc(U.flats[0].url)}" target="_blank" rel="noopener">Boys’ flat ↗</a> · <a href="${esc(U.flats[1].url)}" target="_blank" rel="noopener">Girls’ flat ↗</a>`],
+    ['Book six seats together', `Once everyone has said they’re in: easyJet ${esc(out.from)} ${esc(out.dep)} out (£${out.pp_gbp}) and Geneva ${esc(back.dep)} back (£${back.pp_gbp}). Flights can’t be refunded, so this step waits for six yeses. <a href="${esc(out.url)}" target="_blank" rel="noopener">Check fares ↗</a>`],
+    ['Lessons, minibus, rental', `Book the girls’ instructor at ESF Flaine (three mornings, Thu–Sat), the minibus and the skis online in November. All three cancel freely. <a href="${esc(U.lessons[0].url)}" target="_blank" rel="noopener">ESF ↗</a>`],
+  ].map(([h, p]) => `<div class="step"><div><h4>${h}</h4><p>${p}</p></div></div>`).join('');
+
+  /* I'm in (round 3), counts only */
+  const NAMES = ['Joaquin', 'Juan', 'Chloe', 'Kannes', 'Ina', 'Natasha'];
+  let me = null; try { me = localStorage.getItem('yuki-me'); } catch (e) {}
+  $('#who').innerHTML = NAMES.map(n => `<label><input type="radio" name="who" value="${n}" ${me === n ? 'checked' : ''}><span>${n}</span></label>`).join('');
+  const setStatus = (m, c = '') => { const s = $('#status'); s.textContent = m; s.className = 'status ' + c; };
+  const api = async body => { const r = await fetch(U.voteApi, body ? { method: 'POST', body: JSON.stringify(body) } : {}); const j = await r.json(); if (!j.ok) throw new Error(j.error); return j; };
+  const draw = st => { const r3 = st.ballots.filter(b => b.answers.round === 'r3'); const c = { in: 0, check: 0, no: 0 }; r3.forEach(b => { if (b.answers.going in c) c[b.answers.going]++; });
+    $('#count').innerHTML = `<span><b>${c.in}</b>in</span><span><b>${c.check}</b>checking</span><span><b>${c.no}</b>can’t</span><span style="color:var(--on-ai-2)">of 6</span>`; };
+  api().then(draw).catch(() => { $('#count').textContent = ''; });
+  document.querySelector('.answers').addEventListener('click', async e => { const b = e.target.closest('button[data-a]'); if (!b) return;
+    const n = document.querySelector('input[name="who"]:checked')?.value; if (!n) { setStatus('Tap your name first.', 'err'); return; }
+    try { localStorage.setItem('yuki-me', n); } catch (x) {}
+    document.querySelectorAll('.answers button').forEach(x => x.disabled = true); setStatus('Saving…');
+    const send = () => api({ name: n, type: 'ballot', answers: { round: 'r3', going: b.dataset.a } });
+    try { let st; try { st = await send(); } catch (first) { await new Promise(r => setTimeout(r, 1500)); st = await send(); }
+      draw(st); setStatus(b.dataset.a === 'in' ? `Lovely, ${n}. See you on the mountain.` : b.dataset.a === 'check' ? `No problem, ${n}. Change it whenever you know.` : `Thanks for letting us know, ${n}.`, 'ok'); }
+    catch (x) { setStatus('That didn’t save. Wait a minute and tap again, or just tell the group chat.', 'err'); }
+    finally { document.querySelectorAll('.answers button').forEach(x => x.disabled = false); } });
+
+  /* credits */
+  $('#credits').innerHTML = [...credits.values()].map(c => `<div><a href="${esc(c.page)}" target="_blank" rel="noopener">${esc(c.subject.replace(/\s*\(.*?\)\s*/g, ' ').trim())}</a>, ${esc(c.author)}, ${esc(c.license)}</div>`).join('');
+})();
+</script>
+</body>
+</html>

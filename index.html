@@ -507,15 +507,15 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
   <div class="wrap">
     <a class="brand" href="#top"><b lang="zh-Hant">滑雪團</b> <span>Alps 2027</span></a>
     <nav class="links" aria-label="Sections" id="links">
-      <a href="#round2">Round 2</a><a href="#guides">Resorts</a><a href="#vote">Vote</a><a href="#party">Party</a><a href="#archive">Round 1</a><a href="#next">Next</a>
+      <a href="update.html">The plan</a><a href="#round2">Round 2</a><a href="#guides">Resorts</a><a href="#vote">Results</a><a href="#party">Party</a><a href="#archive">Round 1</a><a href="#next">Next</a>
       <span id="nav-p" hidden></span>
     </nav>
-    <a class="cta" href="#vote">Stamp your vote</a>
+    <a class="cta" href="update.html">The plan</a>
   </div>
 </header>
 
 <main id="top">
-<div class="r2-banner" id="r2-top" style="padding-top:calc(56px + .7rem + env(safe-area-inset-top,0px))">Round 2 is open. <a href="#round2">Shorter and cheaper options</a> · vote by <span id="r2-close"></span></div>
+<div class="r2-banner" id="r2-top" style="padding-top:calc(56px + .7rem + env(safe-area-inset-top,0px))">Round 2 is decided: Flaine, Wed 27 → Sun 31 Jan. <a href="update.html">See the plan and fresh prices →</a><span id="r2-close" hidden></span></div>
 <!-- HERO: hand-built SVG scene; drawn in script from peak coordinates -->
 <section class="hero" aria-label="Introduction">
   <svg class="scene" id="scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
@@ -558,7 +558,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
         <div><span class="t-l">Book by</span><span class="t-k" id="cd-book">—</span></div>
       </div>
     </div>
-    <div class="hero-row"><a class="btn" href="#round2">See round 2</a><a class="btn line" href="#vote">Go straight to the vote</a></div>
+    <div class="hero-row"><a class="btn" href="update.html">See the plan for Flaine</a><a class="btn line" href="#round2">Round 2 results</a></div>
   </div>
 </section>
 
@@ -747,7 +747,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
 
 <script src="data.js?v=6"></script>
 <script src="images.js?v=4"></script>
-<script src="data2.js?v=15"></script>
+<script src="data2.js?v=16"></script>
 <script>
 (() => {
   'use strict';
@@ -1163,7 +1163,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
   const name = () => document.querySelector('input[name="who"]:checked')?.value || null;
   const setStatus = (m, c = '') => { const s = $('#status'); s.textContent = m; s.className = 'status ' + c; };
   let state = { ballots: [], comments: [] };
-  const roundBallots = () => state.ballots.filter(b => ROUND ? b.answers.round === ROUND : !b.answers.round);
+  const roundBallots = () => (R2 && R2.closed && R2.frozen) ? R2.frozen.ballots : state.ballots.filter(b => ROUND ? b.answers.round === ROUND : !b.answers.round);
   // Only pre-fill a ballot that was submitted from this device, so picking someone else's name never reveals their answers.
   const votedHere = () => { try { return JSON.parse(localStorage.getItem('yuki-voted') || '[]'); } catch (e) { return []; } };
   function loadMine() { const n = name(); if (!n) return; try { localStorage.setItem('yuki-me', n); } catch (e) {}
@@ -1180,6 +1180,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
     try { await navigator.clipboard.writeText(t); setStatus('Copied. Paste it into the group chat.', 'ok'); } catch (e) { const ta = $('#comment'); ta.value = t; ta.select(); setStatus('Your browser blocked copying. The text is selected in the note box, so copy it manually.', 'err'); } });
   async function api(method, body) { if (!API) throw new Error('no_api'); const r = await fetch(API, method === 'POST' ? { method: 'POST', body: JSON.stringify(body) } : {}); const j = await r.json(); if (!j.ok) throw new Error(j.error || 'failed'); return j; }
   $('#ballot').addEventListener('submit', async e => { e.preventDefault(); const n = name();
+    if (R2 && R2.closed) { setStatus('Round 2 has closed: all six voted. See the update page for the plan.', 'err'); return; }
     if (!n) { setStatus('Pick your name at the top of the ballot first.', 'err'); return; }
     const a = collect(); const miss = Q.filter(q => q.required && (a[q.id] == null || (Array.isArray(a[q.id]) && !a[q.id].length))).map(q => `${KANJI[Q.indexOf(q)]} (${Q.indexOf(q) + 1})`);
     if (miss.length) { setStatus(`Still to answer: question ${miss.join(', ')}.`, 'err'); return; }
@@ -1208,7 +1209,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
     if (boardHook) boardHook(bs);
     const cm = state.comments.slice().reverse();
     $('#comments').innerHTML = cm.length ? cm.map(c => `<div class="cmt"><b>${esc(c.name)}</b><time>${new Date(c.ts).toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short' })}</time><div>${esc(c.text)}</div></div>`).join('') : '<p class="vote-note">No notes yet.</p>'; }
-  async function refresh() { try { state = await api('GET'); $('#sync').textContent = `Live · ${roundBallots().length} of ${crewN} voted in round 2 · refreshed ${new Date().toLocaleTimeString('en-GB', { timeStyle: 'short' })}`; renderResults(); loadMine(); }
+  async function refresh() { try { state = await api('GET'); $('#sync').textContent = R2 && R2.closed ? `Round 2 closed · ${roundBallots().length} of ${crewN} voted · final results` : `Live · ${roundBallots().length} of ${crewN} voted in round 2 · refreshed ${new Date().toLocaleTimeString('en-GB', { timeStyle: 'short' })}`; renderResults(); loadMine(); }
     catch (e) { $('#sync').textContent = 'Live results are unavailable right now. Use “Copy for WhatsApp” as a backup.'; renderResults(); } }
   refresh(); setInterval(() => { if (!document.hidden) refresh(); }, 60000);
   if (R2 && $('#r1-results')) { $('#r1-results').innerHTML = tallyHTML(D.decisions, R2.round1.ballots, { frozen: true }); }

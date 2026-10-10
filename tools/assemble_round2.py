@@ -90,6 +90,11 @@ def scrub(o):
     return o
 R2 = scrub(R2)
 R2['round1']['taken'] = '4 Oct 2026, 20:45'
+# Round 2 closed 10 Oct with all six votes: freeze it (later rounds replace each person's latest ballot in the live feed).
+_r2 = os.path.join(ROOT, 'research', 'round2_frozen.json')
+if os.path.exists(_r2):
+    R2['closed'] = True
+    R2['frozen'] = json.load(open(_r2))
 R2['round1']['note'] = 'Round 1 is kept as a record. Everyone votes again in round 2, which uses new options and prices.'
 
 steps = [

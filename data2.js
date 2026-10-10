@@ -3084,7 +3084,145 @@ window.ROUND2 = {
     }
    ]
   }
- ]
+ ],
+ "closed": true,
+ "frozen": {
+  "taken": "10 Oct 2026",
+  "ballots": [
+   {
+    "name": "Joaquin",
+    "ts": "2026-10-04T21:12:57.289Z",
+    "answers": {
+     "round": "r2",
+     "lengths": [
+      "M",
+      "S"
+     ],
+     "leave": "5",
+     "favourite": "any",
+     "resort": [
+      "C",
+      "L",
+      "F"
+     ],
+     "budget": "1300",
+     "levers": [
+      "any"
+     ],
+     "flex": "any"
+    }
+   },
+   {
+    "name": "Chloe",
+    "ts": "2026-10-04T20:32:48.489Z",
+    "answers": {
+     "round": "r2",
+     "lengths": [
+      "M"
+     ],
+     "leave": "5",
+     "favourite": "any",
+     "resort": [
+      "C",
+      "F",
+      "L"
+     ],
+     "budget": "700",
+     "levers": [
+      "group"
+     ],
+     "flex": "any"
+    }
+   },
+   {
+    "name": "Juan",
+    "ts": "2026-10-04T22:32:23.865Z",
+    "answers": {
+     "round": "r2",
+     "lengths": [
+      "LS",
+      "M",
+      "S"
+     ],
+     "leave": "5",
+     "favourite": "any",
+     "resort": "any",
+     "budget": "700",
+     "levers": [
+      "none"
+     ],
+     "flex": "any"
+    }
+   },
+   {
+    "name": "Kannes",
+    "ts": "2026-10-04T20:26:14.350Z",
+    "answers": {
+     "round": "r2",
+     "lengths": [
+      "S"
+     ],
+     "leave": "3",
+     "favourite": "S",
+     "resort": [
+      "F",
+      "C",
+      "L"
+     ],
+     "budget": "700",
+     "levers": [],
+     "flex": "any"
+    }
+   },
+   {
+    "name": "Ina",
+    "ts": "2026-10-04T20:26:13.941Z",
+    "answers": {
+     "round": "r2",
+     "lengths": [
+      "S"
+     ],
+     "leave": "2",
+     "favourite": "S",
+     "resort": [
+      "F",
+      "C",
+      "L"
+     ],
+     "budget": "u700",
+     "levers": [
+      "ski1"
+     ],
+     "flex": "yes"
+    }
+   },
+   {
+    "name": "Natasha",
+    "ts": "2026-10-08T20:32:42.539Z",
+    "answers": {
+     "round": "r2",
+     "lengths": [
+      "M",
+      "S",
+      "XS"
+     ],
+     "leave": "5",
+     "favourite": "S",
+     "resort": [
+      "F",
+      "C",
+      "L"
+     ],
+     "budget": "700",
+     "levers": [
+      "ski1"
+     ],
+     "flex": "any"
+    }
+   }
+  ],
+  "comments": []
+ }
 };
 window.TRIP.steps = [
  {
