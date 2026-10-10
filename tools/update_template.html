@@ -283,7 +283,7 @@ footer a{color:var(--on-ai)}
   $('#cost-table').innerHTML = `<thead><tr><th>Item</th><th class="r">Girl</th><th class="r">Boy</th><th class="r">vs 4 Oct</th></tr></thead><tbody>${U.lines.map(l => `<tr><td>${esc(l.k)} ${tag(l.tag)}<small>${esc(l.d)}</small></td><td class="r num">${l.girl ? G(l.girl) : '—'}</td><td class="r num">${l.boy ? G(l.boy) : '—'}</td><td class="r">${chg(l)}</td></tr>`).join('')}</tbody><tfoot><tr><td>Per person</td><td class="r num">${G(pp.girl)}</td><td class="r num">${G(pp.boy)}</td><td></td></tr></tfoot>`;
   $('#changes').innerHTML = [
     ['Steady prices', 'Flats, flights and minibus moved by less than £2 each in a week. Every flat is still available.'],
-    ['Better rooms', 'A second flat next door, for the boys, gives every girl her own bed. It adds about £96 each.'],
+    ['Better rooms', 'A second flat nearby in Flaine Forêt, for the boys, gives every girl her own bed. It adds about £96 each.'],
     ['Lessons corrected', 'The school’s published rate is €160 per 2-hour private, so €120 per girl for three mornings.'],
     ['Thin supply', 'Only one 2-bedroom flat on Airbnb takes six people for these dates. The cheapest flight fare is the last one at £29 before £46.50.'],
   ].map(([b, t]) => `<div class="change"><b>${b}</b><span>${t}</span></div>`).join('');
