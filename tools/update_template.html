@@ -195,8 +195,9 @@ footer a{color:var(--on-ai)}
 </div></section>
 
 <section><div class="wrap">
-  <div class="head"><p class="label"><span class="kj">住宿</span>Where we’d sleep</p><h2>Two flats in the forest</h2><p class="lead">Checked again today for Wed 27 → Sun 31, six adults. Every pick is free to cancel for weeks, so holding one costs nothing.</p></div>
+  <div class="head"><p class="label"><span class="kj">住宿</span>Where we’d sleep</p><h2>Two flats in the forest</h2><p class="lead">We checked every place in Flaine that could give the boys their own room. For our exact dates, two flats a few minutes apart is the only option within budget. Anything under one roof needs a 7-night booking.</p></div>
   <div class="flats" id="flats"></div>
+  <div class="flat" style="margin-top:1rem"><span class="tier">Before we book the girls’ flat</span><ul id="before" style="margin:.2rem 0 0;padding-left:1.1rem;font-size:.86rem;display:grid;gap:.3rem"></ul></div>
 </div></section>
 
 <section id="cost" style="background:var(--washi)"><div class="wrap">
@@ -265,25 +266,27 @@ footer a{color:var(--on-ai)}
   $('#joys').innerHTML = U.experiences.map(e => { let p = pickPhoto(e.title); if (p && seen.has(p.url)) p = null; if (p) seen.add(p.url);
     return `<article class="joy">${p ? ph(p, e.title) : ''}<div class="in"><span class="who">${esc(e.who.split('(')[0].trim())}</span><h4>${esc(e.title)}</h4><p>${esc(e.what)}</p><p class="muted">${esc(e.why)}</p><a href="${esc(e.source)}" target="_blank" rel="noopener">More ↗</a></div></article>`; }).join('');
 
-  /* flats */
-  const TIER = { 'best-value': ['Our pick', true], 'budget': ['Cheapest', false], 'comfort': ['Treat', false] };
-  $('#flats').innerHTML = U.flats.map(f => { const [t, rec] = TIER[f.tier] || [f.tier, false]; const pp = f.total / 6, ppn = pp / 4;
+  /* flats: our pick plus the two best single-place alternatives */
+  const TIER = { pick: ['Our pick', true], 'one roof': ['If we want one roof', false], 'best location': ['Best location', false] };
+  $('#flats').innerHTML = U.flats.map(f => { const [t, rec] = TIER[f.tier] || [f.tier, false];
     return `<article class="flat ${rec ? 'rec' : ''}">${rec ? '<span class="hanko" lang="zh-Hant" aria-label="Recommended">推薦</span>' : ''}<span class="tier">${t}</span><h4>${esc(f.name)}</h4>
-      <span class="price num">${G(pp)}<small>each for 4 nights (${G(ppn)} a night) · ${G(f.total)} in total</small></span>
-      <p class="meta">${esc(f.beds)}</p><p class="meta">${esc(f.lift)} · rated ${esc(f.rating)}</p><p class="meta">${esc(f.cancel)}</p>${f.note ? `<p class="meta">${esc(f.note)}</p>` : ''}
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:.6rem"><span class="pill ok">${f.available ? 'available today' : 'check'}</span><a href="${esc(f.url)}" target="_blank" rel="noopener">View listing ↗</a></div></article>`; }).join('');
+      <span class="price num">${G(f.pp)}<small>each · ${G(f.total)} in total · ${esc(f.nights_note)}</small></span>
+      <p class="meta"><b>Rooms:</b> ${esc(f.beds)}</p><p class="meta"><b>Where:</b> ${esc(f.where)}</p><p class="meta"><b>Reviews:</b> ${esc(f.reviews)}</p>
+      <ul style="margin:0;padding-left:1rem;font-size:.8rem;display:grid;gap:.2rem">${f.pros.map(x => `<li style="color:var(--green)"><span style="color:var(--ink)">${esc(x)}</span></li>`).join('')}${f.cons.map(x => `<li style="color:var(--shu)"><span style="color:var(--ink-2)">${esc(x)}</span></li>`).join('')}</ul>
+      <div style="display:flex;justify-content:flex-end;gap:.9rem;flex-wrap:wrap">${f.links.map(l => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}</a>`).join('')}</div></article>`; }).join('');
+  $('#before').innerHTML = U.beforeBooking.map(x => `<li>${esc(x)}</li>`).join('');
 
   /* cost */
   const pp = U.pricePerson;
   $('#p-girl').textContent = G(pp.girl); $('#p-boy').textContent = G(pp.boy);
-  $('#cost-lead').textContent = `All-in per person with our pick of flats, excluding food (about ${G(pp.foodPerDayEur * 4 / 1.1764)} for four days). All six in the single cheapest flat would be ${G(pp.budgetGirl)} per girl and ${G(pp.budgetBoy)} per boy, with two girls sharing a sofa bed.`;
+  $('#cost-lead').textContent = `All-in per person with the two flats, excluding food (about ${G(pp.foodPerDayEur * 4 / 1.1764)} for four days). Choosing one roof (Refuge du Golf) would add about ${G(U.oneRoofDelta)} each.`;
   $('#p-notes').innerHTML = `Les Arcs, the close second, would be about ${G(U.arcs.girl)} per girl and ${G(U.arcs.boy)} per boy on the same flights, with a 3-hour transfer.`;
   const tag = t => `<span class="pill ${t === 'live' ? 'ok' : t === 'published' ? 'pub' : 'est'}">${t}</span>`;
   const chg = l => { if (l.was == null) return '<span class="chg eq">new</span>'; const d = l.girl - l.was; return Math.abs(d) < 1 ? '<span class="chg eq">no change</span>' : d > 0 ? `<span class="chg up">+${G(d)}</span>` : `<span class="chg dn">−${G(-d)}</span>`; };
   $('#cost-table').innerHTML = `<thead><tr><th>Item</th><th class="r">Girl</th><th class="r">Boy</th><th class="r">vs 4 Oct</th></tr></thead><tbody>${U.lines.map(l => `<tr><td>${esc(l.k)} ${tag(l.tag)}<small>${esc(l.d)}</small></td><td class="r num">${l.girl ? G(l.girl) : '—'}</td><td class="r num">${l.boy ? G(l.boy) : '—'}</td><td class="r">${chg(l)}</td></tr>`).join('')}</tbody><tfoot><tr><td>Per person</td><td class="r num">${G(pp.girl)}</td><td class="r num">${G(pp.boy)}</td><td></td></tr></tfoot>`;
   $('#changes').innerHTML = [
     ['Steady prices', 'Flats, flights and minibus moved by less than £2 each in a week. Every flat is still available.'],
-    ['Better rooms', 'A second flat nearby in Flaine Forêt, for the boys, gives every girl her own bed. It adds about £96 each.'],
+    ['Better rooms', 'A second flat a few minutes away gives the boys their own space and every girl her own bed. No single place does that for our dates within budget.'],
     ['Lessons corrected', 'The school’s published rate is €160 per 2-hour private, so €120 per girl for three mornings.'],
     ['Thin supply', 'Only one 2-bedroom flat on Airbnb takes six people for these dates. The cheapest flight fare is the last one at £29 before £46.50.'],
   ].map(([b, t]) => `<div class="change"><b>${b}</b><span>${t}</span></div>`).join('');
@@ -291,7 +294,7 @@ footer a{color:var(--on-ai)}
   /* steps */
   const out = U.flights.out[0], back = U.flights.back[0];
   $('#steps').innerHTML = [
-    ['Hold the two flats', `Free to cancel until 28 December, so holding them now costs nothing and protects us from the thin supply. One person books, everyone sends their share. <a href="${esc(U.flats[0].url)}" target="_blank" rel="noopener">Boys’ flat ↗</a> · <a href="${esc(U.flats[1].url)}" target="_blank" rel="noopener">Girls’ flat ↗</a>`],
+    ['Hold the two flats', `Free to cancel until 28 December, so holding them costs nothing and protects us from the thin supply. Check linen and Sunday bags with the host first. ${U.flats[0].links.map(l => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}</a>`).join(' · ')}`],
     ['Book six seats together', `As one booking for all six: easyJet ${esc(out.from)} ${esc(out.dep)} out (£${out.pp_gbp}) and Geneva ${esc(back.dep)} back (£${back.pp_gbp}). Flights can’t be refunded, and the £29 fare is the last one before £46.50. <a href="${esc(out.url)}" target="_blank" rel="noopener">Check fares ↗</a>`],
     ['Lessons, minibus, rental', `Book the girls’ instructor at ESF Flaine (three mornings, Thu–Sat), the minibus and the skis online in November. All three cancel freely. <a href="${esc(U.lessons[0].url)}" target="_blank" rel="noopener">ESF ↗</a>`],
   ].map(([h, p]) => `<div class="step"><div><h4>${h}</h4><p>${p}</p></div></div>`).join('');
