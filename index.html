@@ -1077,7 +1077,8 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
       bs.forEach(b => { const v = b.answers.resort; if (!Array.isArray(v)) return; v.forEach((id, k) => { if (id in pts) pts[id] += v.length - k; }); if (v[0] in firsts) firsts[v[0]]++; });
       const ranked = ids.slice().sort((a, b) => pts[b] - pts[a] || firsts[b] - firsts[a]);
       const lead = R2.resorts.find(r => r.id === ranked[0]), second = R2.resorts.find(r => r.id === ranked[1]);
-      const margin = pts[ranked[0]] - pts[ranked[1]], remaining = crewN - n, open = margin <= remaining * (ids.length - 1);
+      const margin = pts[ranked[0]] - pts[ranked[1]], remaining = crewN - n, open = !R2.closed && margin <= remaining * (ids.length - 1);
+      const tieNote = margin === 0 && firsts[ranked[0]] > firsts[ranked[1]] ? ` · tie, won on first choices (${firsts[ranked[0]]} to ${firsts[ranked[1]]})` : '';
       // length: longest everyone ticked, else most ticked (ties → longer)
       const answeredL = bs.filter(b => Array.isArray(b.answers.lengths) && b.answers.lengths.length);
       const cnt = Object.fromEntries(R2.shapes.map(sh => [sh.id, answeredL.filter(b => b.answers.lengths.includes(sh.id)).length]));
@@ -1094,12 +1095,12 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
       $('#live-board').innerHTML = !n ? '' : `
         <div class="b-top"><b>Where we stand</b><span>Live · ${n} of ${crewN} voted${waiting.length ? ` · waiting for ${esc(waiting.join(', '))}` : ' · everyone has voted'}</span></div>
         <div class="tiles">
-          <div class="tile"><span class="k">Resort</span><span class="v">${esc(lead.short)} leads</span><span class="s">${ranked.map(id => `${esc(R2.resorts.find(r => r.id === id).short.split(' (')[0])} ${pts[id]}`).join(' · ')} pts${open ? ' · still open' : ' · decided'}</span></div>
+          <div class="tile"><span class="k">Resort</span><span class="v">${esc(lead.short)} ${open ? 'leads' : 'wins'}</span><span class="s">${ranked.map(id => `${esc(R2.resorts.find(r => r.id === id).short.split(' (')[0])} ${pts[id]}`).join(' · ')} pts${tieNote}${open ? ' · still open' : ' · decided'}</span></div>
           <div class="tile"><span class="k">Length</span><span class="v">${esc(shape.dates.replace(' Jan', ''))}</span><span class="s">${shape.nights} nights · works for ${cnt[shape.id]} of ${answeredL.length}${all ? ' (everyone so far)' : ''}</span></div>
           <div class="tile"><span class="k">Budget</span><span class="v">${tierB === 'budget' ? 'Budget tier' : 'Comfort tier'}</span><span class="s">${low} of ${bud.length} chose up to £1,000</span></div>
           <div class="tile"><span class="k">Provisional price</span><span class="v">${tL ? G(tL.beg / FX) + ' per girl' : '—'}</span><span class="s">${tL ? G(tL.adv / FX) + ' per boy · ' : ''}${esc(lead.short.split(' (')[0])}, all-in except food · ${esc(second.short.split(' (')[0])}: ${price(tS)}</span></div>
         </div>
-        <p class="next"><b>Next:</b> round 2 closes ${esc(R2.closeLabel)}. Round 3 then confirms who’s in for the winning dates, and we book the flat and flights together by Sun 18 Oct. The draft booking plan is under “Before the first lift”.</p>`;
+        <p class="next"><b>Next:</b> ${R2.closed ? 'round 2 is closed. The plan, fresh prices and an “are you in?” tap are on the <a href="update.html">plan page</a>. We book by Sun 18 Oct.' : `round 2 closes ${esc(R2.closeLabel)}. Round 3 then confirms who’s in for the winning dates, and we book the flat and flights together by Sun 18 Oct.`}</p>`;
       // draft booking plan for the provisional winner
       if (!cellL || !cellL.feasible) { $('#draft-plan').innerHTML = ''; return; }
       const c = cellL, b = c.budget.stay, cf = c.comfort.stay, its = c[tierB].items;
