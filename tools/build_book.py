@@ -17,8 +17,8 @@ INSURANCE_EST = 30    # winter-sports single trip, agent range £20–45
 LINEN_EST = 20        # girls' flat has no linen
 flat_pp = opt['two_flats']['total_gbp'] / 6
 lessons_eur = X['lessons'][0]['pp_eur']
-common = [('Flights (out + back)', out['pp_1'] + back['pp_1'], 'You book: easyJet app or Google Flights'),
-          ('Hold bag, both ways', BAG_EST, 'You add it to your flight (or share one between two)'),
+common = [('Flights (out + back)', out['pp_1'] + back['pp_1'], 'One of us books all six; send them your share'),
+          ('Hold bag, both ways', BAG_EST, 'Tell the booker; added to the same booking (or share one between two)'),
           ('Flat share', flat_pp, 'Send to Joaquin, who books both flats'),
           ('Minibus share', X['transfer']['pp_gbp'], 'Send to whoever books the minibus'),
           ('Insurance', INSURANCE_EST, 'You buy: winter-sports cover'),
@@ -71,10 +71,11 @@ bags = F['bags']
 bags_html = (f"<p>23 kg hold bag: about {bags['hold_23kg_oneway'].replace('ESTIMATE ~GBP ', '£').split(' online')[0]} each way online (£60 at the airport). "
              f"Large cabin bag: {bags['large_cabin_oneway'].replace('ESTIMATE ~GBP ', '£').split(' online')[0]}. Seat to sit together: {bags['seat_from'].replace('ESTIMATE ~GBP ', '£').split(' standard')[0]}.</p>"
              "<p>A small under-seat bag is free. Ski bags are £45 per flight; rent skis in Flaine instead.</p>")
-tips = ['Search the flight number in the easyJet app: U2 5741 out (Southend), U2 8490 back (Gatwick).',
-        'Book tonight, in the same sitting: today the price is the same for 1 or 6 seats, and the cheapest seats go first.',
-        'Name exactly as in your passport. Each of us adds our own bag and seat.',
-        'To sit together, pick seats next to the ones already taken.',
+tips = ['One booking, six passengers: search the flight number in the easyJet app, U2 5741 out (Southend) and U2 8490 back (Gatwick), for 6 adults.',
+        'Before the booker pays, everyone sends them: full name exactly as in the passport, and whether you want a hold bag.',
+        'Spelling fixes are free later; a full name change costs £60 per flight, so check the names twice.',
+        'Six seats together: the booker picks them in one go. Skip seats and easyJet scatters us at check-in.',
+        'Passport details go in at online check-in. The booker can do all six, or share the booking reference.',
         'HKSAR, BN(O) and British passports need no visa for a short Schengen trip. Allow time for the new EU biometric check at Geneva.',
         'Coming from the west? SWISS LX 359 from Heathrow at 07:00 (£67) also makes the minibus.']
 
@@ -98,15 +99,16 @@ for k in kit:
 
 tasks = [
   {'id': 'stay', 'anchor': 'stay', 'who': 'Joaquin books · everyone sends £194', 'title': 'Hold the two flats', 'what': 'Boys’ flat first, then the girls’ flat. Free to cancel until 27 December.', 'when': 'At the table, before the main course'},
-  {'id': 'flight', 'anchor': 'flight', 'who': 'Everyone · on your phone', 'title': 'Book your flights', 'what': 'easyJet U2 5741 Southend 10:40 out; U2 8490 Gatwick 18:25 back (or 19:55, £17 cheaper).', 'when': 'Tonight, while seats are £28'},
+  {'id': 'flight', 'anchor': 'flight', 'who': 'One booker · everyone sends name + share', 'title': 'Book the flights together', 'what': 'One booking for six: easyJet U2 5741 Southend 10:40 out; U2 8490 Gatwick 18:25 back (or 19:55, £17 cheaper).', 'when': 'Tonight, while seats are £28'},
   {'id': 'lessons', 'anchor': 'lessons', 'who': 'One of the girls', 'title': 'Send the lesson request', 'what': 'Copy the message below to ESF and Maison Sport, then pick the first good reply.', 'when': 'Tonight; reply within days'},
   {'id': 'minibus', 'anchor': 'extras', 'who': 'One volunteer', 'title': 'Book the minibus', 'what': f"Alps2Alps, £{X['transfer']['price_total_gbp']:.0f} for six, free to cancel until 24 h before.", 'when': 'This week'},
   {'id': 'insurance', 'anchor': 'extras', 'who': 'Everyone', 'title': 'Insurance + GHIC', 'what': 'Winter-sports cover with mountain rescue; free GHIC card from the NHS site.', 'when': 'This week'},
   {'id': 'gear', 'anchor': 'kit', 'who': 'Girls · one person books rental', 'title': 'Layers and rental', 'what': 'Buy warm layers before the trip; one person books skis for all six in November.', 'when': 'November'},
 ]
-track = [{'id': 'flat', 'label': 'Flats booked', 'task': 'stay'}, {'id': 'fout', 'label': 'Flight out booked', 'task': 'flight'}, {'id': 'fback', 'label': 'Flight back booked', 'task': 'flight'},
+track = [{'id': 'flat', 'label': 'Flats booked', 'task': 'stay'}, {'id': 'fout', 'label': 'Flight out booked', 'task': 'flight'}, {'id': 'fback', 'label': 'Flight back booked', 'task': 'flight'}, {'id': 'fpaid', 'label': 'Flight share sent', 'task': 'flight'},
          {'id': 'paid', 'label': 'Flat share sent', 'task': 'stay'}, {'id': 'lessons', 'label': 'Lesson request sent', 'task': 'lessons'}, {'id': 'minibus', 'label': 'Minibus booked', 'task': 'minibus'}, {'id': 'ins', 'label': 'Insurance bought', 'task': 'insurance'}]
 
+six = lambda u: u.replace('for%201%20adult', 'for%206%20adults')  # group booking search
 girl_total, boy_total = total(girls), total(boys)
 DATA = {
   'voteApi': VOTE_API, 'today': 'Saturday 17 October', 'checked': '17 Oct 2026 (flats, flights, minibus live; lessons, passes published; rental 10 Oct)',
@@ -118,12 +120,12 @@ DATA = {
   'tasks': tasks, 'trackTasks': track,
   'stay': {'headline': f"Two flats in Flaine Forêt, £{flat_pp:.0f} each", 'lead': 'Re-checked tonight. For our exact dates it’s still the only way to give the boys their own space and every girl her own bed. Nothing under one roof takes a Wednesday-to-Sunday booking. Both flats are free to cancel until 27 December, so booking tonight keeps every option open.',
            'options': stay_opts, 'hostMessage': host_message},
-  'flights': {'lead': f"Everyone books their own ticket on the same flights, so we travel together and nobody fronts the money. Today: £{out['pp_1']} out and £{back['pp_1']} back, or £{F['alternatives_back'][0]['pp_1']} on the later return.",
-              'out': {**out, 'to': 'GVA', 'pp': out['pp_1'], 'book_url': out['gf_url'], 'airline': 'easyJet'}, 'back': {**back, 'to': 'LGW', 'pp': back['pp_1'], 'book_url': back['gf_url'], 'airline': 'easyJet'},
+  'flights': {'lead': f"One of us books all six seats in a single booking, so we sit together and manage one reference. Everyone sends their name and share first. Today: £{out['pp_1']} out and £{back['pp_1']} back, or £{F['alternatives_back'][0]['pp_1']} on the later return.",
+              'out': {**out, 'gf_url': six(out['gf_url']), 'to': 'GVA', 'pp': out['pp_1'], 'book_url': six(out['gf_url']), 'airline': 'easyJet'}, 'back': {**back, 'gf_url': six(back['gf_url']), 'to': 'LGW', 'pp': back['pp_1'], 'book_url': six(back['gf_url']), 'airline': 'easyJet'},
               'alts': alts, 'bags': bags_html, 'tips': tips},
   'lessons': {'lead': 'One instructor for all four girls, three mornings, at their pace. Send the request below tonight and book whichever school replies first with a good instructor.', 'options': les_opts, 'en': lesson_en, 'fr': lesson_fr},
   'extras': extras,
-  'money': {'lead': 'Each of us books our own flight, bag, insurance and lift pass. Shared bookings are paid by one person and settled the same evening.',
+  'money': {'lead': 'Flights, flats, minibus, lessons and rental are each booked by one person and settled the same evening. Insurance and lift passes we buy ourselves.',
             'people': [{'who': 'Each girl', 'total': girl_total, 'rows': [{'k': k, 'v': v, 'how': h} for k, v, h in girls]}, {'who': 'Each boy', 'total': boy_total, 'rows': [{'k': k, 'v': v, 'how': h} for k, v, h in boys]}]},
   'kit': kit,
   'photos': {'hero': photo('Mont Blanc from'), 'end': photo('overview')},
