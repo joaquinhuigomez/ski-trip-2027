@@ -385,8 +385,10 @@ body.present .pnav{display:flex}
 
   /* present mode */
   const slides = () => [...document.querySelectorAll('.slide')];
-  const go = d => { const ys = slides().map(s => s.getBoundingClientRect().top); let i = ys.findIndex(y => y > 8); i = i === -1 ? ys.length : i; const target = d > 0 ? slides()[Math.min(i, ys.length - 1)] : slides()[Math.max(0, i - 2)]; target && target.scrollIntoView({ behavior: 'smooth' }); };
-  const setPresent = on => { document.body.classList.toggle('present', on); document.documentElement.style.scrollSnapType = on ? 'y mandatory' : ''; $('#present').textContent = on ? 'Exit present' : 'Present'; };
+  // Jump to the previous/next section from the one at the top of the screen (instant: smooth scrolling fights snapping on tall sections).
+  const go = d => { const s = slides(), tops = s.map(x => Math.round(x.getBoundingClientRect().top + scrollY)); let cur = 0;
+    tops.forEach((t, i) => { if (t <= scrollY + 12) cur = i; }); const i = Math.max(0, Math.min(s.length - 1, cur + d)); scrollTo({ top: tops[i], behavior: 'instant' }); };
+  const setPresent = on => { document.body.classList.toggle('present', on); document.documentElement.style.scrollSnapType = on ? 'y proximity' : ''; $('#present').textContent = on ? 'Exit present' : 'Present'; };
   $('#present').addEventListener('click', () => setPresent(!document.body.classList.contains('present')));
   $('#next').addEventListener('click', () => go(1)); $('#prev').addEventListener('click', () => go(-1));
   addEventListener('keydown', e => { if (!document.body.classList.contains('present')) return; if (['ArrowDown', 'ArrowRight', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); go(1); } if (['ArrowUp', 'ArrowLeft', 'PageUp'].includes(e.key)) { e.preventDefault(); go(-1); } });
