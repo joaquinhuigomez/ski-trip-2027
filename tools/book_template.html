@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>滑雪團 · Booking night</title>
-<meta name="description" content="Flaine, Wed 27 → Sun 31 January 2027. Everything we need to book tonight, with links.">
+<meta name="description" content="Les Carroz (Grand Massif), Wed 27 → Sun 31 January 2027. Everything we need to book tonight, with links.">
 <meta property="og:title" content="滑雪團 · Booking night">
-<meta property="og:description" content="Flaine, 27–31 January. The flat, your flight, lessons and the rest, all in one place.">
+<meta property="og:description" content="Les Carroz, 27–31 January. The chalet, your flight, lessons and the rest, all in one place.">
 <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Mont_Blanc_from_Flaine%2C_2009.jpg/1280px-Mont_Blanc_from_Flaine%2C_2009.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2712%27 fill=%27%2312233B%27/%3E%3Cpath d=%27M6 50 26 18l8 12 6-8 18 28z%27 fill=%27%237C88B4%27/%3E%3Cpath d=%27M26 18l-6 10 6-3 4 4z%27 fill=%27%23F3F1FA%27/%3E%3Ccircle cx=%2748%27 cy=%2716%27 r=%275%27 fill=%27%23E0482B%27/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -207,7 +207,7 @@ body.present .pnav{display:flex}
 <body>
 <header class="bar" id="bar"><div class="wrap">
   <a class="brand" href="update.html" lang="zh-Hant">滑雪團</a>
-  <nav aria-label="Sections"><a href="#tonight">Tonight</a><a href="#stay">Flat</a><a href="#flight">Flights</a><a href="#lessons">Lessons</a><a href="#extras">Minibus &amp; gear</a><a href="#money">Money</a><a href="#tracker">Booked?</a></nav>
+  <nav aria-label="Sections"><a href="#tonight">Tonight</a><a href="#stay">Chalet</a><a href="#flight">Flights</a><a href="#lessons">Lessons</a><a href="#extras">Minibus &amp; gear</a><a href="#money">Money</a><a href="#tracker">Booked?</a></nav>
   <button class="present-btn" id="present" type="button">Present</button>
 </div></header>
 <div class="pnav"><button type="button" id="prev" aria-label="Previous section">↑</button><button type="button" id="next" aria-label="Next section">↓</button></div>
@@ -218,15 +218,15 @@ body.present .pnav{display:flex}
   <div class="seal" lang="zh-Hant" aria-hidden="true">今晚</div>
   <div class="wrap">
     <p class="label">Booking night · <span id="today"></span></p>
-    <h1>Tonight, we book Flaine</h1>
-    <p class="tag">Four nights, six of us, Mont Blanc across the valley. By dessert we can have the flat held, flights in our inboxes, and lessons and the minibus sorted. Everything we need is on this page.</p>
+    <h1>Les Carroz, here we come</h1>
+    <p class="tag">Four nights, six of us, Mont Blanc across the valley. The chalet is requested; next come flights in our inboxes, and lessons and the minibus sorted. Everything we need is on this page.</p>
     <div class="mons" id="mons"></div>
     <div class="count"><span><b id="cd">—</b>days to go</span><span><b>4</b>nights</span><span><b id="hero-girl">—</b>per girl, all-in</span></div>
   </div>
 </section>
 
 <section class="slide dark" id="glance"><div class="wrap">
-  <div class="head"><p class="label"><span class="kj">一覽</span>The plan at a glance</p><h2>Flaine, 27–31 January</h2><p class="lead" id="glance-lead"></p></div>
+  <div class="head"><p class="label"><span class="kj">一覽</span>The plan at a glance</p><h2>Les Carroz, 27–31 January</h2><p class="lead" id="glance-lead"></p></div>
   <div class="glance" id="glance-grid"></div>
 </div></section>
 
@@ -236,9 +236,10 @@ body.present .pnav{display:flex}
 </div></section>
 
 <section class="slide alt" id="stay"><div class="wrap">
-  <div class="head"><p class="step-n">STEP 1 · ONE PERSON BOOKS</p><p class="label"><span class="kj">住宿</span>Where we’ll sleep</p><h2 id="stay-h"></h2><p class="lead" id="stay-lead"></p></div>
+  <div class="head"><p class="step-n">STEP 1 · REQUESTED</p><p class="label"><span class="kj">住宿</span>Where we’ll sleep</p><h2 id="stay-h"></h2><p class="lead" id="stay-lead"></p></div>
   <div class="opts" id="stay-opts"></div>
-  <div class="card" style="margin-top:1rem"><span class="label">Message to send the host before paying</span><div class="copy"><textarea id="host-msg" readonly></textarea><button class="btn soft" type="button" data-copy="host-msg">Copy message</button></div></div>
+  <div class="card" style="margin-top:1rem" id="lifts"></div>
+  <div class="card" style="margin-top:1rem"><span class="label">Message to send Carole once she accepts</span><div class="copy"><textarea id="host-msg" readonly></textarea><button class="btn soft" type="button" data-copy="host-msg">Copy message</button></div></div>
 </div></section>
 
 <section class="slide" id="flight"><div class="wrap">
@@ -268,7 +269,7 @@ body.present .pnav{display:flex}
 </div></section>
 
 <section class="slide" id="kit"><div class="wrap">
-  <div class="head"><p class="label"><span class="kj">裝備</span>For the girls</p><h2>Warm, dry, happy</h2><p class="lead">Rent the hard kit in Flaine. Buy the soft layers before you go: one good shop covers it, and it’s yours for every trip after.</p></div>
+  <div class="head"><p class="label"><span class="kj">裝備</span>For the girls</p><h2>Warm, dry, happy</h2><p class="lead">Rent the hard kit by the gondola. Buy the soft layers before you go: one good shop covers it, and it’s yours for every trip after.</p></div>
   <div class="kit" id="kit-list"></div>
 </div></section>
 
@@ -323,7 +324,7 @@ body.present .pnav{display:flex}
     <ul class="pc">${o.pros.map(x => `<li class="p">${esc(x)}</li>`).join('')}${o.cons.map(x => `<li class="c">${esc(x)}</li>`).join('')}</ul>
     ${o.how ? `<p class="meta"><b>How to book</b> ${esc(o.how)}</p>` : ''}
     <div class="links">${o.urls.map(u => link(u.url, u.label, o.rec ? 'btn' : 'btn soft')).join('')}</div></article>`).join('');
-  $('#host-msg').value = B.stay.hostMessage;
+  $('#host-msg').value = B.stay.hostMessage; $('#lifts').innerHTML = B.stay.lifts;
 
   /* flights */
   $('#flight-lead').textContent = B.flights.lead;
