@@ -1208,7 +1208,7 @@ footer .credits div{break-inside:avoid;margin-bottom:.3rem}
     $('#turnout').innerHTML = D.crew.map(c => `<span class="${voted.has(c.name) ? 'done' : ''}">${voted.has(c.name) ? '✓ ' : ''}${esc(c.name)}</span>`).join('');
     $('#tallies').innerHTML = tallyHTML(Q, bs);
     if (boardHook) boardHook(bs);
-    const cm = state.comments.slice().reverse();
+    const cm = state.comments.filter(c => !String(c.text || '').startsWith('§L')).slice().reverse();
     $('#comments').innerHTML = cm.length ? cm.map(c => `<div class="cmt"><b>${esc(c.name)}</b><time>${new Date(c.ts).toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short' })}</time><div>${esc(c.text)}</div></div>`).join('') : '<p class="vote-note">No notes yet.</p>'; }
   async function refresh() { try { state = await api('GET'); $('#sync').textContent = R2 && R2.closed ? `Round 2 closed · ${roundBallots().length} of ${crewN} voted · final results` : `Live · ${roundBallots().length} of ${crewN} voted in round 2 · refreshed ${new Date().toLocaleTimeString('en-GB', { timeStyle: 'short' })}`; renderResults(); loadMine(); }
     catch (e) { $('#sync').textContent = 'Live results are unavailable right now. Use “Copy for WhatsApp” as a backup.'; renderResults(); } }
