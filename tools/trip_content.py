@@ -193,3 +193,65 @@ STEPS = [
             {'name': 'Grand Massif pass (boys)', 'price': '€189', 'unit': '3 days · €252 for 4', 'note': 'All five resorts incl. Flaine. Add €9 “Avantage Sérénité” to cancel up to the night before.', 'url': 'https://www.skipass-grand-massif.com/en/shopping-cart', 'cta': 'Pass shop ↗'}]},
   EAT_STEP,
 ]
+
+# ---------- gear: rent vs buy (from pt_gear.json) ----------
+GR = R('pt_gear.json')
+def _verdict(it):
+    r = it['recommendation'].upper()
+    if r.startswith('RENT'): return 'Rent', 'rent'
+    if 'OR RENT' in r or 'OTHERWISE RENT' in r: return 'Buy budget · or rent', 'either'
+    return 'Buy', 'buy'
+def _rent(it):
+    ro = it.get('rent_option') or {}
+    if not ro.get('price'): return ''
+    return f"{ro['who'].split(' (')[0]}: {ro['price'].split(';')[0]}"
+NAMES_G = {1: 'Base layers (top + bottoms)', 2: 'Mid layer', 3: 'Ski jacket', 4: 'Ski pants', 5: 'Ski socks ×2', 6: 'Gloves / mittens', 7: 'Goggles', 8: 'Helmet', 9: 'Neck warmer + beanie', 10: 'Small extras'}
+WHY_G = {1: 'Worn against skin all day, so nobody rents them, and they cost less than a day’s hire. Reusable all winter.',
+         2: 'Most of us own a fleece or light down already. Whoever feels the cold: add a synthetic insulated layer.',
+         3: 'Decathlon’s £40 jacket (10,000 mm, warm to −8°C) costs about the same as hiring one. Hire makes sense for a premium look on a one-off trip.',
+         4: 'Beginners sit in the snow a lot: a waterproof seat matters more than the brand. Rent together with the jacket if hiring.',
+         5: 'Never rented. One thin ski sock beats two thick ones in rental boots.',
+         6: 'Mittens for the girls: noticeably warmer than gloves, and beginners don’t need the dexterity.',
+         7: 'No goggle rental found in Les Carroz. An all-weather lens copes with flat light and snow.',
+         8: 'Skiset rents one for €12.60 for 3 days (about £11), added to the ski pack and fitted on the spot. Buy only if you’ll ski again soon.',
+         9: 'Pennies, and worn on the face. The neck warmer matters more than the beanie on the slopes.',
+         10: 'Hand warmers and SPF50 for face and lips; share one bottle between two or three.'}
+import re as _re
+def _note(n):
+    n = _re.sub(r'(Bottoms|Leggings|Hat|Beanie|Sun cream|Step-up[^:]*|Gloves 100 version[^:]*):?\s*https?://\S+', '', str(n))
+    n = _re.sub(r'https?://\S+', '', n).strip(' .;:')
+    return n.split('. ')[0][:90]
+GEAR_ITEMS = []
+for idx, it in enumerate(GR['items'], 1):
+    v, vc = _verdict(it)
+    GEAR_ITEMS.append({'item': NAMES_G.get(idx, it['item']), 'verdict': v, 'vclass': vc, 'why': WHY_G.get(idx, it['why']), 'rent': _rent(it),
+                       'tiers': [{'tier': t['tier'].capitalize(), 'name': f"{t['brand'].split(' (')[0]} · {t['product'].split(' £')[0].split(' x2')[0][:60]}", 'price': f"£{float(t['price_gbp']):.2f}".replace('.00', ''),
+                                  'notes': _note(t.get('notes', '')), 'url': t.get('url', '')} for t in it['tiers']]})
+GEAR_ITEMS[2]['rent'] = 'Adventure Kit Hire: jacket + pants together £75 for 10 days (premium £115), plus shipping from £15'
+GEAR_ITEMS[3]['rent'] = 'Bundle with the jacket (left). Trousers alone £30 for 3 days'
+GEAR_ITEMS[7]['rent'] = 'Skiset, downstairs: €12.60 for 3 days, add it to the ski booking'
+KT = GR['kit_totals']
+rv = KT.get('rent_outerwear_variant', {})
+def _rv(k):
+    vals = [v for kk, v in rv.items() if kk.startswith(k + '_') and isinstance(v, (int, float))] if isinstance(rv, dict) else []
+    return f" · £{vals[-1]:,.0f} if you hire the jacket + pants" if vals else ''
+GEAR = {
+  'lead': 'Everyone rents skis, boots and poles at Skiset downstairs. For the rest: buy what touches skin, rent the helmet, and choose your tier for the jacket and pants. Prices checked on 18 Oct at UK shops; women’s versions shown, men’s cost about the same.',
+  'totals': [{'k': 'Budget kit · Decathlon', 'v': f"£{KT['budget']['helmet_rented_at_skiset_gbp']:,.0f}", 's': 'everything below, helmet rented' + _rv('budget'), 'gold': True},
+             {'k': 'Mid kit', 'v': f"£{KT['mid']['helmet_rented_at_skiset_gbp']:,.0f}", 's': 'Uniqlo, Wedze 500, Columbia, Smith, Giro' + _rv('mid')},
+             {'k': 'Premium kit', 'v': f"£{KT['premium']['helmet_rented_at_skiset_gbp']:,.0f}", 's': 'Icebreaker, The North Face, Arc’teryx, Oakley' + _rv('premium')},
+             {'k': 'Our pick for the girls', 'v': '≈ £200', 's': 'budget kit + merino layer and warm mittens for whoever feels the cold'}],
+  'items': GEAR_ITEMS,
+  'extra': ["""<h4>Renting clothes instead</h4>
+<p class="small"><b>Adventure Kit Hire</b> posts to you, no deposit: jacket + pants £55 (3 days), £65 (7) or £75 (10 days, covers travel); premium £115. Shipping £15 and up, covering the return. One combined order for the group cuts shipping; ask for delivery around Mon 25 Jan.</p>
+<p class="small"><b>Expedition Kit Hire:</b> full kit (jacket, salopettes, base layers, fleece, mitts) £140 a week, plus a £70 refundable deposit.</p>
+<p class="small"><b>Ski Stuff</b> is closing down and selling ex-hire jackets and salopettes at £10 each plus postage, cheaper than any hire.</p>
+<div class="links"><a class="btn soft" href="https://www.adventurekithire.co.uk/collections/adult-skiwear-hire" target="_blank" rel="noopener">Adventure Kit Hire ↗</a><a class="btn soft" href="https://ski-stuff.co.uk/" target="_blank" rel="noopener">Ski Stuff ↗</a></div>""",
+"""<h4>Second-hand and timing</h4>
+<p class="small"><b>Decathlon Second Life</b> is the safest used option: inspected, returnable, Decathlon sizing. Vinted and eBay have jackets from £5–25; check the seat and knees.</p>
+<p class="small"><b>Order by 1 December.</b> Decathlon lets you try and return in store; leave room in the jacket and pants for a mid layer. Black Friday (27 Nov) is the low point for premium brands.</p>
+<p class="small"><b>Layer, don’t bulk:</b> a waterproof shell + base layer + fleece beats one heavy jacket. Boys: usually only goggles and merino socks are missing.</p>
+<div class="links"><a class="btn soft" href="https://www.decathlon.co.uk/browse/c0-sports/c1-skiing-snowboarding/_/N-1gzqtj2" target="_blank" rel="noopener">Decathlon ski ↗</a><a class="btn soft" href="https://www.vinted.co.uk/catalog?search_text=womens%20ski%20jacket" target="_blank" rel="noopener">Vinted ↗</a></div>"""],
+}
+KIT_LEAD = 'The bits people forget.'
+KIT = KIT[-3:]

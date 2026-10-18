@@ -61,7 +61,7 @@ DATA = {
   'daysLead': DAYS_LEAD, 'days': DAYS,
   'around': {'lead': AROUND_LEAD, 'cards': AROUND_CARDS},
   'eat': {'lead': EAT_LEAD, 'photos': [mood('mood_fondue', 0), mood('mood_apres', 1), mood('mood_fondue', 2)], 'list': EAT},
-  'check': CHECK, 'kitLead': KIT_LEAD, 'kit': KIT, 'dates': DATES, 'cal': CAL,
+  'gear': GEAR, 'check': CHECK, 'kitLead': KIT_LEAD, 'kit': KIT, 'dates': DATES, 'cal': CAL,
   'endTag': 'First turns on Thursday morning, fondue by Thursday night, Mont Blanc across the valley all week.',
   'foot': FOOT,
   'photos': {'hero': {**photo3('Mont Blanc from'), 'page': photo3('Mont Blanc from').get('page', '')}, 'end': CARROZ},
